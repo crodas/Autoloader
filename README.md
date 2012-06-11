@@ -35,4 +35,13 @@ $generator = new \Autoloader\Generator($finder);
 $generator->generate("autoloader.php");
 ```
 
+How to install
+--------------
+
+In order to install you should use `compose`.
+
+```
+php composer.phar install
+```
+
 
