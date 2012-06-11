@@ -22,7 +22,7 @@ require "lib/Autoloader/Generator.php";
 
 $generator = new \Autoloader\Generator("vendors/");
 $generator->generate("autoloader.php");
-``
+```
 
 Or if you know what you're doing, you can use an instance of `Finder`.
 
