@@ -119,6 +119,10 @@ class Generator
             throw new \RuntimeException("{$dir} is not writable");
         }
 
+        if (file_exists($output) && !is_file($output)) {
+            throw new \RuntimeException("{$output} exists but it isn't a file");
+        }
+
         $classes   = array();
         foreach ($this->path as $file) {
             $path = $file->getRealPath();
