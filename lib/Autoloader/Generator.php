@@ -139,7 +139,7 @@ class Generator
     }
 
 
-    public function generate($output, $relative = false)
+    public function generate($output, $relative = false, $include_psr0 = true)
     {
         $dir = dirname($output);
         if (!is_dir($dir) || !is_writable($dir)) {
@@ -156,6 +156,9 @@ class Generator
             $path = $file->getRealPath();
             if ($relative) {
                 $rpath = $this->getRelativePath(dirname($path), dirname($output)) . '/' . basename($path);
+                if ($rpath[0] != '/') {
+                    $rpath = "/" . $rpath;
+                }
             }
             foreach ($this->getClasses($path) as $class) {
                 $classes[$class] = !empty($rpath) ? $rpath : $path;
@@ -163,7 +166,7 @@ class Generator
         }
 
         $tpl  = file_get_contents(__DIR__ . "/autoloader.tpl.php");
-        $code = Artifex::execute($tpl, compact('classes', 'relative'));
+        $code = Artifex::execute($tpl, compact('classes', 'relative', 'include_psr0'));
         Artifex::save($output, $code);
     }
 }

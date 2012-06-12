@@ -70,7 +70,13 @@ class CliApp
                 $command->setDefinition($args);
             }
             if (!empty($conf['opt'])) {
-                $command->addOption($conf['opt']['name'], $conf['opt']['default']);
+                foreach ($conf['opt'] as $opt) {
+                    if (array_key_exists('default', $opt)) {
+                        $command->addOption($opt['name'], null, InputOption::VALUE_OPTIONAL, $opt['help'], $opt['default']);
+                    } else {
+                        $command->addOption($opt['name'], null, InputOption::VALUE_NONE, $opt['help']);
+                    }
+                }
             }
         }
     }
@@ -98,7 +104,8 @@ class CliApp
     /**
      *  @cli
      *  @help Generate autoloader
-     *  @opt(name='relative', default=false)
+     *  @opt(name='relative', help="Save as relative path")
+     *  @opt(name='include-psr-0', default=true, help="Include the PSR-0 autoloader")
      *  @arg(name='output', help="Output autoloader")
      *  @arg(name='dir', help="Directory to scan",array=true)
      */
@@ -111,7 +118,7 @@ class CliApp
             ->in($input->getArgument('dir'));
 
         $generator = new Generator($finder);
-        $generator->generate($file, $input->getOption('relative'));
+        $generator->generate($file, $input->getOption('relative'), $input->getOption('include-psr-0'));
         $output->write("<info>{$file} was generated</info>\n");
     }
 

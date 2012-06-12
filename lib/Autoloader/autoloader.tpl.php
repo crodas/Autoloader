@@ -16,6 +16,7 @@ spl_autoload_register(function ($class) {
         return true;
     }
 
+    #* if ($include_psr0)
     /**
      * Autoloader that implements the PSR-0 spec for interoperability between
      * PHP software.
@@ -33,5 +34,6 @@ spl_autoload_register(function ($class) {
             return require $path;
         }
     }
-
+    #* end
+    return false;
 }, true, true);
