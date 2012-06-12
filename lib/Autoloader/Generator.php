@@ -40,6 +40,8 @@ namespace Autoloader;
 use Symfony\Component\Finder\Finder,
     Artifex;
 
+require __DIR__ . "/ClassDef.php";
+
 class Generator
 {
     protected $path;
@@ -70,39 +72,93 @@ class Generator
         return true;
     }
 
-    public function getClasses($file)
+    public function getClasses($content, $file, &$classes)
     {
-        if (!is_readable($file)) {
-            throw new \RuntimeException("{$file} is not readable");
-        }
-        $content   = file_get_contents($file);
         $tokens    = token_get_all($content); 
-        $classes   = array();
         $namespace = "";
+        $classMap  = array();
         $allTokens = count($tokens);
+        $readNamespace  = function() use ($tokens, &$i) {
+            while ($tokens[$i][0] != T_STRING && $tokens[$i][0] != T_NS_SEPARATOR) {
+                ++$i;
+            }
+            $parts = array();
+            while (true) {
+                $token = $tokens[$i];
+                if (!is_array($token)) {
+                    break;
+                }
+                if ($token[0] == T_STRING || $token[0] == T_NS_SEPARATOR) {
+                    $parts[] = $token[1];
+                } else {
+                    break;
+                }
+                $i++;
+            }
+
+            return $parts;
+        };
+
         for ($i=0; $i < $allTokens; $i++) {
             $token = $tokens[$i];
             if (!is_array($token)) continue;
             switch ($token[0]) {
+            case T_USE:
+                read_class_alias:
+                $parts = $readNamespace();
+                $tmpns = implode("", $parts);
+                $alias = $parts[ count($parts) - 1];
+                while ($tokens[$i][0] == T_WHITESPACE) ++$i;
+                if ($tokens[$i][0] == T_AS) {
+                    while ($tokens[$i][0] != T_STRING) ++$i;
+                    $alias = $tokens[$i++][1];
+                }
+                $classMap[$alias] = $tmpns;
+
+                if ($tokens[$i] == ",") {
+                    goto read_class_alias;
+                }
+
+                break;
             case T_INTERFACE:
             case T_CLASS:
                 while ($tokens[++$i][0] != T_STRING);
-                $classes[] = $namespace . $tokens[$i][1];
-                break;
-            case T_NAMESPACE:
-                while ($tokens[++$i][0] != T_STRING);
-                $parts = array();
-                while (true) {
-                    $token = $tokens[$i++];
-                    if (!is_array($token) || ($token[0] != T_STRING && $token[0] != T_NS_SEPARATOR)) {
-                        break;
-                    }
-                    if ($token[0] == T_STRING) {
-                        $parts[] = $token[1];
+                $className = $namespace . $tokens[$i][1];
+                if (!isset($classes[$className])) {
+                    $classes[$className] = new classDef($className);
+                }
+                $class = $classes[$className];
+                $class->setFile($file);
+                $class->isLocal(true);
+                while ($tokens[$i++] != '{') {
+                    if (!is_array($tokens[$i])) continue;
+                    switch ($tokens[$i][0]) {
+                    case T_EXTENDS:
+                    case T_IMPLEMENTS:
+                        read_class_name:
+                        $parentClass = implode("", $readNamespace());
+                        if (isset($classMap[$parentClass])) {
+                            $parentClass = $classMap[$parentClass];
+                        } else {
+                            if ($parentClass[0] != "\\") {
+                                $parentClass = $namespace . $parentClass;
+                            } else {
+                                $parentClass = substr($parentClass, 1);
+                            }
+                        }
+                        if (!isset($classes[$parentClass])) {
+                            $classes[$parentClass] = new classDef($parentClass);
+                        }
+                        $class->setParentClass($classes[$parentClass]);
+                        while ($tokens[$i][0] == T_WHITESPACE) ++$i;
+                        if ($tokens[$i] == ',') {
+                            goto read_class_name;
+                        }
                     }
                 }
-                
-                $namespace = implode("\\", $parts) . "\\";
+                break;
+            case T_NAMESPACE:
+                $namespace = implode("", $readNamespace()) . "\\";
                 break;
             }
         }
@@ -154,7 +210,8 @@ class Generator
             throw new \RuntimeException("{$output} exists but it isn't a file");
         }
 
-        $classes   = array();
+        $zclasses  = array();
+        $deps      = array();
         $relatives = array();
         foreach ($this->path as $file) {
             $path = $file->getRealPath();
@@ -164,14 +221,29 @@ class Generator
                     $rpath = "/" . $rpath;
                 }
             }
-            foreach ($this->getClasses($path) as $class) {
-                $classes[$class] = !empty($rpath) ? $rpath : $path;
+            $this->getClasses(file_get_contents($path), $rpath, $zclasses);
+        }
+
+        foreach ($zclasses as $class) {
+            if (!$class->isLocal()) {
+                continue;
             }
+            if ($class->getParentClass() && $class->getParentClass()->isLocal()) {
+                $tmp = $class;
+                $zdeps = array();
+                while ($tmp = $tmp->getParentClass()) {
+                    if (!$tmp->isLocal()) continue;
+                    $zdeps[] = strtolower($tmp);
+                }
+                $deps[strtolower($class)] = array_reverse($zdeps);
+            }
+            $classes[strtolower($class)] = $class->getFile();
         }
 
         $tpl  = file_get_contents(__DIR__ . "/autoloader.tpl.php");
-        $code = Artifex::execute($tpl, compact('classes', 'relative', 'include_psr0'));
+        $code = Artifex::execute($tpl, compact('classes', 'relative', 'deps', 'include_psr0'));
         Artifex::save($output, $code);
+        //autoload_stats();
     }
 }
 

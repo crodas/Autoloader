@@ -43,8 +43,11 @@ use Symfony\Component\Console\Application,
     Symfony\Component\Console\Output\OutputInterface,
     Symfony\Component\Finder\Finder,
     Notoj\ReflectionMethod;
-
-class CliApp
+ 
+/**
+ *  @autoloader("\Notoj\ReflectionMethod", "Generator")
+ */
+class CliApp extends \stdClass
 {
     public function __construct(Application $app)
     {
