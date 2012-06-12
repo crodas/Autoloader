@@ -132,6 +132,11 @@ class CliApp
         foreach ($finder as $file) {
             $phar->addFile($file->getRealPath());
         }
+
+        $phar->setStub("#!/usr/bin/env php\n"
+            . $phar->createDefaultStub('index.php')
+        );
         $phar->addFile($_SERVER["PHP_SELF"], 'index.php');
+        chmod('autoloader.phar', 0755);
     }
 }
