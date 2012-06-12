@@ -44,7 +44,7 @@ use Symfony\Component\Console\Application,
     Symfony\Component\Finder\Finder,
     Notoj\ReflectionMethod;
 
-class Main
+class CliApp
 {
     public function __construct(Application $app)
     {
@@ -68,6 +68,9 @@ class Main
                     $args[] = new InputArgument($arg['name'], $opts , $arg['help']);
                 }
                 $command->setDefinition($args);
+            }
+            if (!empty($conf['opt'])) {
+                $command->addOption($conf['opt']['name'], $conf['opt']['default']);
             }
         }
     }
@@ -95,6 +98,7 @@ class Main
     /**
      *  @cli
      *  @help Generate autoloader
+     *  @opt(name='relative', default=false)
      *  @arg(name='output', help="Output autoloader")
      *  @arg(name='dir', help="Directory to scan",array=true)
      */
@@ -107,7 +111,7 @@ class Main
             ->in($input->getArgument('dir'));
 
         $generator = new Generator($finder);
-        $generator->generate($file);
+        $generator->generate($file, $input->getOption('relative'));
         $output->write("<info>{$file} was generated</info>\n");
     }
 
@@ -118,10 +122,11 @@ class Main
     public function createPhar(InputInterface $input, OutputInterface $output)
     {
         $finder = new Finder();
+        $dir    = dirname($_SERVER['PHP_SELF']);
         $finder->files()
             ->name('*.php')
-            ->in(__DIR__)
-            ->in(__DIR__ . '/../../vendor');
+            ->in($dir . '/lib')
+            ->in($dir . '/vendor');
 
         $phar = new \Phar('autoloader.phar');
         foreach ($finder as $file) {

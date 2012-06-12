@@ -8,7 +8,11 @@ spl_autoload_register(function ($class) {
     static $classes = __classes__;
 
     if (isset($classes[$class])) {
+        #* if ($relative)
+        require __DIR__  . '/' . $classes[$class];
+        #* else
         require $classes[$class];
+        #* end
         return true;
     }
 

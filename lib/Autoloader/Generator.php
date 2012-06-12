@@ -40,8 +40,6 @@ namespace Autoloader;
 use Symfony\Component\Finder\Finder,
     Artifex;
 
-require __DIR__ . "/../../vendor/autoload.php";
-
 class Generator
 {
     protected $path;
@@ -111,8 +109,37 @@ class Generator
         return $classes;
     }
 
+    public function getRelativePath($dir1, $dir2=NULL)
+    {
+        if (empty($dir2)) {
+            $dir2 = getcwd();
+        }
+        $dir1 = trim(realpath($dir1),'/');
+        $dir2 = trim(realpath($dir2),'/');
+        $to   = explode('/', $dir1);
+        $from = explode('/', $dir2);
 
-    public function generate($output)
+        $realPath = $to;
+
+        foreach ($from as $depth => $dir) {
+            if(isset($to[$depth]) && $dir === $to[$depth]) {
+                array_shift($realPath);
+            } else {
+                $remaining = count($from) - $depth;
+                if($remaining) {
+                    // add traversals up to first matching dir
+                    $padLength = (count($realPath) + $remaining) * -1;
+                    $realPath  = array_pad($realPath, $padLength, '..');
+                    break;
+                }
+            }
+        }
+
+        return implode("/", $realPath);
+    }
+
+
+    public function generate($output, $relative = false)
     {
         $dir = dirname($output);
         if (!is_dir($dir) || !is_writable($dir)) {
@@ -124,14 +151,19 @@ class Generator
         }
 
         $classes   = array();
+        $relatives = array();
         foreach ($this->path as $file) {
             $path = $file->getRealPath();
+            if ($relative) {
+                $rpath = $this->getRelativePath(dirname($path), dirname($output)) . '/' . basename($path);
+            }
             foreach ($this->getClasses($path) as $class) {
-                $classes[$class] = $path;
+                $classes[$class] = !empty($rpath) ? $rpath : $path;
             }
         }
+
         $tpl  = file_get_contents(__DIR__ . "/autoloader.tpl.php");
-        $code = Artifex::execute($tpl, compact('classes'));
+        $code = Artifex::execute($tpl, compact('classes', 'relative'));
         Artifex::save($output, $code);
     }
 }

@@ -35,12 +35,11 @@
   +---------------------------------------------------------------------------------+
 */
 use Symfony\Component\Console\Application,
-    Autoloader\Main,
+    Autoloader\CliApp,
     Autoloader\Generator;
 
-require "lib/Autoloader/Generator.php";
-require "lib/Autoloader/Main.php";
+require "lib/Autoloader/loader.php";
 
 $console = new Application();
-new Main($console);
+new CliApp($console);
 $console->run();
