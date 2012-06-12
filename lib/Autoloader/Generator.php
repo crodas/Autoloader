@@ -45,6 +45,7 @@ require __DIR__ . "/ClassDef.php";
 class Generator
 {
     protected $path;
+    protected $cbc;
 
     public function __construct($dir = NULL)
     {
@@ -78,12 +79,21 @@ class Generator
         $namespace = "";
         $classMap  = array();
         $allTokens = count($tokens);
-        $readNamespace  = function() use ($tokens, &$i) {
+        $readNamespace  = function() use ($tokens, &$i, $file) {
             while ($tokens[$i][0] != T_STRING && $tokens[$i][0] != T_NS_SEPARATOR) {
+                if (empty($tokens[$i]) || !is_array($tokens[$i])) {
+                    break;
+                }
                 ++$i;
+            }
+            if (!is_array($tokens)) {
+                return false;
             }
             $parts = array();
             while (true) {
+                if (empty($tokens[$i])) {
+                    throw new \Exception("Failed at parsing {$file}");
+                }
                 $token = $tokens[$i];
                 if (!is_array($token)) {
                     break;
@@ -106,6 +116,9 @@ class Generator
             case T_USE:
                 read_class_alias:
                 $parts = $readNamespace();
+                if (empty($parts)) {
+                    continue;
+                }
                 $tmpns = implode("", $parts);
                 $alias = $parts[ count($parts) - 1];
                 while ($tokens[$i][0] == T_WHITESPACE) ++$i;
@@ -130,13 +143,13 @@ class Generator
                 $class = $classes[$className];
                 $class->setFile($file);
                 $class->isLocal(true);
-                while ($tokens[$i++] != '{') {
-                    if (!is_array($tokens[$i])) continue;
+                while ($tokens[$i] != "{") {
                     switch ($tokens[$i][0]) {
                     case T_EXTENDS:
                     case T_IMPLEMENTS:
                         read_class_name:
                         $parentClass = implode("", $readNamespace());
+
                         if (isset($classMap[$parentClass])) {
                             $parentClass = $classMap[$parentClass];
                         } else {
@@ -149,11 +162,15 @@ class Generator
                         if (!isset($classes[$parentClass])) {
                             $classes[$parentClass] = new classDef($parentClass);
                         }
-                        $class->setParentClass($classes[$parentClass]);
+                        $class->addDependency($classes[$parentClass]);
                         while ($tokens[$i][0] == T_WHITESPACE) ++$i;
                         if ($tokens[$i] == ',') {
+                            $i++;
                             goto read_class_name;
                         }
+                        break;
+                    default:
+                        $i++;
                     }
                 }
                 break;
@@ -163,6 +180,11 @@ class Generator
             }
         }
         return $classes;
+    }
+
+    public function setStepCallback(\Closure $cbc)
+    {
+        $this->callback = $cbc;
     }
 
     public function getRelativePath($dir1, $dir2=NULL)
@@ -213,29 +235,41 @@ class Generator
         $zclasses  = array();
         $deps      = array();
         $relatives = array();
+        $callback  = $this->callback;
         foreach ($this->path as $file) {
-            $path = $file->getRealPath();
+            $path  = $file->getRealPath();
+            $rpath = $path;
             if ($relative) {
                 $rpath = $this->getRelativePath(dirname($path), dirname($output)) . '/' . basename($path);
                 if ($rpath[0] != '/') {
                     $rpath = "/" . $rpath;
                 }
             }
-            $this->getClasses(file_get_contents($path), $rpath, $zclasses);
+            try {
+                $callback($path, $zclasses);
+                $this->getClasses(file_get_contents($path), $rpath, $zclasses);
+            } Catch (\Exception $e) {}
         }
 
-        foreach ($zclasses as $class) {
+        $buildDepTree = function($next, $class) {
+            $deps = array();
+            if (count($class->getDependencies()) > 0) {
+                foreach (array_reverse($class->getDependencies()) as $dep){
+                    if (!$dep->isLocal()) continue;
+                    $deps   = array_merge($deps, $next($next, $dep));
+                    $deps[] = strtolower($dep);
+                }
+            }
+            return $deps;
+        };
+
+        foreach ($zclasses as $id => $class) {
             if (!$class->isLocal()) {
                 continue;
             }
-            if ($class->getParentClass() && $class->getParentClass()->isLocal()) {
-                $tmp = $class;
-                $zdeps = array();
-                while ($tmp = $tmp->getParentClass()) {
-                    if (!$tmp->isLocal()) continue;
-                    $zdeps[] = strtolower($tmp);
-                }
-                $deps[strtolower($class)] = array_reverse($zdeps);
+            $dep = $buildDepTree($buildDepTree, $class);
+            if (count($dep) > 0) {
+                $deps[strtolower($class)] = $dep;
             }
             $classes[strtolower($class)] = $class->getFile();
         }
@@ -243,7 +277,6 @@ class Generator
         $tpl  = file_get_contents(__DIR__ . "/autoloader.tpl.php");
         $code = Artifex::execute($tpl, compact('classes', 'relative', 'deps', 'include_psr0'));
         Artifex::save($output, $code);
-        //autoload_stats();
     }
 }
 

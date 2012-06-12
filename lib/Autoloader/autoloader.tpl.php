@@ -7,8 +7,14 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
     /*
         This array has a map of (class => file)
     */
+
+    // classes {{{
     static $classes = __classes__;
+    // }}}
+
+    // deps {{{
     static $deps    = __deps__;
+    // }}}
 
     $class = strtolower($class);
     if (isset($classes[$class])) {
@@ -61,9 +67,9 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
 , true, true #* end 
 );
 
+
 #* if ($stats)
-function autoload_stats() {
-    global $load, $call;
-    var_dump(compact('load', 'call'));
-}
+register_shutdown_function(function() use (&$load, &$call) {
+    print "load: $load\ncall: $call\n\n";
+});
 #* end

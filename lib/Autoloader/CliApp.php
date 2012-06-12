@@ -115,11 +115,23 @@ class CliApp extends \stdClass
      */
     public function generate(InputInterface $input, OutputInterface $output)
     {
-        $file   = $input->getArgument('output');
+        $dirs = array();
+        $file = $input->getArgument('output');
+        foreach ($input->getArgument('dir') as $dir) {
+            if ($dir[0] !== '/') {
+                $dir = getcwd() . '/' . $dir;
+            }
+            $dirs[] = $dir;
+        }
+
+        if ($file[0] !== '/') {
+            $file = getcwd() . '/' . $file;
+        }
+
         $finder = new Finder();
         $finder->files()
             ->name("*.php")
-            ->in($input->getArgument('dir'));
+            ->in($dirs);
 
         $relative = $input->getOption('relative');
         $include  = $input->getOption('include-psr-0');
@@ -128,11 +140,14 @@ class CliApp extends \stdClass
             $relative = true;
             $include  = false;
             $finder->filter(function($file) {
-                return preg_match("/tests/i", $file) ? false : true;
+                return preg_match("/test/i", $file) ? false : true;
             });
         }
 
         $generator = new Generator($finder);
+        $generator->setStepCallback(function($file, $classes) use ($output) {
+            $output->write("<comment>scanning {$file}</comment>\n");
+        });
         $generator->generate($file, $relative, $include);
         $output->write("<info>{$file} was generated</info>\n");
     }

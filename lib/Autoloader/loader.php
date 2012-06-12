@@ -5,6 +5,8 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
     /*
         This array has a map of (class => file)
     */
+
+    // classes {{{
     static $classes = array (
   'autoloader\\cliapp' => '/CliApp.php',
   'autoloader\\generator' => '/Generator.php',
@@ -15,8 +17,6 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   'symfony\\component\\console\\output\\outputinterface' => '/../../vendor/symfony/console/Symfony/Component/Console/Output/OutputInterface.php',
   'symfony\\component\\console\\output\\streamoutput' => '/../../vendor/symfony/console/Symfony/Component/Console/Output/StreamOutput.php',
   'symfony\\component\\console\\output\\consoleoutput' => '/../../vendor/symfony/console/Symfony/Component/Console/Output/ConsoleOutput.php',
-  'symfony\\component\\console\\tester\\applicationtester' => '/../../vendor/symfony/console/Symfony/Component/Console/Tester/ApplicationTester.php',
-  'symfony\\component\\console\\tester\\commandtester' => '/../../vendor/symfony/console/Symfony/Component/Console/Tester/CommandTester.php',
   'symfony\\component\\console\\application' => '/../../vendor/symfony/console/Symfony/Component/Console/Application.php',
   'symfony\\component\\console\\helper\\formatterhelper' => '/../../vendor/symfony/console/Symfony/Component/Console/Helper/FormatterHelper.php',
   'symfony\\component\\console\\helper\\helper' => '/../../vendor/symfony/console/Symfony/Component/Console/Helper/Helper.php',
@@ -85,6 +85,9 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   'artifex\\runtime' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime.php',
   'composer\\autoload\\classloader' => '/../../vendor/composer/ClassLoader.php',
 );
+    // }}}
+
+    // deps {{{
     static $deps    = array (
   'symfony\\component\\console\\output\\nulloutput' => 
   array (
@@ -107,8 +110,10 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   'symfony\\component\\console\\output\\consoleoutput' => 
   array (
     0 => 'symfony\\component\\console\\output\\outputinterface',
-    1 => 'symfony\\component\\console\\output\\output',
-    2 => 'symfony\\component\\console\\output\\streamoutput',
+    1 => 'symfony\\component\\console\\output\\consoleoutputinterface',
+    2 => 'symfony\\component\\console\\output\\outputinterface',
+    3 => 'symfony\\component\\console\\output\\output',
+    4 => 'symfony\\component\\console\\output\\streamoutput',
   ),
   'symfony\\component\\console\\helper\\formatterhelper' => 
   array (
@@ -213,6 +218,7 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
     0 => 'artifex\\runtime\\base',
   ),
 );
+    // }}}
 
     $class = strtolower($class);
     if (isset($classes[$class])) {
@@ -235,4 +241,5 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
 
     return false;
 });
+
 

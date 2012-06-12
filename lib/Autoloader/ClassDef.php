@@ -41,8 +41,7 @@ class classDef
 {
     protected $class;
     protected $namespace;
-    protected $parent;
-    protected $interfaces;
+    protected $parent = array();
     protected $file;
     protected $local = false;
 
@@ -74,12 +73,12 @@ class classDef
         return $this->file;
     }
 
-    public function setParentClass(ClassDef $class)
+    public function addDependency(ClassDef $class)
     {
-        $this->parent = $class;
+        $this->parent[] = $class;
     }
 
-    public function getParentClass()
+    public function getDependencies()
     {
         return $this->parent;
     }
