@@ -17,35 +17,6 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   'symfony\\component\\console\\output\\consoleoutput' => '/../../vendor/symfony/console/Symfony/Component/Console/Output/ConsoleOutput.php',
   'symfony\\component\\console\\tester\\applicationtester' => '/../../vendor/symfony/console/Symfony/Component/Console/Tester/ApplicationTester.php',
   'symfony\\component\\console\\tester\\commandtester' => '/../../vendor/symfony/console/Symfony/Component/Console/Tester/CommandTester.php',
-  'foo2command' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/Foo2Command.php',
-  'symfony\\component\\console\\command\\command' => '/../../vendor/symfony/console/Symfony/Component/Console/Command/Command.php',
-  'testcommand' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/TestCommand.php',
-  'foocommand' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/FooCommand.php',
-  'foo3command' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/Foo3Command.php',
-  'foo1command' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/Foo1Command.php',
-  'symfony\\component\\console\\tests\\output\\consoleoutputtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Output/ConsoleOutputTest.php',
-  'symfony\\component\\console\\tests\\output\\streamoutputtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Output/StreamOutputTest.php',
-  'symfony\\component\\console\\tests\\output\\nulloutputtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Output/NullOutputTest.php',
-  'symfony\\component\\console\\tests\\output\\outputtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Output/OutputTest.php',
-  'symfony\\component\\console\\tests\\output\\testoutput' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Output/OutputTest.php',
-  'symfony\\component\\console\\tests\\tester\\commandtestertest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Tester/CommandTesterTest.php',
-  'symfony\\component\\console\\tests\\tester\\applicationtestertest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Tester/ApplicationTesterTest.php',
-  'symfony\\component\\console\\tests\\helper\\dialoghelpertest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Helper/DialogHelperTest.php',
-  'symfony\\component\\console\\tests\\helper\\formatterhelpertest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Helper/FormatterHelperTest.php',
-  'symfony\\component\\console\\tests\\formatter\\outputformatterstylestacktest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Formatter/OutputFormatterStyleStackTest.php',
-  'symfony\\component\\console\\tests\\formatter\\outputformatterstyletest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Formatter/OutputFormatterStyleTest.php',
-  'symfony\\component\\console\\tests\\formatter\\formatterstyletest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Formatter/OutputFormatterTest.php',
-  'symfony\\component\\console\\tests\\input\\inputdefinitiontest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Input/InputDefinitionTest.php',
-  'symfony\\component\\console\\tests\\input\\inputargumenttest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Input/InputArgumentTest.php',
-  'symfony\\component\\console\\tests\\input\\argvinputtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Input/ArgvInputTest.php',
-  'symfony\\component\\console\\tests\\input\\inputoptiontest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Input/InputOptionTest.php',
-  'symfony\\component\\console\\tests\\input\\inputtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Input/InputTest.php',
-  'symfony\\component\\console\\tests\\input\\stringinputtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Input/StringInputTest.php',
-  'symfony\\component\\console\\tests\\input\\arrayinputtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Input/ArrayInputTest.php',
-  'symfony\\component\\console\\tests\\command\\commandtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Command/CommandTest.php',
-  'symfony\\component\\console\\tests\\command\\listcommandtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Command/ListCommandTest.php',
-  'symfony\\component\\console\\tests\\command\\helpcommandtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/Command/HelpCommandTest.php',
-  'symfony\\component\\console\\tests\\applicationtest' => '/../../vendor/symfony/console/Symfony/Component/Console/Tests/ApplicationTest.php',
   'symfony\\component\\console\\application' => '/../../vendor/symfony/console/Symfony/Component/Console/Application.php',
   'symfony\\component\\console\\helper\\formatterhelper' => '/../../vendor/symfony/console/Symfony/Component/Console/Helper/FormatterHelper.php',
   'symfony\\component\\console\\helper\\helper' => '/../../vendor/symfony/console/Symfony/Component/Console/Helper/Helper.php',
@@ -67,40 +38,18 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   'symfony\\component\\console\\input\\stringinput' => '/../../vendor/symfony/console/Symfony/Component/Console/Input/StringInput.php',
   'symfony\\component\\console\\input\\inputdefinition' => '/../../vendor/symfony/console/Symfony/Component/Console/Input/InputDefinition.php',
   'symfony\\component\\console\\command\\listcommand' => '/../../vendor/symfony/console/Symfony/Component/Console/Command/ListCommand.php',
+  'symfony\\component\\console\\command\\command' => '/../../vendor/symfony/console/Symfony/Component/Console/Command/Command.php',
   'symfony\\component\\console\\command\\helpcommand' => '/../../vendor/symfony/console/Symfony/Component/Console/Command/HelpCommand.php',
   'symfony\\component\\finder\\comparator\\numbercomparator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Comparator/NumberComparator.php',
   'symfony\\component\\finder\\comparator\\comparator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Comparator/Comparator.php',
   'symfony\\component\\finder\\comparator\\datecomparator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Comparator/DateComparator.php',
-  'symfony\\component\\finder\\tests\\globtest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/GlobTest.php',
-  'symfony\\component\\finder\\tests\\comparator\\datecomparatortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Comparator/DateComparatorTest.php',
-  'symfony\\component\\finder\\tests\\comparator\\comparatortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Comparator/ComparatorTest.php',
-  'symfony\\component\\finder\\tests\\comparator\\numbercomparatortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Comparator/NumberComparatorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/RealIteratorTestCase.php',
-  'symfony\\component\\finder\\tests\\iterator\\iteratortestcase' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/IteratorTestCase.php',
-  'symfony\\component\\finder\\tests\\iterator\\customfilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/CustomFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\daterangefilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/DateRangeFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\sortableiteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/SortableIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\sizerangefilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/SizeRangeFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\innersizeiterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/SizeRangeFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\filecontentfilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/FilecontentFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\contentinnernameiterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/FilecontentFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\depthrangefilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/DepthRangeIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\multiplepcrefilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/MultiplePcreFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\testmultiplepcrefilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/MultiplePcreFilterIteratorTest.php',
-  'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/MultiplePcreFilterIterator.php',
-  'symfony\\component\\finder\\tests\\iterator\\iterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/Iterator.php',
-  'symfony\\component\\finder\\tests\\iterator\\filetypefilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/FileTypeFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\innertypeiterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/FileTypeFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\excludedirectoryfilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/ExcludeDirectoryFileIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\filenamefilteriteratortest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/FilenameFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\iterator\\innernameiterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/Iterator/FilenameFilterIteratorTest.php',
-  'symfony\\component\\finder\\tests\\findertest' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Tests/FinderTest.php',
   'symfony\\component\\finder\\glob' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Glob.php',
   'symfony\\component\\finder\\finder' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Finder.php',
   'symfony\\component\\finder\\iterator\\filetypefilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/FileTypeFilterIterator.php',
   'symfony\\component\\finder\\iterator\\customfilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/CustomFilterIterator.php',
   'symfony\\component\\finder\\iterator\\excludedirectoryfilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/ExcludeDirectoryFilterIterator.php',
   'symfony\\component\\finder\\iterator\\sizerangefilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/SizeRangeFilterIterator.php',
+  'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/MultiplePcreFilterIterator.php',
   'symfony\\component\\finder\\iterator\\daterangefilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/DateRangeFilterIterator.php',
   'symfony\\component\\finder\\iterator\\recursivedirectoryiterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/RecursiveDirectoryIterator.php',
   'symfony\\component\\finder\\iterator\\filecontentfilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/FilecontentFilterIterator.php',
@@ -118,9 +67,6 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   'notoj\\reflectionmethod' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionMethod.php',
   'notoj\\reflectionclass' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionClass.php',
   'notoj\\reflectionobject' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionObject.php',
-  'cachetest' => '/../../vendor/crodas/Notoj/tests/CacheTest.php',
-  'simpletest' => '/../../vendor/crodas/Notoj/tests/SimpleTest.php',
-  'argumentstest' => '/../../vendor/crodas/Notoj/tests/ArgumentsTest.php',
   'artifex' => '/../../vendor/crodas/Artifex/lib/Artifex.php',
   'artifex\\runtime\\base' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Base.php',
   'artifex\\runtime\\variable' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Variable.php',
@@ -137,7 +83,6 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   'artifex_yystackentry' => '/../../vendor/crodas/Artifex/lib/Artifex/Parser.php',
   'artifex_parser' => '/../../vendor/crodas/Artifex/lib/Artifex/Parser.php',
   'artifex\\runtime' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime.php',
-  'basictest' => '/../../vendor/crodas/Artifex/tests/BasicTest.php',
   'composer\\autoload\\classloader' => '/../../vendor/composer/ClassLoader.php',
 );
     static $deps    = array (
@@ -164,31 +109,6 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
     0 => 'symfony\\component\\console\\output\\outputinterface',
     1 => 'symfony\\component\\console\\output\\output',
     2 => 'symfony\\component\\console\\output\\streamoutput',
-  ),
-  'foo2command' => 
-  array (
-    0 => 'symfony\\component\\console\\command\\command',
-  ),
-  'testcommand' => 
-  array (
-    0 => 'symfony\\component\\console\\command\\command',
-  ),
-  'foocommand' => 
-  array (
-    0 => 'symfony\\component\\console\\command\\command',
-  ),
-  'foo3command' => 
-  array (
-    0 => 'symfony\\component\\console\\command\\command',
-  ),
-  'foo1command' => 
-  array (
-    0 => 'symfony\\component\\console\\command\\command',
-  ),
-  'symfony\\component\\console\\tests\\output\\testoutput' => 
-  array (
-    0 => 'symfony\\component\\console\\output\\outputinterface',
-    1 => 'symfony\\component\\console\\output\\output',
   ),
   'symfony\\component\\console\\helper\\formatterhelper' => 
   array (
@@ -247,61 +167,6 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   'symfony\\component\\finder\\comparator\\datecomparator' => 
   array (
     0 => 'symfony\\component\\finder\\comparator\\comparator',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\customfilteriteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\daterangefilteriteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-    1 => 'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\sortableiteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-    1 => 'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\sizerangefilteriteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-    1 => 'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\filecontentfilteriteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\depthrangefilteriteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-    1 => 'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\testmultiplepcrefilteriterator' => 
-  array (
-    0 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\filetypefilteriteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-    1 => 'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\excludedirectoryfilteriteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-    1 => 'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\iterator\\filenamefilteriteratortest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-  ),
-  'symfony\\component\\finder\\tests\\findertest' => 
-  array (
-    0 => 'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-    1 => 'symfony\\component\\finder\\tests\\iterator\\realiteratortestcase',
   ),
   'symfony\\component\\finder\\iterator\\filecontentfilteriterator' => 
   array (

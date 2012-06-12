@@ -127,6 +127,9 @@ class CliApp extends \stdClass
         if ($input->getOption('library')) {
             $relative = true;
             $include  = false;
+            $finder->filter(function($file) {
+                return preg_match("/tests/i", $file) ? false : true;
+            });
         }
 
         $generator = new Generator($finder);
