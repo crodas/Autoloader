@@ -36,4 +36,6 @@ spl_autoload_register(function ($class) {
     }
     #* end
     return false;
-}, true, true);
+} #* if (!$relative)
+, true, true #* end 
+);

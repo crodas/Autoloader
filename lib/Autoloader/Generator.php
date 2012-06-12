@@ -141,9 +141,13 @@ class Generator
 
     public function generate($output, $relative = false, $include_psr0 = true)
     {
-        $dir = dirname($output);
-        if (!is_dir($dir) || !is_writable($dir)) {
-            throw new \RuntimeException("{$dir} is not writable");
+        $dir = realpath(dirname($output));
+        if (!is_dir($dir)) {
+            throw new \RuntimeException(dirname($dir) . " is not a directory");
+        }
+
+        if (!is_writable($dir)) {
+            throw new \RuntimeException(dirname($dir) . " is not a writable");
         }
 
         if (file_exists($output) && !is_file($output)) {

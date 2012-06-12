@@ -104,6 +104,7 @@ class CliApp
     /**
      *  @cli
      *  @help Generate autoloader
+     *  @opt(name='library', help="Generate the autoloader for a library (portability frendly)")
      *  @opt(name='relative', help="Save as relative path")
      *  @opt(name='include-psr-0', default=true, help="Include the PSR-0 autoloader")
      *  @arg(name='output', help="Output autoloader")
@@ -117,8 +118,16 @@ class CliApp
             ->name("*.php")
             ->in($input->getArgument('dir'));
 
+        $relative = $input->getOption('relative');
+        $include  = $input->getOption('include-psr-0');
+
+        if ($input->getOption('library')) {
+            $relative = true;
+            $include  = false;
+        }
+
         $generator = new Generator($finder);
-        $generator->generate($file, $input->getOption('relative'), $input->getOption('include-psr-0'));
+        $generator->generate($file, $relative, $include);
         $output->write("<info>{$file} was generated</info>\n");
     }
 
@@ -131,13 +140,13 @@ class CliApp
         $finder = new Finder();
         $dir    = dirname($_SERVER['PHP_SELF']);
         $finder->files()
-            ->name('*.php')
-            ->in($dir . '/lib')
-            ->in($dir . '/vendor');
-
-        $phar = new \Phar('autoloader.phar');
+               ->name('*.php')
+               ->in($dir . '/lib')
+               ->in($dir . '/vendor');
+         
+        $phar = new \Phar('autoloader.phar', 0);
         foreach ($finder as $file) {
-            $phar->addFile($file->getRealPath());
+            $phar->addFile($file->getRealPath(), substr($file, strlen($dir)));
         }
 
         $phar->setStub("#!/usr/bin/env php\n"
@@ -145,5 +154,7 @@ class CliApp
         );
         $phar->addFile($_SERVER["PHP_SELF"], 'index.php');
         chmod('autoloader.phar', 0755);
+
     }
 }
+
