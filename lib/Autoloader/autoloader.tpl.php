@@ -9,7 +9,7 @@ spl_autoload_register(function ($class) {
 
     if (isset($classes[$class])) {
         #* if ($relative)
-        require __DIR__  . '/' . $classes[$class];
+        require __DIR__  . $classes[$class];
         #* else
         require $classes[$class];
         #* end
