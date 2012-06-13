@@ -1,6 +1,6 @@
 <?php
 
-class BasicTest extends \phpunit_framework_testcase
+class generatorTest extends \phpunit_framework_testcase
 {
     public static function provider() {
         return array(
