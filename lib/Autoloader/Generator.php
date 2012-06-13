@@ -45,7 +45,8 @@ require __DIR__ . "/ClassDef.php";
 class Generator
 {
     protected $path;
-    protected $cbc;
+    protected $stats;
+    protected $callback;
 
     public function __construct($dir = NULL)
     {
@@ -216,6 +217,10 @@ class Generator
         return implode("/", $realPath);
     }
 
+    public function enableStats($name)
+    {
+        $this->stats = $name;
+    }
 
     public function generate($output, $relative = false, $include_psr0 = true)
     {
@@ -228,7 +233,7 @@ class Generator
             throw new \RuntimeException(dirname($dir) . " is not a writable");
         }
 
-        if (file_exists($output) && !is_file($output)) {
+        if (file_exists($output) && !is_dir($output)) {
             throw new \RuntimeException("{$output} exists but it isn't a file");
         }
 
@@ -246,7 +251,9 @@ class Generator
                 }
             }
             try {
-                $callback($path, $zclasses);
+                if ($callback) {
+                    $callback($path, $zclasses);
+                }
                 $this->getClasses(file_get_contents($path), $rpath, $zclasses);
             } Catch (\Exception $e) {}
         }
@@ -274,8 +281,9 @@ class Generator
             $classes[strtolower($class)] = $class->getFile();
         }
 
-        $tpl  = file_get_contents(__DIR__ . "/autoloader.tpl.php");
-        $code = Artifex::execute($tpl, compact('classes', 'relative', 'deps', 'include_psr0'));
+        $tpl   = file_get_contents(__DIR__ . "/autoloader.tpl.php");
+        $stats = $this->stats;
+        $code  = Artifex::execute($tpl, compact('classes', 'relative', 'deps', 'include_psr0', 'stats'));
         Artifex::save($output, $code);
     }
 }

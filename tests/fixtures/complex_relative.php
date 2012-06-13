@@ -1,56 +1,62 @@
 <?php
-#* if ($stats)
-$GLOBALS['call___stats__'] = 0;
-$GLOBALS['load___stats__'] = 0;
-#* end
+$GLOBALS['call_complex_relativestat'] = 0;
+$GLOBALS['load_complex_relativestat'] = 0;
 
 spl_autoload_register(function ($class) {
-    #* $classes = @$classes;
-    #* $deps    = @$deps;
     /*
         This array has a map of (class => file)
     */
 
     // classes {{{
-    static $classes = __classes__;
+    static $classes = array (
+  'autoloader\\test\\complex\\xxxfoobar_rel' => '/complex_relative/anotherInterface.php',
+  'barinterface_rel' => '/complex_relative/interface1.php',
+  'xxxinterface_rel' => '/complex_relative/interface2.php',
+  'simple_rel' => '/complex_relative/Bar.php',
+  'autoloader\\test\\complex\\complex_rel' => '/complex_relative/Foo.php',
+  'foointerface_rel' => '/complex_relative/interface.php',
+);
     // }}}
 
     // deps {{{
-    static $deps    = __deps__;
+    static $deps    = array (
+  'barinterface_rel' => 
+  array (
+    0 => 'xxxinterface_rel',
+  ),
+  'autoloader\\test\\complex\\complex_rel' => 
+  array (
+    0 => 'xxxinterface_rel',
+    1 => 'barinterface_rel',
+    2 => 'foointerface_rel',
+  ),
+  'foointerface_rel' => 
+  array (
+    0 => 'xxxinterface_rel',
+    1 => 'barinterface_rel',
+  ),
+);
     // }}}
 
     $class = strtolower($class);
     if (isset($classes[$class])) {
-        #* if ($stats) 
-        $GLOBALS['call___stats__']++;
-        $GLOBALS['load___stats__']++;
-        #* end
+        $GLOBALS['call_complex_relativestat']++;
+        $GLOBALS['load_complex_relativestat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
                 if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
-                    #* if ($stats) 
-                    $GLOBALS['load___stats__']++;
-                    #* end
-                    #* if ($relative)
+                    $GLOBALS['load_complex_relativestat']++;
                     require __DIR__  . $classes[$zclass];
-                    #* else
-                    require $classes[$zclass];
-                    #* end
                 }
             }
         }
 
         if (!class_exists($class, false) && !interface_exists($class, false)) {
-            #* if ($relative)
             require __DIR__  . $classes[$class];
-            #* else
-            require $classes[$class];
-            #* end
         }
         return true;
     }
 
-    #* if ($include_psr0)
     /**
      * Autoloader that implements the PSR-0 spec for interoperability between
      * PHP software.
@@ -68,16 +74,11 @@ spl_autoload_register(function ($class) {
             return require $path;
         }
     }
-    #* end
     return false;
-} #* if (!$relative)
-, true, true #* end 
-);
+});
 
 
-#* if ($stats)
-function get__stats__() {
-    global $load___stats__, $call___stats__;
-    return array('loaded' => $load___stats__, 'calls' => $call___stats__);
+function getcomplex_relativestat() {
+    global $load_complex_relativestat, $call_complex_relativestat;
+    return array('loaded' => $load_complex_relativestat, 'calls' => $call_complex_relativestat);
 }
-#* end

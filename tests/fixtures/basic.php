@@ -1,56 +1,43 @@
 <?php
-#* if ($stats)
-$GLOBALS['call___stats__'] = 0;
-$GLOBALS['load___stats__'] = 0;
-#* end
+$GLOBALS['call_basicstat'] = 0;
+$GLOBALS['load_basicstat'] = 0;
 
 spl_autoload_register(function ($class) {
-    #* $classes = @$classes;
-    #* $deps    = @$deps;
     /*
         This array has a map of (class => file)
     */
 
     // classes {{{
-    static $classes = __classes__;
+    static $classes = array (
+  'autoloader\\test\\simple\\bar' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/basic/Bar.php',
+  'autoloader\\test\\simple\\foo' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/basic/Foo.php',
+);
     // }}}
 
     // deps {{{
-    static $deps    = __deps__;
+    static $deps    = array (
+);
     // }}}
 
     $class = strtolower($class);
     if (isset($classes[$class])) {
-        #* if ($stats) 
-        $GLOBALS['call___stats__']++;
-        $GLOBALS['load___stats__']++;
-        #* end
+        $GLOBALS['call_basicstat']++;
+        $GLOBALS['load_basicstat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
                 if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
-                    #* if ($stats) 
-                    $GLOBALS['load___stats__']++;
-                    #* end
-                    #* if ($relative)
-                    require __DIR__  . $classes[$zclass];
-                    #* else
+                    $GLOBALS['load_basicstat']++;
                     require $classes[$zclass];
-                    #* end
                 }
             }
         }
 
         if (!class_exists($class, false) && !interface_exists($class, false)) {
-            #* if ($relative)
-            require __DIR__  . $classes[$class];
-            #* else
             require $classes[$class];
-            #* end
         }
         return true;
     }
 
-    #* if ($include_psr0)
     /**
      * Autoloader that implements the PSR-0 spec for interoperability between
      * PHP software.
@@ -68,16 +55,11 @@ spl_autoload_register(function ($class) {
             return require $path;
         }
     }
-    #* end
     return false;
-} #* if (!$relative)
-, true, true #* end 
-);
+}, true, true);
 
 
-#* if ($stats)
-function get__stats__() {
-    global $load___stats__, $call___stats__;
-    return array('loaded' => $load___stats__, 'calls' => $call___stats__);
+function getbasicstat() {
+    global $load_basicstat, $call_basicstat;
+    return array('loaded' => $load_basicstat, 'calls' => $call_basicstat);
 }
-#* end

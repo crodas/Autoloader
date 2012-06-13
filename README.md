@@ -67,7 +67,3 @@ By default it will generate absolute paths, which is amazing for performance but
 ```
 
 The output looks like this: https://github.com/crodas/Autoloader/blob/master/lib/Autoloader/loader.php
-
-Todo
------
-1. Unit testings
