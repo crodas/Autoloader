@@ -1,5 +1,5 @@
-Autoloader
-==========
+Autoloader [![Build Status](https://secure.travis-ci.org/crodas/Autoloader.png?branch=master)](http://travis-ci.org/crodas/Autoloader)
+===============
 
 Autoloader generator for PHP.
 
