@@ -302,9 +302,6 @@ class Generator
 
         $buildDepTree = function($next, $class) {
             $deps = array();
-            if ($class . "" == "Autoloader\\test\\complex\\Complex_Traits") {
-                //var_dump($class);exit;
-            }
             if (count($class->getDependencies()) > 0) {
                 foreach (array_reverse($class->getDependencies()) as $dep){
                     if (!$dep->isLocal()) continue;
