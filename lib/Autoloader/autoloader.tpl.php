@@ -35,8 +35,7 @@ spl_autoload_register(function ($class) {
         #* end
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-                if (!class_exists($zclass, false) && !interface_exists($zclass, false) #* if ($hasTraits) print(" && !trait_exists($zclass, false) ")  end 
-) {
+                if (!class_exists($zclass, false) && !interface_exists($zclass, false)#* if ($hasTraits) *# && !trait_exists($zclass, false) #* end  *#) {
                     #* if ($stats) 
                     $GLOBALS['load___stats__']++;
                     #* end
@@ -49,8 +48,7 @@ spl_autoload_register(function ($class) {
             }
         }
 
-        if (!class_exists($class, false) && !interface_exists($class, false) #* if ($hasTraits) print(" && !trait_exists($class, false) ")  end 
-) {
+        if (!class_exists($class, false) && !interface_exists($class, false)#* if ($hasTraits) *# && !trait_exists($class, false) #* end  *#) {
             #* if ($relative)
             require __DIR__  . $classes[$class];
             #* else

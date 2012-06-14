@@ -52,14 +52,14 @@ spl_autoload_register(function ($class) {
         $GLOBALS['load_complex_relativestat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-                if (!class_exists($zclass, false) && !interface_exists($zclass, false) && !trait_exists($zclass, false) ) {
+                if (!class_exists($zclass, false) && !interface_exists($zclass, false) && !trait_exists($zclass, false)) {
                     $GLOBALS['load_complex_relativestat']++;
                     require __DIR__  . $classes[$zclass];
                 }
             }
         }
 
-        if (!class_exists($class, false) && !interface_exists($class, false) && !trait_exists($class, false) ) {
+        if (!class_exists($class, false) && !interface_exists($class, false) && !trait_exists($class, false)) {
             require __DIR__  . $classes[$class];
         }
         return true;
