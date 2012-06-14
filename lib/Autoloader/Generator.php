@@ -40,10 +40,8 @@ namespace Autoloader;
 use Symfony\Component\Finder\Finder,
     Artifex;
 
-require __DIR__ . "/ClassDef.php";
-
-if (!defined('T_TRAITS')) {
-    define('T_TRAIS', -1);
+if (!defined('T_TRAIT')) {
+    define('T_TRAIT', 0xf0f0c0);
 }
 
 class Generator
@@ -84,6 +82,10 @@ class Generator
         $namespace = "";
         $classMap  = array();
         $allTokens = count($tokens);
+
+        /* for traits */
+        $lastClass  = null;
+
         $readNamespace  = function() use ($tokens, &$i, $file) {
             while ($tokens[$i][0] != T_STRING && $tokens[$i][0] != T_NS_SEPARATOR) {
                 if (empty($tokens[$i]) || !is_array($tokens[$i])) {
@@ -114,9 +116,19 @@ class Generator
             return $parts;
         };
 
+        $level = 0;
         for ($i=0; $i < $allTokens; $i++) {
             $token = $tokens[$i];
-            if (!is_array($token)) continue;
+            if (!is_array($token)) {
+                switch ($token[0]) {
+                case '{':
+                    $level++;
+                    break;
+                case '}':
+                    $level--;
+                    break;
+                }
+            }
             switch ($token[0]) {
             case T_USE:
                 read_class_alias:
@@ -125,13 +137,33 @@ class Generator
                     continue;
                 }
                 $tmpns = implode("", $parts);
-                $alias = $parts[ count($parts) - 1];
-                while ($tokens[$i][0] == T_WHITESPACE) ++$i;
-                if ($tokens[$i][0] == T_AS) {
-                    while ($tokens[$i][0] != T_STRING) ++$i;
-                    $alias = $tokens[$i++][1];
+                if ($level > 0) {
+
+                    // class maps and namespaces {{{
+                    if (isset($classMap[$tmpns])) {
+                        $tmpns = $classMap[$tmpns];
+                    } else {
+                        if ($tmpns[0] != "\\") {
+                            $tmpns = $namespace . $tmpns;
+                        } else {
+                            $tmpns = substr($tmpns, 1);
+                        }
+                    }
+                    // }}}
+
+                    if (!isset($classes[$tmpns])) {
+                        $classes[$tmpns] = new classDef($tmpns);
+                    }
+                    $lastClass->addDependency($classes[$tmpns]);
+                } else {
+                    $alias = $parts[ count($parts) - 1];
+                    while ($tokens[$i][0] == T_WHITESPACE) ++$i;
+                    if ($tokens[$i][0] == T_AS) {
+                        while ($tokens[$i][0] != T_STRING) ++$i;
+                        $alias = $tokens[$i++][1];
+                    }
+                    $classMap[$alias] = $tmpns;
                 }
-                $classMap[$alias] = $tmpns;
 
                 if ($tokens[$i] == ",") {
                     goto read_class_alias;
@@ -140,6 +172,7 @@ class Generator
                 break;
             case T_INTERFACE:
             case T_CLASS:
+            case T_TRAIT:
                 while ($tokens[++$i][0] != T_STRING);
                 $className = $namespace . $tokens[$i][1];
                 if (!isset($classes[$className])) {
@@ -155,6 +188,7 @@ class Generator
                         read_class_name:
                         $parentClass = implode("", $readNamespace());
 
+                        // class maps and namespaces {{{
                         if (isset($classMap[$parentClass])) {
                             $parentClass = $classMap[$parentClass];
                         } else {
@@ -164,6 +198,8 @@ class Generator
                                 $parentClass = substr($parentClass, 1);
                             }
                         }
+                        // }}}
+
                         if (!isset($classes[$parentClass])) {
                             $classes[$parentClass] = new classDef($parentClass);
                         }
@@ -178,6 +214,8 @@ class Generator
                         $i++;
                     }
                 }
+                $lastClass = $class;
+                $level++;
                 break;
             case T_NAMESPACE:
                 $namespace = implode("", $readNamespace()) . "\\";
@@ -259,11 +297,14 @@ class Generator
                     $callback($path, $zclasses);
                 }
                 $this->getClasses(file_get_contents($path), $rpath, $zclasses);
-            } Catch (\Exception $e) {}
+            } Catch (\Exception $e) { }
         }
 
         $buildDepTree = function($next, $class) {
             $deps = array();
+            if ($class . "" == "Autoloader\\test\\complex\\Complex_Traits") {
+                //var_dump($class);exit;
+            }
             if (count($class->getDependencies()) > 0) {
                 foreach (array_reverse($class->getDependencies()) as $dep){
                     if (!$dep->isLocal()) continue;
@@ -285,9 +326,10 @@ class Generator
             $classes[strtolower($class)] = $class->getFile();
         }
 
+        $hasTraits = is_callable('trait_exists');
         $tpl   = file_get_contents(__DIR__ . "/autoloader.tpl.php");
         $stats = $this->stats;
-        $code  = Artifex::execute($tpl, compact('classes', 'relative', 'deps', 'include_psr0', 'stats'));
+        $code  = Artifex::execute($tpl, compact('classes', 'relative', 'deps', 'include_psr0', 'stats', 'hasTraits'));
         Artifex::save($output, $code);
     }
 }

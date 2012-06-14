@@ -3,18 +3,22 @@
 class generatorTest extends \phpunit_framework_testcase
 {
     public static function provider() {
-        return array(
+        $tests =  array(
             array('basic', array('simple\Foo', 'simple\Bar')),
             array('caseInsentive', array('CaseInsentive\Foo', 'CaseInsentive\Bar')),
             array('complex', array('complex\Complex')),
             array('complex_relative', array('complex\Complex_rel')),
         );
+        if (PHP_MAJOR_VERSION == 5 && PHP_MINOR_VERSION >= 4) {
+            $tests[] = array('traits', array('complex\Complex_Traits'), array('traits.php'));
+        }
+        return $tests;
     }
 
     /**
      *  @dataProvider provider
      */
-    public function testBasicGeneration($targetName, $classes)
+    public function testBasicGeneration($targetName, $classes, $load = array())
     {
         $target = __DIR__ . '/fixtures/' . $targetName . '.php';
         $relative = strpos($target, 'relative') > 0;
@@ -36,6 +40,10 @@ class generatorTest extends \phpunit_framework_testcase
         }
 
         require $target;
+
+        foreach ($load as $file) {
+            require __DIR__ . '/fixtures/' . $targetName . '/' . $file;
+        }
 
         foreach ($classes as $class) {
             $class = '\\Autoloader\\test\\' . $class;
@@ -60,6 +68,11 @@ class generatorTest extends \phpunit_framework_testcase
         $output = getComplexStat();  
         $this->assertEquals($output['calls'], 1);
         $this->assertEquals($output['loaded'], 6);
+        if (is_callable('getTraitsStat')) {
+            $output = getTraitsStat();  
+            $this->assertEquals($output['loaded'], 7);
+            $this->assertEquals($output['calls'], 1);
+        }
     }
 
     /**
