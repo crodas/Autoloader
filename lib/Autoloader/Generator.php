@@ -42,6 +42,10 @@ use Symfony\Component\Finder\Finder,
 
 require __DIR__ . "/ClassDef.php";
 
+if (!defined('T_TRAITS')) {
+    define('T_TRAIS', -1);
+}
+
 class Generator
 {
     protected $path;
@@ -233,7 +237,7 @@ class Generator
             throw new \RuntimeException(dirname($dir) . " is not a writable");
         }
 
-        if (file_exists($output) && !is_dir($output)) {
+        if (file_exists($dir) && !is_dir($dir)) {
             throw new \RuntimeException("{$output} exists but it isn't a file");
         }
 
@@ -276,7 +280,7 @@ class Generator
             }
             $dep = $buildDepTree($buildDepTree, $class);
             if (count($dep) > 0) {
-                $deps[strtolower($class)] = $dep;
+                $deps[strtolower($class)] = array_unique($dep);
             }
             $classes[strtolower($class)] = $class->getFile();
         }

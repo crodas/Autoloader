@@ -1,7 +1,6 @@
 <?php
-$call = 0;
-$load = 0;
-spl_autoload_register(function ($class) use (&$call, &$load) {
+
+spl_autoload_register(function ($class) {
     /*
         This array has a map of (class => file)
     */
@@ -111,7 +110,6 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
   array (
     0 => 'symfony\\component\\console\\output\\outputinterface',
     1 => 'symfony\\component\\console\\output\\consoleoutputinterface',
-    2 => 'symfony\\component\\console\\output\\outputinterface',
     3 => 'symfony\\component\\console\\output\\output',
     4 => 'symfony\\component\\console\\output\\streamoutput',
   ),
@@ -222,12 +220,9 @@ spl_autoload_register(function ($class) use (&$call, &$load) {
 
     $class = strtolower($class);
     if (isset($classes[$class])) {
-        $call++;
-        $load++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
                 if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
-                    $load++;
                     require __DIR__  . $classes[$zclass];
                 }
             }
