@@ -65,13 +65,13 @@ chmod +x autoloader.phar
 The `cli` app is very simple to use
 
 ```
-./autoloader generate autoloader.php dir1/ dir2/
+./autoloader.phar generate autoloader.php dir1/ dir2/
 ```
 
 By default it will generate absolute paths, which is amazing for performance but you loose portability. If you're writing a library, then you could use --library which generates paths relative to the generated autoloader location.
 
 ```
-./autoloader generate  --library autoloader.php dir1/ dir2/
+./autoloader.phar generate  --library autoloader.php dir1/ dir2/
 ```
 
 The output looks like this: https://github.com/crodas/Autoloader/blob/master/lib/Autoloader/loader.php
