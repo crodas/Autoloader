@@ -173,6 +173,7 @@ class Generator
             case T_INTERFACE:
             case T_CLASS:
             case T_TRAIT:
+                $type = $token;
                 while ($tokens[++$i][0] != T_STRING);
                 $className = $namespace . $tokens[$i][1];
                 if (!isset($classes[$className])) {
@@ -181,6 +182,7 @@ class Generator
                 $class = $classes[$className];
                 $class->setFile($file);
                 $class->isLocal(true);
+                $class->setType($type[0]);
                 while ($tokens[$i] != "{") {
                     switch ($tokens[$i][0]) {
                     case T_EXTENDS:
@@ -312,10 +314,12 @@ class Generator
             return $deps;
         };
 
+        $types = array();
         foreach ($zclasses as $id => $class) {
             if (!$class->isLocal()) {
                 continue;
             }
+            $types[$class->getType()] = 1;
             $dep = $buildDepTree($buildDepTree, $class);
             if (count($dep) > 0) {
                 $deps[strtolower($class)] = array_unique($dep);
@@ -323,10 +327,15 @@ class Generator
             $classes[strtolower($class)] = $class->getFile();
         }
 
-        $hasTraits = is_callable('trait_exists');
+        $hasTraits    = is_callable('trait_exists') && !empty($types[T_TRAIT]);
+        $hasInterface = !empty($types[T_INTERFACE]);
         $tpl   = file_get_contents(__DIR__ . "/autoloader.tpl.php");
         $stats = $this->stats;
-        $code  = Artifex::execute($tpl, compact('classes', 'relative', 'deps', 'include_psr0', 'stats', 'hasTraits'));
+        $args  = compact(
+            'classes', 'relative', 'deps', 'include_psr0', 
+            'stats', 'hasTraits', 'hasInterface'
+        );
+        $code  = Artifex::execute($tpl, $args);
         Artifex::save($output, $code);
     }
 }

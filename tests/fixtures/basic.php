@@ -10,6 +10,8 @@
 $GLOBALS['call_basicstat'] = 0;
 $GLOBALS['load_basicstat'] = 0;
 
+
+
 spl_autoload_register(function ($class) {
     /*
         This array has a map of (class => file)
@@ -33,14 +35,14 @@ spl_autoload_register(function ($class) {
         $GLOBALS['load_basicstat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-                if (!class_exists($zclass, false) && !interface_exists($zclass, false) && !trait_exists($zclass, false)) {
+if (!class_exists($zclass, false)) {
                     $GLOBALS['load_basicstat']++;
                     require $classes[$zclass];
                 }
             }
         }
 
-        if (!class_exists($class, false) && !interface_exists($class, false) && !trait_exists($class, false)) {
+if (!class_exists($class, false)) {
             require $classes[$class];
         }
         return true;

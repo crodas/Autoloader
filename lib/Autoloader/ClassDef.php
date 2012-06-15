@@ -44,6 +44,7 @@ class classDef
     protected $parent = array();
     protected $file;
     protected $local = false;
+    protected $type;
 
     public function __construct($className)
     {
@@ -61,6 +62,16 @@ class classDef
 
         $this->class = $name;
         $this->namespace = $namespace;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    public function getType()
+    {
+        return $this->type;
     }
 
     public function setFile($file)

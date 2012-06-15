@@ -53,6 +53,14 @@ class generatorTest extends \phpunit_framework_testcase
         }
     }
 
+    public function testInterfaces() {
+        $dir  = __DIR__ . '/fixtures/';
+        $complex = file_get_contents("{$dir}complex.php");
+        $basic   = file_get_contents("{$dir}basic.php");
+        $this->assertTrue(strpos($complex, 'interface_exists') > 0);
+        $this->assertFalse(strpos($basic, 'interface_exists'));
+    }
+
     /**
      *  @dataProvider provider
      */
