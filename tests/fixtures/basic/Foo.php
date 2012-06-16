@@ -1,6 +1,6 @@
 <?php
 
-namespace Autoloader\test\simple;
+namespace Autoloader\test\ simple;
 
 class Foo
 {

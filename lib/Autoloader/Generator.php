@@ -107,6 +107,7 @@ class Generator
                 }
                 if ($token[0] == T_STRING || $token[0] == T_NS_SEPARATOR) {
                     $parts[] = $token[1];
+                } else if ($token[0] == T_WHITESPACE) {
                 } else {
                     break;
                 }
