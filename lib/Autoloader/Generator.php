@@ -38,6 +38,7 @@
 namespace Autoloader;
 
 use Symfony\Component\Finder\Finder,
+    Notoj\File as FileParser,
     Artifex;
 
 if (!defined('T_TRAIT')) {
@@ -226,6 +227,35 @@ class Generator
                 break;
             }
         }
+
+        $parser = new FileParser($file);
+        foreach ($parser->getAnnotations() as $annotation) {
+            if (!isset($classes[$annotation['class']])) {
+                throw new \RuntimeException("Missing class {$annotation['class']}");
+            }
+            $class = $classes[$annotation['class']];
+            foreach ($annotation['annotations'] as $decorator) {
+                if (strtolower($decorator['method']) != "autoload") {
+                    continue;
+                }
+                foreach ($decorator['args'] as $parentClass) {
+                    if (isset($classMap[$parentClass])) {
+                        $parentClass = $classMap[$parentClass];
+                    } else {
+                        if ($parentClass[0] != "\\") {
+                            $parentClass = $namespace . $parentClass;
+                        } else {
+                            $parentClass = substr($parentClass, 1);
+                        }
+                    }
+                    if (!isset($classes[$parentClass])) {
+                        $classes[$parentClass] = new classDef($parentClass);
+                    }
+                    $class->addDependency($classes[$parentClass]);
+                }
+            }
+        }
+
         return $classes;
     }
 

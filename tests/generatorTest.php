@@ -8,6 +8,7 @@ class generatorTest extends \phpunit_framework_testcase
             array('caseInsentive', array('CaseInsentive\Foo', 'CaseInsentive\Bar')),
             array('complex', array('complex\Complex')),
             array('complex_relative', array('complex\Complex_rel')),
+            array('complex_annotations', array('complex\Complex_ann')),
             array('namespaces', array('\yet_another_silly_class')),
         );
         if (PHP_MAJOR_VERSION == 5 && PHP_MINOR_VERSION >= 4) {
@@ -79,6 +80,9 @@ class generatorTest extends \phpunit_framework_testcase
         $output = getComplexStat();  
         $this->assertEquals($output['calls'], 1);
         $this->assertEquals($output['loaded'], 6);
+        $output = getcomplex_annotationsstat();
+        $this->assertEquals($output['calls'], 1);
+        $this->assertEquals($output['loaded'], 5);
         if (is_callable('getTraitsStat')) {
             $output = getTraitsStat();  
             $this->assertEquals($output['loaded'], 7);
