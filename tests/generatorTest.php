@@ -8,6 +8,7 @@ class generatorTest extends \phpunit_framework_testcase
             array('caseInsentive', array('CaseInsentive\Foo', 'CaseInsentive\Bar')),
             array('complex', array('complex\Complex')),
             array('complex_relative', array('complex\Complex_rel')),
+            array('namespaces', array('\yet_another_silly_class')),
         );
         if (PHP_MAJOR_VERSION == 5 && PHP_MINOR_VERSION >= 4) {
             $tests[] = array('traits', array('complex\Complex_Traits'), array('traits.php'));
@@ -37,7 +38,7 @@ class generatorTest extends \phpunit_framework_testcase
         $generator->generate($target, $relative);
 
         foreach ($classes as $class) {
-            $class = '\\Autoloader\\test\\' . $class;
+            $class = $class[0] == '\\' ? $class : '\\autoloader\\test\\' . $class;
             $this->assertFalse(class_exists($class, false));
         }
 
@@ -48,7 +49,7 @@ class generatorTest extends \phpunit_framework_testcase
         }
 
         foreach ($classes as $class) {
-            $class = '\\Autoloader\\test\\' . $class;
+            $class = $class[0] == '\\' ? $class : '\\autoloader\\test\\' . $class;
             $this->assertTrue(class_exists($class));
         }
     }

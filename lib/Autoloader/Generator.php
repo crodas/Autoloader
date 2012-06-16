@@ -221,7 +221,8 @@ class Generator
                 $level++;
                 break;
             case T_NAMESPACE:
-                $namespace = implode("", $readNamespace()) . "\\";
+                $nsparts   = $readNamespace();
+                $namespace = count($nsparts) ? implode("", $nsparts) . "\\" : "";
                 break;
             }
         }
