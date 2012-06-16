@@ -67,6 +67,7 @@ spl_autoload_register(function ($class) {
   'symfony\\component\\finder\\iterator\\sortableiterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/SortableIterator.php',
   'symfony\\component\\finder\\splfileinfo' => '/../../vendor/symfony/finder/Symfony/Component/Finder/SplFileInfo.php',
   'notoj\\notoj' => '/../../vendor/crodas/Notoj/lib/Notoj/Notoj.php',
+  'notoj\\file' => '/../../vendor/crodas/Notoj/lib/Notoj/File.php',
   'notoj\\tokenizer' => '/../../vendor/crodas/Notoj/lib/Notoj/Tokenizer.php',
   'notoj_yytoken' => '/../../vendor/crodas/Notoj/lib/Notoj/Parser.php',
   'notoj_yystackentry' => '/../../vendor/crodas/Notoj/lib/Notoj/Parser.php',
