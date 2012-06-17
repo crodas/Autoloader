@@ -17,6 +17,7 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
+  'autoloader\\arrayinsensitive' => '/ArrayInsensitive.php',
   'autoloader\\cliapp' => '/CliApp.php',
   'autoloader\\generator' => '/Generator.php',
   'autoloader\\classdef' => '/ClassDef.php',

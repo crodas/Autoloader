@@ -81,7 +81,7 @@ class Generator
     {
         $tokens    = token_get_all($content); 
         $namespace = "";
-        $classMap  = array();
+        $classMap  = new ArrayInsensitive;
         $allTokens = count($tokens);
 
         /* for traits */
@@ -142,9 +142,8 @@ class Generator
 
                 if ($level > 0) {
                     // class maps and namespaces {{{
-                    $name = strtolower($tmpns);
-                    if (isset($classMap[$name])) {
-                        $tmpns = $classMap[$name];
+                    if (isset($classMap[$tmpns])) {
+                        $tmpns = $classMap[$tmpns];
                     } else {
                         if ($tmpns[0] != "\\") {
                             $tmpns = $namespace . $tmpns;
@@ -154,11 +153,10 @@ class Generator
                     }
                     // }}}
 
-                    $name = strtolower($tmpns);
-                    if (!isset($classes[$name])) {
-                        $classes[$name] = new classDef($name);
+                    if (!isset($classes[$tmpns])) {
+                        $classes[$tmpns] = new classDef($tmpns);
                     }
-                    $lastClass->addDependency($classes[$name]);
+                    $lastClass->addDependency($classes[$tmpns]);
                 } else {
                     $alias = $parts[ count($parts) - 1];
                     while ($tokens[$i][0] == T_WHITESPACE) ++$i;
@@ -166,8 +164,7 @@ class Generator
                         while ($tokens[$i][0] != T_STRING) ++$i;
                         $alias = $tokens[$i++][1];
                     }
-                    $name = strtolower($alias);
-                    $classMap[$name] = $tmpns;
+                    $classMap[$alias] = $tmpns;
                 }
 
                 if ($tokens[$i] == ",") {
@@ -181,11 +178,10 @@ class Generator
                 $type = $token;
                 while ($tokens[++$i][0] != T_STRING);
                 $className = $namespace . $tokens[$i][1];
-                $name = strtolower($className);
-                if (!isset($classes[$name])) {
-                    $classes[$name] = new classDef($className);
+                if (!isset($classes[$className])) {
+                    $classes[$className] = new classDef($className);
                 }
-                $class = $classes[$name];
+                $class = $classes[$className];
                 $class->setFile($file);
                 $class->isLocal(true);
                 $class->setType($type[0]);
@@ -197,9 +193,8 @@ class Generator
                         $parentClass = implode("", $readNamespace());
 
                         // class maps and namespaces {{{
-                        $name = strtolower($parentClass);
-                        if (isset($classMap[$name])) {
-                            $parentClass = $classMap[$name];
+                        if (isset($classMap[$parentClass])) {
+                            $parentClass = $classMap[$parentClass];
                         } else {
                             if ($parentClass[0] != "\\") {
                                 $parentClass = $namespace . $parentClass;
@@ -209,11 +204,10 @@ class Generator
                         }
                         // }}}
 
-                        $name = strtolower($parentClass);
-                        if (!isset($classes[$name])) {
-                            $classes[$name] = new classDef($parentClass);
+                        if (!isset($classes[$parentClass])) {
+                            $classes[$parentClass] = new classDef($parentClass);
                         }
-                        $class->addDependency($classes[$name]);
+                        $class->addDependency($classes[$parentClass]);
                         while ($tokens[$i][0] == T_WHITESPACE) ++$i;
                         if ($tokens[$i] == ',') {
                             $i++;
@@ -236,19 +230,17 @@ class Generator
 
         $parser = new FileParser($file);
         foreach ($parser->getAnnotations() as $annotation) {
-            $name = strtolower($annotation['class']);
-            if (!isset($classes[$name])) {
+            if (!isset($classes[$annotation['class']])) {
                 throw new \RuntimeException("Missing class {$annotation['class']}");
             }
-            $class = $classes[$name];
+            $class = $classes[$annotation['class']];
             foreach ($annotation['annotations'] as $decorator) {
                 if (strtolower($decorator['method']) != "autoload") {
                     continue;
                 }
                 foreach ($decorator['args'] as $parentClass) {
-                    $name = strtolower($parentClass);
-                    if (isset($classMap[$name])) {
-                        $parentClass = $classMap[$name];
+                    if (isset($classMap[$parentClass])) {
+                        $parentClass = $classMap[$parentClass];
                     } else {
                         if ($parentClass[0] != "\\") {
                             $parentClass = $namespace . $parentClass;
@@ -256,11 +248,10 @@ class Generator
                             $parentClass = substr($parentClass, 1);
                         }
                     }
-                    $name = strtolower($parentClass);
-                    if (!isset($classes[$name])) {
-                        $classes[$name] = new classDef($parentClass);
+                    if (!isset($classes[$parentClass])) {
+                        $classes[$parentClass] = new classDef($parentClass);
                     }
-                    $class->addDependency($classes[$name]);
+                    $class->addDependency($classes[$parentClass]);
                 }
             }
         }
@@ -322,7 +313,7 @@ class Generator
             throw new \RuntimeException("{$output} exists but it isn't a file");
         }
 
-        $zclasses  = array();
+        $zclasses  = new ArrayInsensitive;
         $deps      = array();
         $relatives = array();
         $callback  = $this->callback;
@@ -363,9 +354,9 @@ class Generator
             $types[$class->getType()] = 1;
             $dep = $buildDepTree($buildDepTree, $class);
             if (count($dep) > 0) {
-                $deps[strtolower($class)] = array_unique($dep);
+                $deps[$id] = array_unique($dep);
             }
-            $classes[strtolower($class)] = $class->getFile();
+            $classes[$id] = $class->getFile();
         }
 
         $hasTraits    = is_callable('trait_exists') && !empty($types[T_TRAIT]);
