@@ -36,10 +36,11 @@ spl_autoload_register(function ($class) {
   ),
   'autoloader\\test\\complex\\complex_ann' => 
   array (
-    0 => 'xxxinterface_ann',
-    1 => 'barinterface_ann',
-    2 => 'foointerface_ann',
-    3 => 'simple_ann',
+    0 => 'autoloader\\test\\complex\\xxxfoobar_ann',
+    1 => 'xxxinterface_ann',
+    2 => 'barinterface_ann',
+    3 => 'foointerface_ann',
+    4 => 'simple_ann',
   ),
   'foointerface_ann' => 
   array (

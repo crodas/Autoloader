@@ -36,9 +36,11 @@ spl_autoload_register(function ($class) {
   ),
   'autoloader\\test\\complex\\complex_rel' => 
   array (
-    0 => 'xxxinterface_rel',
-    1 => 'barinterface_rel',
-    2 => 'foointerface_rel',
+    0 => 'autoloader\\test\\complex\\xxxfoobar_rel',
+    1 => 'xxxinterface_rel',
+    2 => 'barinterface_rel',
+    3 => 'foointerface_rel',
+    4 => 'simple_rel',
   ),
   'foointerface_rel' => 
   array (

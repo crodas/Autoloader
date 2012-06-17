@@ -139,11 +139,12 @@ class Generator
                     continue;
                 }
                 $tmpns = implode("", $parts);
-                if ($level > 0) {
 
+                if ($level > 0) {
                     // class maps and namespaces {{{
-                    if (isset($classMap[$tmpns])) {
-                        $tmpns = $classMap[$tmpns];
+                    $name = strtolower($tmpns);
+                    if (isset($classMap[$name])) {
+                        $tmpns = $classMap[$name];
                     } else {
                         if ($tmpns[0] != "\\") {
                             $tmpns = $namespace . $tmpns;
@@ -153,10 +154,11 @@ class Generator
                     }
                     // }}}
 
-                    if (!isset($classes[$tmpns])) {
-                        $classes[$tmpns] = new classDef($tmpns);
+                    $name = strtolower($tmpns);
+                    if (!isset($classes[$name])) {
+                        $classes[$name] = new classDef($name);
                     }
-                    $lastClass->addDependency($classes[$tmpns]);
+                    $lastClass->addDependency($classes[$name]);
                 } else {
                     $alias = $parts[ count($parts) - 1];
                     while ($tokens[$i][0] == T_WHITESPACE) ++$i;
@@ -164,7 +166,8 @@ class Generator
                         while ($tokens[$i][0] != T_STRING) ++$i;
                         $alias = $tokens[$i++][1];
                     }
-                    $classMap[$alias] = $tmpns;
+                    $name = strtolower($alias);
+                    $classMap[$name] = $tmpns;
                 }
 
                 if ($tokens[$i] == ",") {
@@ -178,10 +181,11 @@ class Generator
                 $type = $token;
                 while ($tokens[++$i][0] != T_STRING);
                 $className = $namespace . $tokens[$i][1];
-                if (!isset($classes[$className])) {
-                    $classes[$className] = new classDef($className);
+                $name = strtolower($className);
+                if (!isset($classes[$name])) {
+                    $classes[$name] = new classDef($className);
                 }
-                $class = $classes[$className];
+                $class = $classes[$name];
                 $class->setFile($file);
                 $class->isLocal(true);
                 $class->setType($type[0]);
@@ -193,8 +197,9 @@ class Generator
                         $parentClass = implode("", $readNamespace());
 
                         // class maps and namespaces {{{
-                        if (isset($classMap[$parentClass])) {
-                            $parentClass = $classMap[$parentClass];
+                        $name = strtolower($parentClass);
+                        if (isset($classMap[$name])) {
+                            $parentClass = $classMap[$name];
                         } else {
                             if ($parentClass[0] != "\\") {
                                 $parentClass = $namespace . $parentClass;
@@ -204,10 +209,11 @@ class Generator
                         }
                         // }}}
 
-                        if (!isset($classes[$parentClass])) {
-                            $classes[$parentClass] = new classDef($parentClass);
+                        $name = strtolower($parentClass);
+                        if (!isset($classes[$name])) {
+                            $classes[$name] = new classDef($parentClass);
                         }
-                        $class->addDependency($classes[$parentClass]);
+                        $class->addDependency($classes[$name]);
                         while ($tokens[$i][0] == T_WHITESPACE) ++$i;
                         if ($tokens[$i] == ',') {
                             $i++;
@@ -230,17 +236,19 @@ class Generator
 
         $parser = new FileParser($file);
         foreach ($parser->getAnnotations() as $annotation) {
-            if (!isset($classes[$annotation['class']])) {
+            $name = strtolower($annotation['class']);
+            if (!isset($classes[$name])) {
                 throw new \RuntimeException("Missing class {$annotation['class']}");
             }
-            $class = $classes[$annotation['class']];
+            $class = $classes[$name];
             foreach ($annotation['annotations'] as $decorator) {
                 if (strtolower($decorator['method']) != "autoload") {
                     continue;
                 }
                 foreach ($decorator['args'] as $parentClass) {
-                    if (isset($classMap[$parentClass])) {
-                        $parentClass = $classMap[$parentClass];
+                    $name = strtolower($parentClass);
+                    if (isset($classMap[$name])) {
+                        $parentClass = $classMap[$name];
                     } else {
                         if ($parentClass[0] != "\\") {
                             $parentClass = $namespace . $parentClass;
@@ -248,10 +256,11 @@ class Generator
                             $parentClass = substr($parentClass, 1);
                         }
                     }
-                    if (!isset($classes[$parentClass])) {
-                        $classes[$parentClass] = new classDef($parentClass);
+                    $name = strtolower($parentClass);
+                    if (!isset($classes[$name])) {
+                        $classes[$name] = new classDef($parentClass);
                     }
-                    $class->addDependency($classes[$parentClass]);
+                    $class->addDependency($classes[$name]);
                 }
             }
         }
