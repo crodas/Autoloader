@@ -77,96 +77,128 @@ class Generator
         return true;
     }
 
+    protected function getClassRealName($name, $namespace = "", $classMap = NULL)
+    {
+        if ($name[0] == "\\") {
+            $name = substr($name, 1);
+        } else if (isset($classMap[$name])) {
+            $name = $classMap[$name];
+        } else {
+            $name = $namespace . $name;
+        }
+        return $name;
+    }
+
+    protected function readNamespace(Array $tokens, &$offset)
+    {
+        while ($tokens[$offset][0] != T_STRING && $tokens[$offset][0] != T_NS_SEPARATOR) {
+            if (empty($tokens[$offset]) || !is_array($tokens[$offset])) {
+                break;
+            }
+            ++$offset;
+        }
+        if (!is_array($tokens[$offset])) {
+            return array();
+        }
+        $parts = array();
+        while (true) {
+            if (empty($tokens[$offset])) {
+                throw new \Exception("Failed at parsing {$file}");
+            }
+            $token = $tokens[$offset];
+            if (!is_array($token)) {
+                break;
+            }
+            if ($token[0] == T_STRING || $token[0] == T_NS_SEPARATOR) {
+                $parts[] = $token[1];
+            } else if ($token[0] == T_WHITESPACE) {
+            } else {
+                break;
+            }
+            $offset++;
+        }
+
+        return $parts;
+    }
+
+    public function getClassesAlias($content)
+    {
+        $tokens    = token_get_all($content); 
+        $allTokens = count($tokens);
+        $classMap  = new ArrayInsensitive;
+
+        $level = 0;
+        for($i=0; $i < $allTokens; $i++) {
+            switch ($tokens[$i]) {
+            case '{':
+                $level++;
+                break;
+            case '}':
+                $level--;
+                break;
+            }
+            if ($level != 0 || $tokens[$i][0] != T_USE) continue;
+            read_class_alias:
+                $parts = $this->readNamespace($tokens, $i);
+                if (empty($parts)) continue;
+                $alias = $parts[ count($parts) - 1];
+                while ($tokens[$i][0] == T_WHITESPACE) ++$i;
+                if ($tokens[$i][0] == T_AS) {
+                    while ($tokens[$i][0] != T_STRING) ++$i;
+                    $alias = $tokens[$i++][1];
+                }
+                $classMap[$alias] = implode("", $parts);
+
+                while ($tokens[$i][0] == T_WHITESPACE) ++$i;
+                if ($tokens[$i] == ",") {
+                    goto read_class_alias;
+                }
+                $i--;
+        }
+        return $classMap;
+    }
+
     public function getClasses($content, $file, &$classes)
     {
         $tokens    = token_get_all($content); 
         $namespace = "";
-        $classMap  = new ArrayInsensitive;
+        $classMap  = $this->getClassesAlias($content);
         $allTokens = count($tokens);
 
         /* for traits */
         $lastClass  = null;
 
-        $readNamespace  = function() use ($tokens, &$i, $file) {
-            while ($tokens[$i][0] != T_STRING && $tokens[$i][0] != T_NS_SEPARATOR) {
-                if (empty($tokens[$i]) || !is_array($tokens[$i])) {
-                    break;
-                }
-                ++$i;
-            }
-            if (!is_array($tokens)) {
-                return false;
-            }
-            $parts = array();
-            while (true) {
-                if (empty($tokens[$i])) {
-                    throw new \Exception("Failed at parsing {$file}");
-                }
-                $token = $tokens[$i];
-                if (!is_array($token)) {
-                    break;
-                }
-                if ($token[0] == T_STRING || $token[0] == T_NS_SEPARATOR) {
-                    $parts[] = $token[1];
-                } else if ($token[0] == T_WHITESPACE) {
-                } else {
-                    break;
-                }
-                $i++;
-            }
-
-            return $parts;
-        };
-
         $level = 0;
         for ($i=0; $i < $allTokens; $i++) {
             $token = $tokens[$i];
-            if (!is_array($token)) {
-                switch ($token[0]) {
-                case '{':
-                    $level++;
-                    break;
-                case '}':
-                    $level--;
-                    break;
-                }
+            if (!is_array($token) && $token != '{' && $token != '}') {
+                continue;
             }
             switch ($token[0]) {
+            case '{':
+                $level++;
+                break;
+            case '}':
+                $level--;
+                break;
+
             case T_USE:
                 read_class_alias:
-                $parts = $readNamespace();
+                if ($level == 0) {
+                    continue;
+                }
+                $parts = $this->readNamespace($tokens, $i);
                 if (empty($parts)) {
                     continue;
                 }
-                $tmpns = implode("", $parts);
+                $tmpns = $this->getClassRealName(implode("", $parts), $namespace, $classMap);
 
-                if ($level > 0) {
-                    // class maps and namespaces {{{
-                    if (isset($classMap[$tmpns])) {
-                        $tmpns = $classMap[$tmpns];
-                    } else {
-                        if ($tmpns[0] != "\\") {
-                            $tmpns = $namespace . $tmpns;
-                        } else {
-                            $tmpns = substr($tmpns, 1);
-                        }
-                    }
-                    // }}}
-
-                    if (!isset($classes[$tmpns])) {
-                        $classes[$tmpns] = new classDef($tmpns);
-                    }
-                    $lastClass->addDependency($classes[$tmpns]);
-                } else {
-                    $alias = $parts[ count($parts) - 1];
-                    while ($tokens[$i][0] == T_WHITESPACE) ++$i;
-                    if ($tokens[$i][0] == T_AS) {
-                        while ($tokens[$i][0] != T_STRING) ++$i;
-                        $alias = $tokens[$i++][1];
-                    }
-                    $classMap[$alias] = $tmpns;
+                if (!isset($classes[$tmpns])) {
+                    $classes[$tmpns] = new classDef($tmpns);
                 }
+                $lastClass->addDependency($classes[$tmpns]);
 
+                while ($tokens[$i][0] == T_WHITESPACE) ++$i;
                 if ($tokens[$i] == ",") {
                     goto read_class_alias;
                 }
@@ -190,19 +222,8 @@ class Generator
                     case T_EXTENDS:
                     case T_IMPLEMENTS:
                         read_class_name:
-                        $parentClass = implode("", $readNamespace());
-
-                        // class maps and namespaces {{{
-                        if (isset($classMap[$parentClass])) {
-                            $parentClass = $classMap[$parentClass];
-                        } else {
-                            if ($parentClass[0] != "\\") {
-                                $parentClass = $namespace . $parentClass;
-                            } else {
-                                $parentClass = substr($parentClass, 1);
-                            }
-                        }
-                        // }}}
+                        $parts       = implode("", $this->readNamespace($tokens, $i));
+                        $parentClass = $this->getClassRealName($parts, $namespace, $classMap);
 
                         if (!isset($classes[$parentClass])) {
                             $classes[$parentClass] = new classDef($parentClass);
@@ -222,32 +243,39 @@ class Generator
                 $level++;
                 break;
             case T_NAMESPACE:
-                $nsparts   = $readNamespace();
+                $nsparts   = $this->readNamespace($tokens, $i);
                 $namespace = count($nsparts) ? implode("", $nsparts) . "\\" : "";
                 break;
             }
         }
+    }
 
-        $parser = new FileParser($file);
+    public function getDepsFromAnnotations($file, $classes)
+    {
+        if (!is_readable($file)) {
+            throw new \RuntimeException("{$file} cannot be read");
+        }
+        $classMap = $this->getClassesAlias(file_get_contents($file)); 
+        $parser   = new FileParser($file);
         foreach ($parser->getAnnotations() as $annotation) {
+            if (!isset($annotation['class'])) {
+                continue;
+            }
             if (!isset($classes[$annotation['class']])) {
                 throw new \RuntimeException("Missing class {$annotation['class']}");
             }
             $class = $classes[$annotation['class']];
+            $ns = "";
+            if (strpos($class, "\\")) {
+                $ns = substr($class, 0, strrpos($class, "\\")) . "\\";
+            }
+
             foreach ($annotation['annotations'] as $decorator) {
                 if (strtolower($decorator['method']) != "autoload") {
                     continue;
                 }
-                foreach ($decorator['args'] as $parentClass) {
-                    if (isset($classMap[$parentClass])) {
-                        $parentClass = $classMap[$parentClass];
-                    } else {
-                        if ($parentClass[0] != "\\") {
-                            $parentClass = $namespace . $parentClass;
-                        } else {
-                            $parentClass = substr($parentClass, 1);
-                        }
-                    }
+                foreach ($decorator['args'] as $className) {
+                    $parentClass = $this->getClassRealName($className, $ns, $classMap);
                     if (!isset($classes[$parentClass])) {
                         $classes[$parentClass] = new classDef($parentClass);
                     }
@@ -331,6 +359,7 @@ class Generator
                     $callback($path, $zclasses);
                 }
                 $this->getClasses(file_get_contents($path), $rpath, $zclasses);
+                $this->getDepsFromAnnotations($path, $zclasses);
             } Catch (\Exception $e) { }
         }
 

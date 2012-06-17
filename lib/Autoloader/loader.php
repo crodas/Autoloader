@@ -192,6 +192,34 @@ spl_autoload_register(function ($class) {
   array (
     0 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
   ),
+  'notoj\\file' => 
+  array (
+    0 => 'notoj\\notoj',
+  ),
+  'notoj\\tokenizer' => 
+  array (
+    0 => 'notoj\\notoj',
+  ),
+  'notoj\\reflectionfunction' => 
+  array (
+    0 => 'notoj\\notoj',
+  ),
+  'notoj\\reflectionproperty' => 
+  array (
+    0 => 'notoj\\notoj',
+  ),
+  'notoj\\reflectionmethod' => 
+  array (
+    0 => 'notoj\\notoj',
+  ),
+  'notoj\\reflectionclass' => 
+  array (
+    0 => 'notoj\\notoj',
+  ),
+  'notoj\\reflectionobject' => 
+  array (
+    0 => 'notoj\\notoj',
+  ),
   'artifex\\runtime\\variable' => 
   array (
     0 => 'artifex\\runtime\\base',

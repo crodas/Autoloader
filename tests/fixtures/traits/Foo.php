@@ -9,6 +9,5 @@ class Complex_Traits extends \Simple_Traits  implements anotherSillyName, xxxFoo
 {
     use \zzzfoobar, localXXX;
     use zzzfoobar;
-
 }
 
