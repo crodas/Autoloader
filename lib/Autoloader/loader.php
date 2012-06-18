@@ -17,7 +17,6 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'autoloader\\arrayinsensitive' => '/ArrayInsensitive.php',
   'autoloader\\cliapp' => '/CliApp.php',
   'autoloader\\generator' => '/Generator.php',
   'autoloader\\classdef' => '/ClassDef.php',
@@ -94,6 +93,7 @@ spl_autoload_register(function ($class) {
   'artifex_yytoken' => '/../../vendor/crodas/Artifex/lib/Artifex/Parser.php',
   'artifex_yystackentry' => '/../../vendor/crodas/Artifex/lib/Artifex/Parser.php',
   'artifex_parser' => '/../../vendor/crodas/Artifex/lib/Artifex/Parser.php',
+  'artifex\\util\\phptokens' => '/../../vendor/crodas/Artifex/lib/Artifex/Util/PHPTokens.php',
   'artifex\\runtime' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime.php',
   'composer\\autoload\\classloader' => '/../../vendor/composer/ClassLoader.php',
 );
