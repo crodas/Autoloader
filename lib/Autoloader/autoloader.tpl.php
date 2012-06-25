@@ -18,8 +18,8 @@ if (!class_exists($__var__, false) #* if ($hasInterface) *# && !interface_exists
 
 
 spl_autoload_register(function ($class) {
-    #* $classes = @$classes;
-    #* $deps    = @$deps;
+    #* $classes = @$classes
+    #* $deps    = @$deps
     /*
         This array has a map of (class => file)
     */
