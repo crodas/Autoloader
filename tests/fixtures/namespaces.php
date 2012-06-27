@@ -35,14 +35,14 @@ spl_autoload_register(function ($class) {
         $GLOBALS['load_namespacesstat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-if (!class_exists($zclass, false)) {
+                if (!class_exists($zclass, false)) {
                     $GLOBALS['load_namespacesstat']++;
                     require $classes[$zclass];
                 }
             }
         }
 
-if (!class_exists($class, false)) {
+        if (!class_exists($class, false)) {
             require $classes[$class];
         }
         return true;

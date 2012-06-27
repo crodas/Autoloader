@@ -11,11 +11,9 @@
 $GLOBALS['call___stats__'] = 0;
 $GLOBALS['load___stats__'] = 0;
 #* end
-
 #* function validate($var)
 if (!class_exists($__var__, false) #* if ($hasInterface) *# && !interface_exists($__var__, false)#* end if ($hasTraits) *# && !trait_exists($__var__, false) #* end  *#) {
 #* end
-
 
 spl_autoload_register(function ($class) {
     #* $classes = @$classes

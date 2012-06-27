@@ -56,14 +56,14 @@ spl_autoload_register(function ($class) {
         $GLOBALS['load_complex_annotationsstat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
+                if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
                     $GLOBALS['load_complex_annotationsstat']++;
                     require $classes[$zclass];
                 }
             }
         }
 
-if (!class_exists($class, false) && !interface_exists($class, false)) {
+        if (!class_exists($class, false) && !interface_exists($class, false)) {
             require $classes[$class];
         }
         return true;

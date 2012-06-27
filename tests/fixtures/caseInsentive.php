@@ -35,14 +35,14 @@ spl_autoload_register(function ($class) {
         $GLOBALS['load_caseInsentivestat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-if (!class_exists($zclass, false)) {
+                if (!class_exists($zclass, false)) {
                     $GLOBALS['load_caseInsentivestat']++;
                     require $classes[$zclass];
                 }
             }
         }
 
-if (!class_exists($class, false)) {
+        if (!class_exists($class, false)) {
             require $classes[$class];
         }
         return true;

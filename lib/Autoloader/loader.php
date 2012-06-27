@@ -89,6 +89,7 @@ spl_autoload_register(function ($class) {
   'artifex\\runtime\\assign' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Assign.php',
   'artifex\\runtime\\expr_if' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/If.php',
   'artifex\\runtime\\expr_foreach' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/Foreach.php',
+  'artifex\\runtime\\whitespace' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Whitespace.php',
   'artifex\\tokenizer' => '/../../vendor/crodas/Artifex/lib/Artifex/Tokenizer.php',
   'artifex_yytoken' => '/../../vendor/crodas/Artifex/lib/Artifex/Parser.php',
   'artifex_yystackentry' => '/../../vendor/crodas/Artifex/lib/Artifex/Parser.php',
@@ -240,6 +241,10 @@ spl_autoload_register(function ($class) {
   array (
     0 => 'artifex\\runtime\\base',
   ),
+  'artifex\\runtime\\deffunction' => 
+  array (
+    0 => 'artifex\\runtime\\base',
+  ),
   'artifex\\runtime\\concat' => 
   array (
     0 => 'artifex\\runtime\\base',
@@ -256,6 +261,10 @@ spl_autoload_register(function ($class) {
   array (
     0 => 'artifex\\runtime\\base',
   ),
+  'artifex\\runtime\\whitespace' => 
+  array (
+    0 => 'artifex\\runtime\\base',
+  ),
 );
     // }}}
 
@@ -263,13 +272,13 @@ spl_autoload_register(function ($class) {
     if (isset($classes[$class])) {
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
+                if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
                     require __DIR__  . $classes[$zclass];
                 }
             }
         }
 
-if (!class_exists($class, false) && !interface_exists($class, false)) {
+        if (!class_exists($class, false) && !interface_exists($class, false)) {
             require __DIR__  . $classes[$class];
         }
         return true;

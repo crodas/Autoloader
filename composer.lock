@@ -4,12 +4,12 @@
         {
             "package": "crodas/Artifex",
             "version": "dev-master",
-            "source-reference": "beba747a4262f8bf5623000f878b9006efdc1b85"
+            "source-reference": "b2fa6c489b9c510e5cd06b055fcb4ed3405cce8c"
         },
         {
             "package": "crodas/Notoj",
             "version": "dev-master",
-            "source-reference": "dd29baebfbf5b1e0d638be96ebcb50442cf7dbfe"
+            "source-reference": "8513d6ed58dd4e579d2c6c341fb025d9849d3dd7"
         },
         {
             "package": "symfony/console",
@@ -26,13 +26,7 @@
         {
             "package": "symfony/console",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA1"
-        },
-        {
-            "package": "symfony/finder",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "808bf42b4b74c12e6c6a6a9750688035f1c49f9c"
         },
         {
             "package": "symfony/finder",
