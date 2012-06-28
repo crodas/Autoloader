@@ -10,8 +10,6 @@
 $GLOBALS['call_complex_annotationsstat'] = 0;
 $GLOBALS['load_complex_annotationsstat'] = 0;
 
-
-
 spl_autoload_register(function ($class) {
     /*
         This array has a map of (class => file)
@@ -53,7 +51,6 @@ spl_autoload_register(function ($class) {
     $class = strtolower($class);
     if (isset($classes[$class])) {
         $GLOBALS['call_complex_annotationsstat']++;
-        $GLOBALS['load_complex_annotationsstat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
                 if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
@@ -64,6 +61,7 @@ spl_autoload_register(function ($class) {
         }
 
         if (!class_exists($class, false) && !interface_exists($class, false)) {
+            $GLOBALS['load_complex_annotationsstat']++;
             require $classes[$class];
         }
         return true;

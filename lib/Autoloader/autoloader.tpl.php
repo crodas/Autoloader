@@ -13,6 +13,15 @@ $GLOBALS['load___stats__'] = 0;
 #* end
 #* function validate($var)
 if (!class_exists($__var__, false) #* if ($hasInterface) *# && !interface_exists($__var__, false)#* end if ($hasTraits) *# && !trait_exists($__var__, false) #* end  *#) {
+    #* if ($stats) 
+    $GLOBALS['load___stats__']++;
+    #* end
+    #* if ($relative)
+    require __DIR__  . $classes[$__var__];
+    #* else
+    require $classes[$__var__];
+    #* end
+}
 #* end
 
 spl_autoload_register(function ($class) {
@@ -34,30 +43,14 @@ spl_autoload_register(function ($class) {
     if (isset($classes[$class])) {
         #* if ($stats) 
         $GLOBALS['call___stats__']++;
-        $GLOBALS['load___stats__']++;
         #* end
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
                 #* validate('zclass')
-                    #* if ($stats) 
-                    $GLOBALS['load___stats__']++;
-                    #* end
-                    #* if ($relative)
-                    require __DIR__  . $classes[$zclass];
-                    #* else
-                    require $classes[$zclass];
-                    #* end
-                }
             }
         }
 
         #* validate('class')
-            #* if ($relative)
-            require __DIR__  . $classes[$class];
-            #* else
-            require $classes[$class];
-            #* end
-        }
         return true;
     }
 

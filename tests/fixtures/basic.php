@@ -10,8 +10,6 @@
 $GLOBALS['call_basicstat'] = 0;
 $GLOBALS['load_basicstat'] = 0;
 
-
-
 spl_autoload_register(function ($class) {
     /*
         This array has a map of (class => file)
@@ -32,7 +30,6 @@ spl_autoload_register(function ($class) {
     $class = strtolower($class);
     if (isset($classes[$class])) {
         $GLOBALS['call_basicstat']++;
-        $GLOBALS['load_basicstat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
                 if (!class_exists($zclass, false)) {
@@ -43,6 +40,7 @@ spl_autoload_register(function ($class) {
         }
 
         if (!class_exists($class, false)) {
+            $GLOBALS['load_basicstat']++;
             require $classes[$class];
         }
         return true;

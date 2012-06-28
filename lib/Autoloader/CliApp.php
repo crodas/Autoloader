@@ -156,7 +156,7 @@ class CliApp extends \stdClass
      *  @cli
      *  @help Create a phar file for the autoloader generator
      */
-    public function createPhar(InputInterface $input, OutputInterface $output)
+    public function compile(InputInterface $input, OutputInterface $output)
     {
         $finder = new Finder();
         $dir    = dirname($_SERVER['PHP_SELF']);
