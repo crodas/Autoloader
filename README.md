@@ -59,7 +59,7 @@ How to install (final users)
 If you're a final user you should only care about the `autoloader.phar` file.
 
 ```
-wget https://github.com/crodas/Autoloader/blob/master/autoloader.phar
+wget https://github.com/crodas/Autoloader/raw/master/autoloader.phar
 chmod +x autoloader.phar
 ```
 The `cli` app is very simple to use
