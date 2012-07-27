@@ -8,8 +8,6 @@
  */
 
 
-
-
 spl_autoload_register(function ($class) {
     /*
         This array has a map of (class => file)
@@ -67,8 +65,12 @@ spl_autoload_register(function ($class) {
   'symfony\\component\\finder\\iterator\\sortableiterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/SortableIterator.php',
   'symfony\\component\\finder\\splfileinfo' => '/../../vendor/symfony/finder/Symfony/Component/Finder/SplFileInfo.php',
   'notoj\\notoj' => '/../../vendor/crodas/Notoj/lib/Notoj/Notoj.php',
+  'notoj\\annotation' => '/../../vendor/crodas/Notoj/lib/Notoj/Annotation.php',
   'notoj\\file' => '/../../vendor/crodas/Notoj/lib/Notoj/File.php',
+  'notoj\\annotations' => '/../../vendor/crodas/Notoj/lib/Notoj/Annotations.php',
+  'notoj\\annotationbase' => '/../../vendor/crodas/Notoj/lib/Notoj/AnnotationBase.php',
   'notoj\\tokenizer' => '/../../vendor/crodas/Notoj/lib/Notoj/Tokenizer.php',
+  'notoj\\dir' => '/../../vendor/crodas/Notoj/lib/Notoj/Dir.php',
   'notoj_yytoken' => '/../../vendor/crodas/Notoj/lib/Notoj/Parser.php',
   'notoj_yystackentry' => '/../../vendor/crodas/Notoj/lib/Notoj/Parser.php',
   'notoj_parser' => '/../../vendor/crodas/Notoj/lib/Notoj/Parser.php',
@@ -193,33 +195,70 @@ spl_autoload_register(function ($class) {
   array (
     0 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
   ),
+  'notoj\\notoj' => 
+  array (
+    0 => 'notoj\\annotationbase',
+    1 => 'notoj\\annotation',
+  ),
+  'notoj\\annotation' => 
+  array (
+    0 => 'notoj\\annotationbase',
+  ),
   'notoj\\file' => 
   array (
-    0 => 'notoj\\notoj',
+    0 => 'notoj\\annotationbase',
+    2 => 'notoj\\annotation',
+    3 => 'notoj\\annotations',
+    6 => 'notoj\\notoj',
+  ),
+  'notoj\\annotations' => 
+  array (
+    0 => 'notoj\\annotationbase',
+    2 => 'notoj\\annotation',
   ),
   'notoj\\tokenizer' => 
   array (
-    0 => 'notoj\\notoj',
+    0 => 'notoj\\annotationbase',
+    1 => 'notoj\\annotation',
+    2 => 'notoj\\notoj',
+  ),
+  'notoj\\dir' => 
+  array (
+    0 => 'notoj\\annotationbase',
+    2 => 'notoj\\annotation',
+    3 => 'notoj\\annotations',
+    6 => 'notoj\\notoj',
+    7 => 'notoj\\file',
   ),
   'notoj\\reflectionfunction' => 
   array (
-    0 => 'notoj\\notoj',
+    0 => 'notoj\\annotationbase',
+    1 => 'notoj\\annotation',
+    2 => 'notoj\\notoj',
   ),
   'notoj\\reflectionproperty' => 
   array (
-    0 => 'notoj\\notoj',
+    0 => 'notoj\\annotationbase',
+    1 => 'notoj\\annotation',
+    2 => 'notoj\\notoj',
   ),
   'notoj\\reflectionmethod' => 
   array (
-    0 => 'notoj\\notoj',
+    0 => 'notoj\\annotationbase',
+    1 => 'notoj\\annotation',
+    2 => 'notoj\\notoj',
   ),
   'notoj\\reflectionclass' => 
   array (
-    0 => 'notoj\\notoj',
+    0 => 'notoj\\annotationbase',
+    1 => 'notoj\\annotation',
+    2 => 'notoj\\notoj',
   ),
   'notoj\\reflectionobject' => 
   array (
-    0 => 'notoj\\notoj',
+    0 => 'notoj\\annotationbase',
+    1 => 'notoj\\annotation',
+    2 => 'notoj\\notoj',
   ),
   'artifex\\runtime\\variable' => 
   array (

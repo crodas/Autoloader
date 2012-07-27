@@ -4,12 +4,14 @@
         {
             "package": "crodas/Artifex",
             "version": "dev-master",
-            "source-reference": "b2fa6c489b9c510e5cd06b055fcb4ed3405cce8c"
+            "source-reference": "b2fa6c489b9c510e5cd06b055fcb4ed3405cce8c",
+            "commit-date": "1340826720"
         },
         {
             "package": "crodas/Notoj",
             "version": "dev-master",
-            "source-reference": "8513d6ed58dd4e579d2c6c341fb025d9849d3dd7"
+            "source-reference": "b658711534b71c43abfd3cadabc68ec061091739",
+            "commit-date": "1343370983"
         },
         {
             "package": "symfony/console",
@@ -20,13 +22,8 @@
         {
             "package": "symfony/console",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/console",
-            "version": "dev-master",
-            "source-reference": "808bf42b4b74c12e6c6a6a9750688035f1c49f9c"
+            "source-reference": "v2.1.0-BETA4",
+            "commit-date": "1342347231"
         },
         {
             "package": "symfony/finder",
@@ -37,14 +34,15 @@
         {
             "package": "symfony/finder",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA1"
+            "source-reference": "v2.1.0-BETA4",
+            "commit-date": "1342778082"
         }
     ],
     "packages-dev": null,
     "aliases": [
 
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": [
 
     ]
