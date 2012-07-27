@@ -144,11 +144,19 @@ class CliApp extends \stdClass
             });
         }
 
-        $generator = new Generator($finder);
-        $generator->setStepCallback(function($file, $classes) use ($output) {
-            $output->write("<comment>scanning {$file}</comment>\n");
-        });
-        $generator->generate($file, $relative, $include);
+        try {
+            $generator = new Generator($finder);
+            $generator->setStepCallback(function($file, $classes, $error = false) use ($output) {
+                if ($error) {
+                    $output->write("<error>failed: $file</error>\n");
+                } else {
+                    $output->write("<comment>scanning {$file}</comment>\n");
+                }
+            });
+            $generator->generate($file, $relative, $include);
+        } Catch(\exception $e) {
+            $output->write("<error>Fatal error, stopping generator</error>\n");
+        }
         $output->write("<info>{$file} was generated</info>\n");
     }
 

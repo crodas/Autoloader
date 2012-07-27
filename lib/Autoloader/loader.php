@@ -53,6 +53,7 @@ spl_autoload_register(function ($class) {
   'symfony\\component\\finder\\glob' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Glob.php',
   'symfony\\component\\finder\\finder' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Finder.php',
   'symfony\\component\\finder\\iterator\\filetypefilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/FileTypeFilterIterator.php',
+  'symfony\\component\\finder\\iterator\\filteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/FilterIterator.php',
   'symfony\\component\\finder\\iterator\\customfilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/CustomFilterIterator.php',
   'symfony\\component\\finder\\iterator\\excludedirectoryfilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/ExcludeDirectoryFilterIterator.php',
   'symfony\\component\\finder\\iterator\\sizerangefilteriterator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Iterator/SizeRangeFilterIterator.php',
@@ -187,13 +188,43 @@ spl_autoload_register(function ($class) {
   array (
     0 => 'symfony\\component\\finder\\comparator\\comparator',
   ),
+  'symfony\\component\\finder\\iterator\\filetypefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\customfilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\excludedirectoryfilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\sizerangefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\daterangefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
   'symfony\\component\\finder\\iterator\\filecontentfilteriterator' => 
   array (
-    0 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+    1 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
   ),
   'symfony\\component\\finder\\iterator\\filenamefilteriterator' => 
   array (
-    0 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+    1 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\depthrangefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
   ),
   'notoj\\notoj' => 
   array (
@@ -209,7 +240,7 @@ spl_autoload_register(function ($class) {
     0 => 'notoj\\annotationbase',
     2 => 'notoj\\annotation',
     3 => 'notoj\\annotations',
-    6 => 'notoj\\notoj',
+    5 => 'notoj\\notoj',
   ),
   'notoj\\annotations' => 
   array (
@@ -227,8 +258,8 @@ spl_autoload_register(function ($class) {
     0 => 'notoj\\annotationbase',
     2 => 'notoj\\annotation',
     3 => 'notoj\\annotations',
-    6 => 'notoj\\notoj',
-    7 => 'notoj\\file',
+    5 => 'notoj\\notoj',
+    6 => 'notoj\\file',
   ),
   'notoj\\reflectionfunction' => 
   array (

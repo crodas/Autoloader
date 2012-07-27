@@ -294,6 +294,9 @@ class Generator
         }
 
         $this->classes = array();
+        if (!$callback) {
+            $callback = function() {};
+        }
         foreach ($this->path as $file) {
             $path  = $file->getRealPath();
             $rpath = $path;
@@ -303,16 +306,22 @@ class Generator
                     $rpath = "/" . $rpath;
                 }
             }
-            if ($callback) {
-                $callback($path, $this->classes);
-            }
             $this->reset();
             $this->currentFile = $rpath;
-            $php->setFile($path);
+            try {
+                $php->setFile($path);
+                $callback($path, $this->classes);
+            } catch (\Exception $e) {
+                $callback($path, $this->classes, $e);
+            }
         }
 
-        $buildDepTree = function($next, $class) {
+        $buildDepTree = function($next, $class) use (&$loaded) {
             $deps = array();
+            if (isset($loaded[$class . ''])) {
+                return array();
+            }
+            $loaded[$class . ''] = true;
             if (count($class->getDependencies()) > 0) {
                 foreach (array_reverse($class->getDependencies()) as $dep){
                     if (!$dep->isLocal()) continue;
@@ -329,6 +338,7 @@ class Generator
                 continue;
             }
             $types[$class->getType()] = 1;
+            $loaded = array();
             $dep = $buildDepTree($buildDepTree, $class);
             if (count($dep) > 0) {
                 $deps[$id] = array_unique($dep);
