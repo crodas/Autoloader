@@ -14,5 +14,10 @@
         "symfony/finder": "2.1.*",
         "crodas/Artifex":"*",
         "crodas/Notoj":"*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Autoloader": "lib/"
+        }
     }
 }
