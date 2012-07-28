@@ -4,8 +4,8 @@
         {
             "package": "crodas/Artifex",
             "version": "dev-master",
-            "source-reference": "2e083e30e4fe750eb03738e82ee7875047039f5a",
-            "commit-date": "1343402554"
+            "source-reference": "6a2ac4ca75a072902caeb127bc74a1179512b42b",
+            "commit-date": "1343472952"
         },
         {
             "package": "crodas/Notoj",

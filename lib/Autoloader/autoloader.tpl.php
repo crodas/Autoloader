@@ -25,30 +25,32 @@ if (!class_exists($__var__, false) #* if ($hasInterface) *# && !interface_exists
 #* end
 
 spl_autoload_register(function ($class) {
-    #* $classes = @$classes
-    #* $deps    = @$deps
     /*
         This array has a map of (class => file)
     */
 
     // classes {{{
-    static $classes = __classes__;
+    static $classes = __@classes__;
     // }}}
 
+    #* if (count($deps) > 0)
     // deps {{{
-    static $deps    = __deps__;
+    static $deps    = __@deps__;
     // }}}
+    #* end
 
     $class = strtolower($class);
     if (isset($classes[$class])) {
         #* if ($stats) 
         $GLOBALS['call___stats__']++;
         #* end
+        #* if (count($deps) > 0)
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
                 #* validate('zclass')
             }
         }
+        #* end
 
         #* validate('class')
         return true;

@@ -22,26 +22,17 @@ spl_autoload_register(function ($class) {
 );
     // }}}
 
-    // deps {{{
-    static $deps    = array (
-);
-    // }}}
 
     $class = strtolower($class);
     if (isset($classes[$class])) {
         $GLOBALS['call_namespacesstat']++;
-        if (!empty($deps[$class])) {
-            foreach ($deps[$class] as $zclass) {
-                if (!class_exists($zclass, false)) {
-                    $GLOBALS['load_namespacesstat']++;
-                    require $classes[$zclass];
-                }
-            }
-        }
 
         if (!class_exists($class, false)) {
+
             $GLOBALS['load_namespacesstat']++;
+
             require $classes[$class];
+
         }
         return true;
     }

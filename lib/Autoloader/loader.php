@@ -82,16 +82,17 @@ spl_autoload_register(function ($class) {
   'notoj\\reflectionobject' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionObject.php',
   'artifex' => '/../../vendor/crodas/Artifex/lib/Artifex.php',
   'artifex\\runtime\\base' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Base.php',
+  'artifex\\runtime\\raw' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Raw.php',
   'artifex\\runtime\\variable' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Variable.php',
   'artifex\\runtime\\exec' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Exec.php',
   'artifex\\runtime\\term' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Term.php',
   'artifex\\runtime\\rawstring' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/RawString.php',
   'artifex\\runtime\\expr' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr.php',
-  'artifex\\runtime\\deffunction' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/DefFunction.php',
   'artifex\\runtime\\concat' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Concat.php',
   'artifex\\runtime\\assign' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Assign.php',
   'artifex\\runtime\\expr_if' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/If.php',
   'artifex\\runtime\\expr_foreach' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/Foreach.php',
+  'artifex\\runtime\\expr_function' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/Function.php',
   'artifex\\runtime\\whitespace' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Whitespace.php',
   'artifex\\tokenizer' => '/../../vendor/crodas/Artifex/lib/Artifex/Tokenizer.php',
   'artifex_yytoken' => '/../../vendor/crodas/Artifex/lib/Artifex/Parser.php',
@@ -291,6 +292,10 @@ spl_autoload_register(function ($class) {
     1 => 'notoj\\annotation',
     2 => 'notoj\\notoj',
   ),
+  'artifex\\runtime\\raw' => 
+  array (
+    0 => 'artifex\\runtime\\base',
+  ),
   'artifex\\runtime\\variable' => 
   array (
     0 => 'artifex\\runtime\\base',
@@ -306,12 +311,9 @@ spl_autoload_register(function ($class) {
   'artifex\\runtime\\rawstring' => 
   array (
     0 => 'artifex\\runtime\\base',
+    1 => 'artifex\\runtime\\raw',
   ),
   'artifex\\runtime\\expr' => 
-  array (
-    0 => 'artifex\\runtime\\base',
-  ),
-  'artifex\\runtime\\deffunction' => 
   array (
     0 => 'artifex\\runtime\\base',
   ),
@@ -331,9 +333,14 @@ spl_autoload_register(function ($class) {
   array (
     0 => 'artifex\\runtime\\base',
   ),
+  'artifex\\runtime\\expr_function' => 
+  array (
+    0 => 'artifex\\runtime\\base',
+  ),
   'artifex\\runtime\\whitespace' => 
   array (
     0 => 'artifex\\runtime\\base',
+    1 => 'artifex\\runtime\\raw',
   ),
 );
     // }}}

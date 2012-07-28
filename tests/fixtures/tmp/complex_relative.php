@@ -61,8 +61,11 @@ spl_autoload_register(function ($class) {
         }
 
         if (!class_exists($class, false) && !interface_exists($class, false)) {
+
             $GLOBALS['load_complex_relativestat']++;
+
             require __DIR__  . $classes[$class];
+
         }
         return true;
     }
