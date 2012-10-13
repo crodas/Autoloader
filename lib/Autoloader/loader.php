@@ -18,6 +18,8 @@ spl_autoload_register(function ($class) {
   'autoloader\\classdef' => '/ClassDef.php',
   'autoloader\\cliapp' => '/CliApp.php',
   'autoloader\\generator' => '/Generator.php',
+  'notoj\\annotation\\base' => '/../../vendor/crodas/Notoj/lib/Notoj/Annotation/Base.php',
+  'notoj\\annotation\\annclass' => '/../../vendor/crodas/Notoj/lib/Notoj/Annotation/AnnClass.php',
   'notoj\\file' => '/../../vendor/crodas/Notoj/lib/Notoj/File.php',
   'notoj\\notoj' => '/../../vendor/crodas/Notoj/lib/Notoj/Notoj.php',
   'notoj\\annotations' => '/../../vendor/crodas/Notoj/lib/Notoj/Annotations.php',
@@ -26,11 +28,11 @@ spl_autoload_register(function ($class) {
   'notoj_yystackentry' => '/../../vendor/crodas/Notoj/lib/Notoj/Parser.php',
   'notoj_parser' => '/../../vendor/crodas/Notoj/lib/Notoj/Parser.php',
   'notoj\\annotation' => '/../../vendor/crodas/Notoj/lib/Notoj/Annotation.php',
-  'notoj\\annotationbase' => '/../../vendor/crodas/Notoj/lib/Notoj/AnnotationBase.php',
   'notoj\\reflectionproperty' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionProperty.php',
   'notoj\\reflectionmethod' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionMethod.php',
   'notoj\\reflectionclass' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionClass.php',
   'notoj\\dir' => '/../../vendor/crodas/Notoj/lib/Notoj/Dir.php',
+  'notoj\\cache' => '/../../vendor/crodas/Notoj/lib/Notoj/Cache.php',
   'notoj\\reflectionfunction' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionFunction.php',
   'notoj\\reflectionobject' => '/../../vendor/crodas/Notoj/lib/Notoj/ReflectionObject.php',
   'artifex\\tokenizer' => '/../../vendor/crodas/Artifex/lib/Artifex/Tokenizer.php',
@@ -40,8 +42,10 @@ spl_autoload_register(function ($class) {
   'artifex\\util\\phptokens' => '/../../vendor/crodas/Artifex/lib/Artifex/Util/PHPTokens.php',
   'artifex\\runtime\\base' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Base.php',
   'artifex\\runtime\\expr_function' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/Function.php',
+  'artifex\\runtime\\expr_continue' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/Continue.php',
   'artifex\\runtime\\expr_if' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/If.php',
   'artifex\\runtime\\expr_foreach' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/Foreach.php',
+  'artifex\\runtime\\expr_return' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr/Return.php',
   'artifex\\runtime\\variable' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Variable.php',
   'artifex\\runtime\\assign' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Assign.php',
   'artifex\\runtime\\expr' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime/Expr.php',
@@ -54,6 +58,7 @@ spl_autoload_register(function ($class) {
   'artifex\\runtime' => '/../../vendor/crodas/Artifex/lib/Artifex/Runtime.php',
   'artifex' => '/../../vendor/crodas/Artifex/lib/Artifex.php',
   'composer\\autoload\\classloader' => '/../../vendor/composer/ClassLoader.php',
+  'composerautoloaderinit' => '/../../vendor/composer/autoload_real.php',
   'symfony\\component\\finder\\glob' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Glob.php',
   'symfony\\component\\finder\\finder' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Finder.php',
   'symfony\\component\\finder\\comparator\\comparator' => '/../../vendor/symfony/finder/Symfony/Component/Finder/Comparator/Comparator.php',
@@ -108,52 +113,52 @@ spl_autoload_register(function ($class) {
     static $deps    = array (
   'notoj\\file' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     2 => 'notoj\\annotation',
     3 => 'notoj\\annotations',
     5 => 'notoj\\notoj',
   ),
   'notoj\\notoj' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     1 => 'notoj\\annotation',
   ),
   'notoj\\annotations' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     2 => 'notoj\\annotation',
   ),
   'notoj\\tokenizer' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     1 => 'notoj\\annotation',
     2 => 'notoj\\notoj',
   ),
   'notoj\\annotation' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
   ),
   'notoj\\reflectionproperty' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     1 => 'notoj\\annotation',
     2 => 'notoj\\notoj',
   ),
   'notoj\\reflectionmethod' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     1 => 'notoj\\annotation',
     2 => 'notoj\\notoj',
   ),
   'notoj\\reflectionclass' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     1 => 'notoj\\annotation',
     2 => 'notoj\\notoj',
   ),
   'notoj\\dir' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     2 => 'notoj\\annotation',
     3 => 'notoj\\annotations',
     5 => 'notoj\\notoj',
@@ -161,17 +166,21 @@ spl_autoload_register(function ($class) {
   ),
   'notoj\\reflectionfunction' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     1 => 'notoj\\annotation',
     2 => 'notoj\\notoj',
   ),
   'notoj\\reflectionobject' => 
   array (
-    0 => 'notoj\\annotationbase',
+    0 => 'notoj\\annotation\\base',
     1 => 'notoj\\annotation',
     2 => 'notoj\\notoj',
   ),
   'artifex\\runtime\\expr_function' => 
+  array (
+    0 => 'artifex\\runtime\\base',
+  ),
+  'artifex\\runtime\\expr_continue' => 
   array (
     0 => 'artifex\\runtime\\base',
   ),
@@ -180,6 +189,10 @@ spl_autoload_register(function ($class) {
     0 => 'artifex\\runtime\\base',
   ),
   'artifex\\runtime\\expr_foreach' => 
+  array (
+    0 => 'artifex\\runtime\\base',
+  ),
+  'artifex\\runtime\\expr_return' => 
   array (
     0 => 'artifex\\runtime\\base',
   ),
