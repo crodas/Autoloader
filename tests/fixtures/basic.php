@@ -17,8 +17,8 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'autoloader\\test\\simple\\bar' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/basic/Bar.php',
-  'autoloader\\test\\simple\\foo' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/basic/Foo.php',
+  'autoloader\\test\\simple\\bar' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/basic/Bar.php',
+  'autoloader\\test\\simple\\foo' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/basic/Foo.php',
 );
     // }}}
 

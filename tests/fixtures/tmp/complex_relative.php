@@ -17,17 +17,22 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'autoloader\\test\\complex\\xxxfoobar_rel' => '/../complex_relative/anotherInterface.php',
+  'foointerface_rel' => '/../complex_relative/interface.php',
   'barinterface_rel' => '/../complex_relative/interface1.php',
   'xxxinterface_rel' => '/../complex_relative/interface2.php',
+  'autoloader\\test\\complex\\xxxfoobar_rel' => '/../complex_relative/anotherInterface.php',
   'simple_rel' => '/../complex_relative/Bar.php',
   'autoloader\\test\\complex\\complex_rel' => '/../complex_relative/Foo.php',
-  'foointerface_rel' => '/../complex_relative/interface.php',
 );
     // }}}
 
     // deps {{{
     static $deps    = array (
+  'foointerface_rel' => 
+  array (
+    0 => 'xxxinterface_rel',
+    1 => 'barinterface_rel',
+  ),
   'barinterface_rel' => 
   array (
     0 => 'xxxinterface_rel',
@@ -39,11 +44,6 @@ spl_autoload_register(function ($class) {
     2 => 'barinterface_rel',
     3 => 'foointerface_rel',
     4 => 'simple_rel',
-  ),
-  'foointerface_rel' => 
-  array (
-    0 => 'xxxinterface_rel',
-    1 => 'barinterface_rel',
   ),
 );
     // }}}

@@ -17,8 +17,8 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'autoloader\\test\\caseinsentive\\bar' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/caseInsentive/Bar.php',
-  'autoloader\\test\\caseinsentive\\foo' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/caseInsentive/Foo.php',
+  'autoloader\\test\\caseinsentive\\bar' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/caseInsentive/Bar.php',
+  'autoloader\\test\\caseinsentive\\foo' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/caseInsentive/Foo.php',
 );
     // }}}
 

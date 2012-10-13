@@ -42,10 +42,6 @@ use Symfony\Component\Finder\Finder,
     Artifex\Util\PHPTokens,
     Artifex;
 
-if (!defined('T_TRAIT')) {
-    define('T_TRAIT', 0xf0f0c0);
-}
-
 class Generator
 {
     protected $path;
@@ -56,12 +52,14 @@ class Generator
     protected $alias = array();
     protected $lastClass = NULL;
 
+    protected $trait;
 
     public function __construct($dir = NULL)
     {
         if (!is_null($dir)) {
             $this->setScanPath($dir);
         }
+        $this->trait = defined('T_TRAIT') ? T_TRAIT : "";
     }
 
     public function setScanPath($dir) {
@@ -244,7 +242,7 @@ class Generator
                 T_STATIC, T_ABSTRACT, T_FINAL
             ))->getToken();
 
-        $allow = array(T_CLASS, T_INTERFACE, defined('T_TRAIT') ? T_TRAIT : "");
+        $allow = array(T_CLASS, T_INTERFACE, $this->trait);
         if (!in_array($token[0], $allow)) {
             return;
         }
@@ -289,9 +287,7 @@ class Generator
         $php->on(T_USE, array($this, 'parseUse'));
         $php->on(T_CLASS, array($this, 'parseClass'));
         $php->on(T_INTERFACE, array($this, 'parseClass'));
-        if (defined('T_TRAIT')) {
-            $php->on(T_TRAIT, array($this, 'parseClass'));
-        }
+        $php->on($this->trait, array($this, 'parseClass'));
 
         $this->classes = array();
         if (!$callback) {
@@ -346,7 +342,7 @@ class Generator
             $classes[$id] = $class->getFile();
         }
 
-        $hasTraits    = is_callable('trait_exists') && !empty($types[T_TRAIT]);
+        $hasTraits    = is_callable('trait_exists') && !empty($types[$this->trait]);
         $hasInterface = !empty($types[T_INTERFACE]);
         $tpl   = file_get_contents(__DIR__ . "/autoloader.tpl.php");
         $stats = $this->stats;

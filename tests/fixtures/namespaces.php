@@ -17,8 +17,8 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'autoloader\\test\\yyy\\foobar' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/namespaces/Foo.php',
-  'yet_another_silly_class' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/namespaces/Foo.php',
+  'autoloader\\test\\yyy\\foobar' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/namespaces/Foo.php',
+  'yet_another_silly_class' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/namespaces/Foo.php',
 );
     // }}}
 

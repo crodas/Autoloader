@@ -17,17 +17,22 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'autoloader\\test\\complex\\xxxfoobar' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex/anotherInterface.php',
-  'barinterface' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex/interface1.php',
-  'xxxinterface' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex/interface2.php',
-  'simple' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex/Bar.php',
-  'autoloader\\test\\complex\\complex' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex/Foo.php',
-  'foointerface' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex/interface.php',
+  'foointerface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface.php',
+  'barinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface1.php',
+  'xxxinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface2.php',
+  'autoloader\\test\\complex\\xxxfoobar' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/anotherInterface.php',
+  'simple' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/Bar.php',
+  'autoloader\\test\\complex\\complex' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/Foo.php',
 );
     // }}}
 
     // deps {{{
     static $deps    = array (
+  'foointerface' => 
+  array (
+    0 => 'xxxinterface',
+    1 => 'barinterface',
+  ),
   'barinterface' => 
   array (
     0 => 'xxxinterface',
@@ -39,11 +44,6 @@ spl_autoload_register(function ($class) {
     2 => 'barinterface',
     3 => 'foointerface',
     4 => 'simple',
-  ),
-  'foointerface' => 
-  array (
-    0 => 'xxxinterface',
-    1 => 'barinterface',
   ),
 );
     // }}}

@@ -17,17 +17,22 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'autoloader\\test\\complex\\xxxfoobar_ann' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex_annotations/anotherInterface.php',
-  'barinterface_ann' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex_annotations/interface1.php',
-  'xxxinterface_ann' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex_annotations/interface2.php',
-  'simple_ann' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex_annotations/Bar.php',
-  'autoloader\\test\\complex\\complex_ann' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex_annotations/Foo.php',
-  'foointerface_ann' => '/home/crodas/projects/mongolico/Autoloader/tests/fixtures/complex_annotations/interface.php',
+  'foointerface_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/interface.php',
+  'barinterface_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/interface1.php',
+  'xxxinterface_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/interface2.php',
+  'autoloader\\test\\complex\\xxxfoobar_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/anotherInterface.php',
+  'simple_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/Bar.php',
+  'autoloader\\test\\complex\\complex_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/Foo.php',
 );
     // }}}
 
     // deps {{{
     static $deps    = array (
+  'foointerface_ann' => 
+  array (
+    0 => 'xxxinterface_ann',
+    1 => 'barinterface_ann',
+  ),
   'barinterface_ann' => 
   array (
     0 => 'xxxinterface_ann',
@@ -39,11 +44,6 @@ spl_autoload_register(function ($class) {
     2 => 'barinterface_ann',
     3 => 'foointerface_ann',
     4 => 'simple_ann',
-  ),
-  'foointerface_ann' => 
-  array (
-    0 => 'xxxinterface_ann',
-    1 => 'barinterface_ann',
   ),
 );
     // }}}
