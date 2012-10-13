@@ -261,7 +261,88 @@ class Generator
         }
     }
 
-    public function generate($output, $relative = false, $include_psr0 = true)
+    public function getNamespacefile($class, $prefix)
+    {
+        return preg_replace("/php$/", "", $prefix) . str_replace("\\", ".", $class) . ".php";
+
+    }
+
+    protected function renderMultiple($output, $args, $namespaces)
+    {
+        // sort them alphabeticaly
+        uksort($namespaces, function($a, $b) {
+            return strlen($b) - strlen($a);
+        });
+
+        $nspaces = array_keys($namespaces);
+        $prefix  = $output;
+  
+        if ($args['relative']) {
+            $prefix = "/" . basename($prefix);
+        }
+
+        $filemap     = array();
+        $extraLoader = false;
+        $allClasses  = $args['classes'];
+        $allDeps     = $args['deps'];
+
+        foreach (array_keys($namespaces) as $namespace) {
+            $classes = array();
+            $deps    = array();
+            foreach ($allClasses as $class => $file) {
+                if (strpos($class, $namespace) !== 0) continue;
+                $classes[$class] = $file;
+                unset($allClasses[$class]);
+                if (!empty($allDeps[$class])) {
+                    $deps[$class] = $allDeps[$class];
+                }
+            }
+
+            $nargs  = compact(
+                'classes', 'relative', 'deps', 'include_psr0', 
+                'stats', 'hasTraits', 'hasInterface'
+            );
+
+            $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
+            $file = $this->getNamespacefile($namespace, $prefix);
+            Artifex::save($file, $code);
+            $filemap[$namespace] = $file;
+        }
+        
+        if (count($allClasses) > 0) {
+            $classes = array();
+            $deps    = array();
+            foreach ($allClasses as $class => $file) {
+                $classes[$class] = $file;
+                if (!empty($allDeps[$class])) {
+                    $deps[$class] = $allDeps[$class];
+                }
+            }
+
+            $nargs  = compact(
+                'classes', 'relative', 'deps', 'include_psr0', 
+                'stats', 'hasTraits', 'hasInterface'
+            );
+
+            $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
+            $file = $this->getNamespacefile('*', $prefix);
+            Artifex::save($file, $code);
+            $filemap['*'] = $file;
+        }
+
+        $nargs = compact('filemap', 'relative', 'extraLoader');
+        $code = Artifex::load(__DIR__ . "/Template/index.tpl.php", $nargs)->run();
+        Artifex::save($output, $code);
+
+    }
+    
+    protected function renderSingle($output, $args)
+    {
+        $code  = Artifex::load(__DIR__ . "/Template/autoloader.tpl.php", $args)->run();
+        Artifex::save($output, $code);
+    }
+
+    public function generate($output, $relative = false, $include_psr0 = true, $groupThem = 0)
     {
         $dir = realpath(dirname($output));
         if (!is_dir($dir)) {
@@ -344,14 +425,37 @@ class Generator
 
         $hasTraits    = is_callable('trait_exists') && !empty($types[$this->trait]);
         $hasInterface = !empty($types[T_INTERFACE]);
-        $tpl   = file_get_contents(__DIR__ . "/autoloader.tpl.php");
         $stats = $this->stats;
+
+        // group the classes in namespaces
+        $namespaces = array();
+        foreach ($classes as $class => $file) {
+            $parts = explode("\\", $class);
+            $len   = count($parts)-1;
+            for ($i = 0; $i < $len; $i++) {
+                $namespace = implode("\\", array_slice($parts, 0, $i+1));
+                if (empty($namespaces[$namespace])) {
+                    $namespaces[$namespace] = 0;
+                }
+                $namespaces[$namespace]++;
+            }
+        } 
+
+        // get the most crowded ones
+        $namespaces = array_filter($namespaces, function($classes) {
+            return $classes >= 10;
+        });
+
         $args  = compact(
             'classes', 'relative', 'deps', 'include_psr0', 
-            'stats', 'hasTraits', 'hasInterface'
+            'stats', 'hasTraits', 'hasInterface', 'relative'
         );
-        $code  = Artifex::execute($tpl, $args);
-        Artifex::save($output, $code);
+
+        if (count($namespaces) > 0) {
+            $this->renderMultiple($output, $args, $namespaces);
+        } else {
+            $this->renderSingle($output, $args, $namespaces);
+        }
     }
 }
 

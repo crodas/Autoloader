@@ -29,8 +29,7 @@
         <whitelist>
             <directory>lib/</directory>
             <exclude>
-                <file>lib/Autoloader/autoloader.tpl.php</file>
-                <file>lib/Autoloader/CliApp.php</file>
+                <directory>lib/Autoloader/Template</directory>
             </exclude>
         </whitelist>
     </filter>

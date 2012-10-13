@@ -6,7 +6,6 @@
  *
  *  This is a generated file, do not modify it.
  */
-
 $GLOBALS['call_basicstat'] = 0;
 $GLOBALS['load_basicstat'] = 0;
 

@@ -6,7 +6,6 @@
  *
  *  This is a generated file, do not modify it.
  */
-
 $GLOBALS['call_namespacesstat'] = 0;
 $GLOBALS['load_namespacesstat'] = 0;
 
