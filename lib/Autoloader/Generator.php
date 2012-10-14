@@ -263,20 +263,18 @@ class Generator
 
     public function getNamespacefile($class, $prefix)
     {
-        return preg_replace("/php$/", "", $prefix) . str_replace("\\", ".", $class) . ".php";
+        return preg_replace("/.php$/", "-", $prefix) . str_replace("\\", ".", $class) . ".php";
 
     }
 
     protected function renderMultiple($output, $args, $namespaces)
     {
-        // sort them alphabeticaly
+        // sort them by length
         uksort($namespaces, function($a, $b) {
             return strlen($b) - strlen($a);
         });
 
-        $nspaces = array_keys($namespaces);
-        $prefix  = $output;
-  
+        $prefix = $output;
         if ($args['relative']) {
             $prefix = "/" . basename($prefix);
         }
@@ -298,15 +296,15 @@ class Generator
                 }
             }
 
-            $nargs  = compact(
-                'classes', 'relative', 'deps', 'include_psr0', 
-                'stats', 'hasTraits', 'hasInterface'
-            );
+            if (empty($classes)) continue;
+
+            $nargs  = array_merge($args, compact('classes', 'deps'));
 
             $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
             $file = $this->getNamespacefile($namespace, $prefix);
-            Artifex::save($file, $code);
             $filemap[$namespace] = $file;
+
+            Artifex::save(($args['relative'] ? dirname($output)  : "") . $file, $code);
         }
         
         if (count($allClasses) > 0) {
@@ -319,21 +317,17 @@ class Generator
                 }
             }
 
-            $nargs  = compact(
-                'classes', 'relative', 'deps', 'include_psr0', 
-                'stats', 'hasTraits', 'hasInterface'
-            );
+            $nargs  = array_merge($args, compact('classes', 'deps'));
 
             $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
-            $file = $this->getNamespacefile('*', $prefix);
-            Artifex::save($file, $code);
-            $filemap['*'] = $file;
+            $file = $this->getNamespacefile('-all', $prefix);
+            $filemap['-all'] = $file;
+            Artifex::save(($args['relative'] ? dirname($output)  : "") . $file, $code);
         }
 
-        $nargs = compact('filemap', 'relative', 'extraLoader');
+        $nargs = array_merge($args, compact('filemap', 'relative', 'extraLoader'));
         $code = Artifex::load(__DIR__ . "/Template/index.tpl.php", $nargs)->run();
         Artifex::save($output, $code);
-
     }
     
     protected function renderSingle($output, $args)
@@ -342,7 +336,30 @@ class Generator
         Artifex::save($output, $code);
     }
 
-    public function generate($output, $relative = false, $include_psr0 = true, $groupThem = 0)
+    protected function checkIfShouldGroup($classes)
+    {
+        // group the classes in namespaces
+        $namespaces = array();
+        foreach ($classes as $class => $file) {
+            $parts = explode("\\", $class);
+            $len   = count($parts)-1;
+            for ($i = 0; $i < $len; $i++) {
+                $namespace = implode("\\", array_slice($parts, 0, $i+1));
+                if (empty($namespaces[$namespace])) {
+                    $namespaces[$namespace] = 0;
+                }
+                $namespaces[$namespace]++;
+            }
+        } 
+
+        // return an array with the most common namespaces
+        return array_filter($namespaces, function($classes) {
+            return $classes >= 10;
+        });
+
+    }
+
+    public function generate($output, $relative = false, $include_psr0 = true, $dontGroup = false)
     {
         $dir = realpath(dirname($output));
         if (!is_dir($dir)) {
@@ -427,35 +444,19 @@ class Generator
         $hasInterface = !empty($types[T_INTERFACE]);
         $stats = $this->stats;
 
-        // group the classes in namespaces
-        $namespaces = array();
-        foreach ($classes as $class => $file) {
-            $parts = explode("\\", $class);
-            $len   = count($parts)-1;
-            for ($i = 0; $i < $len; $i++) {
-                $namespace = implode("\\", array_slice($parts, 0, $i+1));
-                if (empty($namespaces[$namespace])) {
-                    $namespaces[$namespace] = 0;
-                }
-                $namespaces[$namespace]++;
-            }
-        } 
-
-        // get the most crowded ones
-        $namespaces = array_filter($namespaces, function($classes) {
-            return $classes >= 10;
-        });
-
         $args  = compact(
             'classes', 'relative', 'deps', 'include_psr0', 
             'stats', 'hasTraits', 'hasInterface', 'relative'
         );
 
-        if (count($namespaces) > 0) {
-            $this->renderMultiple($output, $args, $namespaces);
-        } else {
-            $this->renderSingle($output, $args, $namespaces);
+        if (!$dontGroup) {
+            $namespaces = $this->checkIfShouldGroup($classes);
+            if (count($namespaces) > 0) {
+                return $this->renderMultiple($output, $args, $namespaces);
+            }
         }
+
+        return $this->renderSingle($output, $args, $namespaces);
     }
 }
 

@@ -171,8 +171,8 @@ class generatorTest extends \phpunit_framework_testcase
         }
 
         $loadedFiles = array_filter(get_included_files(), function($file) {
-            return strpos($file, __DIR__ . "/fixtures/multiple.") === 0;
+            return strpos($file, __DIR__ . "/fixtures/multiple") === 0;
         });
-        $this->assertTrue(count($loadedFiles) > 2);
+        $this->assertEquals(3, count($loadedFiles));
     }
 }

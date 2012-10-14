@@ -14,7 +14,7 @@ spl_autoload_register(function($class) {
     $class = strtolower($class);
 
     foreach ($namespaces as $namespace => $file) {
-        if ($namespace !== '*' && strpos($class, $namespace) !== 0) {
+        if ($namespace !== '-all' && strpos($class, $namespace) !== 0) {
             // wrong namespace move forward!
             continue;
         }
