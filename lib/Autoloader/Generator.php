@@ -408,7 +408,7 @@ class Generator
             }
 
             for ($i = 0; $i < $len; $i++) {
-                $namespace = implode($sep, array_slice($parts, 0, $i+1));
+                $namespace = implode($sep, array_slice($parts, 0, $i+1)) . $sep;
                 if (empty($namespaces[$namespace])) {
                     $namespaces[$namespace] = 0;
                 }
