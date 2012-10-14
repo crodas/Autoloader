@@ -334,6 +334,18 @@ class Generator
 
             if (empty($classes)) continue;
 
+            // If in our dependency tree we reference
+            // to another class which handled in another file
+            // we *must* duplicate that class definition in o
+            // order to make autoloading simpler
+            foreach ($deps as $dep) {
+                foreach ($dep as $class) {
+                    if (empty($classes[$class])) {
+                        $classes[$class] = $this->classes[$class];
+                    }
+                }
+            }
+
             $nargs  = array_merge($this->getTemplateArgs(), compact('classes', 'deps'));
 
             $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
@@ -350,6 +362,14 @@ class Generator
                 $classes[$class] = $file;
                 if (!empty($allDeps[$class])) {
                     $deps[$class] = $allDeps[$class];
+                }
+            }
+
+            foreach ($deps as $dep) {
+                foreach ($dep as $class) {
+                    if (empty($classes[$class])) {
+                        $classes[$class] = $this->classes[$class];
+                    }
                 }
             }
 
