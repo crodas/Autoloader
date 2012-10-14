@@ -36,7 +36,8 @@ class generatorTest extends \phpunit_framework_testcase
         $generator->enableStats($targetName . 'stat');
         $generator->setStepCallback(function($callback) {
         });
-        $generator->generate($target, $relative);
+        $generator->relativePaths($relative);
+        $generator->generate($target);
 
         foreach ($classes as $class) {
             $class = $class[0] == '\\' ? $class : '\\autoloader\\test\\' . $class;
@@ -157,7 +158,9 @@ class generatorTest extends \phpunit_framework_testcase
     public function testGeneratorMultipleFiles()
     {
         $generator = new Autoloader\Generator(__DIR__ . '/../vendor/');
+        $generator->multipleFiles();
         $generator->generate(__DIR__ . '/fixtures/multiple.php');
+
         $classes = array(
             'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
             'cachetest',

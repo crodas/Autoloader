@@ -153,7 +153,10 @@ class CliApp extends \stdClass
                     $output->write("<comment>scanning {$file}</comment>\n");
                 }
             });
-            $generator->generate($file, $relative, $include);
+            $generator->relativePaths($relative);
+            $generator->includePSR0Autoloader($include);
+            $generator->singleFile();
+            $generator->generate($file);
         } Catch(\exception $e) {
             $output->write("<error>Fatal error, stopping generator</error>\n");
         }

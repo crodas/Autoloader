@@ -54,12 +54,48 @@ class Generator
 
     protected $trait;
 
+    protected $classes;
+    protected $classes_obj;
+    protected $hasTraits;
+    protected $hasInterface;
+
+    /** settings */
+
+    protected $relative     = false;
+    protected $include_psr0 = true;
+    protected $singleFile   = true;
+
+
     public function __construct($dir = NULL)
     {
         if (!is_null($dir)) {
             $this->setScanPath($dir);
         }
         $this->trait = defined('T_TRAIT') ? T_TRAIT : "";
+    }
+
+    public function singleFile()
+    {
+        $this->singleFile = true;
+        return $this;
+    }
+
+    public function multipleFiles()
+    {
+        $this->singleFile = false;
+        return $this;
+    }
+
+    public function relativePaths ($rel = true)
+    {
+        $this->relative = $rel;
+        return $this;
+    }
+
+    public function IncludePSR0Autoloader($psr0 = true)
+    {
+        $this->include_psr0 = $psr0;
+        return $this;
     }
 
     public function setScanPath($dir) {
@@ -171,10 +207,10 @@ class Generator
             $className = $this->namespace . $name;
         }
         $index = strtolower($className);
-        if (!isset($this->classes[$index])) {
-            $this->classes[$index] = new classDef($className);
+        if (!isset($this->classes_obj[$index])) {
+            $this->classes_obj[$index] = new classDef($className);
         }
-        return $this->classes[$index];
+        return $this->classes_obj[$index];
     }
 
     public function parseClass(PHPTokens $php)
@@ -267,7 +303,7 @@ class Generator
 
     }
 
-    protected function renderMultiple($output, $args, $namespaces)
+    protected function renderMultiple($output, $namespaces)
     {
         // sort them by length
         uksort($namespaces, function($a, $b) {
@@ -275,14 +311,14 @@ class Generator
         });
 
         $prefix = $output;
-        if ($args['relative']) {
+        if ($this->relative) {
             $prefix = "/" . basename($prefix);
         }
 
         $filemap     = array();
         $extraLoader = false;
-        $allClasses  = $args['classes'];
-        $allDeps     = $args['deps'];
+        $allClasses  = $this->classes;
+        $allDeps     = $this->deps;
 
         foreach (array_keys($namespaces) as $namespace) {
             $classes = array();
@@ -298,13 +334,13 @@ class Generator
 
             if (empty($classes)) continue;
 
-            $nargs  = array_merge($args, compact('classes', 'deps'));
+            $nargs  = array_merge($this->getTemplateArgs(), compact('classes', 'deps'));
 
             $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
             $file = $this->getNamespacefile($namespace, $prefix);
             $filemap[$namespace] = $file;
 
-            Artifex::save(($args['relative'] ? dirname($output)  : "") . $file, $code);
+            Artifex::save(($this->relative ? dirname($output)  : "") . $file, $code);
         }
         
         if (count($allClasses) > 0) {
@@ -317,22 +353,22 @@ class Generator
                 }
             }
 
-            $nargs  = array_merge($args, compact('classes', 'deps'));
+            $nargs  = array_merge($this->getTemplateArgs(), compact('classes', 'deps'));
 
             $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
             $file = $this->getNamespacefile('-all', $prefix);
             $filemap['-all'] = $file;
-            Artifex::save(($args['relative'] ? dirname($output)  : "") . $file, $code);
+            Artifex::save(($this->relative ? dirname($output)  : "") . $file, $code);
         }
 
-        $nargs = array_merge($args, compact('filemap', 'relative', 'extraLoader'));
+        $nargs = array_merge($this->getTemplateArgs(), compact('filemap', 'relative', 'extraLoader'));
         $code = Artifex::load(__DIR__ . "/Template/index.tpl.php", $nargs)->run();
         Artifex::save($output, $code);
     }
     
-    protected function renderSingle($output, $args)
+    protected function renderSingle($output)
     {
-        $code  = Artifex::load(__DIR__ . "/Template/autoloader.tpl.php", $args)->run();
+        $code  = Artifex::load(__DIR__ . "/Template/autoloader.tpl.php", $this->getTemplateArgs())->run();
         Artifex::save($output, $code);
     }
 
@@ -359,7 +395,76 @@ class Generator
 
     }
 
-    public function generate($output, $relative = false, $include_psr0 = true, $dontGroup = false)
+    protected function getParser()
+    {
+        $php  = new \Artifex\Util\PHPTokens;
+
+        $php->on(T_NAMESPACE, array($this, 'parseNamespace'));
+        $php->on(T_DOC_COMMENT, array($this, 'parseAnnotations'));
+        $php->on(T_USE, array($this, 'parseUse'));
+        $php->on(T_CLASS, array($this, 'parseClass'));
+        $php->on(T_INTERFACE, array($this, 'parseClass'));
+        $php->on($this->trait, array($this, 'parseClass'));
+
+        return $php;
+    }
+
+    protected function generateClassDependencyTree()
+    {
+        $buildDepTree = function($next, $class) use (&$loaded) {
+            $deps = array();
+            if (isset($loaded[$class . ''])) {
+                return array();
+            }
+            $loaded[$class . ''] = true;
+            if (count($class->getDependencies()) > 0) {
+                foreach (array_reverse($class->getDependencies()) as $dep){
+                    if (!$dep->isLocal()) continue;
+                    $deps   = array_merge($deps, $next($next, $dep));
+                    $deps[] = strtolower($dep);
+                }
+            }
+            return $deps;
+        };
+
+        $types   = array();
+        $classes = array();
+        $deps    = array();
+        foreach ($this->classes_obj as $id => $class) {
+            if (!$class->isLocal()) {
+                continue;
+            }
+            $types[$class->getType()] = 1;
+            $loaded = array();
+            $dep = $buildDepTree($buildDepTree, $class);
+            if (count($dep) > 0) {
+                $deps[$id] = array_unique($dep);
+            }
+            $classes[$id] = $class->getFile();
+        }
+
+        $this->hasTraits    = is_callable('trait_exists') && !empty($types[$this->trait]);
+        $this->hasInterface = !empty($types[T_INTERFACE]);
+        $this->classes      = $classes;
+        $this->deps         = $deps;
+    }
+
+    protected function getTemplateArgs()
+    {
+        $args  = array(
+            'classes', 'relative', 'deps', 'include_psr0', 
+            'stats', 'hasTraits', 'hasInterface'
+        );
+
+        $return = array();
+        foreach ($args as $arg) {
+            $return[$arg] = $this->$arg;
+        }
+
+        return $return;
+    }
+
+    public function generate($output)
     {
         $dir = realpath(dirname($output));
         if (!is_dir($dir)) {
@@ -378,23 +483,18 @@ class Generator
         $relatives = array();
         $callback  = $this->callback;
 
-        $php  = new \Artifex\Util\PHPTokens;
 
-        $php->on(T_NAMESPACE, array($this, 'parseNamespace'));
-        $php->on(T_DOC_COMMENT, array($this, 'parseAnnotations'));
-        $php->on(T_USE, array($this, 'parseUse'));
-        $php->on(T_CLASS, array($this, 'parseClass'));
-        $php->on(T_INTERFACE, array($this, 'parseClass'));
-        $php->on($this->trait, array($this, 'parseClass'));
-
-        $this->classes = array();
+        $this->classes_obj = array();
         if (!$callback) {
             $callback = function() {};
         }
+
+        $parser = $this->getParser();
+
         foreach ($this->path as $file) {
             $path  = $file->getRealPath();
             $rpath = $path;
-            if ($relative) {
+            if ($this->relative) {
                 $rpath = $this->getRelativePath(dirname($path), dirname($output)) . '/' . basename($path);
                 if ($rpath[0] != '/') {
                     $rpath = "/" . $rpath;
@@ -403,60 +503,24 @@ class Generator
             $this->reset();
             $this->currentFile = $rpath;
             try {
-                $php->setFile($path);
-                $callback($path, $this->classes);
+                $parser->setFile($path);
+                $callback($path, $this->classes_obj);
             } catch (\Exception $e) {
-                $callback($path, $this->classes, $e);
+                $callback($path, $this->classes_obj, $e);
             }
         }
 
-        $buildDepTree = function($next, $class) use (&$loaded) {
-            $deps = array();
-            if (isset($loaded[$class . ''])) {
-                return array();
-            }
-            $loaded[$class . ''] = true;
-            if (count($class->getDependencies()) > 0) {
-                foreach (array_reverse($class->getDependencies()) as $dep){
-                    if (!$dep->isLocal()) continue;
-                    $deps   = array_merge($deps, $next($next, $dep));
-                    $deps[] = strtolower($dep);
-                }
-            }
-            return $deps;
-        };
 
-        $types = array();
-        foreach ($this->classes as $id => $class) {
-            if (!$class->isLocal()) {
-                continue;
-            }
-            $types[$class->getType()] = 1;
-            $loaded = array();
-            $dep = $buildDepTree($buildDepTree, $class);
-            if (count($dep) > 0) {
-                $deps[$id] = array_unique($dep);
-            }
-            $classes[$id] = $class->getFile();
-        }
+        $this->generateClassDependencyTree();
 
-        $hasTraits    = is_callable('trait_exists') && !empty($types[$this->trait]);
-        $hasInterface = !empty($types[T_INTERFACE]);
-        $stats = $this->stats;
-
-        $args  = compact(
-            'classes', 'relative', 'deps', 'include_psr0', 
-            'stats', 'hasTraits', 'hasInterface', 'relative'
-        );
-
-        if (!$dontGroup) {
-            $namespaces = $this->checkIfShouldGroup($classes);
+        if (!$this->singleFile) {
+            $namespaces = $this->checkIfShouldGroup($this->classes);
             if (count($namespaces) > 0) {
-                return $this->renderMultiple($output, $args, $namespaces);
+                return $this->renderMultiple($output, $namespaces);
             }
         }
 
-        return $this->renderSingle($output, $args, $namespaces);
+        return $this->renderSingle($output);
     }
 }
 

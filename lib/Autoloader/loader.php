@@ -7,7 +7,6 @@
  *  This is a generated file, do not modify it.
  */
 
-
 spl_autoload_register(function ($class) {
     /*
         This array has a map of (class => file)
