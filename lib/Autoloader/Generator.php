@@ -208,7 +208,7 @@ class Generator
         }
         $index = strtolower($className);
         if (!isset($this->classes_obj[$index])) {
-            $this->classes_obj[$index] = new classDef($className);
+            $this->classes_obj[$index] = new ClassDef($className);
         }
         return $this->classes_obj[$index];
     }
