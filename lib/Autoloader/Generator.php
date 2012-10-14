@@ -399,8 +399,16 @@ class Generator
         foreach ($classes as $class => $file) {
             $parts = explode("\\", $class);
             $len   = count($parts)-1;
+            $sep   = "\\";
+
+            if ($len == 0) {
+                $parts = explode("_", $class);
+                $len   = count($parts) - 1;
+                $sep   = "_";
+            }
+
             for ($i = 0; $i < $len; $i++) {
-                $namespace = implode("\\", array_slice($parts, 0, $i+1));
+                $namespace = implode($sep, array_slice($parts, 0, $i+1));
                 if (empty($namespaces[$namespace])) {
                     $namespaces[$namespace] = 0;
                 }
