@@ -521,7 +521,7 @@ class Generator
         return $return;
     }
 
-    public function generate($output)
+    public function generate($output, $cache = '')
     {
         $dir = realpath(dirname($output));
         if (!is_dir($dir)) {
@@ -547,9 +547,23 @@ class Generator
         }
 
         $parser = $this->getParser();
+        $files  = array();
+
+        if ($cache && is_file($cache)) {
+            $data= unserialize(file_get_contents($cache));
+            if (is_array($data) && count($data) == 2) {
+                $files = $data[0];
+                $this->classes_obj = $data[1];
+            }
+        }
 
         foreach ($this->path as $file) {
             $path  = $file->getRealPath();
+            if (!empty($files[$path]) && filemtime($path) <= $files[$path]) {
+                continue;
+            }
+
+            $files[$path] =  filemtime($path);
             $this->reset();
             $this->currentFile = $path;
             try {
@@ -560,6 +574,9 @@ class Generator
             }
         }
 
+        if ($cache) {
+            file_put_contents($cache, serialize(array($files, $this->classes_obj)));
+        }
 
         $this->generateClassDependencyTree();
 

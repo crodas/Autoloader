@@ -37,7 +37,7 @@
 
 namespace Autoloader;
 
-class classDef
+class ClassDef
 {
     protected $class;
     protected $namespace;
