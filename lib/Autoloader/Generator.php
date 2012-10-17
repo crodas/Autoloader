@@ -128,10 +128,14 @@ class Generator
         if (empty($dir2)) {
             $dir2 = getcwd();
         }
-        $dir1 = trim(realpath($dir1),'/');
-        $dir2 = trim(realpath($dir2),'/');
-        $to   = explode('/', $dir1);
-        $from = explode('/', $dir2);
+
+        $slash = DIRECTORY_SEPARATOR;
+
+        $file = basename($dir1);
+        $dir1 = trim(realpath(dirname($dir1)), $slash);
+        $dir2 = trim(realpath(dirname($dir2)), $slash);
+        $to   = explode($slash, $dir1);
+        $from = explode($slash, $dir2);
 
         $realPath = $to;
 
@@ -149,7 +153,16 @@ class Generator
             }
         }
 
-        return implode("/", $realPath);
+        $rpath = implode($slash, $realPath);
+        if ($rpath[0] != $slash) {
+            $rpath = $slash . $rpath;
+        }
+        
+        if ($file) {
+            $rpath .= $slash . $file;
+        }
+
+        return $rpath;
     }
 
     public function enableStats($name)
@@ -346,13 +359,18 @@ class Generator
                 }
             }
 
-            $nargs  = array_merge($this->getTemplateArgs(), compact('classes', 'deps'));
 
-            $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
             $file = $this->getNamespacefile($namespace, $prefix);
-            $filemap[$namespace] = $file;
+            if ($this->relative) {
+                $filemap[$namespace] = $this->getRelativePath($file, $output);
+            } else {
+                $filemap[$namespace] = $file;
+            }
 
-            Artifex::save(($this->relative ? dirname($output)  : "") . $file, $code);
+
+            $nargs  = array_merge($this->getTemplateArgs($file), compact('classes', 'deps'));
+            $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
+            Artifex::save($file, $code);
         }
         
         if (count($allClasses) > 0) {
@@ -373,12 +391,17 @@ class Generator
                 }
             }
 
-            $nargs  = array_merge($this->getTemplateArgs(), compact('classes', 'deps'));
 
-            $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
             $file = $this->getNamespacefile('-all', $prefix);
-            $filemap['-all'] = $file;
-            Artifex::save(($this->relative ? dirname($output)  : "") . $file, $code);
+            if ($this->relative) {
+                $filemap['-all'] = $this->getRelativePath($file, $output);
+            } else {
+                $filemap['-all'] = $file;
+            }
+
+            $nargs  = array_merge($this->getTemplateArgs($file), compact('classes', 'deps'));
+            $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
+            Artifex::save($file, $code);
         }
 
         $nargs = array_merge($this->getTemplateArgs(), compact('filemap', 'relative', 'extraLoader'));
@@ -388,7 +411,7 @@ class Generator
     
     protected function renderSingle($output)
     {
-        $code  = Artifex::load(__DIR__ . "/Template/autoloader.tpl.php", $this->getTemplateArgs())->run();
+        $code  = Artifex::load(__DIR__ . "/Template/autoloader.tpl.php", $this->getTemplateArgs($output))->run();
         Artifex::save($output, $code);
     }
 
@@ -477,7 +500,7 @@ class Generator
         $this->deps         = $deps;
     }
 
-    protected function getTemplateArgs()
+    protected function getTemplateArgs($file = "")
     {
         $args  = array(
             'classes', 'relative', 'deps', 'include_psr0', 
@@ -487,6 +510,12 @@ class Generator
         $return = array();
         foreach ($args as $arg) {
             $return[$arg] = $this->$arg;
+        }
+
+        if ($this->relative && $file) {
+            foreach ($return['classes'] as $class => $fileClass) {
+                $return['classes'][$class] = $this->getRelativePath($fileClass, $file);
+            }
         }
 
         return $return;
@@ -521,15 +550,8 @@ class Generator
 
         foreach ($this->path as $file) {
             $path  = $file->getRealPath();
-            $rpath = $path;
-            if ($this->relative) {
-                $rpath = $this->getRelativePath(dirname($path), dirname($output)) . '/' . basename($path);
-                if ($rpath[0] != '/') {
-                    $rpath = "/" . $rpath;
-                }
-            }
             $this->reset();
-            $this->currentFile = $rpath;
+            $this->currentFile = $path;
             try {
                 $parser->setFile($path);
                 $callback($path, $this->classes_obj);
