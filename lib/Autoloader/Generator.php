@@ -99,7 +99,7 @@ class Generator
     }
 
     public function setScanPath($dir) {
-        if ($dir instanceof Finder) {
+        if ($dir instanceof Finder || is_array($dir)) {
             $this->path = $dir;
             return true;
         }
@@ -368,8 +368,8 @@ class Generator
             }
 
 
-            $nargs  = array_merge($this->getTemplateArgs($file), compact('classes', 'deps'));
-            $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
+            $nargs = $this->getTemplateArgs($file, compact('classes', 'Ideps'));
+            $code  = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
             Artifex::save($file, $code);
         }
         
@@ -399,8 +399,8 @@ class Generator
                 $filemap['-all'] = $file;
             }
 
-            $nargs  = array_merge($this->getTemplateArgs($file), compact('classes', 'deps'));
-            $code = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
+            $nargs  = $this->getTemplateArgs($file, compact('classes', 'deps'));
+            $code   = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
             Artifex::save($file, $code);
         }
 
@@ -500,7 +500,7 @@ class Generator
         $this->deps         = $deps;
     }
 
-    protected function getTemplateArgs($file = "")
+    protected function getTemplateArgs($file = "", $default = array())
     {
         $args  = array(
             'classes', 'relative', 'deps', 'include_psr0', 
@@ -509,7 +509,7 @@ class Generator
 
         $return = array();
         foreach ($args as $arg) {
-            $return[$arg] = $this->$arg;
+            $return[$arg] = array_key_exists($arg, $default) ? $default[$arg] : $this->$arg;
         }
 
         if ($this->relative && $file) {
