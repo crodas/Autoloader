@@ -1,0 +1,13 @@
+name: autoloader
+authors:
+    - name: César D. Rodas
+    - email: crodas@php.net
+
+files: [lib],
+version: 0.1.0-beta
+
+dependencies:
+    - https://github.com/symfony/Console
+    - https://github.com/symfony/Finder
+    - https://github.com/crodas/Artifex
+    - https://github.com/crodas/Notoj
