@@ -368,7 +368,7 @@ class Generator
             }
 
 
-            $nargs = $this->getTemplateArgs($file, compact('classes', 'Ideps'));
+            $nargs = $this->getTemplateArgs($file, compact('classes', 'deps'));
             $code  = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
             Artifex::save($file, $code);
         }
