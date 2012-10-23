@@ -3,6 +3,9 @@ authors:
     - name: César D. Rodas
     - email: crodas@php.net
 
+bin:
+    autoloader-gen: cli.php
+
 files: [lib],
 version: 0.1.0-beta
 
