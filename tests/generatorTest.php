@@ -157,13 +157,13 @@ class generatorTest extends \phpunit_framework_testcase
 
     public function testGeneratorMultipleFiles()
     {
-        $generator = new Autoloader\Generator(__DIR__ . '/../packages/');
+        $generator = new Autoloader\Generator(__DIR__ . '/fixtures/multiple/');
         $generator->multipleFiles();
         $generator->generate(__DIR__ . '/fixtures/multiple.php');
 
         $classes = array(
-            'symfony\\component\\finder\\tests\\iterator\\iteratortestcase',
-            'cachetest',
+            'foobar_term_1',
+            'foobar\\term1\\xx1',
         );
 
         require __DIR__ . "/fixtures/multiple.php";
@@ -174,8 +174,10 @@ class generatorTest extends \phpunit_framework_testcase
         }
 
         $loadedFiles = array_filter(get_included_files(), function($file) {
-            return strpos($file, __DIR__ . "/fixtures/multiple") === 0;
+            return strpos($file, __DIR__ . "/fixtures/multiple") === 0
+                && strpos($file, __DIR__ . "/fixtures/multiple/") !== 0;
         });
+        var_dump($loadedFiles);exit;
         $this->assertEquals(3, count($loadedFiles));
     }
 }
