@@ -547,19 +547,23 @@ class Generator
         }
 
         $parser = $this->getParser();
+        $zfiles = array();
+        $cached = array();
         $files  = array();
+        $hit    = array();
 
         if ($cache && is_file($cache)) {
-            $data= unserialize(file_get_contents($cache));
+            $data = unserialize(file_get_contents($cache));
             if (is_array($data) && count($data) == 2) {
-                $files = $data[0];
-                $this->classes_obj = $data[1];
+                $files  = $data[0];
+                $cached = $data[1];
             }
         }
 
         foreach ($this->path as $file) {
             $path  = $file->getRealPath();
-            if (!empty($files[$path]) && filemtime($path) <= $files[$path]) {
+            if (!empty($zfiles[$path]) && filemtime($path) <= $zfiles[$path]) {
+                $hit[$path] = 1;
                 continue;
             }
 
@@ -571,6 +575,12 @@ class Generator
                 $callback($path, $this->classes_obj);
             } catch (\Exception $e) {
                 $callback($path, $this->classes_obj, $e);
+            }
+        }
+
+        foreach ($cached as $id => $class) {
+            if (!empty($hit[$class->getFile()])) {
+                $this->classes_obj[$id] = $class;
             }
         }
 
