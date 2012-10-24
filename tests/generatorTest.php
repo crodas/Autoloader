@@ -177,7 +177,7 @@ class generatorTest extends \phpunit_framework_testcase
             return strpos($file, __DIR__ . "/fixtures/multiple") === 0
                 && strpos($file, __DIR__ . "/fixtures/multiple/") !== 0;
         });
-        var_dump($loadedFiles);exit;
+
         $this->assertEquals(3, count($loadedFiles));
     }
 }
