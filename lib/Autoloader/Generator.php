@@ -555,7 +555,7 @@ class Generator
         if ($cache && is_file($cache)) {
             $data = unserialize(file_get_contents($cache));
             if (is_array($data) && count($data) == 2) {
-                $files  = $data[0];
+                $zfiles = $data[0];
                 $cached = $data[1];
             }
         }
