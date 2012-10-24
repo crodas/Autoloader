@@ -38,7 +38,7 @@ use Symfony\Component\Console\Application,
     Autoloader\CliApp,
     Autoloader\Generator;
 
-require "lib/Autoloader/loader.php";
+require __DIR__ . "/packages/autoload.php";
 
 $console = new Application();
 new CliApp($console);

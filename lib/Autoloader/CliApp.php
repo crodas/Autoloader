@@ -162,31 +162,5 @@ class CliApp extends \stdClass
         }
         $output->write("<info>{$file} was generated</info>\n");
     }
-
-    /**
-     *  @cli
-     *  @help Create a phar file for the autoloader generator
-     */
-    public function compile(InputInterface $input, OutputInterface $output)
-    {
-        $finder = new Finder();
-        $dir    = dirname($_SERVER['PHP_SELF']);
-        $finder->files()
-               ->name('*.php')
-               ->in($dir . '/lib')
-               ->in($dir . '/vendor');
-         
-        $phar = new \Phar('autoloader.phar', 0);
-        foreach ($finder as $file) {
-            $phar->addFile($file->getRealPath(), substr($file, strlen($dir)));
-        }
-
-        $phar->setStub("#!/usr/bin/env php\n"
-            . $phar->createDefaultStub('index.php')
-        );
-        $phar->addFile($_SERVER["PHP_SELF"], 'index.php');
-        chmod('autoloader.phar', 0755);
-
-    }
 }
 
