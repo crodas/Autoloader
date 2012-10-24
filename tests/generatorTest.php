@@ -157,7 +157,7 @@ class generatorTest extends \phpunit_framework_testcase
 
     public function testGeneratorMultipleFiles()
     {
-        $generator = new Autoloader\Generator(__DIR__ . '/../vendor/');
+        $generator = new Autoloader\Generator(__DIR__ . '/../packages/');
         $generator->multipleFiles();
         $generator->generate(__DIR__ . '/fixtures/multiple.php');
 
