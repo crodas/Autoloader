@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . "/../lib/Autoloader/loader.php";
+require __DIR__ . "/../packages/autoload.php";
 
 set_include_path(__DIR__ . "/fixtures/some_other_include_path/:" . get_include_path());
 
