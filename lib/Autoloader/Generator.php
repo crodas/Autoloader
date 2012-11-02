@@ -47,6 +47,7 @@ class Generator
     protected $path;
     protected $stats;
     protected $callback;
+    protected $callback_path;
 
     protected $namespace = "";
     protected $alias = array();
@@ -121,6 +122,14 @@ class Generator
     public function setStepCallback(\Closure $cbc)
     {
         $this->callback = $cbc;
+
+        return $this;
+    }
+
+    public function setPathCallback(\Closure $cbc)
+    {
+        $this->callback_path = $cbc;
+        return $this;
     }
 
     public function getRelativePath($dir1, $dir2=NULL)
@@ -312,8 +321,14 @@ class Generator
 
     public function getNamespacefile($class, $prefix)
     {
-        return preg_replace("/.php$/", "-", $prefix) . str_replace("\\", ".", $class) . ".php";
+        if ($this->callback_path) {
+            $path = call_user_func($this->callback_path, $class, $prefix);
+            if ($path) {
+                return $path;
+            }
+        }
 
+        return preg_replace("/.php$/", "-", $prefix) . str_replace("\\", ".", $class) . ".php";
     }
 
     protected function renderMultiple($output, $namespaces)
@@ -411,7 +426,7 @@ class Generator
     
     protected function renderSingle($output)
     {
-        $code  = Artifex::load(__DIR__ . "/Template/autoloader.tpl.php", $this->getTemplateArgs($output))->run();
+        $code = Artifex::load(__DIR__ . "/Template/autoloader.tpl.php", $this->getTemplateArgs($output))->run();
         Artifex::save($output, $code);
     }
 
