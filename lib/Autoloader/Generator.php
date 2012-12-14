@@ -221,6 +221,9 @@ class Generator
 
     protected function getClass($name)
     {
+        if (empty($name)) {
+            throw new \RuntimeException("Invalid class name");
+        }
         if ($name[0] == "\\") {
             $className = substr($name, 1);
         } else if (isset($this->alias[$name])) {
@@ -276,6 +279,11 @@ class Generator
             // traits
             do {
                 $trait = $this->getNamespace($php);
+                if (!$this->getLastClass()) {
+                    // should never happen, unless the current
+                    // file is broken
+                    continue;
+                }
                 $this->getLastClass()->addDependency($this->getClass($trait));
             } while ($php->getToken() == ',');
         }
