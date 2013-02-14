@@ -6,6 +6,6 @@ php:
   - 5.4
   
 before_script:
-  - wget http://cesarodas.com/eath.phar
+  - wget https://github.com/crodas/Eath/raw/master/eath.phar
   - php eath.phar install
 
