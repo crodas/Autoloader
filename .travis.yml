@@ -6,6 +6,6 @@ php:
   - 5.4
   
 before_script:
-  - wget https://github.com/crodas/Eath/raw/master/eath.phar
-  - php eath.phar install
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install
 
