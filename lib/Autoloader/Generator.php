@@ -163,7 +163,7 @@ class Generator
         }
 
         $rpath = implode($slash, $realPath);
-        if ($rpath[0] != $slash) {
+        if ($rpath && $rpath[0] != $slash) {
             $rpath = $slash . $rpath;
         }
         
@@ -269,7 +269,7 @@ class Generator
                 if (empty($import)) return;
                 $next = $php->moveWhile(array(T_WHITESPACE))
                     ->getToken();
-                $alias = substr($import, strrpos("\\", $import));
+                $alias = substr($import, strrpos($import, "\\")+1);
                 if ($next[0] == T_AS) {
                     $alias = $this->getNamespace($php);
                 }
