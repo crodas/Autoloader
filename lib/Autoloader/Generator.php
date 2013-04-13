@@ -347,9 +347,6 @@ class Generator
         });
 
         $prefix = $output;
-        if ($this->relative) {
-            $prefix = "/" . basename($prefix);
-        }
 
         $filemap     = array();
         $extraLoader = false;
