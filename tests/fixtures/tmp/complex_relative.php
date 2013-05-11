@@ -16,25 +16,25 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'foointerface_rel' => '/../complex_relative/interface.php',
-  'barinterface_rel' => '/../complex_relative/interface1.php',
   'xxxinterface_rel' => '/../complex_relative/interface2.php',
   'autoloader\\test\\complex\\xxxfoobar_rel' => '/../complex_relative/anotherInterface.php',
-  'simple_rel' => '/../complex_relative/Bar.php',
+  'barinterface_rel' => '/../complex_relative/interface1.php',
+  'foointerface_rel' => '/../complex_relative/interface.php',
   'autoloader\\test\\complex\\complex_rel' => '/../complex_relative/Foo.php',
+  'simple_rel' => '/../complex_relative/Bar.php',
 );
     // }}}
 
     // deps {{{
     static $deps    = array (
+  'barinterface_rel' => 
+  array (
+    0 => 'xxxinterface_rel',
+  ),
   'foointerface_rel' => 
   array (
     0 => 'xxxinterface_rel',
     1 => 'barinterface_rel',
-  ),
-  'barinterface_rel' => 
-  array (
-    0 => 'xxxinterface_rel',
   ),
   'autoloader\\test\\complex\\complex_rel' => 
   array (

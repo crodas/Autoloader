@@ -16,25 +16,25 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'foointerface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface.php',
-  'barinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface1.php',
   'xxxinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface2.php',
   'autoloader\\test\\complex\\xxxfoobar' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/anotherInterface.php',
-  'simple' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/Bar.php',
+  'barinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface1.php',
+  'foointerface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface.php',
   'autoloader\\test\\complex\\complex' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/Foo.php',
+  'simple' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/Bar.php',
 );
     // }}}
 
     // deps {{{
     static $deps    = array (
+  'barinterface' => 
+  array (
+    0 => 'xxxinterface',
+  ),
   'foointerface' => 
   array (
     0 => 'xxxinterface',
     1 => 'barinterface',
-  ),
-  'barinterface' => 
-  array (
-    0 => 'xxxinterface',
   ),
   'autoloader\\test\\complex\\complex' => 
   array (

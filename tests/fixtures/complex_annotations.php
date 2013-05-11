@@ -16,25 +16,25 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'foointerface_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/interface.php',
-  'barinterface_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/interface1.php',
   'xxxinterface_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/interface2.php',
   'autoloader\\test\\complex\\xxxfoobar_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/anotherInterface.php',
-  'simple_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/Bar.php',
+  'barinterface_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/interface1.php',
+  'foointerface_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/interface.php',
   'autoloader\\test\\complex\\complex_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/Foo.php',
+  'simple_ann' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex_annotations/Bar.php',
 );
     // }}}
 
     // deps {{{
     static $deps    = array (
+  'barinterface_ann' => 
+  array (
+    0 => 'xxxinterface_ann',
+  ),
   'foointerface_ann' => 
   array (
     0 => 'xxxinterface_ann',
     1 => 'barinterface_ann',
-  ),
-  'barinterface_ann' => 
-  array (
-    0 => 'xxxinterface_ann',
   ),
   'autoloader\\test\\complex\\complex_ann' => 
   array (

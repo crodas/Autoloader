@@ -605,7 +605,8 @@ class Generator
         }
 
         if ($cache) {
-            file_put_contents($cache, serialize(array($files, $this->classes_obj)));
+            $tocache = array(array_merge($zfiles, $files), array_merge($cached, $this->classes_obj));
+            file_put_contents($cache, serialize($tocache));
         }
 
         $this->generateClassDependencyTree();
