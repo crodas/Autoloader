@@ -1,4 +1,4 @@
-Autoloader [![Build Status](https://secure.travis-ci.org/crodas/Autoloader.png?branch=master)](http://travis-ci.org/crodas/Autoloader)
+Autoloader [![Build Status](https://secure.travis-ci.org/crodas/Autoloader.png?branch=master)](http://travis-ci.org/crodas/Autoloader) [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=crodas&url=https://github.com/crodas/Autoloader&title=[PHP] Autoloader generator&language=&tags=github&category=software) 
 ===============
 
 Autoloader generator for PHP.
