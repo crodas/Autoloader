@@ -75,3 +75,22 @@ By default it will generate absolute paths, which is amazing for performance but
 ```
 
 The output looks like this: https://github.com/crodas/Autoloader/blob/master/lib/Autoloader/loader.php
+
+Using with composer
+-------------------
+
+[Composer](http://getcomposer.org) is a great dependency manager, however I believe there is a lot of room for optimization in terms of autoloader generation. If you wish to have a better autoloader, one that can scan all your dependencies and your project (Whether they have configure the `psr-0` or not). It will also add your local clases to the autoloader.
+
+```json
+{
+  "require": {
+    "crodas/autoloader":"*"
+  },
+  "minimum-stability": "dev",
+  "scripts": {
+    "post-autoload-dump": "php vendor/crodas/autoloader/autoloader.phar composer"
+  }
+}
+```
+
+By overriding the `post-autoload-dump` it will replace the generated autoloader file, it will be called automatically however if you want to re-run it (for instance when you add a new class in your project and wish to be autoloaded) just run ` composer dump-autoload`.
