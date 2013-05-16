@@ -159,6 +159,7 @@ class generatorTest extends \phpunit_framework_testcase
     {
         $generator = new Autoloader\Generator(__DIR__ . '/fixtures/multiple/');
         $generator->multipleFiles();
+        $generator->relativePaths();
         $generator->generate(__DIR__ . '/fixtures/multiple.php');
 
         $classes = array(
@@ -175,7 +176,7 @@ class generatorTest extends \phpunit_framework_testcase
 
         $loadedFiles = array_filter(get_included_files(), function($file) {
             return strpos($file, __DIR__ . "/fixtures/multiple") === 0
-                && strpos($file, __DIR__ . "/fixtures/multiple/") !== 0;
+                && strpos($file, __DIR__ . "/fixtures/multiple/loader:") !== 0;
         });
 
         $this->assertEquals(3, count($loadedFiles));

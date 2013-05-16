@@ -336,7 +336,16 @@ class Generator
             }
         }
 
-        return preg_replace("/.php$/", "-", $prefix) . str_replace("\\", ".", $class) . ".php";
+        $dir  = preg_replace("/.php$/", "/", $prefix) ;
+        $file = 'loader:' . str_replace("\\", ".", $class) . ".php";
+
+        if (!is_dir($dir)) {
+            if (!mkdir($dir)) {
+                throw new \RuntimeException("Cannot create directory {$dir}");
+            }
+        }
+
+        return $dir . preg_replace("/(\.+|\.\_)/", ".", $file);
     }
 
     protected function renderMultiple($output, $namespaces)
