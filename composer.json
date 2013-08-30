@@ -15,7 +15,8 @@
         "symfony/console": "2.1.*",
         "symfony/finder": "2.1.*",
         "crodas/Artifex":"*",
-        "crodas/Notoj":"*"
+        "crodas/Notoj":"*",
+        "crodas/path": "*"
     },
     "autoload": {
         "psr-0": {
