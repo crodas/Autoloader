@@ -40,7 +40,8 @@ namespace Autoloader;
 use Symfony\Component\Finder\Finder,
     Notoj\Notoj,
     Artifex\Util\PHPTokens,
-    Artifex;
+    Artifex,
+    crodas\Path;
 
 class Generator
 {
@@ -130,48 +131,6 @@ class Generator
     {
         $this->callback_path = $cbc;
         return $this;
-    }
-
-    public function getRelativePath($dir1, $dir2=NULL)
-    {
-        if (empty($dir2)) {
-            $dir2 = getcwd();
-        }
-
-        $slash = DIRECTORY_SEPARATOR;
-
-        $file = basename($dir1);
-        $dir1 = trim(realpath(dirname($dir1)), $slash);
-        $dir2 = trim(realpath(dirname($dir2)), $slash);
-        $to   = explode($slash, $dir1);
-        $from = explode($slash, $dir2);
-
-        $realPath = $to;
-
-        foreach ($from as $depth => $dir) {
-            if(isset($to[$depth]) && $dir === $to[$depth]) {
-                array_shift($realPath);
-            } else {
-                $remaining = count($from) - $depth;
-                if($remaining) {
-                    // add traversals up to first matching dir
-                    $padLength = (count($realPath) + $remaining) * -1;
-                    $realPath  = array_pad($realPath, $padLength, '..');
-                    break;
-                }
-            }
-        }
-
-        $rpath = implode($slash, $realPath);
-        if ($rpath && $rpath[0] != $slash) {
-            $rpath = $slash . $rpath;
-        }
-        
-        if ($file) {
-            $rpath .= $slash . $file;
-        }
-
-        return $rpath;
     }
 
     public function enableStats($name)
@@ -391,7 +350,7 @@ class Generator
 
             $file = $this->getNamespacefile($namespace, $prefix);
             if ($this->relative) {
-                $filemap[$namespace] = $this->getRelativePath($file, $output);
+                $filemap[$namespace] = Path::getRelative($file, $output);
             } else {
                 $filemap[$namespace] = $file;
             }
@@ -423,7 +382,7 @@ class Generator
 
             $file = $this->getNamespacefile('-all', $prefix);
             if ($this->relative) {
-                $filemap['-all'] = $this->getRelativePath($file, $output);
+                $filemap['-all'] = Path::getRelative($file, $output);
             } else {
                 $filemap['-all'] = $file;
             }
@@ -543,7 +502,7 @@ class Generator
 
         if ($this->relative && $file) {
             foreach ($return['classes'] as $class => $fileClass) {
-                $return['classes'][$class] = $this->getRelativePath($fileClass, $file);
+                $return['classes'][$class] = Path::getRelative($fileClass, $file);
             }
         }
 
