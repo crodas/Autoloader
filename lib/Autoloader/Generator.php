@@ -146,6 +146,16 @@ class Generator
         $to   = explode($slash, $dir1);
         $from = explode($slash, $dir2);
 
+        if ($slash == '\\') {
+            // F*cking windows ;-)
+            if (strncasecmp($dir1, $dir2, 2) != 0) {
+                // There is no relative path
+                return $dir1;
+            }
+            $dir1 = substr($dir1, 2);
+            $dir2 = substr($dir2, 2);
+        }
+
         $realPath = $to;
 
         foreach ($from as $depth => $dir) {
