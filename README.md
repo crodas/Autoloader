@@ -88,7 +88,7 @@ Using with composer
   },
   "minimum-stability": "dev",
   "scripts": {
-    "post-autoload-dump": "php vendor/crodas/autoloader/autoloader.phar composer"
+    "post-autoload-dump": "Autoloader\\Composer::generate"
   }
 }
 ```
