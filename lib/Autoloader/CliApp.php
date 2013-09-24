@@ -106,33 +106,6 @@ class CliApp extends \stdClass
 
     /**
      *  @cli
-     *  @help Replace composer autoloader
-     */
-    public function composer(InputInterface $input, OutputInterface $output)
-    {
-        $dir  = ".";
-        $file = getcwd() . "/vendor/autoload.php"; 
-
-        $finder = new Finder();
-        $finder->files()
-            ->name("*.php")
-            ->in($dir);
-
-        try {
-            $generator = new Generator($finder);
-            $generator->relativePaths(true)
-                ->includePSR0Autoloader(false)
-                ->multipleFiles()
-                ->generate($file, "$file.cache");
-        } catch (\Exception $e) {
-            $output->write("<error>Fatal error, stopping generator</error>\n");
-            exit(-1);
-        }
-        exit(0);
-    }
-
-    /**
-     *  @cli
      *  @help Generate autoloader
      *  @opt(name='library', help="Generate the autoloader for a library (portability frendly)")
      *  @opt(name='relative', help="Save as relative path")
