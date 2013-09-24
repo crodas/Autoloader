@@ -53,29 +53,6 @@ In order to install you should use `compose`.
 php composer.phar install
 ```
 
-How to install (final users)
-----------------------------
-
-If you're a final user you should only care about the `autoloader.phar` file.
-
-```
-wget https://github.com/crodas/Autoloader/raw/master/autoloader.phar
-chmod +x autoloader.phar
-```
-The `cli` app is very simple to use
-
-```
-./autoloader.phar generate autoloader.php dir1/ dir2/
-```
-
-By default it will generate absolute paths, which is amazing for performance but you loose portability. If you're writing a library, then you could use --library which generates paths relative to the generated autoloader location.
-
-```
-./autoloader.phar generate  --library autoloader.php dir1/ dir2/
-```
-
-The output looks like this: https://github.com/crodas/Autoloader/blob/master/lib/Autoloader/loader.php
-
 Using with composer
 -------------------
 
