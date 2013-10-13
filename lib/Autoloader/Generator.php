@@ -429,7 +429,7 @@ class Generator
 
         // return an array with the most common namespaces
         return array_filter($namespaces, function($classes) {
-            return $classes >= 10;
+            return $classes >= 5;
         });
 
     }
