@@ -29,20 +29,52 @@ spl_autoload_register(function ($class) {
     static $deps    = array (
   'barinterface_rel' => 
   array (
-    0 => 'xxxinterface_rel',
+    0 => 
+    array (
+      0 => 'xxxinterface_rel',
+      1 => 'interface_exists',
+    ),
   ),
   'foointerface_rel' => 
   array (
-    0 => 'xxxinterface_rel',
-    1 => 'barinterface_rel',
+    0 => 
+    array (
+      0 => 'xxxinterface_rel',
+      1 => 'interface_exists',
+    ),
+    1 => 
+    array (
+      0 => 'barinterface_rel',
+      1 => 'interface_exists',
+    ),
   ),
   'autoloader\\test\\complex\\complex_rel' => 
   array (
-    0 => 'autoloader\\test\\complex\\xxxfoobar_rel',
-    1 => 'xxxinterface_rel',
-    2 => 'barinterface_rel',
-    3 => 'foointerface_rel',
-    4 => 'simple_rel',
+    0 => 
+    array (
+      0 => 'autoloader\\test\\complex\\xxxfoobar_rel',
+      1 => 'interface_exists',
+    ),
+    1 => 
+    array (
+      0 => 'xxxinterface_rel',
+      1 => 'interface_exists',
+    ),
+    2 => 
+    array (
+      0 => 'barinterface_rel',
+      1 => 'interface_exists',
+    ),
+    3 => 
+    array (
+      0 => 'foointerface_rel',
+      1 => 'interface_exists',
+    ),
+    4 => 
+    array (
+      0 => 'simple_rel',
+      1 => 'class_exists',
+    ),
   ),
 );
     // }}}
@@ -52,14 +84,29 @@ spl_autoload_register(function ($class) {
         $GLOBALS['call_complex_relativestat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-                if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
+                if (is_array($zclass)) {
+                    if (!$zclass[1]($zclass[0], false)) {
+                        $GLOBALS['load_complex_relativestat']++;
+                        require __DIR__  . $classes[$zclass[0]];
+                    }
+                } else if (!class_exists($zclass, false)) {
                     $GLOBALS['load_complex_relativestat']++;
                     require __DIR__  . $classes[$zclass];
                 }
             }
         }
 
-        if (!class_exists($class, false) && !interface_exists($class, false)) {
+        if (is_array($class)) {
+
+            if (!$class[1]($class[0], false)) {
+
+                $GLOBALS['load_complex_relativestat']++;
+
+                require __DIR__  . $classes[$class[0]];
+
+            }
+
+        } else if (!class_exists($class, false)) {
 
             $GLOBALS['load_complex_relativestat']++;
 

@@ -26,7 +26,17 @@ spl_autoload_register(function ($class) {
     if (isset($classes[$class])) {
         $GLOBALS['call_namespacesstat']++;
 
-        if (!class_exists($class, false)) {
+        if (is_array($class)) {
+
+            if (!$class[1]($class[0], false)) {
+
+                $GLOBALS['load_namespacesstat']++;
+
+                require $classes[$class[0]];
+
+            }
+
+        } else if (!class_exists($class, false)) {
 
             $GLOBALS['load_namespacesstat']++;
 

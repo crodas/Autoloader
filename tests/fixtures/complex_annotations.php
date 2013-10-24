@@ -29,20 +29,24 @@ spl_autoload_register(function ($class) {
     static $deps    = array (
   'barinterface_ann' => 
   array (
-    0 => 'xxxinterface_ann',
+    0 => 
+    array (
+      0 => 'xxxinterface_ann',
+      1 => 'interface_exists',
+    ),
   ),
   'foointerface_ann' => 
   array (
-    0 => 'xxxinterface_ann',
-    1 => 'barinterface_ann',
-  ),
-  'autoloader\\test\\complex\\complex_ann' => 
-  array (
-    0 => 'autoloader\\test\\complex\\xxxfoobar_ann',
-    1 => 'xxxinterface_ann',
-    2 => 'barinterface_ann',
-    3 => 'foointerface_ann',
-    4 => 'simple_ann',
+    0 => 
+    array (
+      0 => 'xxxinterface_ann',
+      1 => 'interface_exists',
+    ),
+    1 => 
+    array (
+      0 => 'barinterface_ann',
+      1 => 'interface_exists',
+    ),
   ),
 );
     // }}}
@@ -52,14 +56,29 @@ spl_autoload_register(function ($class) {
         $GLOBALS['call_complex_annotationsstat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-                if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
+                if (is_array($zclass)) {
+                    if (!$zclass[1]($zclass[0], false)) {
+                        $GLOBALS['load_complex_annotationsstat']++;
+                        require $classes[$zclass[0]];
+                    }
+                } else if (!class_exists($zclass, false)) {
                     $GLOBALS['load_complex_annotationsstat']++;
                     require $classes[$zclass];
                 }
             }
         }
 
-        if (!class_exists($class, false) && !interface_exists($class, false)) {
+        if (is_array($class)) {
+
+            if (!$class[1]($class[0], false)) {
+
+                $GLOBALS['load_complex_annotationsstat']++;
+
+                require $classes[$class[0]];
+
+            }
+
+        } else if (!class_exists($class, false)) {
 
             $GLOBALS['load_complex_annotationsstat']++;
 
