@@ -193,8 +193,8 @@ class Generator
             // order to make autoloading simpler
             foreach ($deps as $dep) {
                 foreach ($dep as $class) {
-                    if (empty($classes[$class])) {
-                        $classes[$class] = $this->classes[$class];
+                    if (empty($classes[$class[0]])) {
+                        $classes[$class[0]] = $this->classes[$class[0]];
                     }
                 }
             }
@@ -225,8 +225,8 @@ class Generator
 
             foreach ($deps as $dep) {
                 foreach ($dep as $class) {
-                    if (empty($classes[$class])) {
-                        $classes[$class] = $this->classes[$class];
+                    if (empty($classes[$class[0]])) {
+                        $classes[$class[0]] = $this->classes[$class[0]];
                     }
                 }
             }
