@@ -138,154 +138,6 @@ class Generator
         $this->stats = $name;
     }
 
-    protected function reset()
-    {
-        $this->namespace = "";
-        $this->alias     = array();
-        $this->lastClass = NULL;
-    }
-
-    protected function getLastClass()
-    {
-        return $this->lastClass;
-    }
-
-    public function setLastClass($class)
-    {
-        $this->lastClass = $class;
-    }
-
-    protected function setNamespace($namespace)
-    {
-        $this->namespace = empty($namespace) ? "" : $namespace . "\\";
-    }
-
-    protected function setAlias($alias, $class)
-    {
-        $this->alias[$alias] = $class;
-    }
-
-    protected function getNamespace($php)
-    {
-        $php->move()
-            ->moveWhile(array(T_WHITESPACE));
-        $start = $php->getOffset();
-        $php->moveWhile(array(T_WHITESPACE, T_STRING, T_NS_SEPARATOR));
-        $tokens = array_map(function($token) {
-            return $token[0] == T_WHITESPACE ? "" : $token[1];
-        }, $php->getTokens($start, $php->getOffset() - $start));
-        return implode("", $tokens);
-    }
-
-
-    protected function getClass($name)
-    {
-        if (empty($name)) {
-            throw new \RuntimeException("Invalid class name");
-        }
-        if ($name[0] == "\\") {
-            $className = substr($name, 1);
-        } else if (isset($this->alias[$name])) {
-            $className = $this->alias[$name];
-        } else {
-            $className = $this->namespace . $name;
-        }
-        $index = strtolower($className);
-        if (!isset($this->classes_obj[$index])) {
-            $this->classes_obj[$index] = new ClassDef($className);
-        }
-        return $this->classes_obj[$index];
-    }
-
-    public function parseClass(PHPTokens $php)
-    {
-        $type = $php->getToken();
-        $token = $php->whileNot(array(T_STRING))
-            ->getToken();
-        $class = $this->getClass($token[1]);
-        $class->isLocal(true);
-        $class->SetType($type[0]);
-        $class->setFile($this->currentFile);
-
-        $this->setLastClass($class);
-
-        $token = $php->move()
-            ->whileNot(array(T_EXTENDS, T_IMPLEMENTS, '{'))
-            ->getToken();
-        while ($token != '{') {
-            $parentClass = $this->getClass($this->getNamespace($php));
-            $class->addDependency($parentClass);
-            $token = $php->getToken();
-        }
-    }
-
-    public function parseUse(PHPTokens $php)
-    {
-        $stack = $php->getStack();
-        if (count($stack) == 0 || (count($stack) == 1 && $stack[0] == T_NAMESPACE)) {
-            do {
-                $import = $this->getNamespace($php);
-                if (empty($import)) return;
-                $next = $php->moveWhile(array(T_WHITESPACE))
-                    ->getToken();
-                $alias = substr($import, strrpos($import, "\\")+1);
-                if ($next[0] == T_AS) {
-                    $alias = $this->getNamespace($php);
-                }
-                $this->setAlias($alias, $import);
-            } while ($php->getToken() == ',');
-        } else if ($stack[count($stack)-1] == T_CLASS) {
-            // traits
-            do {
-                $trait = $this->getNamespace($php);
-                if (!$this->getLastClass()) {
-                    // should never happen, unless the current
-                    // file is broken
-                    continue;
-                }
-                $this->getLastClass()->addDependency($this->getClass($trait));
-            } while ($php->getToken() == ',');
-        }
-    }
-
-    public function parseNamespace(PHPTokens $php)
-    {
-        $namespace = $this->getNamespace($php);
-        $this->setNamespace($namespace);
-    }
-
-    public function parseAnnotations(PHPTokens $php)
-    {
-        $comment = $php->getToken();
-        $annotations = Notoj::parseDocComment($comment[1]);
-        if (empty($annotations)) {
-            return;
-        }
-        $token = $php->move()
-            ->moveWhile(array(
-                T_WHITESPACE, T_PUBLIC, T_PRIVATE, T_PROTECTED, 
-                T_STATIC, T_ABSTRACT, T_FINAL
-            ))->getToken();
-
-        $allow = array(T_CLASS, T_INTERFACE, $this->trait);
-        if (!in_array($token[0], $allow)) {
-            return;
-        }
-
-        $className = $php->moveWhileNot(array(T_STRING))
-            ->getToken();
-        $class = $this->getClass($className[1]);
-
-        foreach ($annotations as $decorator) {
-            if (strtolower($decorator['method']) != "autoload") {
-                continue;
-            }
-            foreach ($decorator['args'] as $className) {
-                $class->addDependency($this->getClass($className));
-            }
-        }
-    }
-
     public function getNamespacefile($class, $prefix)
     {
         if ($this->callback_path) {
@@ -436,31 +288,26 @@ class Generator
 
     protected function getParser()
     {
-        $php  = new \Artifex\Util\PHPTokens;
-
-        $php->on(T_NAMESPACE, array($this, 'parseNamespace'));
-        $php->on(T_DOC_COMMENT, array($this, 'parseAnnotations'));
-        $php->on(T_USE, array($this, 'parseUse'));
-        $php->on(T_CLASS, array($this, 'parseClass'));
-        $php->on(T_INTERFACE, array($this, 'parseClass'));
-        $php->on($this->trait, array($this, 'parseClass'));
-
-        return $php;
+        return new \crodas\ClassInfo\ClassInfo;
     }
 
     protected function generateClassDependencyTree()
     {
         $buildDepTree = function($next, $class) use (&$loaded) {
             $deps = array();
-            if (isset($loaded[$class . ''])) {
+            if (isset($loaded[$class->getName()])) {
                 return array();
             }
-            $loaded[$class . ''] = true;
-            if (count($class->getDependencies()) > 0) {
-                foreach (array_reverse($class->getDependencies()) as $dep){
-                    if (!$dep->isLocal()) continue;
+            $loaded[$class->getName()] = true;
+            $zdeps = array_merge($class->getInterfaces(), $class->getTraits());
+            if ($parent = $class->getParent()) {
+                $zdeps  = array_merge(array($class->getParent()), $zdeps);
+            }
+            if (count($zdeps) > 0) {
+                foreach (array_reverse($zdeps) as $dep){
+                    if (!$dep->isUserDefined()) continue;
                     $deps   = array_merge($deps, $next($next, $dep));
-                    $deps[] = strtolower($dep);
+                    $deps[] = serialize(array(strtolower($dep->getName()), $dep->getType() . '_exists'));
                 }
             }
             return $deps;
@@ -470,7 +317,7 @@ class Generator
         $classes = array();
         $deps    = array();
         foreach ($this->classes_obj as $id => $class) {
-            if (!$class->isLocal()) {
+            if (!$class->isUserDefined()) {
                 continue;
             }
             $types[$class->getType()] = 1;
@@ -478,6 +325,7 @@ class Generator
             $dep = $buildDepTree($buildDepTree, $class);
             if (count($dep) > 0) {
                 $deps[$id] = array_unique($dep);
+                $deps[$id] = array_map('unserialize', $deps[$id]);
             }
             $classes[$id] = $class->getFile();
         }
@@ -556,16 +404,16 @@ class Generator
             }
 
             $files[$path] =  filemtime($path);
-            $this->reset();
             $this->currentFile = $path;
             try {
-                $parser->setFile($path);
-                $callback($path, $this->classes_obj);
+                $parser->parse($path);
+                $callback($path, $parser->getClasses());
             } catch (\Exception $e) {
-                $callback($path, $this->classes_obj, $e);
+                $callback($path, $parser->getClasses(), $e);
             }
         }
 
+        $this->classes_obj = $parser->getClasses();
         foreach ($cached as $id => $class) {
             if (!empty($hit[$class->getFile()])) {
                 $this->classes_obj[$id] = $class;
