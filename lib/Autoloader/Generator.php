@@ -301,7 +301,7 @@ class Generator
             $loaded[$class->getName()] = true;
             $zdeps = array_merge($class->getInterfaces(), $class->getTraits());
             if ($parent = $class->getParent()) {
-                $zdeps  = array_merge([$class->getParent()], $zdeps);
+                $zdeps  = array_merge(array($class->getParent()), $zdeps);
             }
             if (count($zdeps) > 0) {
                 foreach (array_reverse($zdeps) as $dep){
