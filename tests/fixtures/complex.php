@@ -29,20 +29,52 @@ spl_autoload_register(function ($class) {
     static $deps    = array (
   'barinterface' => 
   array (
-    0 => 'xxxinterface',
+    0 => 
+    array (
+      0 => 'xxxinterface',
+      1 => 'interface_exists',
+    ),
   ),
   'foointerface' => 
   array (
-    0 => 'xxxinterface',
-    1 => 'barinterface',
+    0 => 
+    array (
+      0 => 'xxxinterface',
+      1 => 'interface_exists',
+    ),
+    1 => 
+    array (
+      0 => 'barinterface',
+      1 => 'interface_exists',
+    ),
   ),
   'autoloader\\test\\complex\\complex' => 
   array (
-    0 => 'autoloader\\test\\complex\\xxxfoobar',
-    1 => 'xxxinterface',
-    2 => 'barinterface',
-    3 => 'foointerface',
-    4 => 'simple',
+    0 => 
+    array (
+      0 => 'autoloader\\test\\complex\\xxxfoobar',
+      1 => 'interface_exists',
+    ),
+    1 => 
+    array (
+      0 => 'xxxinterface',
+      1 => 'interface_exists',
+    ),
+    2 => 
+    array (
+      0 => 'barinterface',
+      1 => 'interface_exists',
+    ),
+    3 => 
+    array (
+      0 => 'foointerface',
+      1 => 'interface_exists',
+    ),
+    4 => 
+    array (
+      0 => 'simple',
+      1 => 'class_exists',
+    ),
   ),
 );
     // }}}
@@ -52,14 +84,29 @@ spl_autoload_register(function ($class) {
         $GLOBALS['call_complexstat']++;
         if (!empty($deps[$class])) {
             foreach ($deps[$class] as $zclass) {
-                if (!class_exists($zclass, false) && !interface_exists($zclass, false)) {
+                if (is_array($zclass)) {
+                    if (!$zclass[1]($zclass[0], false)) {
+                        $GLOBALS['load_complexstat']++;
+                        require $classes[$zclass[0]];
+                    }
+                } else if (!class_exists($zclass, false)) {
                     $GLOBALS['load_complexstat']++;
                     require $classes[$zclass];
                 }
             }
         }
 
-        if (!class_exists($class, false) && !interface_exists($class, false)) {
+        if (is_array($class)) {
+
+            if (!$class[1]($class[0], false)) {
+
+                $GLOBALS['load_complexstat']++;
+
+                require $classes[$class[0]];
+
+            }
+
+        } else if (!class_exists($class, false)) {
 
             $GLOBALS['load_complexstat']++;
 

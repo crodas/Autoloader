@@ -83,7 +83,7 @@ class generatorTest extends \phpunit_framework_testcase
         $this->assertEquals($output['loaded'], 6);
         $output = getcomplex_annotationsstat();
         $this->assertEquals($output['calls'], 1);
-        $this->assertEquals($output['loaded'], 6);
+        $this->assertEquals($output['loaded'], 1);
         if (is_callable('getTraitsStat')) {
             $output = getTraitsStat();  
             $this->assertEquals($output['loaded'], 7);
@@ -142,15 +142,6 @@ class generatorTest extends \phpunit_framework_testcase
             $generator->generate($path . '/foo.php');
             $this->assertTrue(false);
         } catch (\RuntimeException $e) {
-            $this->assertTrue(true);
-        }
-    }
-
-    public function testInvalidClassName() {
-        try {
-            new \Autoloader\ClassDef("\\foo\\bar\\");
-            $this->assertTrue(false);
-        } catch (\Exception $e) {
             $this->assertTrue(true);
         }
     }
