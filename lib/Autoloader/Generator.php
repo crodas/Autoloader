@@ -378,12 +378,42 @@ class Generator
         }
     }
 
+    protected function loadClassesFromCache($cached)
+    {
+        foreach ($cached as $id => $class) {
+            if (!empty($hit[$class->getFile()])) {
+                $this->classes_obj[$id] = $class;
+            }
+        }
+    }
+
+
     protected function saveCache($cache, $zfiles, $cached)
     {
         if ($cache) {
             $tocache = array(array_merge($zfiles, $files), array_merge($cached, $this->classes_obj));
             file_put_contents($cache, serialize($tocache));
         }
+    }
+
+    /**
+     *  Return a list of php files found which contains at least one
+     *  class, interface or trait
+     *
+     *  @return []
+     */
+    public function getPHPFiles()
+    {
+        $files = array();
+        foreach ($this->path as $file) {
+            $path = $file->getRealPath();
+            if (!preg_match('/\s(class|interface|trait)\s/ismU', file_get_contents($path))) {
+                /* no classes */
+                continue;
+            }
+            $files[] = $path;
+        }
+        return $files;
     }
 
     public function generate($output, $cache = '')
@@ -403,24 +433,17 @@ class Generator
         $zfiles = array();
         $cached = array();
         $files  = array();
-        $hit    = array();
 
         
         $this->loadCache($cache, $zfiles, $cached);
 
-        foreach ($this->path as $file) {
-            $path  = $file->getRealPath();
+        foreach ($this->getPHPFiles() as $path) {
             if (!empty($zfiles[$path]) && filemtime($path) <= $zfiles[$path]) {
-                $hit[$path] = 1;
                 continue;
             }
 
             $files[$path] =  filemtime($path);
             $this->currentFile = $path;
-            if (!preg_match('/\s(class|interface|trait)\s/ismU', file_get_contents($path))) {
-                /* no classes */
-                continue;
-            }
             try {
                 $parser->parse($path);
                 $callback($path, $parser->getClasses());
@@ -430,14 +453,8 @@ class Generator
         }
 
         $this->classes_obj = $parser->getClasses();
-        foreach ($cached as $id => $class) {
-            if (!empty($hit[$class->getFile()])) {
-                $this->classes_obj[$id] = $class;
-            }
-        }
-
+        $this->loadClassesFromCache($cached);
         $this->saveCache($cache, $zfiles, $files);
-
         $this->generateClassDependencyTree();
         $this->writeAutoloader($output);
     }
