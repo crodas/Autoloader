@@ -299,9 +299,8 @@ class Generator
         return new \crodas\ClassInfo\ClassInfo;
     }
 
-    protected function generateClassDependencyTree()
+    protected function buildDepTree($class, &$loaded)
     {
-        $buildDepTree = function($next, $class) use (&$loaded) {
             $deps = array();
             if (isset($loaded[$class->getName()])) {
                 return array();
@@ -314,13 +313,15 @@ class Generator
             if (count($zdeps) > 0) {
                 foreach (array_reverse($zdeps) as $dep){
                     if (!$dep->isUserDefined()) continue;
-                    $deps   = array_merge($deps, $next($next, $dep));
+                    $deps   = array_merge($deps, $this->buildDepTree($dep, $loaded));
                     $deps[] = serialize(array(strtolower($dep->getName()), $dep->getType() . '_exists'));
                 }
             }
             return $deps;
-        };
+    }
 
+    protected function generateClassDependencyTree()
+    {
         $types   = array();
         $classes = array();
         $deps    = array();
@@ -330,7 +331,7 @@ class Generator
             }
             $types[$class->getType()] = 1;
             $loaded = array();
-            $dep = $buildDepTree($buildDepTree, $class);
+            $dep = $this->buildDepTree($class, $loaded);
             if (count($dep) > 0) {
                 $deps[$id] = array_unique($dep);
                 $deps[$id] = array_map('unserialize', $deps[$id]);
