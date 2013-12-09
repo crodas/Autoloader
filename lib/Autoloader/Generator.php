@@ -208,6 +208,25 @@ class Generator
         return $file;
     }
 
+    protected function getClassesByNamespace($namespaces, $allClasses)
+    {
+        $nsClasses = array();
+        foreach (array_keys($namespaces) as $namespace) {
+            $classes = array();
+            foreach ($allClasses as $class => $file) {
+                if (strpos($class, $namespace) === 0) {
+                    $classes[$class] = $file;
+                    unset($allClasses[$class]);
+                }
+            }
+            $nsClasses[$namespace] = $classes;
+        }
+        if (count($allClasses) > 0) {
+            $nsClasses['-all'] = $allClasses;
+        }
+        return $nsClasses;
+    }
+
     protected function renderMultiple($output, $namespaces)
     {
         // sort them by length
@@ -221,24 +240,9 @@ class Generator
         $extraLoader = false;
         $allClasses  = $this->classes;
 
-        foreach (array_keys($namespaces) as $namespace) {
-            $classes = array();
-            foreach ($allClasses as $class => $file) {
-                if (strpos($class, $namespace) === 0) {
-                    $classes[$class] = $file;
-                    unset($allClasses[$class]);
-                }
-            }
-
-            if (!empty($classes)) {
-                $file = $this->renderClassesFile($classes, $namespace, $prefix);
-                $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
-            }
-        }
-        
-        if (count($allClasses) > 0) {
-            $file = $this->renderClassesFile($allClasses, '-all', $prefix);
-            $filemap['-all'] = $this->relative ? Path::getRelative($file, $output) : $file;
+        foreach ($this->getClassesByNamespace($namespaces, $allClasses) as $namespace => $classes) {
+            $file = $this->renderClassesFile($classes, $namespace, $prefix);
+            $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
         }
 
         $nargs = array_merge($this->getTemplateArgs(), compact('filemap', 'relative', 'extraLoader'));
