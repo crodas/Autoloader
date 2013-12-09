@@ -405,6 +405,10 @@ class Generator
 
             $files[$path] =  filemtime($path);
             $this->currentFile = $path;
+            if (!preg_match('/\s(class|interface|trait)\s/ismU', file_get_contents($path))) {
+                /* no classes */
+                continue;
+            }
             try {
                 $parser->parse($path);
                 $callback($path, $parser->getClasses());
