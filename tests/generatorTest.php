@@ -162,7 +162,7 @@ class generatorTest extends \phpunit_framework_testcase
 
         foreach ($classes as $class) {
             $this->assertFalse(class_exists($class, false));
-            $this->assertTrue(class_exists($class));
+            $this->assertTrue(class_exists($class), "Cannot load {$class}");
         }
 
         $loadedFiles = array_filter(get_included_files(), function($file) {

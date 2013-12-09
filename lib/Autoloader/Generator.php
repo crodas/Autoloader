@@ -175,7 +175,7 @@ class Generator
             $deps    = array();
             $allDeps = $this->deps;
 
-            foreach ($classes as $class) {
+            foreach ($classes as $class => $file) {
                 if (!empty($allDeps[$class])) {
                     $deps[$class] = $allDeps[$class];
                 }
@@ -217,20 +217,20 @@ class Generator
         foreach (array_keys($namespaces) as $namespace) {
             $classes = array();
             foreach ($allClasses as $class => $file) {
-                if (strpos($class, $namespace) !== 0) {
+                if (strpos($class, $namespace) === 0) {
                     $classes[$class] = $file;
                     unset($allClasses[$class]);
                 }
             }
 
-            if (empty($classes)) {
+            if (!empty($classes)) {
                 $file = $this->renderClassesFile($classes, $namespace, $prefix);
                 $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
             }
         }
         
         if (count($allClasses) > 0) {
-            $file = $this->renderClassesFile($allClasses, $namespace, $prefix);
+            $file = $this->renderClassesFile($allClasses, '-all', $prefix);
             $filemap['-all'] = $this->relative ? Path::getRelative($file, $output) : $file;
         }
 
