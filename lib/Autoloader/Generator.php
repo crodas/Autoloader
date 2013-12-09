@@ -100,18 +100,29 @@ class Generator
         return $this;
     }
 
+    protected function checkDirExists($dir)
+    {
+        if (!is_dir($dir)) {
+            throw new \RuntimeException(dirname($dir) . " is not a directory");
+        }
+
+        if (!is_writable($dir)) {
+            throw new \RuntimeException(dirname($dir) . " is not a writable");
+        }
+
+        if (file_exists($dir) && !is_dir($dir)) {
+            throw new \RuntimeException("{$output} exists but it isn't a file");
+        }
+    }
+
     public function setScanPath($dir) {
         if ($dir instanceof Finder || is_array($dir)) {
             $this->path = $dir;
             return true;
         }
 
-        if (!is_dir($dir)) {
-            throw new \RuntimeException("{$dir} doesn't exists");
-        }
-        if (!is_readable($dir)) {
-            throw new \RuntimeException("{$dir} cannot be read");
-        }
+        $this->checkDirExists($dir);
+
         $finder = new Finder;
         $this->path = $finder->files()
             ->name('*.php')
@@ -364,37 +375,8 @@ class Generator
         return $return;
     }
 
-    public function generate($output, $cache = '')
+    protected function loadCache($cache, &$Zfiles, &$cached)
     {
-        $dir = realpath(dirname($output));
-        if (!is_dir($dir)) {
-            throw new \RuntimeException(dirname($dir) . " is not a directory");
-        }
-
-        if (!is_writable($dir)) {
-            throw new \RuntimeException(dirname($dir) . " is not a writable");
-        }
-
-        if (file_exists($dir) && !is_dir($dir)) {
-            throw new \RuntimeException("{$output} exists but it isn't a file");
-        }
-
-        $deps      = array();
-        $relatives = array();
-        $callback  = $this->callback;
-
-
-        $this->classes_obj = array();
-        if (!$callback) {
-            $callback = function() {};
-        }
-
-        $parser = $this->getParser();
-        $zfiles = array();
-        $cached = array();
-        $files  = array();
-        $hit    = array();
-
         if ($cache && is_file($cache)) {
             $data = unserialize(file_get_contents($cache));
             if (is_array($data) && count($data) == 2) {
@@ -402,6 +384,29 @@ class Generator
                 $cached = $data[1];
             }
         }
+    }
+
+    public function generate($output, $cache = '')
+    {
+        $dir = realpath(dirname($output));
+        $this->checkDirExists($dir);
+
+        $deps      = array();
+        $relatives = array();
+        $callback  = $this->callback;
+
+
+        $this->classes_obj = array();
+        $callback = !empty($callback) ? $callback : function() {};
+
+        $parser = $this->getParser();
+        $zfiles = array();
+        $cached = array();
+        $files  = array();
+        $hit    = array();
+
+        
+        $this->loadCache($cache, $zfiles, $cached);
 
         foreach ($this->path as $file) {
             $path  = $file->getRealPath();
