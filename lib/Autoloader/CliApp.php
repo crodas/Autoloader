@@ -112,6 +112,24 @@ class CliApp extends \stdClass
         return $file;
     }
 
+    protected function getFinderObject($isLibrary)
+    {
+        $finder = new Finder();
+        $finder->files()
+            ->name("*.php")
+            ->in($dirs);
+
+        if ($input->getOption('library')) {
+            $relative = true;
+            $include  = false;
+            $finder->filter(function($file) {
+                return preg_match("/test/i", $file) ? false : true;
+            });
+        }
+
+        return $finder;
+    }
+
     /**
      *  @cli
      *  @help Generate autoloader
@@ -132,24 +150,12 @@ class CliApp extends \stdClass
         }
 
         $file = $this->getPath($file);
-
-        $finder = new Finder();
-        $finder->files()
-            ->name("*.php")
-            ->in($dirs);
+        $finder = $this->getFinderObject($input->getOption('library'));
 
         $relative = $input->getOption('relative');
         $include  = $input->getOption('include-psr-0');
         $cache    = $input->getOption('enable-cache');
         $multi    = $input->getOption('multi');
-
-        if ($input->getOption('library')) {
-            $relative = true;
-            $include  = false;
-            $finder->filter(function($file) {
-                return preg_match("/test/i", $file) ? false : true;
-            });
-        }
 
         try {
             $generator = new Generator($finder);
