@@ -170,6 +170,29 @@ class Generator
         return $dir . preg_replace("/(\.+|\.\_)/", ".", $file);
     }
 
+    protected function renderClassesFile($classes, $namespace, $prefix)
+    {
+            $deps    = array();
+            // If in our dependency tree we reference
+            // to another class which handled in another file
+            // we *must* duplicate that class definition in o
+            // order to make autoloading simpler
+            foreach ($deps as $dep) {
+                foreach ($dep as $class) {
+                    if (empty($classes[$class[0]])) {
+                        $classes[$class[0]] = $this->classes[$class[0]];
+                    }
+                }
+            }
+
+            $file  = $this->getNamespacefile($namespace, $prefix);
+            $nargs = $this->getTemplateArgs($file, compact('classes', 'deps'));
+            $code  = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
+            Artifex::save($file, $code);
+
+            return $file;
+    }
+
     protected function renderMultiple($output, $namespaces)
     {
         // sort them by length
@@ -197,62 +220,13 @@ class Generator
             }
 
             if (empty($classes)) continue;
-
-            // If in our dependency tree we reference
-            // to another class which handled in another file
-            // we *must* duplicate that class definition in o
-            // order to make autoloading simpler
-            foreach ($deps as $dep) {
-                foreach ($dep as $class) {
-                    if (empty($classes[$class[0]])) {
-                        $classes[$class[0]] = $this->classes[$class[0]];
-                    }
-                }
-            }
-
-
-            $file = $this->getNamespacefile($namespace, $prefix);
-            if ($this->relative) {
-                $filemap[$namespace] = Path::getRelative($file, $output);
-            } else {
-                $filemap[$namespace] = $file;
-            }
-
-
-            $nargs = $this->getTemplateArgs($file, compact('classes', 'deps'));
-            $code  = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
-            Artifex::save($file, $code);
+            $file = $this->renderClassesFile($classes, $namespace, $prefix);
+            $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
         }
         
         if (count($allClasses) > 0) {
-            $classes = array();
-            $deps    = array();
-            foreach ($allClasses as $class => $file) {
-                $classes[$class] = $file;
-                if (!empty($allDeps[$class])) {
-                    $deps[$class] = $allDeps[$class];
-                }
-            }
-
-            foreach ($deps as $dep) {
-                foreach ($dep as $class) {
-                    if (empty($classes[$class[0]])) {
-                        $classes[$class[0]] = $this->classes[$class[0]];
-                    }
-                }
-            }
-
-
-            $file = $this->getNamespacefile('-all', $prefix);
-            if ($this->relative) {
-                $filemap['-all'] = Path::getRelative($file, $output);
-            } else {
-                $filemap['-all'] = $file;
-            }
-
-            $nargs  = $this->getTemplateArgs($file, compact('classes', 'deps'));
-            $code   = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
-            Artifex::save($file, $code);
+            $file = $this->renderClassesFile($allClasses, $namespace, $prefix);
+            $filemap['-all'] = $this->relative ? Path::getRelative($file, $output) : $file;
         }
 
         $nargs = array_merge($this->getTemplateArgs(), compact('filemap', 'relative', 'extraLoader'));
