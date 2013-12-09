@@ -104,6 +104,14 @@ class CliApp extends \stdClass
         return $annotations;
     }
 
+    protected function getPath($file)
+    {
+        if ($file[0] !== '/') {
+            $file = getcwd() . '/' . $file;
+        }
+        return $file;
+    }
+
     /**
      *  @cli
      *  @help Generate autoloader
@@ -120,15 +128,10 @@ class CliApp extends \stdClass
         $dirs = array();
         $file = $input->getArgument('output');
         foreach ($input->getArgument('dir') as $dir) {
-            if ($dir[0] !== '/') {
-                $dir = getcwd() . '/' . $dir;
-            }
-            $dirs[] = $dir;
+            $dirs[] = $this->getPath($dir);
         }
 
-        if ($file[0] !== '/') {
-            $file = getcwd() . '/' . $file;
-        }
+        $file = $this->getPath($file);
 
         $finder = new Finder();
         $finder->files()
