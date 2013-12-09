@@ -173,6 +173,14 @@ class Generator
     protected function renderClassesFile($classes, $namespace, $prefix)
     {
             $deps    = array();
+            $allDeps = $this->deps;
+
+            foreach ($classes as $class) {
+                if (!empty($allDeps[$class])) {
+                    $deps[$class] = $allDeps[$class];
+                }
+            }
+
             // If in our dependency tree we reference
             // to another class which handled in another file
             // we *must* duplicate that class definition in o
@@ -205,23 +213,20 @@ class Generator
         $filemap     = array();
         $extraLoader = false;
         $allClasses  = $this->classes;
-        $allDeps     = $this->deps;
 
         foreach (array_keys($namespaces) as $namespace) {
             $classes = array();
-            $deps    = array();
             foreach ($allClasses as $class => $file) {
-                if (strpos($class, $namespace) !== 0) continue;
-                $classes[$class] = $file;
-                unset($allClasses[$class]);
-                if (!empty($allDeps[$class])) {
-                    $deps[$class] = $allDeps[$class];
+                if (strpos($class, $namespace) !== 0) {
+                    $classes[$class] = $file;
+                    unset($allClasses[$class]);
                 }
             }
 
-            if (empty($classes)) continue;
-            $file = $this->renderClassesFile($classes, $namespace, $prefix);
-            $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
+            if (empty($classes)) {
+                $file = $this->renderClassesFile($classes, $namespace, $prefix);
+                $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
+            }
         }
         
         if (count($allClasses) > 0) {
