@@ -402,11 +402,16 @@ class Generator
      *
      *  @return []
      */
-    public function getPHPFiles()
+    public function getPHPFiles($zfiles)
     {
         $files = array();
         foreach ($this->path as $file) {
             $path = $file->getRealPath();
+            if (!empty($zfiles[$path]) && filemtime($path) <= $zfiles[$path]) {
+                continue;
+            }
+
+            $files[$path] =  filemtime($path);
             if (!preg_match('/\s(class|interface|trait)\s/ismU', file_get_contents($path))) {
                 /* no classes */
                 continue;
@@ -436,13 +441,9 @@ class Generator
 
         
         $this->loadCache($cache, $zfiles, $cached);
+        $files = $this->getPHPFiles($zfiles);
 
-        foreach ($this->getPHPFiles() as $path) {
-            if (!empty($zfiles[$path]) && filemtime($path) <= $zfiles[$path]) {
-                continue;
-            }
-
-            $files[$path] =  filemtime($path);
+        foreach ($files as $path) {
             $this->currentFile = $path;
             try {
                 $parser->parse($path);
