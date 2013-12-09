@@ -255,23 +255,30 @@ class Generator
         Artifex::save($output, $code);
     }
 
+    protected function getClassInfo($class)
+    {
+        $parts = explode("\\", $class);
+        $len   = count($parts)-1;
+        $sep   = "\\";
+
+        if ($len == 0) {
+            $parts = explode("_", $class);
+            $len   = count($parts) - 1;
+            $sep   = "_";
+        }
+
+        return compact('parts', 'len', 'sep');
+    }
+
     protected function checkIfShouldGroup($classes)
     {
         // group the classes in namespaces
         $namespaces = array();
         foreach ($classes as $class => $file) {
-            $parts = explode("\\", $class);
-            $len   = count($parts)-1;
-            $sep   = "\\";
+            $info = $this->getClassInfo($class);
 
-            if ($len == 0) {
-                $parts = explode("_", $class);
-                $len   = count($parts) - 1;
-                $sep   = "_";
-            }
-
-            for ($i = 0; $i < $len; $i++) {
-                $namespace = implode($sep, array_slice($parts, 0, $i+1)) . $sep;
+            for ($i = 0; $i < $info['len']; $i++) {
+                $namespace = implode($info['sep'], array_slice($info['parts'], 0, $i+1)) . $info['sep'];
                 if (empty($namespaces[$namespace])) {
                     $namespaces[$namespace] = 0;
                 }
