@@ -6,8 +6,6 @@
  *
  *  This is a generated file, do not modify it.
  */
-$GLOBALS['call_namespacesstat'] = 0;
-$GLOBALS['load_namespacesstat'] = 0;
 
 spl_autoload_register(function ($class) {
     /*
@@ -16,29 +14,25 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'autoloader\\test\\yyy\\foobar' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/namespaces/Foo.php',
-  'yet_another_silly_class' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/namespaces/Foo.php',
+  'autoloader\\cliapp' => '/home/crodas/projects/newest/Autoloader/lib/Autoloader/CliApp.php',
+  'autoloader\\generator' => '/home/crodas/projects/newest/Autoloader/lib/Autoloader/Generator.php',
+  'autoloader\\composer' => '/home/crodas/projects/newest/Autoloader/lib/Autoloader/Composer.php',
 );
     // }}}
 
 
     $class = strtolower($class);
     if (isset($classes[$class])) {
-        $GLOBALS['call_namespacesstat']++;
 
         if (is_array($class)) {
 
             if (!$class[1]($class[0], false)) {
-
-                $GLOBALS['load_namespacesstat']++;
 
                 require $classes[$class[0]];
 
             }
 
         } else if (!class_exists($class, false)) {
-
-            $GLOBALS['load_namespacesstat']++;
 
             require $classes[$class];
 
@@ -65,7 +59,3 @@ spl_autoload_register(function ($class) {
 }, true, true);
 
 
-function getnamespacesstat() {
-    global $load_namespacesstat, $call_namespacesstat;
-    return array('loaded' => $load_namespacesstat, 'calls' => $call_namespacesstat);
-}

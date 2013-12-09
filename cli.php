@@ -38,8 +38,10 @@ use Symfony\Component\Console\Application,
     Autoloader\CliApp,
     Autoloader\Generator;
 
-require __DIR__ . "/packages/autoload.php";
+require __DIR__ . "/vendor/autoload.php";
 
-$console = new Application();
-new CliApp($console);
-$console->run();
+$cli = new crodas\cli\Cli(__DIR__ . "/vendor/temp.php");
+$cli->addDirectory(__DIR__ . '/lib');
+$cli->main();
+
+

@@ -27,7 +27,7 @@ How it works
 
 It was designed to be integrated in your deployment scripts. 
 ```php
-require "lib/Autoloader/Generator.php";
+require "lib/Autoloader/loader.php";
 
 $generator = new \Autoloader\Generator("vendors/");
 $generator->generate("autoloader.php");
@@ -36,7 +36,7 @@ $generator->generate("autoloader.php");
 Or if you know what you're doing, you can use an instance of `Finder`.
 
 ```php
-require "lib/Autoloader/Generator.php";
+require "lib/Autoloader/loader.php";
 $finder = \Symfony\Component\Finder\Finder();
 $finder->files()->name('*.php')->in("vendors/");
 
@@ -47,7 +47,7 @@ $generator->generate("autoloader.php");
 How to install (for developers)
 ----------------------------
 
-In order to install you should use `compose`.
+In order to install you should use `composer`.
 
 ```
 php composer.phar install

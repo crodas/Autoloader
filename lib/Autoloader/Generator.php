@@ -100,18 +100,29 @@ class Generator
         return $this;
     }
 
+    protected function checkDirExists($dir)
+    {
+        if (!is_dir($dir)) {
+            throw new \RuntimeException(dirname($dir) . " is not a directory");
+        }
+
+        if (!is_writable($dir)) {
+            throw new \RuntimeException(dirname($dir) . " is not a writable");
+        }
+
+        if (file_exists($dir) && !is_dir($dir)) {
+            throw new \RuntimeException("{$output} exists but it isn't a file");
+        }
+    }
+
     public function setScanPath($dir) {
         if ($dir instanceof Finder || is_array($dir)) {
             $this->path = $dir;
             return true;
         }
 
-        if (!is_dir($dir)) {
-            throw new \RuntimeException("{$dir} doesn't exists");
-        }
-        if (!is_readable($dir)) {
-            throw new \RuntimeException("{$dir} cannot be read");
-        }
+        $this->checkDirExists($dir);
+
         $finder = new Finder;
         $this->path = $finder->files()
             ->name('*.php')
@@ -159,6 +170,63 @@ class Generator
         return $dir . preg_replace("/(\.+|\.\_)/", ".", $file);
     }
 
+    protected function getClassesDeps($classes)
+    {
+        $deps    = array();
+        $allDeps = $this->deps;
+
+        foreach ($classes as $class => $file) {
+            if (!empty($allDeps[$class])) {
+                $deps[$class] = $allDeps[$class];
+            }
+        }
+
+        return $deps;
+    }
+
+    protected function renderClassesFile($classes, $namespace, $prefix)
+    {
+        $deps = $this->getClassesDeps($classes);
+
+        // If in our dependency tree we reference
+        // to another class which handled in another file
+        // we *must* duplicate that class definition in o
+        // order to make autoloading simpler
+        foreach ($deps as $dep) {
+            foreach ($dep as $class) {
+                if (empty($classes[$class[0]])) {
+                    $classes[$class[0]] = $this->classes[$class[0]];
+                }
+            }
+        }
+
+        $file  = $this->getNamespacefile($namespace, $prefix);
+        $nargs = $this->getTemplateArgs($file, compact('classes', 'deps'));
+        $code  = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
+        Artifex::save($file, $code);
+
+        return $file;
+    }
+
+    protected function getClassesByNamespace($namespaces, $allClasses)
+    {
+        $nsClasses = array();
+        foreach (array_keys($namespaces) as $namespace) {
+            $classes = array();
+            foreach ($allClasses as $class => $file) {
+                if (strpos($class, $namespace) === 0) {
+                    $classes[$class] = $file;
+                    unset($allClasses[$class]);
+                }
+            }
+            $nsClasses[$namespace] = $classes;
+        }
+        if (count($allClasses) > 0) {
+            $nsClasses['-all'] = $allClasses;
+        }
+        return $nsClasses;
+    }
+
     protected function renderMultiple($output, $namespaces)
     {
         // sort them by length
@@ -171,77 +239,10 @@ class Generator
         $filemap     = array();
         $extraLoader = false;
         $allClasses  = $this->classes;
-        $allDeps     = $this->deps;
 
-        foreach (array_keys($namespaces) as $namespace) {
-            $classes = array();
-            $deps    = array();
-            foreach ($allClasses as $class => $file) {
-                if (strpos($class, $namespace) !== 0) continue;
-                $classes[$class] = $file;
-                unset($allClasses[$class]);
-                if (!empty($allDeps[$class])) {
-                    $deps[$class] = $allDeps[$class];
-                }
-            }
-
-            if (empty($classes)) continue;
-
-            // If in our dependency tree we reference
-            // to another class which handled in another file
-            // we *must* duplicate that class definition in o
-            // order to make autoloading simpler
-            foreach ($deps as $dep) {
-                foreach ($dep as $class) {
-                    if (empty($classes[$class[0]])) {
-                        $classes[$class[0]] = $this->classes[$class[0]];
-                    }
-                }
-            }
-
-
-            $file = $this->getNamespacefile($namespace, $prefix);
-            if ($this->relative) {
-                $filemap[$namespace] = Path::getRelative($file, $output);
-            } else {
-                $filemap[$namespace] = $file;
-            }
-
-
-            $nargs = $this->getTemplateArgs($file, compact('classes', 'deps'));
-            $code  = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
-            Artifex::save($file, $code);
-        }
-        
-        if (count($allClasses) > 0) {
-            $classes = array();
-            $deps    = array();
-            foreach ($allClasses as $class => $file) {
-                $classes[$class] = $file;
-                if (!empty($allDeps[$class])) {
-                    $deps[$class] = $allDeps[$class];
-                }
-            }
-
-            foreach ($deps as $dep) {
-                foreach ($dep as $class) {
-                    if (empty($classes[$class[0]])) {
-                        $classes[$class[0]] = $this->classes[$class[0]];
-                    }
-                }
-            }
-
-
-            $file = $this->getNamespacefile('-all', $prefix);
-            if ($this->relative) {
-                $filemap['-all'] = Path::getRelative($file, $output);
-            } else {
-                $filemap['-all'] = $file;
-            }
-
-            $nargs  = $this->getTemplateArgs($file, compact('classes', 'deps'));
-            $code   = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
-            Artifex::save($file, $code);
+        foreach ($this->getClassesByNamespace($namespaces, $allClasses) as $namespace => $classes) {
+            $file = $this->renderClassesFile($classes, $namespace, $prefix);
+            $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
         }
 
         $nargs = array_merge($this->getTemplateArgs(), compact('filemap', 'relative', 'extraLoader'));
@@ -255,23 +256,30 @@ class Generator
         Artifex::save($output, $code);
     }
 
+    protected function getClassInfo($class)
+    {
+        $parts = explode("\\", $class);
+        $len   = count($parts)-1;
+        $sep   = "\\";
+
+        if ($len == 0) {
+            $parts = explode("_", $class);
+            $len   = count($parts) - 1;
+            $sep   = "_";
+        }
+
+        return compact('parts', 'len', 'sep');
+    }
+
     protected function checkIfShouldGroup($classes)
     {
         // group the classes in namespaces
         $namespaces = array();
         foreach ($classes as $class => $file) {
-            $parts = explode("\\", $class);
-            $len   = count($parts)-1;
-            $sep   = "\\";
+            $info = $this->getClassInfo($class);
 
-            if ($len == 0) {
-                $parts = explode("_", $class);
-                $len   = count($parts) - 1;
-                $sep   = "_";
-            }
-
-            for ($i = 0; $i < $len; $i++) {
-                $namespace = implode($sep, array_slice($parts, 0, $i+1)) . $sep;
+            for ($i = 0; $i < $info['len']; $i++) {
+                $namespace = implode($info['sep'], array_slice($info['parts'], 0, $i+1)) . $info['sep'];
                 if (empty($namespaces[$namespace])) {
                     $namespaces[$namespace] = 0;
                 }
@@ -291,9 +299,8 @@ class Generator
         return new \crodas\ClassInfo\ClassInfo;
     }
 
-    protected function generateClassDependencyTree()
+    protected function buildDepTree($class, &$loaded)
     {
-        $buildDepTree = function($next, $class) use (&$loaded) {
             $deps = array();
             if (isset($loaded[$class->getName()])) {
                 return array();
@@ -303,16 +310,19 @@ class Generator
             if ($parent = $class->getParent()) {
                 $zdeps  = array_merge(array($class->getParent()), $zdeps);
             }
-            if (count($zdeps) > 0) {
-                foreach (array_reverse($zdeps) as $dep){
-                    if (!$dep->isUserDefined()) continue;
-                    $deps   = array_merge($deps, $next($next, $dep));
+            
+            foreach (array_reverse($zdeps) as $dep){
+                if ($dep->isUserDefined()) {
+                    $deps   = array_merge($deps, $this->buildDepTree($dep, $loaded));
                     $deps[] = serialize(array(strtolower($dep->getName()), $dep->getType() . '_exists'));
                 }
             }
-            return $deps;
-        };
 
+            return $deps;
+    }
+
+    protected function generateClassDependencyTree()
+    {
         $types   = array();
         $classes = array();
         $deps    = array();
@@ -322,7 +332,7 @@ class Generator
             }
             $types[$class->getType()] = 1;
             $loaded = array();
-            $dep = $buildDepTree($buildDepTree, $class);
+            $dep = $this->buildDepTree($class, $loaded);
             if (count($dep) > 0) {
                 $deps[$id] = array_unique($dep);
                 $deps[$id] = array_map('unserialize', $deps[$id]);
@@ -357,37 +367,8 @@ class Generator
         return $return;
     }
 
-    public function generate($output, $cache = '')
+    protected function loadCache($cache, &$Zfiles, &$cached)
     {
-        $dir = realpath(dirname($output));
-        if (!is_dir($dir)) {
-            throw new \RuntimeException(dirname($dir) . " is not a directory");
-        }
-
-        if (!is_writable($dir)) {
-            throw new \RuntimeException(dirname($dir) . " is not a writable");
-        }
-
-        if (file_exists($dir) && !is_dir($dir)) {
-            throw new \RuntimeException("{$output} exists but it isn't a file");
-        }
-
-        $deps      = array();
-        $relatives = array();
-        $callback  = $this->callback;
-
-
-        $this->classes_obj = array();
-        if (!$callback) {
-            $callback = function() {};
-        }
-
-        $parser = $this->getParser();
-        $zfiles = array();
-        $cached = array();
-        $files  = array();
-        $hit    = array();
-
         if ($cache && is_file($cache)) {
             $data = unserialize(file_get_contents($cache));
             if (is_array($data) && count($data) == 2) {
@@ -395,20 +376,75 @@ class Generator
                 $cached = $data[1];
             }
         }
+    }
 
+    protected function loadClassesFromCache($cached)
+    {
+        foreach ($cached as $id => $class) {
+            if (!empty($hit[$class->getFile()])) {
+                $this->classes_obj[$id] = $class;
+            }
+        }
+    }
+
+
+    protected function saveCache($cache, $zfiles, $cached)
+    {
+        if ($cache) {
+            $tocache = array(array_merge($zfiles, $files), array_merge($cached, $this->classes_obj));
+            file_put_contents($cache, serialize($tocache));
+        }
+    }
+
+    /**
+     *  Return a list of php files found which contains at least one
+     *  class, interface or trait
+     *
+     *  @return []
+     */
+    public function getPHPFiles($zfiles)
+    {
+        $files = array();
         foreach ($this->path as $file) {
-            $path  = $file->getRealPath();
+            $path = $file->getRealPath();
             if (!empty($zfiles[$path]) && filemtime($path) <= $zfiles[$path]) {
-                $hit[$path] = 1;
                 continue;
             }
 
             $files[$path] =  filemtime($path);
-            $this->currentFile = $path;
             if (!preg_match('/\s(class|interface|trait)\s/ismU', file_get_contents($path))) {
                 /* no classes */
                 continue;
             }
+            $files[] = $path;
+        }
+        return $files;
+    }
+
+    public function generate($output, $cache = '')
+    {
+        $dir = realpath(dirname($output));
+        $this->checkDirExists($dir);
+
+        $deps      = array();
+        $relatives = array();
+        $callback  = $this->callback;
+
+
+        $this->classes_obj = array();
+        $callback = !empty($callback) ? $callback : function() {};
+
+        $parser = $this->getParser();
+        $zfiles = array();
+        $cached = array();
+        $files  = array();
+
+        
+        $this->loadCache($cache, $zfiles, $cached);
+        $files = $this->getPHPFiles($zfiles);
+
+        foreach ($files as $path) {
+            $this->currentFile = $path;
             try {
                 $parser->parse($path);
                 $callback($path, $parser->getClasses());
@@ -418,19 +454,14 @@ class Generator
         }
 
         $this->classes_obj = $parser->getClasses();
-        foreach ($cached as $id => $class) {
-            if (!empty($hit[$class->getFile()])) {
-                $this->classes_obj[$id] = $class;
-            }
-        }
-
-        if ($cache) {
-            $tocache = array(array_merge($zfiles, $files), array_merge($cached, $this->classes_obj));
-            file_put_contents($cache, serialize($tocache));
-        }
-
+        $this->loadClassesFromCache($cached);
+        $this->saveCache($cache, $zfiles, $files);
         $this->generateClassDependencyTree();
+        $this->writeAutoloader($output);
+    }
 
+    protected function writeAutoloader($output)
+    {
         if (!$this->singleFile) {
             $namespaces = $this->checkIfShouldGroup($this->classes);
             if (count($namespaces) > 0) {
