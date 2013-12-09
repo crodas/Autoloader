@@ -87,12 +87,6 @@ class CliApp
      */
     public function generate(InputInterface $input, OutputInterface $output)
     {
-        $dirs = array();
-        $file = $input->getArgument('output');
-        foreach ($input->getArgument('dir') as $dir) {
-            $dirs[] = $this->getPath($dir);
-        }
-
         $file = $this->getPath($input->getArgument('output'));
         $finder = $this->getFinderObject(
             $input->getOption('library'),
