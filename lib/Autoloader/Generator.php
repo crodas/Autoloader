@@ -310,13 +310,14 @@ class Generator
             if ($parent = $class->getParent()) {
                 $zdeps  = array_merge(array($class->getParent()), $zdeps);
             }
-            if (count($zdeps) > 0) {
-                foreach (array_reverse($zdeps) as $dep){
-                    if (!$dep->isUserDefined()) continue;
+            
+            foreach (array_reverse($zdeps) as $dep){
+                if ($dep->isUserDefined()) {
                     $deps   = array_merge($deps, $this->buildDepTree($dep, $loaded));
                     $deps[] = serialize(array(strtolower($dep->getName()), $dep->getType() . '_exists'));
                 }
             }
+
             return $deps;
     }
 
