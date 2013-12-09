@@ -378,6 +378,14 @@ class Generator
         }
     }
 
+    protected function saveCache($cache, $zfiles, $cached)
+    {
+        if ($cache) {
+            $tocache = array(array_merge($zfiles, $files), array_merge($cached, $this->classes_obj));
+            file_put_contents($cache, serialize($tocache));
+        }
+    }
+
     public function generate($output, $cache = '')
     {
         $dir = realpath(dirname($output));
@@ -428,13 +436,14 @@ class Generator
             }
         }
 
-        if ($cache) {
-            $tocache = array(array_merge($zfiles, $files), array_merge($cached, $this->classes_obj));
-            file_put_contents($cache, serialize($tocache));
-        }
+        $this->saveCache($cache, $zfiles, $files);
 
         $this->generateClassDependencyTree();
+        $this->writeAutoloader($output);
+    }
 
+    protected function writeAutoloader($output)
+    {
         if (!$this->singleFile) {
             $namespaces = $this->checkIfShouldGroup($this->classes);
             if (count($namespaces) > 0) {
