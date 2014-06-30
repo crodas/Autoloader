@@ -41,7 +41,7 @@ use Symfony\Component\Finder\Finder,
     Notoj\Notoj,
     Artifex\Util\PHPTokens,
     Artifex,
-    crodas\Path;
+    crodas\FileUtil\Path;
 
 class Generator
 {

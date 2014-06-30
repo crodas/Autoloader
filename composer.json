@@ -15,7 +15,7 @@
         "symfony/console": "2.1.*",
         "symfony/finder": "2.1.*",
         "crodas/Artifex":"~0.1",
-        "crodas/path": "~0.1",
+        "crodas/file-util": "~0.1",
         "crodas/class-info": "~0.1",
         "crodas/cli": "*"
     },

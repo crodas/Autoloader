@@ -16,25 +16,17 @@ spl_autoload_register(function ($class) {
 
     // classes {{{
     static $classes = array (
-  'xxxinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface2.php',
-  'autoloader\\test\\complex\\xxxfoobar' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/anotherInterface.php',
-  'barinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface1.php',
   'foointerface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface.php',
+  'barinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface1.php',
   'autoloader\\test\\complex\\complex' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/Foo.php',
   'simple' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/Bar.php',
+  'autoloader\\test\\complex\\xxxfoobar' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/anotherInterface.php',
+  'xxxinterface' => '/home/crodas/projects/newest/Autoloader/tests/fixtures/complex/interface2.php',
 );
     // }}}
 
     // deps {{{
     static $deps    = array (
-  'barinterface' => 
-  array (
-    0 => 
-    array (
-      0 => 'xxxinterface',
-      1 => 'interface_exists',
-    ),
-  ),
   'foointerface' => 
   array (
     0 => 
@@ -45,6 +37,14 @@ spl_autoload_register(function ($class) {
     1 => 
     array (
       0 => 'barinterface',
+      1 => 'interface_exists',
+    ),
+  ),
+  'barinterface' => 
+  array (
+    0 => 
+    array (
+      0 => 'xxxinterface',
       1 => 'interface_exists',
     ),
   ),
