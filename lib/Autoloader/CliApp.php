@@ -41,93 +41,22 @@ use Symfony\Component\Console\Application,
     Symfony\Component\Console\Input\InputArgument,
     Symfony\Component\Console\Input\InputOption,
     Symfony\Component\Console\Output\OutputInterface,
-    Symfony\Component\Finder\Finder,
-    Notoj\ReflectionMethod;
+    Symfony\Component\Finder\Finder;
  
-/**
- *  @autoloader("\Notoj\ReflectionMethod", "Generator")
- */
-class CliApp extends \stdClass
+class CliApp
 {
-    public function __construct(Application $app)
+    protected function getPath($file)
     {
-        $self = $this;
-        foreach(get_class_methods($this) as $method) {
-            if ($method == __FUNCTION__) continue;
-            $conf = $this->getAnnotations($method);
-            if (!array_key_exists('cli', $conf)) continue;
-            $command = $app->register($method)
-                ->setDescription($conf['help'][0])
-                ->setCode(function(InputInterface $input, OutputInterface $output) use ($method, $self) {
-                    $self->$method($input, $output);
-                });
-            if (!empty($conf['arg'])) {
-                $args = array();
-                foreach((array)$conf['arg'] as $arg) {
-                    $opts = InputArgument::REQUIRED;
-                    if (!empty($arg['array'])) {
-                        $opts |= InputArgument::IS_ARRAY;
-                    }
-                    $args[] = new InputArgument($arg['name'], $opts , $arg['help']);
-                }
-                $command->setDefinition($args);
-            }
-            if (!empty($conf['opt'])) {
-                foreach ($conf['opt'] as $opt) {
-                    if (array_key_exists('default', $opt)) {
-                        $command->addOption($opt['name'], null, InputOption::VALUE_OPTIONAL, $opt['help'], $opt['default']);
-                    } else {
-                        $command->addOption($opt['name'], null, InputOption::VALUE_NONE, $opt['help']);
-                    }
-                }
-            }
-        }
-    }
-
-    protected function getAnnotations($method)
-    {
-        $reflection  = new ReflectionMethod($this, $method);
-        $annotations = array();
-        $compounds   = array();
-        foreach($reflection->getAnnotations() as $method) {
-            $name = $method['method'];
-            if (isset($annotations[$name])) {
-                if (empty($compounds[$name])) {
-                    $compounds[$name]   = TRUE;
-                    $annotations[$name] = array($annotations[$name]);
-                }
-                $annotations[$name][] = $method['args'];
-                continue;
-            }
-            $annotations[$name] = $method['args'];
-        }
-        return $annotations;
-    }
-
-    /**
-     *  @cli
-     *  @help Generate autoloader
-     *  @opt(name='library', help="Generate the autoloader for a library (portability frendly)")
-     *  @opt(name='relative', help="Save as relative path")
-     *  @opt(name='multi', help="Split the autoloader in multiple files")
-     *  @opt(name='enable-cache', help="Create a cache file to speed-up re-generation")
-     *  @opt(name='include-psr-0', default=true, help="Include the PSR-0 autoloader")
-     *  @arg(name='output', help="Output autoloader")
-     *  @arg(name='dir', help="Directory to scan",array=true)
-     */
-    public function generate(InputInterface $input, OutputInterface $output)
-    {
-        $dirs = array();
-        $file = $input->getArgument('output');
-        foreach ($input->getArgument('dir') as $dir) {
-            if ($dir[0] !== '/') {
-                $dir = getcwd() . '/' . $dir;
-            }
-            $dirs[] = $dir;
-        }
-
         if ($file[0] !== '/') {
             $file = getcwd() . '/' . $file;
+        }
+        return $file;
+    }
+
+    protected function getFinderObject($isLibrary, $dirs)
+    {
+        foreach ($dirs as $id => $dir) {
+            $dirs[$id] = $this->getPath($dir);
         }
 
         $finder = new Finder();
@@ -135,18 +64,39 @@ class CliApp extends \stdClass
             ->name("*.php")
             ->in($dirs);
 
-        $relative = $input->getOption('relative');
-        $include  = $input->getOption('include-psr-0');
-        $cache    = $input->getOption('enable-cache');
-        $multi    = $input->getOption('multi');
-
-        if ($input->getOption('library')) {
+        if ($isLibrary) {
             $relative = true;
             $include  = false;
             $finder->filter(function($file) {
                 return preg_match("/test/i", $file) ? false : true;
             });
         }
+
+        return $finder;
+    }
+
+    /**
+     *  @Cli("generate", "Generate autoloader")
+     *  @Option('library')
+     *  @Option('relative')
+     *  @Option('multi')
+     *  @Option('enable-cache')
+     *  @Option('include-psr-0', default=true)
+     *  @Arg('output', REQUIRED)
+     *  @Arg('dir', REQUIRED|IS_ARRAY)
+     */
+    public function generate(InputInterface $input, OutputInterface $output)
+    {
+        $file = $this->getPath($input->getArgument('output'));
+        $finder = $this->getFinderObject(
+            $input->getOption('library'),
+            $input->getArgument('dir')
+        );
+
+        $relative = $input->getOption('relative');
+        $include  = $input->getOption('include-psr-0');
+        $cache    = $input->getOption('enable-cache');
+        $multi    = $input->getOption('multi');
 
         try {
             $generator = new Generator($finder);
