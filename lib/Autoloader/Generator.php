@@ -388,7 +388,7 @@ class Generator
     }
 
 
-    protected function saveCache($cache, $zfiles, $cached)
+    protected function saveCache($cache, $zfiles, $files, $cached)
     {
         if ($cache) {
             $tocache = array(array_merge($zfiles, $files), array_merge($cached, $this->classes_obj));
@@ -455,7 +455,7 @@ class Generator
 
         $this->classes_obj = $parser->getClasses();
         $this->loadClassesFromCache($cached);
-        $this->saveCache($cache, $zfiles, $files);
+        $this->saveCache($cache, $zfiles, $files, $cached);
         $this->generateClassDependencyTree();
         $this->writeAutoloader($output);
     }
