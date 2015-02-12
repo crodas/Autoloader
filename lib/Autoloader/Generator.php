@@ -39,9 +39,8 @@ namespace Autoloader;
 
 use Symfony\Component\Finder\Finder,
     Notoj\Notoj,
-    Artifex\Util\PHPTokens,
-    Artifex,
-    crodas\FileUtil\Path;
+    crodas\FileUtil\Path,
+    crodas\FileUtil\File;
 
 class Generator
 {
@@ -202,8 +201,8 @@ class Generator
 
         $file  = $this->getNamespacefile($namespace, $prefix);
         $nargs = $this->getTemplateArgs($file, compact('classes', 'deps'));
-        $code  = Artifex::load(__DIR__ . "/Template/namespace.loader.tpl.php", $nargs)->run();
-        Artifex::save($file, $code);
+        $code  = Templates::get('namespace')->render($nargs, true);
+        File::write($file, $code);
 
         return $file;
     }
@@ -246,14 +245,15 @@ class Generator
         }
 
         $nargs = array_merge($this->getTemplateArgs(), compact('filemap', 'relative', 'extraLoader'));
-        $code = Artifex::load(__DIR__ . "/Template/index.tpl.php", $nargs)->run();
-        Artifex::save($output, $code);
+        $code  = Templates::get('index')->render($nargs, true);
+        File::Write($output, $code);
     }
     
     protected function renderSingle($output)
     {
-        $code = Artifex::load(__DIR__ . "/Template/autoloader.tpl.php", $this->getTemplateArgs($output))->run();
-        Artifex::save($output, $code);
+        $code = Templates::get('autoloader')
+            ->render($this->GetTemplateArgs($output), true);
+        File::write($output, $code);
     }
 
     protected function getClassInfo($class)
@@ -301,24 +301,24 @@ class Generator
 
     protected function buildDepTree($class, &$loaded)
     {
-            $deps = array();
-            if (isset($loaded[$class->getName()])) {
-                return array();
+        $deps = array();
+        if (isset($loaded[$class->getName()])) {
+            return array();
+        }
+        $loaded[$class->getName()] = true;
+        $zdeps = array_merge($class->getInterfaces(), $class->getTraits());
+        if ($parent = $class->getParent()) {
+            $zdeps  = array_merge(array($class->getParent()), $zdeps);
+        }
+        
+        foreach (array_reverse($zdeps) as $dep){
+            if ($dep->isUserDefined()) {
+                $deps   = array_merge($deps, $this->buildDepTree($dep, $loaded));
+                $deps[] = strtolower($dep->getName());
             }
-            $loaded[$class->getName()] = true;
-            $zdeps = array_merge($class->getInterfaces(), $class->getTraits());
-            if ($parent = $class->getParent()) {
-                $zdeps  = array_merge(array($class->getParent()), $zdeps);
-            }
-            
-            foreach (array_reverse($zdeps) as $dep){
-                if ($dep->isUserDefined()) {
-                    $deps   = array_merge($deps, $this->buildDepTree($dep, $loaded));
-                    $deps[] = serialize(array(strtolower($dep->getName()), $dep->getType() . '_exists'));
-                }
-            }
+        }
 
-            return $deps;
+        return $deps;
     }
 
     protected function generateClassDependencyTree()
@@ -335,13 +335,12 @@ class Generator
             $dep = $this->buildDepTree($class, $loaded);
             if (count($dep) > 0) {
                 $deps[$id] = array_unique($dep);
-                $deps[$id] = array_map('unserialize', $deps[$id]);
             }
-            $classes[$id] = $class->getFile();
+            $classes[$id] = array($class->GetFile(), $class->getType() . '_exists');
         }
 
-        $this->hasTraits    = is_callable('trait_exists') && !empty($types[$this->trait]);
-        $this->hasInterface = !empty($types[T_INTERFACE]);
+        $this->hasTraits    = is_callable('trait_exists') && !empty($types['trait']);
+        $this->hasInterface = !empty($types['interface']);
         $this->classes      = $classes;
         $this->deps         = $deps;
     }
@@ -360,7 +359,7 @@ class Generator
 
         if ($this->relative && $file) {
             foreach ($return['classes'] as $class => $fileClass) {
-                $return['classes'][$class] = Path::getRelative($fileClass, $file);
+                $return['classes'][$class][0] = Path::getRelative($fileClass[0], $file);
             }
         }
 

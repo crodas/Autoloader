@@ -9,7 +9,7 @@
 
 spl_autoload_register(function($class) {
     static $loaded     = array();
-    static $namespaces = __@filemap__;
+    static $namespaces = {{ @$filemap}};
 
     $class = strtolower($class);
 
@@ -20,12 +20,13 @@ spl_autoload_register(function($class) {
         }
 
         if (empty($loaded[$namespace])) {
-            #* if ($relative)
+            @if ($relative)
             $loaded[$namespace] = require __DIR__ . $file;
-            #* else
+            @else
             $loaded[$namespace] = require $file;
-            #* end
+            @end
         }
         return $loaded[$namespace]( $class );
     }
 });
+
