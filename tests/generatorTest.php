@@ -34,6 +34,7 @@ class generatorTest extends \phpunit_framework_testcase
 
         $generator = new Autoloader\Generator(__DIR__ . '/fixtures/' . $targetName);
         $generator->enableStats($targetName . 'stat');
+        $generator->includeFiles([__FILE__]);
         $generator->setStepCallback(function($callback) {
         });
         $generator->relativePaths($relative);

@@ -48,6 +48,14 @@ spl_autoload_register(function ($class) {
 @end
 );
 
+@foreach ($includes as $include)
+    @if ($relative)
+        require_once __DIR__ . {{@$include}};
+    @else
+        require_once {{@$include}};
+    @end
+@end
+
 @if ($stats)
 function get{{$stats}}() {
     global $load_{{$stats}}, $call_{{$stats}};

@@ -30,3 +30,10 @@ spl_autoload_register(function($class) {
     }
 });
 
+@foreach ($includes as $include)
+    @if ($relative)
+        require_once __DIR__ . {{@$include}};
+    @else
+        require_once {{@$include}};
+    @end
+@end

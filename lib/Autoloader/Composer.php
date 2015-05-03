@@ -41,10 +41,27 @@ use Symfony\Component\Finder\Finder;
 
 class Composer
 {
+    protected static function getFilesToInclude($dir)
+    {
+        $files = array();
+        foreach (glob("$dir/*/*/composer.json") as $json) {
+            $content = json_decode(file_get_contents($json), true);
+            if (!empty($content['autoload']) && !empty($content['autoload']['files'])) {
+                $files[] = array_map(function($file) use ($json) {
+                    return dirname($json) . '/' . $file;
+                }, (array)$content['autoload']['files']);
+            }
+        }
+
+        return call_user_func_array('array_merge', $files);
+    }
+
     public static function generate()
     {
-        $dir  = getcwd() . "/";
+        $dir  = getcwd();
         $file = "$dir/vendor/autoload.php"; 
+
+        $include = self::getFilesToinclude($dir . "/vendor/");
 
         $finder = new Finder();
         $finder->files()
@@ -53,6 +70,7 @@ class Composer
 
         $generator = new Generator($finder);
         $generator->relativePaths(true)
+            ->includeFiles($include)
             ->includePSR0Autoloader(false)
             ->multipleFiles()
             ->generate($file, "$file.cache");

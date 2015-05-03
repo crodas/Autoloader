@@ -9,7 +9,7 @@
     ],
     "minimum-stability": "dev",
     "license": "BSD-4-Clause",
-    "version": "v0.1.10",
+    "version": "v0.1.11",
     "require": {
         "php": ">=5.3.0",
         "symfony/console": "2.1.*",
@@ -17,7 +17,8 @@
         "crodas/Artifex":"~0.1",
         "crodas/file-util": "~0.1",
         "crodas/class-info": "~0.1",
-        "crodas/cli": "*"
+        "crodas/cli": "*",
+        "crodas/simple-view-engine": "*"
     },
     "autoload": {
         "psr-0": {
