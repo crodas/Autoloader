@@ -51,6 +51,7 @@ class Generator
 
     protected $namespace = "";
     protected $alias = array();
+    protected $includes = array();
     protected $lastClass = NULL;
 
     protected $trait;
@@ -84,6 +85,12 @@ class Generator
     public function multipleFiles()
     {
         $this->singleFile = false;
+        return $this;
+    }
+
+    public function includeFiles(Array $files)
+    {
+        $this->includes = array_merge($this->includes, $files);
         return $this;
     }
 
@@ -349,7 +356,7 @@ class Generator
     {
         $args  = array(
             'classes', 'relative', 'deps', 'include_psr0', 
-            'stats', 'hasTraits', 'hasInterface'
+            'stats', 'hasTraits', 'hasInterface', 'includes',
         );
 
         $return = array();
@@ -360,6 +367,9 @@ class Generator
         if ($this->relative && $file) {
             foreach ($return['classes'] as $class => $fileClass) {
                 $return['classes'][$class][0] = Path::getRelative($fileClass[0], $file);
+            }
+            foreach ($return['includes'] as $id => $include) {
+                $return['includes'][$id] = Path::getRelative($include, $file);
             }
         }
 

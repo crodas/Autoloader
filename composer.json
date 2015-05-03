@@ -17,7 +17,8 @@
         "crodas/Artifex":"~0.1",
         "crodas/file-util": "~0.1",
         "crodas/class-info": "~0.1",
-        "crodas/cli": "*"
+        "crodas/cli": "*",
+        "crodas/simple-view-engine": "*"
     },
     "autoload": {
         "psr-0": {

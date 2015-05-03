@@ -14,29 +14,14 @@ spl_autoload_register(function ($class) {
         This array has a map of (class => file)
     */
     static $classes = array (
-  'barinterface_rel' => 
-  array (
-    0 => '/../complex_relative/interface1.php',
-    1 => 'class_exists',
-  ),
-  'xxxinterface_rel' => 
-  array (
-    0 => '/../complex_relative/interface2.php',
-    1 => 'interface_exists',
-  ),
-  'simple_rel' => 
-  array (
-    0 => '/../complex_relative/Bar.php',
-    1 => 'class_exists',
-  ),
   'foointerface_rel' => 
   array (
     0 => '/../complex_relative/interface.php',
     1 => 'interface_exists',
   ),
-  'autoloader\\test\\complex\\xxxfoobar_rel' => 
+  'barinterface_rel' => 
   array (
-    0 => '/../complex_relative/anotherInterface.php',
+    0 => '/../complex_relative/interface1.php',
     1 => 'interface_exists',
   ),
   'autoloader\\test\\complex\\complex_rel' => 
@@ -44,17 +29,32 @@ spl_autoload_register(function ($class) {
     0 => '/../complex_relative/Foo.php',
     1 => 'class_exists',
   ),
+  'simple_rel' => 
+  array (
+    0 => '/../complex_relative/Bar.php',
+    1 => 'class_exists',
+  ),
+  'autoloader\\test\\complex\\xxxfoobar_rel' => 
+  array (
+    0 => '/../complex_relative/anotherInterface.php',
+    1 => 'interface_exists',
+  ),
+  'xxxinterface_rel' => 
+  array (
+    0 => '/../complex_relative/interface2.php',
+    1 => 'interface_exists',
+  ),
 );
 
     static $deps    = array (
-  'barinterface_rel' => 
-  array (
-    0 => 'xxxinterface_rel',
-  ),
   'foointerface_rel' => 
   array (
     0 => 'xxxinterface_rel',
     1 => 'barinterface_rel',
+  ),
+  'barinterface_rel' => 
+  array (
+    0 => 'xxxinterface_rel',
   ),
   'autoloader\\test\\complex\\complex_rel' => 
   array (
@@ -107,6 +107,8 @@ if (
     return false;
 } 
 );
+
+        require_once __DIR__ . '/../../generatorTest.php';
 
 function getcomplex_relativestat() {
     global $load_complex_relativestat, $call_complex_relativestat;
