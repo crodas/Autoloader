@@ -39,6 +39,8 @@ namespace Autoloader;
 
 use Symfony\Component\Finder\Finder;
 
+require getcwd() . '/vendor/autoload.php';
+
 class Composer
 {
     protected static function getFilesToInclude($dir)

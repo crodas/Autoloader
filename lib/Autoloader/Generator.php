@@ -74,6 +74,7 @@ class Generator
             $this->setScanPath($dir);
         }
         $this->trait = defined('T_TRAIT') ? T_TRAIT : "";
+        ini_set('xdebug.max_nesting_level', 2000);
     }
 
     public function singleFile()
@@ -200,8 +201,8 @@ class Generator
         // order to make autoloading simpler
         foreach ($deps as $dep) {
             foreach ($dep as $class) {
-                if (empty($classes[$class[0]])) {
-                    $classes[$class[0]] = $this->classes[$class[0]];
+                if (empty($classes[$class])) {
+                    $classes[$class] = $this->classes[$class];
                 }
             }
         }
@@ -251,7 +252,8 @@ class Generator
             $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
         }
 
-        $nargs = array_merge($this->getTemplateArgs(), compact('filemap', 'relative', 'extraLoader'));
+        $nargs = array_merge($this->getTemplateArgs($output), compact('filemap', 'relative', 'extraLoader'));
+        $nargs['relative'] = true;
         $code  = Templates::get('index')->render($nargs, true);
         File::Write($output, $code);
     }
@@ -363,8 +365,9 @@ class Generator
         foreach ($args as $arg) {
             $return[$arg] = array_key_exists($arg, $default) ? $default[$arg] : $this->$arg;
         }
+        $return['relative'] = $return['relative'] && !empty($file);
 
-        if ($this->relative && $file) {
+        if ($return['relative']) {
             foreach ($return['classes'] as $class => $fileClass) {
                 $return['classes'][$class][0] = Path::getRelative($fileClass[0], $file);
             }
