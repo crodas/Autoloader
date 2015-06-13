@@ -14,6 +14,21 @@ spl_autoload_register(function ($class) {
         This array has a map of (class => file)
     */
     static $classes = array (
+  'autoloader\\test\\complex\\xxxfoobar_rel' => 
+  array (
+    0 => '/../complex_relative/anotherInterface.php',
+    1 => 'interface_exists',
+  ),
+  'simple_rel' => 
+  array (
+    0 => '/../complex_relative/Bar.php',
+    1 => 'class_exists',
+  ),
+  'autoloader\\test\\complex\\complex_rel' => 
+  array (
+    0 => '/../complex_relative/Foo.php',
+    1 => 'class_exists',
+  ),
   'foointerface_rel' => 
   array (
     0 => '/../complex_relative/interface.php',
@@ -24,21 +39,6 @@ spl_autoload_register(function ($class) {
     0 => '/../complex_relative/interface1.php',
     1 => 'interface_exists',
   ),
-  'autoloader\\test\\complex\\complex_rel' => 
-  array (
-    0 => '/../complex_relative/Foo.php',
-    1 => 'class_exists',
-  ),
-  'simple_rel' => 
-  array (
-    0 => '/../complex_relative/Bar.php',
-    1 => 'class_exists',
-  ),
-  'autoloader\\test\\complex\\xxxfoobar_rel' => 
-  array (
-    0 => '/../complex_relative/anotherInterface.php',
-    1 => 'interface_exists',
-  ),
   'xxxinterface_rel' => 
   array (
     0 => '/../complex_relative/interface2.php',
@@ -47,6 +47,14 @@ spl_autoload_register(function ($class) {
 );
 
     static $deps    = array (
+  'autoloader\\test\\complex\\complex_rel' => 
+  array (
+    0 => 'autoloader\\test\\complex\\xxxfoobar_rel',
+    1 => 'xxxinterface_rel',
+    2 => 'barinterface_rel',
+    3 => 'foointerface_rel',
+    4 => 'simple_rel',
+  ),
   'foointerface_rel' => 
   array (
     0 => 'xxxinterface_rel',
@@ -55,14 +63,6 @@ spl_autoload_register(function ($class) {
   'barinterface_rel' => 
   array (
     0 => 'xxxinterface_rel',
-  ),
-  'autoloader\\test\\complex\\complex_rel' => 
-  array (
-    0 => 'autoloader\\test\\complex\\xxxfoobar_rel',
-    1 => 'xxxinterface_rel',
-    2 => 'barinterface_rel',
-    3 => 'foointerface_rel',
-    4 => 'simple_rel',
   ),
 );
 
