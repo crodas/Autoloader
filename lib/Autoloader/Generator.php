@@ -447,7 +447,7 @@ class Generator
     public function parse($output, $cache = NULL)
     {
         if (!empty($this->parsed)) {
-            return $this->getTemplateArgs();;
+            return $this->getTemplateArgs($output);
         }
 
         $dir = realpath(dirname($output));
@@ -482,15 +482,16 @@ class Generator
 
         $this->classes_obj = $parser->getClasses();
         $this->loadClassesFromCache($cached);
-        $this->saveCache($cache, $zfiles, $files, $cached);
         $this->generateClassDependencyTree();
-        return $this->getTemplateArgs();
+        $this->saveCache($cache, $zfiles, $files, $cached);
+        return $this->getTemplateArgs($output);
     }
 
     public function generate($output, $cache = '')
     {
-        $this->parse($output, $cache);
+        $data = $this->parse($output, $cache);
         $this->writeAutoloader($output);
+        return $data;
     }
 
     protected function writeAutoloader($output)
