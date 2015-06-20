@@ -61,6 +61,8 @@ class Generator
     protected $hasTraits;
     protected $hasInterface;
 
+    protected $parsed = false;
+
     /** settings */
 
     protected $relative     = false;
@@ -91,18 +93,24 @@ class Generator
 
     public function includeFiles(Array $files)
     {
+        /** reset all parser data */
+        $this->parsed = false;
         $this->includes = array_merge($this->includes, $files);
         return $this;
     }
 
     public function relativePaths ($rel = true)
     {
+        /** reset all parser data */
+        $this->parsed = false;
         $this->relative = $rel;
         return $this;
     }
 
     public function IncludePSR0Autoloader($psr0 = true)
     {
+        /** reset all parser data */
+        $this->parserd = false;
         $this->include_psr0 = $psr0;
         return $this;
     }
@@ -123,6 +131,9 @@ class Generator
     }
 
     public function setScanPath($dir) {
+        /** reset all parser data */
+        $this->parsed = false;
+
         if ($dir instanceof Finder || is_array($dir)) {
             $this->path = $dir;
             return true;
@@ -414,7 +425,7 @@ class Generator
      *
      *  @return []
      */
-    public function getPHPFiles($zfiles)
+    public function getPHPFiles(&$zfiles)
     {
         $files = array();
         foreach ($this->path as $file) {
@@ -423,7 +434,7 @@ class Generator
                 continue;
             }
 
-            $files[$path] =  filemtime($path);
+            $zfiles[$path] =  filemtime($path);
             if (!preg_match('/\s(class|interface|trait)\s/ismU', file_get_contents($path))) {
                 /* no classes */
                 continue;
@@ -433,8 +444,12 @@ class Generator
         return $files;
     }
 
-    public function generate($output, $cache = '')
+    public function parse($output, $cache = NULL)
     {
+        if (!empty($this->parsed)) {
+            return $this->getTemplateArgs($output);
+        }
+
         $dir = realpath(dirname($output));
         $this->checkDirExists($dir);
 
@@ -467,9 +482,16 @@ class Generator
 
         $this->classes_obj = $parser->getClasses();
         $this->loadClassesFromCache($cached);
-        $this->saveCache($cache, $zfiles, $files, $cached);
         $this->generateClassDependencyTree();
+        $this->saveCache($cache, $zfiles, $files, $cached);
+        return $this->getTemplateArgs($output);
+    }
+
+    public function generate($output, $cache = '')
+    {
+        $data = $this->parse($output, $cache);
         $this->writeAutoloader($output);
+        return $data;
     }
 
     protected function writeAutoloader($output)
