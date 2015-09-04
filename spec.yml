@@ -1,0 +1,5 @@
+name: autoloader.phar
+files:
+    - lib/
+    -
+        vendor: { exclude: [tests, Tests] }
