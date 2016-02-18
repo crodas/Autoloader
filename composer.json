@@ -15,7 +15,7 @@
         "symfony/console": "^2.1",
         "symfony/finder": "^2.1",
         "crodas/file-util": "^0.1",
-        "crodas/class-info": "^0.1",
+        "crodas/class-info": "^0.2",
         "crodas/cli": "^0.1",
         "crodas/simple-view-engine": "^0.1"
     },

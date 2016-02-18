@@ -1,5 +1,5 @@
 name: autoloader.phar
 files:
     - lib/
-    -
-        vendor: { exclude: [tests, Tests] }
+    - vendor: { exclude: [tests, Tests] }
+main: cli.php
