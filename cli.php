@@ -40,7 +40,7 @@ use Symfony\Component\Console\Application,
 
 require __DIR__ . "/vendor/autoload.php";
 
-$cli = new crodas\cli\Cli(__DIR__ . "/vendor/temp.php");
+$cli = new crodas\cli\Cli;
 $cli->addDirectory(__DIR__ . '/lib');
 $cli->main();
 
