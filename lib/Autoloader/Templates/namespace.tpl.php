@@ -7,7 +7,13 @@
  *  This is a generated file, do not modify it.
  */
 
-return function($class) {
+@set($function, 'autoloader_' . uniqid(true));
+@if ($relative)
+@set($dir, '__DIR__' . uniqid(true));
+define({{@$dir}}, defined('__DIR__') ? __DIR__ : dirname(__FILE__));
+@endif
+
+function {{$function}}($class) {
     static $classes = {{ var_export($classes, true) }};
 
     @if (count($deps) > 0)
@@ -17,5 +23,6 @@ return function($class) {
     @include("load")
 
     return false;
-};
+}
 
+return {{@$function}};

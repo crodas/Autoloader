@@ -11,7 +11,15 @@ $GLOBALS['call_{{$stats}}'] = 0;
 $GLOBALS['load_{{$stats}}'] = 0;
 @end
 
-spl_autoload_register(function ($class) {
+@set($function, 'autoloader_' . uniqid(true));
+@if ($relative)
+@set($dir, '__DIR__' . uniqid(true));
+define({{@$dir}}, defined('__DIR__') ? __DIR__ : dirname(__FILE__));
+@endif
+
+
+
+function {{$function}}($class) {
     /*
         This array has a map of (class => file)
     */
@@ -43,6 +51,8 @@ spl_autoload_register(function ($class) {
 
     return false;
 } 
+
+spl_autoload_register({{@$function}}
 @if (!$relative)
 , true, true
 @end
@@ -50,7 +60,7 @@ spl_autoload_register(function ($class) {
 
 @foreach ($includes as $include)
     @if ($relative)
-        require_once __DIR__ . {{@$include}};
+        require_once {{$dir}} . {{@$include}};
     @else
         require_once {{@$include}};
     @end

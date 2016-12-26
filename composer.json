@@ -16,7 +16,8 @@
         "symfony/finder": "^2.1 | ^3.0",
         "crodas/file-util": ">=0.2",
         "crodas/class-info": "^0.2",
-        "crodas/cli": "^0.1"
+        "crodas/cli": "^0.1",
+        "crodas/remember": ">=0.4"
     },
     "require-dev": {
         "crodas/simple-view-engine": "^0.1"

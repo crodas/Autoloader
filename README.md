@@ -8,7 +8,7 @@ Why?
 
 Autoloaders are cool, but every project comes with their own autoloader. Your project ends up having more autoloader than proper code.
 
-I'm a pragmatic developer, and I don't believe that's fair that we spend in our production environment, where files barely changes comparing to the number of executions, executing autoloaders over and over.
+I'm a pragmatic developer, and I don't believe that's fair that we spend in our production environment, where files barely change comparing to the number of executions.
 
 So as a proof of concept I started this project, that aims to generate an efficient autoloader. The generated autoloader has an array of classes and files. As an extra gift, the generated code will have a generic PSR-0 autoloader (borrowed from @alganet).
 

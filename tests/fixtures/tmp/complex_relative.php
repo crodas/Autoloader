@@ -9,7 +9,11 @@
 $GLOBALS['call_complex_relativestat'] = 0;
 $GLOBALS['load_complex_relativestat'] = 0;
 
-spl_autoload_register(function ($class) {
+define('__DIR__15861807809458', defined('__DIR__') ? __DIR__ : dirname(__FILE__));
+
+
+
+function autoloader_15861807809445($class) {
     /*
         This array has a map of (class => file)
     */
@@ -75,7 +79,7 @@ if (
     ! $classes[$zclass][1]( $zclass, false )
 ) {
     $GLOBALS['load_complex_relativestat']++;
-    require __DIR__  . $classes[$zclass][0];
+    require __DIR__15861807809458  . $classes[$zclass][0];
 }
         }
     }
@@ -83,7 +87,7 @@ if (
     ! $classes[$class][1]( $class, false )
 ) {
     $GLOBALS['load_complex_relativestat']++;
-    require __DIR__  . $classes[$class][0];
+    require __DIR__15861807809458  . $classes[$class][0];
 }
     return true;
 }
@@ -106,9 +110,11 @@ if (
 
     return false;
 } 
+
+spl_autoload_register('autoloader_15861807809445'
 );
 
-        require_once __DIR__ . '/../../generatorTest.php';
+        require_once __DIR__15861807809458 . '/../../generatorTest.php';
 
 function getcomplex_relativestat() {
     global $load_complex_relativestat, $call_complex_relativestat;

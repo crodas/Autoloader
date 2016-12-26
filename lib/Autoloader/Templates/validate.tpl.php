@@ -5,7 +5,7 @@ if (
     $GLOBALS['load_{{$stats}}']++;
     @end
     @if ($relative)
-    require __DIR__  . $classes[${{$var}}][0];
+    require {{$dir}}  . $classes[${{$var}}][0];
     @else
     require $classes[${{$var}}][0];
     @end

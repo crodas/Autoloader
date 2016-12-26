@@ -7,55 +7,3894 @@
  *  This is a generated file, do not modify it.
  */
 
-spl_autoload_register(function ($class) {
+define('__DIR__158618077c5cac', defined('__DIR__') ? __DIR__ : dirname(__FILE__));
+
+
+
+function autoloader_158618077c5c98($class) {
     /*
         This array has a map of (class => file)
     */
-
-    // classes {{{
     static $classes = array (
-  'autoloader\\cliapp' => '/home/crodas/projects/newest/Autoloader/lib/Autoloader/CliApp.php',
-  'autoloader\\generator' => '/home/crodas/projects/newest/Autoloader/lib/Autoloader/Generator.php',
-  'autoloader\\composer' => '/home/crodas/projects/newest/Autoloader/lib/Autoloader/Composer.php',
+  'autoloader\\cliapp' => 
+  array (
+    0 => '/CliApp.php',
+    1 => 'class_exists',
+  ),
+  'autoloader\\composer' => 
+  array (
+    0 => '/Composer.php',
+    1 => 'class_exists',
+  ),
+  'autoloader\\generator' => 
+  array (
+    0 => '/Generator.php',
+    1 => 'class_exists',
+  ),
+  'base_template_aab8d954813d6a190dfedd5e726e6f8ed2ef081e' => 
+  array (
+    0 => '/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_0e0b04df3e4434b3998ba2ae1d44780d04317374' => 
+  array (
+    0 => '/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_a3ffbb3ad03f81c3fd1d93e6556beae4811dc590' => 
+  array (
+    0 => '/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_e516b5d47b06ed172138f3ca3ffbb2cc7d52a85a' => 
+  array (
+    0 => '/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_31028f15e50ec3b9927c300a53d04bb713e73e85' => 
+  array (
+    0 => '/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_5df81830c135da22bb7e6b9a266d6801c6bfeb2f' => 
+  array (
+    0 => '/Templates.php',
+    1 => 'class_exists',
+  ),
+  'autoloader\\templates' => 
+  array (
+    0 => '/Templates.php',
+    1 => 'class_exists',
+  ),
+  'composerautoloaderinitaa66ed6e5c6220f106923d89d7fe1646' => 
+  array (
+    0 => '/../../vendor/composer/autoload_real.php',
+    1 => 'class_exists',
+  ),
+  'composer\\autoload\\composerstaticinitaa66ed6e5c6220f106923d89d7fe1646' => 
+  array (
+    0 => '/../../vendor/composer/autoload_static.php',
+    1 => 'class_exists',
+  ),
+  'composer\\autoload\\classloader' => 
+  array (
+    0 => '/../../vendor/composer/ClassLoader.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\classinfo\\classinfo' => 
+  array (
+    0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/ClassInfo.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\classinfo\\definition\\tbase' => 
+  array (
+    0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Definition/TBase.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\classinfo\\definition\\tclass' => 
+  array (
+    0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Definition/TClass.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\classinfo\\definition\\tfunction' => 
+  array (
+    0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Definition/TFunction.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\classinfo\\definition\\tproperty' => 
+  array (
+    0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Definition/TProperty.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\classinfo\\parser' => 
+  array (
+    0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Parser.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\nodevisitorabstract' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeVisitorAbstract.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\cli\\cli' => 
+  array (
+    0 => '/../../vendor/crodas/cli/lib/crodas/cli/Cli.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\fileutil\\cache' => 
+  array (
+    0 => '/../../vendor/crodas/file-util/lib/crodas/FileUtil/Cache.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\fileutil\\file' => 
+  array (
+    0 => '/../../vendor/crodas/file-util/lib/crodas/FileUtil/File.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\fileutil\\path' => 
+  array (
+    0 => '/../../vendor/crodas/file-util/lib/crodas/FileUtil/Path.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\annotation\\annotation' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Annotation/Annotation.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\annotation\\common' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Annotation/Common.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\annotation\\annotations' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Annotation/Annotations.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\cacheable' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Cacheable.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\dir' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Dir.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\file' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/File.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\filesystem' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Filesystem.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\functioncall' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/FunctionCall.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\notoj' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Notoj.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\object\\base' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/Base.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\object\\zcallable' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zCallable.php',
+    1 => 'interface_exists',
+  ),
+  'notoj\\object\\zclass' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zClass.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\object\\zclassmember' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zClassMember.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\object\\zfunction' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zFunction.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\object\\zmethod' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zMethod.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\object\\zproperty' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zProperty.php',
+    1 => 'class_exists',
+  ),
+  'notoj_yytoken' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Parser.php',
+    1 => 'class_exists',
+  ),
+  'notoj_yystackentry' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Parser.php',
+    1 => 'class_exists',
+  ),
+  'notoj_parser' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Parser.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\reflectionclass' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionClass.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\reflectionfunction' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionFunction.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\reflectionmethod' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionMethod.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\reflectionobject' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionObject.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\reflectionproperty' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionProperty.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\tokenizer' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/Tokenizer.php',
+    1 => 'class_exists',
+  ),
+  'notoj\\tproperty' => 
+  array (
+    0 => '/../../vendor/crodas/notoj/lib/Notoj/tProperty.php',
+    1 => 'class_exists',
+  ),
+  'remember\\remember' => 
+  array (
+    0 => '/../../vendor/crodas/remember/src/Remember/Remember.php',
+    1 => 'class_exists',
+  ),
+  'base_template_281f309710c8d03adaf2a02f1b8ed5b8d690a9d2' => 
+  array (
+    0 => '/../../vendor/crodas/remember/src/Remember/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_1470f1bf1699480bf5a540d4b9196dbe32779c5c' => 
+  array (
+    0 => '/../../vendor/crodas/remember/src/Remember/Templates.php',
+    1 => 'class_exists',
+  ),
+  'remember\\templates' => 
+  array (
+    0 => '/../../vendor/crodas/remember/src/Remember/Templates.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\action' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Action.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\compiler\\servicecall' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Compiler/ServiceCall.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\composer' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Composer.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\provider' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Provider.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\event' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Event.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\eventemitter' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/EventEmitter.php',
+    1 => 'trait_exists',
+  ),
+  'serviceprovider\\events' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Events.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\notfoundexception' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/NotFoundException.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\parser\\ini' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser/INI.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\parser\\json' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser/JSON.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\parser\\yaml' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser/YAML.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\parser\\yml' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser/YML.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\parser' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\services' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Services.php',
+    1 => 'class_exists',
+  ),
+  'base_template_0dbaaa8e22c297efe0e3d4e8af754e27f1d53fd5' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Template/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_0e7c6437a035d77bb64635a76bc7506fb01ef5c7' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Template/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_c96c365346bcf33d93d2a2d073d94f6f8e159b26' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Template/Templates.php',
+    1 => 'class_exists',
+  ),
+  'serviceprovider\\template\\templates' => 
+  array (
+    0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Template/Templates.php',
+    1 => 'class_exists',
+  ),
+  'simple_view_args_yytoken' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Args.php',
+    1 => 'class_exists',
+  ),
+  'simple_view_args_yystackentry' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Args.php',
+    1 => 'class_exists',
+  ),
+  'simple_view_args' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Args.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\compiler' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Compiler.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\environment' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Environment.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\exception' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Exception.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\fixcode' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/FixCode.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\macro\\asset' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Macro/Asset.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\macro\\base' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Macro/Base.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\macro\\assetinline' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Macro/Asset.php',
+    1 => 'class_exists',
+  ),
+  'simple_view_yytoken' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Parser.php',
+    1 => 'class_exists',
+  ),
+  'simple_view_yystackentry' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Parser.php',
+    1 => 'class_exists',
+  ),
+  'simple_view_parser' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Parser.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\runtime' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Runtime.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\template' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Template.php',
+    1 => 'class_exists',
+  ),
+  'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_f5ab41dedb21a24081861ee6a36af5e59365a600' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_cfa7269ec959308c668047e4aa1cd1d833f91eb6' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_55a865e988d24c0d11ce50bc8c11519a2d28b743' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_c36eec984e05803cb157ccb02bc2517cf30266a3' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_ed71512c603ba20ba49346284ee12f19b5d744de' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_1708ebe9d99ba4e58c0ae7fffeacd2f3eee56157' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_55654f0db518414907f78793b7d027601d43ad01' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_e5f3aacac71e677703efc7f7d2621463a25e5059' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_6b1bcd97e93ed2c0cb9aac64a2ca1db0d5c1bbfd' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_a7fd4ba6aa8322c865f773ab9961440df3ccad7e' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_b3f21f4b7452906b330612b966219cc089b11145' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_47c00cca182fe3bc9f62a5b97ca88b8096be84f9' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_29c582cf88090afb569826fab26c5ff2408174a6' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_4c7ae9b989b5399767f582c58a57086e7e11e353' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_399877791885ad1a9fde51bca4deb52107f94699' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_f438effbfd0e1abc280c3a5fd5c49a6b609fdece' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_a5a85b8b99262519741caf9201827cb2a6a2b36f' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_5d7cda60ed67317c63462a7a3f97c1eaa6a18d4e' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_6ab34a3d879c7067d4dc67f5af3a8dd380cd3156' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\templates\\templates' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
+    1 => 'class_exists',
+  ),
+  'crodas\\simpleview\\tokenizer' => 
+  array (
+    0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Tokenizer.php',
+    1 => 'class_exists',
+  ),
+  'base_template_cae776d793caf672c15e1210f1d0eb6609155ade' => 
+  array (
+    0 => '/../../vendor/crodas/watch-files/lib/WatchFiles/Templates.php',
+    1 => 'class_exists',
+  ),
+  'class_a4423e79cd6df51ca66b13affa3d681f3041bae4' => 
+  array (
+    0 => '/../../vendor/crodas/watch-files/lib/WatchFiles/Templates.php',
+    1 => 'class_exists',
+  ),
+  'watchfiles\\templates' => 
+  array (
+    0 => '/../../vendor/crodas/watch-files/lib/WatchFiles/Templates.php',
+    1 => 'class_exists',
+  ),
+  'watchfiles\\watch' => 
+  array (
+    0 => '/../../vendor/crodas/watch-files/lib/WatchFiles/Watch.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\autoloader' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Autoloader.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\class_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Class_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\declaration' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Declaration.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builderabstract' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/BuilderAbstract.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\function_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Function_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\functionlike' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/FunctionLike.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\interface_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Interface_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\method' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Method.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\namespace_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Namespace_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\param' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Param.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\property' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Property.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\trait_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Trait_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder\\use_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Use_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\builder' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder.php',
+    1 => 'interface_exists',
+  ),
+  'phpparser\\builderfactory' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/BuilderFactory.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\comment\\doc' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Comment/Doc.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\comment' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Comment.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\error' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Error.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\lexer\\emulative' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Lexer/Emulative.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\lexer' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Lexer.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\arg' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\nodeabstract' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeAbstract.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\const_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\array_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Array_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\arraydimfetch' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ArrayDimFetch.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\arrayitem' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ArrayItem.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assign' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Assign.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\bitwiseand' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseAnd.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\bitwiseor' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseOr.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\bitwisexor' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseXor.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\concat' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Concat.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\div' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Div.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\minus' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Minus.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\mod' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mod.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\mul' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mul.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\plus' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Plus.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\pow' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Pow.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\shiftleft' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftLeft.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignop\\shiftright' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftRight.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\assignref' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignRef.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\bitwiseand' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\bitwiseor' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\bitwisexor' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\booleanand' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\booleanor' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\coalesce' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\concat' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Concat.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\div' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Div.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\equal' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Equal.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\greater' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Greater.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\greaterorequal' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\identical' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Identical.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\logicaland' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalAnd.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\logicalor' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalOr.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\logicalxor' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\minus' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Minus.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\mod' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mod.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\mul' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mul.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\notequal' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\notidentical' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotIdentical.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\plus' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\pow' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\shiftleft' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\shiftright' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftRight.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\smaller' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\smallerorequal' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/SmallerOrEqual.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\binaryop\\spaceship' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Spaceship.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\bitwisenot' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BitwiseNot.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\booleannot' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BooleanNot.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\cast\\array_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Array_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\cast' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\cast\\bool_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Bool_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\cast\\double' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Double.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\cast\\int_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Int_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\cast\\object_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Object_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\cast\\string_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/String_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\cast\\unset_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Unset_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\classconstfetch' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ClassConstFetch.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\clone_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Clone_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\closure' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Closure.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\functionlike' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php',
+    1 => 'interface_exists',
+  ),
+  'phpparser\\node\\expr\\closureuse' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ClosureUse.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\constfetch' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ConstFetch.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\empty_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Empty_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\errorsuppress' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ErrorSuppress.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\eval_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Eval_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\exit_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Exit_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\funccall' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/FuncCall.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\include_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Include_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\instanceof_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Instanceof_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\isset_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Isset_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\list_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/List_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\methodcall' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/MethodCall.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\new_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/New_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\postdec' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PostDec.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\postinc' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PostInc.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\predec' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PreDec.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\preinc' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PreInc.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\print_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Print_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\propertyfetch' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PropertyFetch.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\shellexec' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ShellExec.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\staticcall' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/StaticCall.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\staticpropertyfetch' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/StaticPropertyFetch.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\ternary' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Ternary.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\unaryminus' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/UnaryMinus.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\unaryplus' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/UnaryPlus.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\variable' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Variable.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\yield_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Yield_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\expr\\yieldfrom' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/YieldFrom.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node.php',
+    1 => 'interface_exists',
+  ),
+  'phpparser\\node\\name\\fullyqualified' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Name/FullyQualified.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\name' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Name.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\name\\relative' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Name/Relative.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\param' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Param.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\dnumber' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\encapsed' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\encapsedstringpart' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\lnumber' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\class_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Class_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\dir' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Dir.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\file' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/File.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\function_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Function_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\line' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Line.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\method' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Method.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\namespace_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Namespace_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\trait_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Trait_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\scalar\\string_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\break_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Break_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\case_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Case_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\catch_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Catch_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\class_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Class_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\classlike' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ClassLike.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\classconst' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ClassConst.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\classmethod' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ClassMethod.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\const_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Const_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\continue_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Continue_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\declare_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Declare_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\declaredeclare' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/DeclareDeclare.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\do_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Do_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\echo_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Echo_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\else_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Else_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\elseif_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ElseIf_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\for_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/For_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\foreach_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Foreach_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\function_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Function_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\global_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Global_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\goto_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Goto_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\groupuse' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/GroupUse.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\haltcompiler' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/HaltCompiler.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\if_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/If_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\inlinehtml' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/InlineHTML.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\interface_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Interface_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\label' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Label.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\namespace_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Namespace_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\nop' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Nop.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\property' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Property.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\propertyproperty' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/PropertyProperty.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\return_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Return_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\static_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Static_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\staticvar' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/StaticVar.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\switch_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Switch_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\throw_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Throw_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\trait_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Trait_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\traituse' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUse.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\traituseadaptation\\alias' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Alias.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\traituseadaptation' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\traituseadaptation\\precedence' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Precedence.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\trycatch' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TryCatch.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\unset_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Unset_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\use_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Use_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\useuse' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/UseUse.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\node\\stmt\\while_' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/While_.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\nodedumper' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeDumper.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\nodetraverser' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeTraverser.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\nodetraverserinterface' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeTraverserInterface.php',
+    1 => 'interface_exists',
+  ),
+  'phpparser\\nodevisitor\\nameresolver' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\nodevisitor' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeVisitor.php',
+    1 => 'interface_exists',
+  ),
+  'phpparser\\parser\\multiple' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser/Multiple.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\parser' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser.php',
+    1 => 'interface_exists',
+  ),
+  'phpparser\\parser\\php5' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser/Php5.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\parserabstract' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\parser\\php7' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser/Php7.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\parser\\tokens' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\parserfactory' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/ParserFactory.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\prettyprinter\\standard' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\prettyprinterabstract' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\serializer\\xml' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Serializer/XML.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\serializer' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Serializer.php',
+    1 => 'interface_exists',
+  ),
+  'phpparser\\unserializer\\xml' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Unserializer/XML.php',
+    1 => 'class_exists',
+  ),
+  'phpparser\\unserializer' => 
+  array (
+    0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Unserializer.php',
+    1 => 'interface_exists',
+  ),
+  'psr\\log\\abstractlogger' => 
+  array (
+    0 => '/../../vendor/psr/log/Psr/Log/AbstractLogger.php',
+    1 => 'class_exists',
+  ),
+  'psr\\log\\loggerinterface' => 
+  array (
+    0 => '/../../vendor/psr/log/Psr/Log/LoggerInterface.php',
+    1 => 'interface_exists',
+  ),
+  'psr\\log\\invalidargumentexception' => 
+  array (
+    0 => '/../../vendor/psr/log/Psr/Log/InvalidArgumentException.php',
+    1 => 'class_exists',
+  ),
+  'psr\\log\\loggerawareinterface' => 
+  array (
+    0 => '/../../vendor/psr/log/Psr/Log/LoggerAwareInterface.php',
+    1 => 'interface_exists',
+  ),
+  'psr\\log\\loggerawaretrait' => 
+  array (
+    0 => '/../../vendor/psr/log/Psr/Log/LoggerAwareTrait.php',
+    1 => 'trait_exists',
+  ),
+  'psr\\log\\loggertrait' => 
+  array (
+    0 => '/../../vendor/psr/log/Psr/Log/LoggerTrait.php',
+    1 => 'trait_exists',
+  ),
+  'psr\\log\\loglevel' => 
+  array (
+    0 => '/../../vendor/psr/log/Psr/Log/LogLevel.php',
+    1 => 'class_exists',
+  ),
+  'psr\\log\\nulllogger' => 
+  array (
+    0 => '/../../vendor/psr/log/Psr/Log/NullLogger.php',
+    1 => 'class_exists',
+  ),
+  'seld\\jsonlint\\duplicatekeyexception' => 
+  array (
+    0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/DuplicateKeyException.php',
+    1 => 'class_exists',
+  ),
+  'seld\\jsonlint\\parsingexception' => 
+  array (
+    0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/ParsingException.php',
+    1 => 'class_exists',
+  ),
+  'seld\\jsonlint\\jsonparser' => 
+  array (
+    0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/JsonParser.php',
+    1 => 'class_exists',
+  ),
+  'seld\\jsonlint\\lexer' => 
+  array (
+    0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/Lexer.php',
+    1 => 'class_exists',
+  ),
+  'seld\\jsonlint\\undefined' => 
+  array (
+    0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/Undefined.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\application' => 
+  array (
+    0 => '/../../vendor/symfony/console/Application.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\command\\command' => 
+  array (
+    0 => '/../../vendor/symfony/console/Command/Command.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\command\\helpcommand' => 
+  array (
+    0 => '/../../vendor/symfony/console/Command/HelpCommand.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\command\\listcommand' => 
+  array (
+    0 => '/../../vendor/symfony/console/Command/ListCommand.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\command\\lockabletrait' => 
+  array (
+    0 => '/../../vendor/symfony/console/Command/LockableTrait.php',
+    1 => 'trait_exists',
+  ),
+  'symfony\\component\\console\\consoleevents' => 
+  array (
+    0 => '/../../vendor/symfony/console/ConsoleEvents.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\descriptor\\applicationdescription' => 
+  array (
+    0 => '/../../vendor/symfony/console/Descriptor/ApplicationDescription.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\descriptor\\descriptor' => 
+  array (
+    0 => '/../../vendor/symfony/console/Descriptor/Descriptor.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\descriptor\\descriptorinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Descriptor/DescriptorInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\descriptor\\jsondescriptor' => 
+  array (
+    0 => '/../../vendor/symfony/console/Descriptor/JsonDescriptor.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\descriptor\\markdowndescriptor' => 
+  array (
+    0 => '/../../vendor/symfony/console/Descriptor/MarkdownDescriptor.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\descriptor\\textdescriptor' => 
+  array (
+    0 => '/../../vendor/symfony/console/Descriptor/TextDescriptor.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\descriptor\\xmldescriptor' => 
+  array (
+    0 => '/../../vendor/symfony/console/Descriptor/XmlDescriptor.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\event\\consolecommandevent' => 
+  array (
+    0 => '/../../vendor/symfony/console/Event/ConsoleCommandEvent.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\event\\consoleevent' => 
+  array (
+    0 => '/../../vendor/symfony/console/Event/ConsoleEvent.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\event\\consoleexceptionevent' => 
+  array (
+    0 => '/../../vendor/symfony/console/Event/ConsoleExceptionEvent.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\event\\consoleterminateevent' => 
+  array (
+    0 => '/../../vendor/symfony/console/Event/ConsoleTerminateEvent.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\exception\\commandnotfoundexception' => 
+  array (
+    0 => '/../../vendor/symfony/console/Exception/CommandNotFoundException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\exception\\exceptioninterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Exception/ExceptionInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\exception\\invalidargumentexception' => 
+  array (
+    0 => '/../../vendor/symfony/console/Exception/InvalidArgumentException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\exception\\invalidoptionexception' => 
+  array (
+    0 => '/../../vendor/symfony/console/Exception/InvalidOptionException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\exception\\logicexception' => 
+  array (
+    0 => '/../../vendor/symfony/console/Exception/LogicException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\exception\\runtimeexception' => 
+  array (
+    0 => '/../../vendor/symfony/console/Exception/RuntimeException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\formatter\\outputformatter' => 
+  array (
+    0 => '/../../vendor/symfony/console/Formatter/OutputFormatter.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\formatter\\outputformatterinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Formatter/OutputFormatterInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\formatter\\outputformatterstyle' => 
+  array (
+    0 => '/../../vendor/symfony/console/Formatter/OutputFormatterStyle.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\formatter\\outputformatterstyleinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Formatter/OutputFormatterStyleInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\formatter\\outputformatterstylestack' => 
+  array (
+    0 => '/../../vendor/symfony/console/Formatter/OutputFormatterStyleStack.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\debugformatterhelper' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/DebugFormatterHelper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\helper' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/Helper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\descriptorhelper' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/DescriptorHelper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\formatterhelper' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/FormatterHelper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\helperinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/HelperInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\helper\\helperset' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/HelperSet.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\inputawarehelper' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/InputAwareHelper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\input\\inputawareinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/InputAwareInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\helper\\processhelper' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/ProcessHelper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\progressbar' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/ProgressBar.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\progressindicator' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/ProgressIndicator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\questionhelper' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/QuestionHelper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\symfonyquestionhelper' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/SymfonyQuestionHelper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\table' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/Table.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\tablecell' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/TableCell.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\tableseparator' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/TableSeparator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\helper\\tablestyle' => 
+  array (
+    0 => '/../../vendor/symfony/console/Helper/TableStyle.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\input\\argvinput' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/ArgvInput.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\input\\input' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/Input.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\input\\arrayinput' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/ArrayInput.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\input\\inputinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/InputInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\input\\streamableinputinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/StreamableInputInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\input\\inputargument' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/InputArgument.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\input\\inputdefinition' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/InputDefinition.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\input\\inputoption' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/InputOption.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\input\\stringinput' => 
+  array (
+    0 => '/../../vendor/symfony/console/Input/StringInput.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\logger\\consolelogger' => 
+  array (
+    0 => '/../../vendor/symfony/console/Logger/ConsoleLogger.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\output\\bufferedoutput' => 
+  array (
+    0 => '/../../vendor/symfony/console/Output/BufferedOutput.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\output\\output' => 
+  array (
+    0 => '/../../vendor/symfony/console/Output/Output.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\output\\consoleoutput' => 
+  array (
+    0 => '/../../vendor/symfony/console/Output/ConsoleOutput.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\output\\streamoutput' => 
+  array (
+    0 => '/../../vendor/symfony/console/Output/StreamOutput.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\output\\consoleoutputinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Output/ConsoleOutputInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\output\\outputinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Output/OutputInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\output\\nulloutput' => 
+  array (
+    0 => '/../../vendor/symfony/console/Output/NullOutput.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\question\\choicequestion' => 
+  array (
+    0 => '/../../vendor/symfony/console/Question/ChoiceQuestion.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\question\\question' => 
+  array (
+    0 => '/../../vendor/symfony/console/Question/Question.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\question\\confirmationquestion' => 
+  array (
+    0 => '/../../vendor/symfony/console/Question/ConfirmationQuestion.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\style\\outputstyle' => 
+  array (
+    0 => '/../../vendor/symfony/console/Style/OutputStyle.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\style\\styleinterface' => 
+  array (
+    0 => '/../../vendor/symfony/console/Style/StyleInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\console\\style\\symfonystyle' => 
+  array (
+    0 => '/../../vendor/symfony/console/Style/SymfonyStyle.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\console\\terminal' => 
+  array (
+    0 => '/../../vendor/symfony/console/Terminal.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\bufferinglogger' => 
+  array (
+    0 => '/../../vendor/symfony/debug/BufferingLogger.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\debug' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Debug.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\debugclassloader' => 
+  array (
+    0 => '/../../vendor/symfony/debug/DebugClassLoader.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\errorhandler' => 
+  array (
+    0 => '/../../vendor/symfony/debug/ErrorHandler.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\classnotfoundexception' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/ClassNotFoundException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\fatalerrorexception' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/FatalErrorException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\contexterrorexception' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/ContextErrorException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\fatalthrowableerror' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/FatalThrowableError.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\flattenexception' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/FlattenException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\outofmemoryexception' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/OutOfMemoryException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\silencederrorcontext' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/SilencedErrorContext.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\undefinedfunctionexception' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/UndefinedFunctionException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exception\\undefinedmethodexception' => 
+  array (
+    0 => '/../../vendor/symfony/debug/Exception/UndefinedMethodException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\exceptionhandler' => 
+  array (
+    0 => '/../../vendor/symfony/debug/ExceptionHandler.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\fatalerrorhandler\\classnotfoundfatalerrorhandler' => 
+  array (
+    0 => '/../../vendor/symfony/debug/FatalErrorHandler/ClassNotFoundFatalErrorHandler.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\fatalerrorhandler\\fatalerrorhandlerinterface' => 
+  array (
+    0 => '/../../vendor/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\debug\\fatalerrorhandler\\undefinedfunctionfatalerrorhandler' => 
+  array (
+    0 => '/../../vendor/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\debug\\fatalerrorhandler\\undefinedmethodfatalerrorhandler' => 
+  array (
+    0 => '/../../vendor/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\comparator\\comparator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Comparator/Comparator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\comparator\\datecomparator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Comparator/DateComparator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\comparator\\numbercomparator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Comparator/NumberComparator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\exception\\accessdeniedexception' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Exception/AccessDeniedException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\exception\\exceptioninterface' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Exception/ExceptionInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\finder\\finder' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Finder.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\glob' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Glob.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\customfilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/CustomFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\filteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/FilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\daterangefilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/DateRangeFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\depthrangefilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/DepthRangeFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\excludedirectoryfilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/ExcludeDirectoryFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\filecontentfilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/FilecontentFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/MultiplePcreFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\filenamefilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/FilenameFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\filetypefilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/FileTypeFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\pathfilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/PathFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\recursivedirectoryiterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/RecursiveDirectoryIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\sizerangefilteriterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/SizeRangeFilterIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\iterator\\sortableiterator' => 
+  array (
+    0 => '/../../vendor/symfony/finder/Iterator/SortableIterator.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\finder\\splfileinfo' => 
+  array (
+    0 => '/../../vendor/symfony/finder/SplFileInfo.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\polyfill\\mbstring\\mbstring' => 
+  array (
+    0 => '/../../vendor/symfony/polyfill-mbstring/Mbstring.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\dumper' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Dumper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\escaper' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Escaper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\exception\\dumpexception' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Exception/DumpException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\exception\\runtimeexception' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Exception/RuntimeException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\exception\\exceptioninterface' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Exception/ExceptionInterface.php',
+    1 => 'interface_exists',
+  ),
+  'symfony\\component\\yaml\\exception\\parseexception' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Exception/ParseException.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\inline' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Inline.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\parser' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Parser.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\unescaper' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Unescaper.php',
+    1 => 'class_exists',
+  ),
+  'symfony\\component\\yaml\\yaml' => 
+  array (
+    0 => '/../../vendor/symfony/yaml/Yaml.php',
+    1 => 'class_exists',
+  ),
 );
-    // }}}
 
+    static $deps    = array (
+  'class_0e0b04df3e4434b3998ba2ae1d44780d04317374' => 
+  array (
+    0 => 'base_template_aab8d954813d6a190dfedd5e726e6f8ed2ef081e',
+  ),
+  'class_a3ffbb3ad03f81c3fd1d93e6556beae4811dc590' => 
+  array (
+    0 => 'base_template_aab8d954813d6a190dfedd5e726e6f8ed2ef081e',
+  ),
+  'class_e516b5d47b06ed172138f3ca3ffbb2cc7d52a85a' => 
+  array (
+    0 => 'base_template_aab8d954813d6a190dfedd5e726e6f8ed2ef081e',
+  ),
+  'class_31028f15e50ec3b9927c300a53d04bb713e73e85' => 
+  array (
+    0 => 'base_template_aab8d954813d6a190dfedd5e726e6f8ed2ef081e',
+  ),
+  'class_5df81830c135da22bb7e6b9a266d6801c6bfeb2f' => 
+  array (
+    0 => 'base_template_aab8d954813d6a190dfedd5e726e6f8ed2ef081e',
+  ),
+  'crodas\\classinfo\\definition\\tclass' => 
+  array (
+    0 => 'crodas\\classinfo\\definition\\tbase',
+  ),
+  'crodas\\classinfo\\definition\\tfunction' => 
+  array (
+    0 => 'crodas\\classinfo\\definition\\tbase',
+  ),
+  'crodas\\classinfo\\definition\\tproperty' => 
+  array (
+    0 => 'crodas\\classinfo\\definition\\tbase',
+  ),
+  'crodas\\classinfo\\parser' => 
+  array (
+    0 => 'phpparser\\nodevisitor',
+    1 => 'phpparser\\nodevisitorabstract',
+  ),
+  'phpparser\\nodevisitorabstract' => 
+  array (
+    0 => 'phpparser\\nodevisitor',
+  ),
+  'notoj\\annotation\\annotation' => 
+  array (
+    0 => 'notoj\\annotation\\common',
+  ),
+  'notoj\\annotation\\annotations' => 
+  array (
+    0 => 'notoj\\annotation\\common',
+  ),
+  'notoj\\dir' => 
+  array (
+    0 => 'notoj\\cacheable',
+  ),
+  'notoj\\file' => 
+  array (
+    0 => 'notoj\\cacheable',
+  ),
+  'notoj\\filesystem' => 
+  array (
+    0 => 'notoj\\cacheable',
+  ),
+  'notoj\\notoj' => 
+  array (
+    0 => 'notoj\\cacheable',
+  ),
+  'notoj\\object\\zclass' => 
+  array (
+    0 => 'notoj\\object\\base',
+  ),
+  'notoj\\object\\zclassmember' => 
+  array (
+    0 => 'notoj\\object\\base',
+  ),
+  'notoj\\object\\zfunction' => 
+  array (
+    0 => 'notoj\\object\\zcallable',
+    1 => 'notoj\\object\\base',
+  ),
+  'notoj\\object\\zmethod' => 
+  array (
+    0 => 'notoj\\object\\zcallable',
+    1 => 'notoj\\object\\base',
+    2 => 'notoj\\object\\zclassmember',
+  ),
+  'notoj\\object\\zproperty' => 
+  array (
+    0 => 'notoj\\object\\base',
+    1 => 'notoj\\object\\zclassmember',
+  ),
+  'class_1470f1bf1699480bf5a540d4b9196dbe32779c5c' => 
+  array (
+    0 => 'base_template_281f309710c8d03adaf2a02f1b8ed5b8d690a9d2',
+  ),
+  'serviceprovider\\composer' => 
+  array (
+    0 => 'serviceprovider\\provider',
+  ),
+  'serviceprovider\\events' => 
+  array (
+    0 => 'serviceprovider\\action',
+  ),
+  'serviceprovider\\parser\\yml' => 
+  array (
+    0 => 'serviceprovider\\parser\\yaml',
+  ),
+  'serviceprovider\\services' => 
+  array (
+    0 => 'serviceprovider\\action',
+  ),
+  'class_0e7c6437a035d77bb64635a76bc7506fb01ef5c7' => 
+  array (
+    0 => 'base_template_0dbaaa8e22c297efe0e3d4e8af754e27f1d53fd5',
+  ),
+  'class_c96c365346bcf33d93d2a2d073d94f6f8e159b26' => 
+  array (
+    0 => 'base_template_0dbaaa8e22c297efe0e3d4e8af754e27f1d53fd5',
+  ),
+  'crodas\\simpleview\\macro\\asset' => 
+  array (
+    0 => 'crodas\\simpleview\\macro\\base',
+  ),
+  'crodas\\simpleview\\macro\\assetinline' => 
+  array (
+    0 => 'crodas\\simpleview\\macro\\base',
+    1 => 'crodas\\simpleview\\macro\\asset',
+  ),
+  'crodas\\simpleview\\runtime' => 
+  array (
+    0 => 'serviceprovider\\eventemitter',
+  ),
+  'class_f5ab41dedb21a24081861ee6a36af5e59365a600' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_cfa7269ec959308c668047e4aa1cd1d833f91eb6' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_55a865e988d24c0d11ce50bc8c11519a2d28b743' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_c36eec984e05803cb157ccb02bc2517cf30266a3' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_ed71512c603ba20ba49346284ee12f19b5d744de' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_1708ebe9d99ba4e58c0ae7fffeacd2f3eee56157' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_55654f0db518414907f78793b7d027601d43ad01' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_e5f3aacac71e677703efc7f7d2621463a25e5059' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_6b1bcd97e93ed2c0cb9aac64a2ca1db0d5c1bbfd' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_a7fd4ba6aa8322c865f773ab9961440df3ccad7e' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_b3f21f4b7452906b330612b966219cc089b11145' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_47c00cca182fe3bc9f62a5b97ca88b8096be84f9' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_29c582cf88090afb569826fab26c5ff2408174a6' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_4c7ae9b989b5399767f582c58a57086e7e11e353' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_399877791885ad1a9fde51bca4deb52107f94699' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_f438effbfd0e1abc280c3a5fd5c49a6b609fdece' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_a5a85b8b99262519741caf9201827cb2a6a2b36f' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_5d7cda60ed67317c63462a7a3f97c1eaa6a18d4e' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_6ab34a3d879c7067d4dc67f5af3a8dd380cd3156' => 
+  array (
+    0 => 'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551',
+  ),
+  'class_a4423e79cd6df51ca66b13affa3d681f3041bae4' => 
+  array (
+    0 => 'base_template_cae776d793caf672c15e1210f1d0eb6609155ade',
+  ),
+  'phpparser\\builder\\class_' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+    2 => 'phpparser\\builder\\declaration',
+  ),
+  'phpparser\\builder\\declaration' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+  ),
+  'phpparser\\builderabstract' => 
+  array (
+    0 => 'phpparser\\builder',
+  ),
+  'phpparser\\builder\\function_' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+    2 => 'phpparser\\builder\\declaration',
+    3 => 'phpparser\\builder\\functionlike',
+  ),
+  'phpparser\\builder\\functionlike' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+    2 => 'phpparser\\builder\\declaration',
+  ),
+  'phpparser\\builder\\interface_' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+    2 => 'phpparser\\builder\\declaration',
+  ),
+  'phpparser\\builder\\method' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+    2 => 'phpparser\\builder\\declaration',
+    3 => 'phpparser\\builder\\functionlike',
+  ),
+  'phpparser\\builder\\namespace_' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+  ),
+  'phpparser\\builder\\param' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+  ),
+  'phpparser\\builder\\property' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+  ),
+  'phpparser\\builder\\trait_' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+    2 => 'phpparser\\builder\\declaration',
+  ),
+  'phpparser\\builder\\use_' => 
+  array (
+    0 => 'phpparser\\builder',
+    1 => 'phpparser\\builderabstract',
+  ),
+  'phpparser\\comment\\doc' => 
+  array (
+    0 => 'phpparser\\comment',
+  ),
+  'phpparser\\lexer\\emulative' => 
+  array (
+    0 => 'phpparser\\lexer',
+  ),
+  'phpparser\\node\\arg' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+  ),
+  'phpparser\\nodeabstract' => 
+  array (
+    0 => 'phpparser\\node',
+  ),
+  'phpparser\\node\\const_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+  ),
+  'phpparser\\node\\expr\\array_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+  ),
+  'phpparser\\node\\expr\\arraydimfetch' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\arrayitem' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\assign' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\assignop\\bitwiseand' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\assignop\\bitwiseor' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\bitwisexor' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\concat' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\div' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\minus' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\mod' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\mul' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\plus' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\pow' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\shiftleft' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignop\\shiftright' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\assignop',
+  ),
+  'phpparser\\node\\expr\\assignref' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\binaryop\\bitwiseand' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\binaryop\\bitwiseor' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\bitwisexor' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\booleanand' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\booleanor' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\coalesce' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\concat' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\div' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\equal' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\greater' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\greaterorequal' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\identical' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\logicaland' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\logicalor' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\logicalxor' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\minus' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\mod' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\mul' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\notequal' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\notidentical' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\plus' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\pow' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\shiftleft' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\shiftright' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\smaller' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\smallerorequal' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\binaryop\\spaceship' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\binaryop',
+  ),
+  'phpparser\\node\\expr\\bitwisenot' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\booleannot' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\cast\\array_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\cast',
+  ),
+  'phpparser\\node\\expr\\cast' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\cast\\bool_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\cast',
+  ),
+  'phpparser\\node\\expr\\cast\\double' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\cast',
+  ),
+  'phpparser\\node\\expr\\cast\\int_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\cast',
+  ),
+  'phpparser\\node\\expr\\cast\\object_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\cast',
+  ),
+  'phpparser\\node\\expr\\cast\\string_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\cast',
+  ),
+  'phpparser\\node\\expr\\cast\\unset_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\expr\\cast',
+  ),
+  'phpparser\\node\\expr\\classconstfetch' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\clone_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\closure' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\node\\functionlike',
+    3 => 'phpparser\\nodeabstract',
+    4 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\functionlike' => 
+  array (
+    0 => 'phpparser\\node',
+  ),
+  'phpparser\\node\\expr\\closureuse' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\constfetch' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\empty_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\errorsuppress' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\eval_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\exit_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\funccall' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\include_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\instanceof_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\isset_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\list_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\methodcall' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\new_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\postdec' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\postinc' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\predec' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\preinc' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\print_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\propertyfetch' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\shellexec' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\staticcall' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\staticpropertyfetch' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\ternary' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\unaryminus' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\unaryplus' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\variable' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\yield_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\expr\\yieldfrom' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\name\\fullyqualified' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\name',
+  ),
+  'phpparser\\node\\name' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+  ),
+  'phpparser\\node\\name\\relative' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\name',
+  ),
+  'phpparser\\node\\param' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+  ),
+  'phpparser\\node\\scalar\\dnumber' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+  ),
+  'phpparser\\node\\scalar' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+  ),
+  'phpparser\\node\\scalar\\encapsed' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+  ),
+  'phpparser\\node\\scalar\\encapsedstringpart' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+  ),
+  'phpparser\\node\\scalar\\lnumber' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\class_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+    4 => 'phpparser\\node\\scalar\\magicconst',
+  ),
+  'phpparser\\node\\scalar\\magicconst' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\dir' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+    4 => 'phpparser\\node\\scalar\\magicconst',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\file' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+    4 => 'phpparser\\node\\scalar\\magicconst',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\function_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+    4 => 'phpparser\\node\\scalar\\magicconst',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\line' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+    4 => 'phpparser\\node\\scalar\\magicconst',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\method' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+    4 => 'phpparser\\node\\scalar\\magicconst',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\namespace_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+    4 => 'phpparser\\node\\scalar\\magicconst',
+  ),
+  'phpparser\\node\\scalar\\magicconst\\trait_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+    4 => 'phpparser\\node\\scalar\\magicconst',
+  ),
+  'phpparser\\node\\scalar\\string_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\expr',
+    3 => 'phpparser\\node\\scalar',
+  ),
+  'phpparser\\node\\stmt\\break_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+  ),
+  'phpparser\\node\\stmt\\case_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\catch_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\class_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+    3 => 'phpparser\\node\\stmt\\classlike',
+  ),
+  'phpparser\\node\\stmt\\classlike' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\classconst' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\classmethod' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\node\\functionlike',
+    3 => 'phpparser\\nodeabstract',
+    4 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\const_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\continue_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\declare_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\declaredeclare' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\do_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\echo_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\else_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\elseif_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\for_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\foreach_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\function_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\node\\functionlike',
+    3 => 'phpparser\\nodeabstract',
+    4 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\global_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\goto_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\groupuse' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\haltcompiler' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\if_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\inlinehtml' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\interface_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+    3 => 'phpparser\\node\\stmt\\classlike',
+  ),
+  'phpparser\\node\\stmt\\label' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\namespace_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\nop' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\property' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\propertyproperty' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\return_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\static_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\staticvar' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\switch_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\throw_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\trait_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+    3 => 'phpparser\\node\\stmt\\classlike',
+  ),
+  'phpparser\\node\\stmt\\traituse' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\traituseadaptation\\alias' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+    3 => 'phpparser\\node\\stmt\\traituseadaptation',
+  ),
+  'phpparser\\node\\stmt\\traituseadaptation' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\traituseadaptation\\precedence' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+    3 => 'phpparser\\node\\stmt\\traituseadaptation',
+  ),
+  'phpparser\\node\\stmt\\trycatch' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\unset_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\use_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\useuse' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\node\\stmt\\while_' => 
+  array (
+    0 => 'phpparser\\node',
+    1 => 'phpparser\\nodeabstract',
+    2 => 'phpparser\\node\\stmt',
+  ),
+  'phpparser\\nodetraverser' => 
+  array (
+    0 => 'phpparser\\nodetraverserinterface',
+  ),
+  'phpparser\\nodevisitor\\nameresolver' => 
+  array (
+    0 => 'phpparser\\nodevisitor',
+    1 => 'phpparser\\nodevisitorabstract',
+  ),
+  'phpparser\\parser\\multiple' => 
+  array (
+    0 => 'phpparser\\parser',
+  ),
+  'phpparser\\parser\\php5' => 
+  array (
+    0 => 'phpparser\\parser',
+    1 => 'phpparser\\parserabstract',
+  ),
+  'phpparser\\parserabstract' => 
+  array (
+    0 => 'phpparser\\parser',
+  ),
+  'phpparser\\parser\\php7' => 
+  array (
+    0 => 'phpparser\\parser',
+    1 => 'phpparser\\parserabstract',
+  ),
+  'phpparser\\prettyprinter\\standard' => 
+  array (
+    0 => 'phpparser\\prettyprinterabstract',
+  ),
+  'phpparser\\serializer\\xml' => 
+  array (
+    0 => 'phpparser\\serializer',
+  ),
+  'phpparser\\unserializer\\xml' => 
+  array (
+    0 => 'phpparser\\unserializer',
+  ),
+  'psr\\log\\abstractlogger' => 
+  array (
+    0 => 'psr\\log\\loggerinterface',
+  ),
+  'psr\\log\\nulllogger' => 
+  array (
+    0 => 'psr\\log\\loggerinterface',
+    1 => 'psr\\log\\abstractlogger',
+  ),
+  'seld\\jsonlint\\duplicatekeyexception' => 
+  array (
+    0 => 'seld\\jsonlint\\parsingexception',
+  ),
+  'symfony\\component\\console\\command\\helpcommand' => 
+  array (
+    0 => 'symfony\\component\\console\\command\\command',
+  ),
+  'symfony\\component\\console\\command\\listcommand' => 
+  array (
+    0 => 'symfony\\component\\console\\command\\command',
+  ),
+  'symfony\\component\\console\\descriptor\\descriptor' => 
+  array (
+    0 => 'symfony\\component\\console\\descriptor\\descriptorinterface',
+  ),
+  'symfony\\component\\console\\descriptor\\jsondescriptor' => 
+  array (
+    0 => 'symfony\\component\\console\\descriptor\\descriptorinterface',
+    1 => 'symfony\\component\\console\\descriptor\\descriptor',
+  ),
+  'symfony\\component\\console\\descriptor\\markdowndescriptor' => 
+  array (
+    0 => 'symfony\\component\\console\\descriptor\\descriptorinterface',
+    1 => 'symfony\\component\\console\\descriptor\\descriptor',
+  ),
+  'symfony\\component\\console\\descriptor\\textdescriptor' => 
+  array (
+    0 => 'symfony\\component\\console\\descriptor\\descriptorinterface',
+    1 => 'symfony\\component\\console\\descriptor\\descriptor',
+  ),
+  'symfony\\component\\console\\descriptor\\xmldescriptor' => 
+  array (
+    0 => 'symfony\\component\\console\\descriptor\\descriptorinterface',
+    1 => 'symfony\\component\\console\\descriptor\\descriptor',
+  ),
+  'symfony\\component\\console\\event\\consolecommandevent' => 
+  array (
+    0 => 'symfony\\component\\console\\event\\consoleevent',
+  ),
+  'symfony\\component\\console\\event\\consoleexceptionevent' => 
+  array (
+    0 => 'symfony\\component\\console\\event\\consoleevent',
+  ),
+  'symfony\\component\\console\\event\\consoleterminateevent' => 
+  array (
+    0 => 'symfony\\component\\console\\event\\consoleevent',
+  ),
+  'symfony\\component\\console\\exception\\commandnotfoundexception' => 
+  array (
+    0 => 'symfony\\component\\console\\exception\\exceptioninterface',
+  ),
+  'symfony\\component\\console\\exception\\invalidargumentexception' => 
+  array (
+    0 => 'symfony\\component\\console\\exception\\exceptioninterface',
+  ),
+  'symfony\\component\\console\\exception\\invalidoptionexception' => 
+  array (
+    0 => 'symfony\\component\\console\\exception\\exceptioninterface',
+  ),
+  'symfony\\component\\console\\exception\\logicexception' => 
+  array (
+    0 => 'symfony\\component\\console\\exception\\exceptioninterface',
+  ),
+  'symfony\\component\\console\\exception\\runtimeexception' => 
+  array (
+    0 => 'symfony\\component\\console\\exception\\exceptioninterface',
+  ),
+  'symfony\\component\\console\\formatter\\outputformatter' => 
+  array (
+    0 => 'symfony\\component\\console\\formatter\\outputformatterinterface',
+  ),
+  'symfony\\component\\console\\formatter\\outputformatterstyle' => 
+  array (
+    0 => 'symfony\\component\\console\\formatter\\outputformatterstyleinterface',
+  ),
+  'symfony\\component\\console\\helper\\debugformatterhelper' => 
+  array (
+    0 => 'symfony\\component\\console\\helper\\helperinterface',
+    1 => 'symfony\\component\\console\\helper\\helper',
+  ),
+  'symfony\\component\\console\\helper\\helper' => 
+  array (
+    0 => 'symfony\\component\\console\\helper\\helperinterface',
+  ),
+  'symfony\\component\\console\\helper\\descriptorhelper' => 
+  array (
+    0 => 'symfony\\component\\console\\helper\\helperinterface',
+    1 => 'symfony\\component\\console\\helper\\helper',
+  ),
+  'symfony\\component\\console\\helper\\formatterhelper' => 
+  array (
+    0 => 'symfony\\component\\console\\helper\\helperinterface',
+    1 => 'symfony\\component\\console\\helper\\helper',
+  ),
+  'symfony\\component\\console\\helper\\inputawarehelper' => 
+  array (
+    0 => 'symfony\\component\\console\\input\\inputawareinterface',
+    1 => 'symfony\\component\\console\\helper\\helperinterface',
+    2 => 'symfony\\component\\console\\helper\\helper',
+  ),
+  'symfony\\component\\console\\helper\\processhelper' => 
+  array (
+    0 => 'symfony\\component\\console\\helper\\helperinterface',
+    1 => 'symfony\\component\\console\\helper\\helper',
+  ),
+  'symfony\\component\\console\\helper\\questionhelper' => 
+  array (
+    0 => 'symfony\\component\\console\\helper\\helperinterface',
+    1 => 'symfony\\component\\console\\helper\\helper',
+  ),
+  'symfony\\component\\console\\helper\\symfonyquestionhelper' => 
+  array (
+    0 => 'symfony\\component\\console\\helper\\helperinterface',
+    1 => 'symfony\\component\\console\\helper\\helper',
+    2 => 'symfony\\component\\console\\helper\\questionhelper',
+  ),
+  'symfony\\component\\console\\helper\\tableseparator' => 
+  array (
+    0 => 'symfony\\component\\console\\helper\\tablecell',
+  ),
+  'symfony\\component\\console\\input\\argvinput' => 
+  array (
+    0 => 'symfony\\component\\console\\input\\inputinterface',
+    1 => 'symfony\\component\\console\\input\\streamableinputinterface',
+    3 => 'symfony\\component\\console\\input\\input',
+  ),
+  'symfony\\component\\console\\input\\input' => 
+  array (
+    0 => 'symfony\\component\\console\\input\\inputinterface',
+    1 => 'symfony\\component\\console\\input\\streamableinputinterface',
+  ),
+  'symfony\\component\\console\\input\\arrayinput' => 
+  array (
+    0 => 'symfony\\component\\console\\input\\inputinterface',
+    1 => 'symfony\\component\\console\\input\\streamableinputinterface',
+    3 => 'symfony\\component\\console\\input\\input',
+  ),
+  'symfony\\component\\console\\input\\streamableinputinterface' => 
+  array (
+    0 => 'symfony\\component\\console\\input\\inputinterface',
+  ),
+  'symfony\\component\\console\\input\\stringinput' => 
+  array (
+    0 => 'symfony\\component\\console\\input\\inputinterface',
+    1 => 'symfony\\component\\console\\input\\streamableinputinterface',
+    3 => 'symfony\\component\\console\\input\\input',
+    4 => 'symfony\\component\\console\\input\\argvinput',
+  ),
+  'symfony\\component\\console\\logger\\consolelogger' => 
+  array (
+    0 => 'psr\\log\\loggerinterface',
+    1 => 'psr\\log\\abstractlogger',
+  ),
+  'symfony\\component\\console\\output\\bufferedoutput' => 
+  array (
+    0 => 'symfony\\component\\console\\output\\outputinterface',
+    1 => 'symfony\\component\\console\\output\\output',
+  ),
+  'symfony\\component\\console\\output\\output' => 
+  array (
+    0 => 'symfony\\component\\console\\output\\outputinterface',
+  ),
+  'symfony\\component\\console\\output\\consoleoutput' => 
+  array (
+    0 => 'symfony\\component\\console\\output\\outputinterface',
+    1 => 'symfony\\component\\console\\output\\consoleoutputinterface',
+    3 => 'symfony\\component\\console\\output\\output',
+    4 => 'symfony\\component\\console\\output\\streamoutput',
+  ),
+  'symfony\\component\\console\\output\\streamoutput' => 
+  array (
+    0 => 'symfony\\component\\console\\output\\outputinterface',
+    1 => 'symfony\\component\\console\\output\\output',
+  ),
+  'symfony\\component\\console\\output\\consoleoutputinterface' => 
+  array (
+    0 => 'symfony\\component\\console\\output\\outputinterface',
+  ),
+  'symfony\\component\\console\\output\\nulloutput' => 
+  array (
+    0 => 'symfony\\component\\console\\output\\outputinterface',
+  ),
+  'symfony\\component\\console\\question\\choicequestion' => 
+  array (
+    0 => 'symfony\\component\\console\\question\\question',
+  ),
+  'symfony\\component\\console\\question\\confirmationquestion' => 
+  array (
+    0 => 'symfony\\component\\console\\question\\question',
+  ),
+  'symfony\\component\\console\\style\\outputstyle' => 
+  array (
+    0 => 'symfony\\component\\console\\style\\styleinterface',
+    1 => 'symfony\\component\\console\\output\\outputinterface',
+  ),
+  'symfony\\component\\console\\style\\symfonystyle' => 
+  array (
+    0 => 'symfony\\component\\console\\style\\styleinterface',
+    1 => 'symfony\\component\\console\\output\\outputinterface',
+    2 => 'symfony\\component\\console\\style\\outputstyle',
+  ),
+  'symfony\\component\\debug\\bufferinglogger' => 
+  array (
+    0 => 'psr\\log\\loggerinterface',
+    1 => 'psr\\log\\abstractlogger',
+  ),
+  'symfony\\component\\debug\\exception\\classnotfoundexception' => 
+  array (
+    0 => 'symfony\\component\\debug\\exception\\fatalerrorexception',
+  ),
+  'symfony\\component\\debug\\exception\\fatalthrowableerror' => 
+  array (
+    0 => 'symfony\\component\\debug\\exception\\fatalerrorexception',
+  ),
+  'symfony\\component\\debug\\exception\\outofmemoryexception' => 
+  array (
+    0 => 'symfony\\component\\debug\\exception\\fatalerrorexception',
+  ),
+  'symfony\\component\\debug\\exception\\undefinedfunctionexception' => 
+  array (
+    0 => 'symfony\\component\\debug\\exception\\fatalerrorexception',
+  ),
+  'symfony\\component\\debug\\exception\\undefinedmethodexception' => 
+  array (
+    0 => 'symfony\\component\\debug\\exception\\fatalerrorexception',
+  ),
+  'symfony\\component\\debug\\fatalerrorhandler\\classnotfoundfatalerrorhandler' => 
+  array (
+    0 => 'symfony\\component\\debug\\fatalerrorhandler\\fatalerrorhandlerinterface',
+  ),
+  'symfony\\component\\debug\\fatalerrorhandler\\undefinedfunctionfatalerrorhandler' => 
+  array (
+    0 => 'symfony\\component\\debug\\fatalerrorhandler\\fatalerrorhandlerinterface',
+  ),
+  'symfony\\component\\debug\\fatalerrorhandler\\undefinedmethodfatalerrorhandler' => 
+  array (
+    0 => 'symfony\\component\\debug\\fatalerrorhandler\\fatalerrorhandlerinterface',
+  ),
+  'symfony\\component\\finder\\comparator\\datecomparator' => 
+  array (
+    0 => 'symfony\\component\\finder\\comparator\\comparator',
+  ),
+  'symfony\\component\\finder\\comparator\\numbercomparator' => 
+  array (
+    0 => 'symfony\\component\\finder\\comparator\\comparator',
+  ),
+  'symfony\\component\\finder\\iterator\\customfilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\daterangefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\depthrangefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\excludedirectoryfilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\filecontentfilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+    1 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\filenamefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+    1 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\filetypefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\pathfilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+    1 => 'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator',
+  ),
+  'symfony\\component\\finder\\iterator\\sizerangefilteriterator' => 
+  array (
+    0 => 'symfony\\component\\finder\\iterator\\filteriterator',
+  ),
+  'symfony\\component\\yaml\\exception\\dumpexception' => 
+  array (
+    0 => 'symfony\\component\\yaml\\exception\\exceptioninterface',
+    1 => 'symfony\\component\\yaml\\exception\\runtimeexception',
+  ),
+  'symfony\\component\\yaml\\exception\\runtimeexception' => 
+  array (
+    0 => 'symfony\\component\\yaml\\exception\\exceptioninterface',
+  ),
+  'symfony\\component\\yaml\\exception\\parseexception' => 
+  array (
+    0 => 'symfony\\component\\yaml\\exception\\exceptioninterface',
+    1 => 'symfony\\component\\yaml\\exception\\runtimeexception',
+  ),
+);
 
-    $class = strtolower($class);
-    if (isset($classes[$class])) {
-
-        if (is_array($class)) {
-
-            if (!$class[1]($class[0], false)) {
-
-                require $classes[$class[0]];
-
-            }
-
-        } else if (!class_exists($class, false)) {
-
-            require $classes[$class];
-
+$class = strtolower($class);
+if (isset($classes[$class])) {
+    if (!empty($deps[$class])) {
+        foreach ($deps[$class] as $zclass) {
+if (
+    ! $classes[$zclass][1]( $zclass, false )
+) {
+    require __DIR__158618077c5cac  . $classes[$zclass][0];
+}
         }
-        return true;
     }
+if (
+    ! $classes[$class][1]( $class, false )
+) {
+    require __DIR__158618077c5cac  . $classes[$class][0];
+}
+    return true;
+}
 
-    /**
-     * Autoloader that implements the PSR-0 spec for interoperability between
-     * PHP software.
-     *
-     * kudos to @alganet for this autoloader script.
-     * borrowed from https://github.com/Respect/Validation/blob/develop/tests/bootstrap.php
-     */
-    $fileParts = explode('\\', ltrim($class, '\\'));
-    if (false !== strpos(end($fileParts), '_')) {
-        array_splice($fileParts, -1, 1, explode('_', current($fileParts)));
-    }
-    $file = stream_resolve_include_path(implode(DIRECTORY_SEPARATOR, $fileParts) . '.php');
-    if ($file) {
-        return require $file;
-    }
+
     return false;
-}, true, true);
+} 
+
+spl_autoload_register('autoloader_158618077c5c98'
+);
 
 

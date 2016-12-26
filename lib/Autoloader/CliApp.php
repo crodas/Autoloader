@@ -93,8 +93,8 @@ class CliApp
             $input->getArgument('dir')
         );
 
-        $relative = $input->getOption('relative');
-        $include  = $input->getOption('include-psr-0');
+        $relative = $input->getOption('relative') || $input->getOption('library');
+        $include  = $input->getOption('include-psr-0') && !$input->getOption('library');
         $cache    = $input->getOption('enable-cache');
         $multi    = $input->getOption('multi');
 
