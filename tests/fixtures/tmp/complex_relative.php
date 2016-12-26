@@ -9,11 +9,11 @@
 $GLOBALS['call_complex_relativestat'] = 0;
 $GLOBALS['load_complex_relativestat'] = 0;
 
-define('__DIR__15861807809458', defined('__DIR__') ? __DIR__ : dirname(__FILE__));
+define('__DIR__a7ac4b6eb233f075820de460851c9f79e6de17fa', defined('__DIR__') ? __DIR__ : dirname(__FILE__));
 
 
 
-function autoloader_15861807809445($class) {
+function autoloader_a7ac4b6eb233f075820de460851c9f79e6de17fa($class) {
     /*
         This array has a map of (class => file)
     */
@@ -79,7 +79,7 @@ if (
     ! $classes[$zclass][1]( $zclass, false )
 ) {
     $GLOBALS['load_complex_relativestat']++;
-    require __DIR__15861807809458  . $classes[$zclass][0];
+    require __DIR__a7ac4b6eb233f075820de460851c9f79e6de17fa  . $classes[$zclass][0];
 }
         }
     }
@@ -87,7 +87,7 @@ if (
     ! $classes[$class][1]( $class, false )
 ) {
     $GLOBALS['load_complex_relativestat']++;
-    require __DIR__15861807809458  . $classes[$class][0];
+    require __DIR__a7ac4b6eb233f075820de460851c9f79e6de17fa  . $classes[$class][0];
 }
     return true;
 }
@@ -111,10 +111,10 @@ if (
     return false;
 } 
 
-spl_autoload_register('autoloader_15861807809445'
+spl_autoload_register('autoloader_a7ac4b6eb233f075820de460851c9f79e6de17fa'
 );
 
-        require_once __DIR__15861807809458 . '/../../generatorTest.php';
+        require_once __DIR__a7ac4b6eb233f075820de460851c9f79e6de17fa . '/../../generatorTest.php';
 
 function getcomplex_relativestat() {
     global $load_complex_relativestat, $call_complex_relativestat;

@@ -386,6 +386,7 @@ class Generator
                 $return['includes'][$id] = Path::getRelative($include, $file);
             }
         }
+        $return['hash'] = sha1($file ? $file : uniqid(true));
 
         return $return;
     }

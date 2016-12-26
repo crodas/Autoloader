@@ -11,9 +11,9 @@ $GLOBALS['call_{{$stats}}'] = 0;
 $GLOBALS['load_{{$stats}}'] = 0;
 @end
 
-@set($function, 'autoloader_' . uniqid(true));
+@set($function, 'autoloader_' . $hash)
 @if ($relative)
-@set($dir, '__DIR__' . uniqid(true));
+@set($dir, '__DIR__' . $hash)
 define({{@$dir}}, defined('__DIR__') ? __DIR__ : dirname(__FILE__));
 @endif
 

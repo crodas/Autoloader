@@ -6,8 +6,9 @@
  *
  *  This is a generated file, do not modify it.
  */
+@set($function, 'index_' . $hash)
 
-spl_autoload_register(function($class) {
+function {{$function}}($class) {
     static $loaded     = array();
     static $namespaces = {{ @$filemap}};
 
@@ -28,7 +29,9 @@ spl_autoload_register(function($class) {
         }
         return $loaded[$namespace]( $class );
     }
-});
+}
+
+spl_autoload_register({{@$function}});
 
 @foreach ($includes as $include)
     @if ($relative)

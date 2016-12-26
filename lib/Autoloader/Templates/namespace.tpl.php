@@ -7,9 +7,9 @@
  *  This is a generated file, do not modify it.
  */
 
-@set($function, 'autoloader_' . uniqid(true));
+@set($function, 'autoloader_' . $hash)
 @if ($relative)
-@set($dir, '__DIR__' . uniqid(true));
+@set($dir, '__DIR__' . $hash)
 define({{@$dir}}, defined('__DIR__') ? __DIR__ : dirname(__FILE__));
 @endif
 
