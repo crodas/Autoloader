@@ -20,7 +20,8 @@
         "crodas/remember": ">=0.4.3"
     },
     "require-dev": {
-        "crodas/simple-view-engine": "^0.1"
+        "crodas/simple-view-engine": "^0.1",
+        "crodas/phpunit-compat": "^1.1"
     },
     "autoload": {
         "psr-0": {
