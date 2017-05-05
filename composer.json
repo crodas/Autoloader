@@ -21,7 +21,7 @@
     },
     "require-dev": {
         "crodas/simple-view-engine": "^0.1",
-        "crodas/phpunit-compat": "^1.1"
+        "crodas/phpunit-compat": "^1.7"
     },
     "autoload": {
         "psr-0": {
