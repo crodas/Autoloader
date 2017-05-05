@@ -1,6 +1,6 @@
 <?php
 
-class generatorTest extends PHPUnit_Framework_TestCase
+class generatorTest extends PHPUnit\Framework\TestCase
 {
     public static function provider() {
         $tests =  array(
