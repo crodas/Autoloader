@@ -48,6 +48,7 @@ class Generator
     protected $stats;
     protected $callback;
     protected $callback_path;
+    protected $exists_functions = array();
 
     protected $namespace = "";
     protected $alias = array();
@@ -263,7 +264,8 @@ class Generator
             $filemap[$namespace] = $this->relative ? Path::getRelative($file, $output) : $file;
         }
 
-        $nargs = array_merge($this->getTemplateArgs($output), compact('filemap', 'relative', 'extraLoader'));
+        $functions = $this->exists_functions;
+        $nargs = array_merge($this->getTemplateArgs($output), compact('filemap', 'relative', 'extraLoader', 'functions'));
         $nargs['relative'] = true;
         $code  = Templates::get('index')->render($nargs, true);
         File::Write($output, $code);
@@ -356,7 +358,11 @@ class Generator
             if (count($dep) > 0) {
                 $deps[$id] = array_unique($dep);
             }
-            $classes[$id] = array($class->GetFile(), $class->getType() . '_exists');
+            $function = $class->getType() . '_exists';
+            if (!in_array($function, $this->exists_functions)) {
+                $this->exists_functions[] = $function;
+            }
+            $classes[$id] = array($class->GetFile(), array_search($function, $this->exists_functions));
         }
 
         $this->hasTraits    = is_callable('trait_exists') && !empty($types['trait']);
@@ -376,7 +382,8 @@ class Generator
         foreach ($args as $arg) {
             $return[$arg] = array_key_exists($arg, $default) ? $default[$arg] : $this->$arg;
         }
-        $return['relative'] = $return['relative'] && !empty($file);
+        $return['relative']  = $return['relative'] && !empty($file);
+        $return['functions'] = $this->exists_functions;
 
         if ($return['relative']) {
             foreach ($return['classes'] as $class => $fileClass) {

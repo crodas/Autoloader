@@ -20,6 +20,7 @@ define({{@$dir}}, defined('__DIR__') ? __DIR__ : dirname(__FILE__));
 
 
 function {{$function}}($class) {
+    static $functions  = {{ @$functions }};
     /*
         This array has a map of (class => file)
     */

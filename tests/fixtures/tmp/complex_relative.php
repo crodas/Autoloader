@@ -14,6 +14,10 @@ define('__DIR__a7ac4b6eb233f075820de460851c9f79e6de17fa', defined('__DIR__') ? _
 
 
 function autoloader_a7ac4b6eb233f075820de460851c9f79e6de17fa($class) {
+    static $functions  = array (
+  0 => 'interface_exists',
+  1 => 'class_exists',
+);
     /*
         This array has a map of (class => file)
     */
@@ -21,32 +25,32 @@ function autoloader_a7ac4b6eb233f075820de460851c9f79e6de17fa($class) {
   'autoloader\\test\\complex\\xxxfoobar_rel' => 
   array (
     0 => '/../complex_relative/anotherInterface.php',
-    1 => 'interface_exists',
+    1 => 0,
   ),
   'simple_rel' => 
   array (
     0 => '/../complex_relative/Bar.php',
-    1 => 'class_exists',
+    1 => 1,
   ),
   'autoloader\\test\\complex\\complex_rel' => 
   array (
     0 => '/../complex_relative/Foo.php',
-    1 => 'class_exists',
+    1 => 1,
   ),
   'foointerface_rel' => 
   array (
     0 => '/../complex_relative/interface.php',
-    1 => 'interface_exists',
+    1 => 0,
   ),
   'barinterface_rel' => 
   array (
     0 => '/../complex_relative/interface1.php',
-    1 => 'interface_exists',
+    1 => 0,
   ),
   'xxxinterface_rel' => 
   array (
     0 => '/../complex_relative/interface2.php',
-    1 => 'interface_exists',
+    1 => 0,
   ),
 );
 
@@ -76,7 +80,7 @@ if (isset($classes[$class])) {
     if (!empty($deps[$class])) {
         foreach ($deps[$class] as $zclass) {
 if (
-    ! $classes[$zclass][1]( $zclass, false )
+    ! $functions[$classes[$zclass][1]]( $zclass, false )
 ) {
     $GLOBALS['load_complex_relativestat']++;
     require __DIR__a7ac4b6eb233f075820de460851c9f79e6de17fa  . $classes[$zclass][0];
@@ -84,7 +88,7 @@ if (
         }
     }
 if (
-    ! $classes[$class][1]( $class, false )
+    ! $functions[$classes[$class][1]]( $class, false )
 ) {
     $GLOBALS['load_complex_relativestat']++;
     require __DIR__a7ac4b6eb233f075820de460851c9f79e6de17fa  . $classes[$class][0];

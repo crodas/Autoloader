@@ -7,10 +7,15 @@
  *  This is a generated file, do not modify it.
  */
 @set($function, 'index_' . $hash)
+@if ($relative)
+@set($dir, '__DIR__' . $hash)
+define({{@$dir}}, defined('__DIR__') ? __DIR__ : dirname(__FILE__));
+@endif
 
 function {{$function}}($class) {
     static $loaded     = array();
     static $namespaces = {{ @$filemap}};
+    static $functions  = {{ @$functions }};
 
     $class = strtolower($class);
 
@@ -22,7 +27,7 @@ function {{$function}}($class) {
 
         if (empty($loaded[$namespace])) {
             @if ($relative)
-            $loaded[$namespace] = require __DIR__ . $file;
+            $loaded[$namespace] = require {{$dir}} . $file;
             @else
             $loaded[$namespace] = require $file;
             @end

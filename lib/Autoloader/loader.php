@@ -12,6 +12,11 @@ define('__DIR__5b1631d32df0a0314cc4cc022b1c7643c877227a', defined('__DIR__') ? _
 
 
 function autoloader_5b1631d32df0a0314cc4cc022b1c7643c877227a($class) {
+    static $functions  = array (
+  0 => 'class_exists',
+  1 => 'interface_exists',
+  2 => 'trait_exists',
+);
     /*
         This array has a map of (class => file)
     */
@@ -19,2207 +24,6072 @@ function autoloader_5b1631d32df0a0314cc4cc022b1c7643c877227a($class) {
   'autoloader\\cliapp' => 
   array (
     0 => '/CliApp.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'autoloader\\composer' => 
   array (
     0 => '/Composer.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'autoloader\\generator' => 
   array (
     0 => '/Generator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'base_template_aab8d954813d6a190dfedd5e726e6f8ed2ef081e' => 
   array (
     0 => '/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_0e0b04df3e4434b3998ba2ae1d44780d04317374' => 
   array (
     0 => '/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_a3ffbb3ad03f81c3fd1d93e6556beae4811dc590' => 
   array (
     0 => '/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_e516b5d47b06ed172138f3ca3ffbb2cc7d52a85a' => 
   array (
     0 => '/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_31028f15e50ec3b9927c300a53d04bb713e73e85' => 
   array (
     0 => '/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_5df81830c135da22bb7e6b9a266d6801c6bfeb2f' => 
   array (
     0 => '/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'autoloader\\templates' => 
   array (
     0 => '/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'composerautoloaderinitaa66ed6e5c6220f106923d89d7fe1646' => 
   array (
     0 => '/../../vendor/composer/autoload_real.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'composer\\autoload\\composerstaticinitaa66ed6e5c6220f106923d89d7fe1646' => 
   array (
     0 => '/../../vendor/composer/autoload_static.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'composer\\autoload\\classloader' => 
   array (
     0 => '/../../vendor/composer/ClassLoader.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\classinfo\\classinfo' => 
   array (
     0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/ClassInfo.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\classinfo\\definition\\tbase' => 
   array (
     0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Definition/TBase.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\classinfo\\definition\\tclass' => 
   array (
     0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Definition/TClass.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\classinfo\\definition\\tfunction' => 
   array (
     0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Definition/TFunction.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\classinfo\\definition\\tproperty' => 
   array (
     0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Definition/TProperty.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\classinfo\\parser' => 
   array (
     0 => '/../../vendor/crodas/class-info/lib/crodas/ClassInfo/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\nodevisitorabstract' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeVisitorAbstract.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\cli\\cli' => 
   array (
     0 => '/../../vendor/crodas/cli/lib/crodas/cli/Cli.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\fileutil\\cache' => 
   array (
     0 => '/../../vendor/crodas/file-util/lib/crodas/FileUtil/Cache.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\fileutil\\file' => 
   array (
     0 => '/../../vendor/crodas/file-util/lib/crodas/FileUtil/File.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\fileutil\\path' => 
   array (
     0 => '/../../vendor/crodas/file-util/lib/crodas/FileUtil/Path.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\annotation\\annotation' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Annotation/Annotation.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\annotation\\common' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Annotation/Common.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\annotation\\annotations' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Annotation/Annotations.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\cacheable' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Cacheable.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\dir' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Dir.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\file' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/File.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\filesystem' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Filesystem.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\functioncall' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/FunctionCall.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\notoj' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Notoj.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\object\\base' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/Base.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\object\\zcallable' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zCallable.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'notoj\\object\\zclass' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zClass.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\object\\zclassmember' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zClassMember.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\object\\zfunction' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zFunction.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\object\\zmethod' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zMethod.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\object\\zproperty' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Object/zProperty.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj_yytoken' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj_yystackentry' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj_parser' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\reflectionclass' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionClass.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\reflectionfunction' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionFunction.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\reflectionmethod' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionMethod.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\reflectionobject' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionObject.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\reflectionproperty' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/ReflectionProperty.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\tokenizer' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/Tokenizer.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'notoj\\tproperty' => 
   array (
     0 => '/../../vendor/crodas/notoj/lib/Notoj/tProperty.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'remember\\remember' => 
   array (
     0 => '/../../vendor/crodas/remember/src/Remember/Remember.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'base_template_281f309710c8d03adaf2a02f1b8ed5b8d690a9d2' => 
   array (
     0 => '/../../vendor/crodas/remember/src/Remember/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_1470f1bf1699480bf5a540d4b9196dbe32779c5c' => 
   array (
     0 => '/../../vendor/crodas/remember/src/Remember/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'remember\\templates' => 
   array (
     0 => '/../../vendor/crodas/remember/src/Remember/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\action' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Action.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\compiler\\servicecall' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Compiler/ServiceCall.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\composer' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Composer.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\provider' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Provider.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\event' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Event.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\eventemitter' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/EventEmitter.php',
-    1 => 'trait_exists',
+    1 => 2,
   ),
   'serviceprovider\\events' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Events.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\notfoundexception' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/NotFoundException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\parser\\ini' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser/INI.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\parser\\json' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser/JSON.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\parser\\yaml' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser/YAML.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\parser\\yml' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser/YML.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\parser' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\services' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Services.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'base_template_0dbaaa8e22c297efe0e3d4e8af754e27f1d53fd5' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Template/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_0e7c6437a035d77bb64635a76bc7506fb01ef5c7' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Template/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_c96c365346bcf33d93d2a2d073d94f6f8e159b26' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Template/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'serviceprovider\\template\\templates' => 
   array (
     0 => '/../../vendor/crodas/service-provider/lib/ServiceProvider/Template/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'simple_view_args_yytoken' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Args.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'simple_view_args_yystackentry' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Args.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'simple_view_args' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Args.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\compiler' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Compiler.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\environment' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Environment.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\exception' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Exception.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\fixcode' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/FixCode.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\macro\\asset' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Macro/Asset.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\macro\\base' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Macro/Base.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\macro\\assetinline' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Macro/Asset.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'simple_view_yytoken' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'simple_view_yystackentry' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'simple_view_parser' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\runtime' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Runtime.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\template' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Template.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'base_template_a7583170cd46360a631dc3d57f152bbeb4c37551' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_f5ab41dedb21a24081861ee6a36af5e59365a600' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_cfa7269ec959308c668047e4aa1cd1d833f91eb6' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_55a865e988d24c0d11ce50bc8c11519a2d28b743' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_c36eec984e05803cb157ccb02bc2517cf30266a3' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_ed71512c603ba20ba49346284ee12f19b5d744de' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_1708ebe9d99ba4e58c0ae7fffeacd2f3eee56157' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_55654f0db518414907f78793b7d027601d43ad01' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_e5f3aacac71e677703efc7f7d2621463a25e5059' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_6b1bcd97e93ed2c0cb9aac64a2ca1db0d5c1bbfd' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_a7fd4ba6aa8322c865f773ab9961440df3ccad7e' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_b3f21f4b7452906b330612b966219cc089b11145' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_47c00cca182fe3bc9f62a5b97ca88b8096be84f9' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_29c582cf88090afb569826fab26c5ff2408174a6' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_4c7ae9b989b5399767f582c58a57086e7e11e353' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_399877791885ad1a9fde51bca4deb52107f94699' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_f438effbfd0e1abc280c3a5fd5c49a6b609fdece' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_a5a85b8b99262519741caf9201827cb2a6a2b36f' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_5d7cda60ed67317c63462a7a3f97c1eaa6a18d4e' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_6ab34a3d879c7067d4dc67f5af3a8dd380cd3156' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\templates\\templates' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'crodas\\simpleview\\tokenizer' => 
   array (
     0 => '/../../vendor/crodas/simple-view-engine/lib/SimpleView/Tokenizer.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'base_template_cae776d793caf672c15e1210f1d0eb6609155ade' => 
   array (
     0 => '/../../vendor/crodas/watch-files/lib/WatchFiles/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'class_a4423e79cd6df51ca66b13affa3d681f3041bae4' => 
   array (
     0 => '/../../vendor/crodas/watch-files/lib/WatchFiles/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'watchfiles\\templates' => 
   array (
     0 => '/../../vendor/crodas/watch-files/lib/WatchFiles/Templates.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'watchfiles\\watch' => 
   array (
     0 => '/../../vendor/crodas/watch-files/lib/WatchFiles/Watch.php',
-    1 => 'class_exists',
+    1 => 0,
+  ),
+  'doctrine\\instantiator\\exception\\exceptioninterface' => 
+  array (
+    0 => '/../../vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
+    1 => 1,
+  ),
+  'doctrine\\instantiator\\exception\\invalidargumentexception' => 
+  array (
+    0 => '/../../vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',
+    1 => 0,
+  ),
+  'doctrine\\instantiator\\exception\\unexpectedvalueexception' => 
+  array (
+    0 => '/../../vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php',
+    1 => 0,
+  ),
+  'doctrine\\instantiator\\instantiator' => 
+  array (
+    0 => '/../../vendor/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php',
+    1 => 0,
+  ),
+  'doctrine\\instantiator\\instantiatorinterface' => 
+  array (
+    0 => '/../../vendor/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php',
+    1 => 1,
+  ),
+  'deepcopy\\deepcopy' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
+    1 => 0,
+  ),
+  'deepcopy\\exception\\cloneexception' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
+    1 => 0,
+  ),
+  'deepcopy\\filter\\doctrine\\doctrinecollectionfilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineCollectionFilter.php',
+    1 => 0,
+  ),
+  'deepcopy\\filter\\filter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Filter/Filter.php',
+    1 => 1,
+  ),
+  'deepcopy\\filter\\doctrine\\doctrineemptycollectionfilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineEmptyCollectionFilter.php',
+    1 => 0,
+  ),
+  'deepcopy\\filter\\doctrine\\doctrineproxyfilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineProxyFilter.php',
+    1 => 0,
+  ),
+  'deepcopy\\filter\\keepfilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Filter/KeepFilter.php',
+    1 => 0,
+  ),
+  'deepcopy\\filter\\replacefilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Filter/ReplaceFilter.php',
+    1 => 0,
+  ),
+  'deepcopy\\filter\\setnullfilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Filter/SetNullFilter.php',
+    1 => 0,
+  ),
+  'deepcopy\\matcher\\doctrine\\doctrineproxymatcher' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Matcher/Doctrine/DoctrineProxyMatcher.php',
+    1 => 0,
+  ),
+  'deepcopy\\matcher\\matcher' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Matcher/Matcher.php',
+    1 => 1,
+  ),
+  'deepcopy\\matcher\\propertymatcher' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Matcher/PropertyMatcher.php',
+    1 => 0,
+  ),
+  'deepcopy\\matcher\\propertynamematcher' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Matcher/PropertyNameMatcher.php',
+    1 => 0,
+  ),
+  'deepcopy\\matcher\\propertytypematcher' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Matcher/PropertyTypeMatcher.php',
+    1 => 0,
+  ),
+  'deepcopy\\reflection\\reflectionhelper' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/Reflection/ReflectionHelper.php',
+    1 => 0,
+  ),
+  'deepcopy\\typefilter\\replacefilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/ReplaceFilter.php',
+    1 => 0,
+  ),
+  'deepcopy\\typefilter\\typefilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
+    1 => 1,
+  ),
+  'deepcopy\\typefilter\\shallowcopyfilter' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/ShallowCopyFilter.php',
+    1 => 0,
+  ),
+  'deepcopy\\typefilter\\spl\\spldoublylinkedlist' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedList.php',
+    1 => 0,
+  ),
+  'deepcopy\\typematcher\\typematcher' => 
+  array (
+    0 => '/../../vendor/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+    1 => 0,
   ),
   'phpparser\\autoloader' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Autoloader.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\class_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Class_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\declaration' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Declaration.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builderabstract' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/BuilderAbstract.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\function_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Function_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\functionlike' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/FunctionLike.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\interface_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Interface_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\method' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Method.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\namespace_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Namespace_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\param' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Param.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\property' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Property.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\trait_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Trait_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder\\use_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder/Use_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\builder' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Builder.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'phpparser\\builderfactory' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/BuilderFactory.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\comment\\doc' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Comment/Doc.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\comment' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Comment.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\error' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Error.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\lexer\\emulative' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Lexer/Emulative.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\lexer' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Lexer.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\arg' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Arg.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\nodeabstract' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeAbstract.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\const_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Const_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\array_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Array_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\arraydimfetch' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ArrayDimFetch.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\arrayitem' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ArrayItem.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assign' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Assign.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\bitwiseand' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseAnd.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\bitwiseor' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseOr.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\bitwisexor' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/BitwiseXor.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\concat' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Concat.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\div' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Div.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\minus' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Minus.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\mod' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mod.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\mul' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Mul.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\plus' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Plus.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\pow' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/Pow.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\shiftleft' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftLeft.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignop\\shiftright' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignOp/ShiftRight.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\assignref' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/AssignRef.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\bitwiseand' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseAnd.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\bitwiseor' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseOr.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\bitwisexor' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BitwiseXor.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\booleanand' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanAnd.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\booleanor' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/BooleanOr.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\coalesce' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Coalesce.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\concat' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Concat.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\div' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Div.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\equal' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Equal.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\greater' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Greater.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\greaterorequal' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/GreaterOrEqual.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\identical' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Identical.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\logicaland' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalAnd.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\logicalor' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalOr.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\logicalxor' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/LogicalXor.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\minus' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Minus.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\mod' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mod.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\mul' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Mul.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\notequal' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotEqual.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\notidentical' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/NotIdentical.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\plus' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Plus.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\pow' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Pow.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\shiftleft' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftLeft.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\shiftright' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/ShiftRight.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\smaller' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Smaller.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\smallerorequal' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/SmallerOrEqual.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\binaryop\\spaceship' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BinaryOp/Spaceship.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\bitwisenot' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BitwiseNot.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\booleannot' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/BooleanNot.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\cast\\array_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Array_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\cast' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\cast\\bool_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Bool_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\cast\\double' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Double.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\cast\\int_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Int_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\cast\\object_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Object_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\cast\\string_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/String_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\cast\\unset_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Cast/Unset_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\classconstfetch' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ClassConstFetch.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\clone_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Clone_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\closure' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Closure.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\functionlike' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/FunctionLike.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'phpparser\\node\\expr\\closureuse' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ClosureUse.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\constfetch' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ConstFetch.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\empty_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Empty_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\errorsuppress' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ErrorSuppress.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\eval_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Eval_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\exit_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Exit_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\funccall' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/FuncCall.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\include_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Include_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\instanceof_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Instanceof_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\isset_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Isset_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\list_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/List_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\methodcall' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/MethodCall.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\new_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/New_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\postdec' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PostDec.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\postinc' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PostInc.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\predec' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PreDec.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\preinc' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PreInc.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\print_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Print_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\propertyfetch' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/PropertyFetch.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\shellexec' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/ShellExec.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\staticcall' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/StaticCall.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\staticpropertyfetch' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/StaticPropertyFetch.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\ternary' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Ternary.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\unaryminus' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/UnaryMinus.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\unaryplus' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/UnaryPlus.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\variable' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Variable.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\yield_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/Yield_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\expr\\yieldfrom' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Expr/YieldFrom.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'phpparser\\node\\name\\fullyqualified' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Name/FullyQualified.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\name' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Name.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\name\\relative' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Name/Relative.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\param' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Param.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\dnumber' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/DNumber.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\encapsed' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/Encapsed.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\encapsedstringpart' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/EncapsedStringPart.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\lnumber' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/LNumber.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst\\class_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Class_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst\\dir' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Dir.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst\\file' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/File.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst\\function_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Function_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst\\line' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Line.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst\\method' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Method.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst\\namespace_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Namespace_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\magicconst\\trait_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Trait_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\scalar\\string_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\break_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Break_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\case_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Case_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\catch_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Catch_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\class_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Class_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\classlike' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ClassLike.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\classconst' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ClassConst.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\classmethod' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ClassMethod.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\const_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Const_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\continue_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Continue_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\declare_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Declare_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\declaredeclare' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/DeclareDeclare.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\do_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Do_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\echo_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Echo_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\else_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Else_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\elseif_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/ElseIf_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\for_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/For_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\foreach_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Foreach_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\function_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Function_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\global_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Global_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\goto_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Goto_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\groupuse' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/GroupUse.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\haltcompiler' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/HaltCompiler.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\if_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/If_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\inlinehtml' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/InlineHTML.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\interface_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Interface_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\label' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Label.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\namespace_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Namespace_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\nop' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Nop.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\property' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Property.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\propertyproperty' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/PropertyProperty.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\return_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Return_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\static_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Static_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\staticvar' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/StaticVar.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\switch_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Switch_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\throw_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Throw_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\trait_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Trait_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\traituse' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUse.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\traituseadaptation\\alias' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Alias.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\traituseadaptation' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\traituseadaptation\\precedence' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TraitUseAdaptation/Precedence.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\trycatch' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/TryCatch.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\unset_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Unset_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\use_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/Use_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\useuse' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/UseUse.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\node\\stmt\\while_' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Node/Stmt/While_.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\nodedumper' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeDumper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\nodetraverser' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeTraverser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\nodetraverserinterface' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeTraverserInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'phpparser\\nodevisitor\\nameresolver' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeVisitor/NameResolver.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\nodevisitor' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/NodeVisitor.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'phpparser\\parser\\multiple' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser/Multiple.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\parser' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'phpparser\\parser\\php5' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser/Php5.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\parserabstract' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/ParserAbstract.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\parser\\php7' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser/Php7.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\parser\\tokens' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Parser/Tokens.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\parserfactory' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/ParserFactory.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\prettyprinter\\standard' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\prettyprinterabstract' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\serializer\\xml' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Serializer/XML.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\serializer' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Serializer.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'phpparser\\unserializer\\xml' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Unserializer/XML.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'phpparser\\unserializer' => 
   array (
     0 => '/../../vendor/nikic/php-parser/lib/PhpParser/Unserializer.php',
-    1 => 'interface_exists',
+    1 => 1,
+  ),
+  'phario\\manifest\\exception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/exceptions/Exception.php',
+    1 => 1,
+  ),
+  'phario\\manifest\\invalidapplicationnameexception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/exceptions/InvalidApplicationNameException.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\invalidemailexception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/exceptions/InvalidEmailException.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\invalidurlexception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/exceptions/InvalidUrlException.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestdocumentexception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/exceptions/ManifestDocumentException.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestdocumentmapperexception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/exceptions/ManifestDocumentMapperException.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestelementexception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/exceptions/ManifestElementException.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestloaderexception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/exceptions/ManifestLoaderException.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestdocumentmapper' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/ManifestDocumentMapper.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestloader' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/ManifestLoader.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestserializer' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/ManifestSerializer.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\application' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Application.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\type' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Type.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\applicationname' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/ApplicationName.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\author' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Author.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\authorcollection' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/AuthorCollection.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\authorcollectioniterator' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/AuthorCollectionIterator.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\bundledcomponent' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/BundledComponent.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\bundledcomponentcollection' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/BundledComponentCollection.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\bundledcomponentcollectioniterator' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/BundledComponentCollectionIterator.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\copyrightinformation' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/CopyrightInformation.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\email' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Email.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\extension' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Extension.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\library' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Library.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\license' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/License.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifest' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Manifest.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\phpextensionrequirement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/PhpExtensionRequirement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\requirement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Requirement.php',
+    1 => 1,
+  ),
+  'phario\\manifest\\phpversionrequirement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/PhpVersionRequirement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\requirementcollection' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/RequirementCollection.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\requirementcollectioniterator' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/RequirementCollectionIterator.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\url' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/values/Url.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\authorelement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/AuthorElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestelement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ManifestElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\authorelementcollection' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/AuthorElementCollection.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\elementcollection' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ElementCollection.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\bundleselement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/BundlesElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\componentelement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ComponentElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\componentelementcollection' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ComponentElementCollection.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\containselement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ContainsElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\copyrightelement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/CopyrightElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\extelement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ExtElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\extelementcollection' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ExtElementCollection.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\extensionelement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ExtensionElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\licenseelement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/LicenseElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestdocument' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ManifestDocument.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\manifestdocumentloadingexception' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/ManifestDocumentLoadingException.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\phpelement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/PhpElement.php',
+    1 => 0,
+  ),
+  'phario\\manifest\\requireselement' => 
+  array (
+    0 => '/../../vendor/phar-io/manifest/src/xml/RequiresElement.php',
+    1 => 0,
+  ),
+  'phario\\version\\abstractversionconstraint' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/AbstractVersionConstraint.php',
+    1 => 0,
+  ),
+  'phario\\version\\versionconstraint' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/VersionConstraint.php',
+    1 => 1,
+  ),
+  'phario\\version\\andversionconstraintgroup' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/AndVersionConstraintGroup.php',
+    1 => 0,
+  ),
+  'phario\\version\\anyversionconstraint' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/AnyVersionConstraint.php',
+    1 => 0,
+  ),
+  'phario\\version\\exactversionconstraint' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/ExactVersionConstraint.php',
+    1 => 0,
+  ),
+  'phario\\version\\exception' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/Exception.php',
+    1 => 1,
+  ),
+  'phario\\version\\greaterthanorequaltoversionconstraint' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/GreaterThanOrEqualToVersionConstraint.php',
+    1 => 0,
+  ),
+  'phario\\version\\invalidversionexception' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/InvalidVersionException.php',
+    1 => 0,
+  ),
+  'phario\\version\\orversionconstraintgroup' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/OrVersionConstraintGroup.php',
+    1 => 0,
+  ),
+  'phario\\version\\prereleasesuffix' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/PreReleaseSuffix.php',
+    1 => 0,
+  ),
+  'phario\\version\\specificmajorandminorversionconstraint' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/SpecificMajorAndMinorVersionConstraint.php',
+    1 => 0,
+  ),
+  'phario\\version\\specificmajorversionconstraint' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/SpecificMajorVersionConstraint.php',
+    1 => 0,
+  ),
+  'phario\\version\\unsupportedversionconstraintexception' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/UnsupportedVersionConstraintException.php',
+    1 => 0,
+  ),
+  'phario\\version\\version' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/Version.php',
+    1 => 0,
+  ),
+  'phario\\version\\versionconstraintparser' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/VersionConstraintParser.php',
+    1 => 0,
+  ),
+  'phario\\version\\versionconstraintvalue' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/VersionConstraintValue.php',
+    1 => 0,
+  ),
+  'phario\\version\\versionnumber' => 
+  array (
+    0 => '/../../vendor/phar-io/version/src/VersionNumber.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\element' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-common/src/Element.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\file' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-common/src/File.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\fqsen' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-common/src/Fqsen.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\location' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-common/src/Location.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\project' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-common/src/Project.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\projectfactory' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-common/src/ProjectFactory.php',
+    1 => 1,
+  ),
+  'mytag' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/examples/04-adding-your-own-tag.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\basetag' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/BaseTag.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/StaticMethod.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\docblock\\description' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Description.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\descriptionfactory' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/DescriptionFactory.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\examplefinder' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/ExampleFinder.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\serializer' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Serializer.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\standardtagfactory' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/StandardTagFactory.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tagfactory' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/TagFactory.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tag' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tag.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\author' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Author.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\covers' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Covers.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\deprecated' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Deprecated.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\example' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Example.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\factory\\strategy' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Factory/Strategy.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\formatter\\passthroughformatter' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter/PassthroughFormatter.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\formatter' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Formatter.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\generic' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Generic.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\link' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Link.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\method' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Method.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\param' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Param.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\property' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Property.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\propertyread' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/PropertyRead.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\propertywrite' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/PropertyWrite.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\return_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Return_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\see' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/See.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\since' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Since.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\source' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Source.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\throws' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Throws.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\uses' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Uses.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\var_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Var_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\version' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock/Tags/Version.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblock' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlock.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblockfactory' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlockFactory.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\docblockfactoryinterface' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/reflection-docblock/src/DocBlockFactoryInterface.php',
+    1 => 1,
+  ),
+  'my\\example\\classy' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/examples/Classy.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\fqsenresolver' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/FqsenResolver.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\type' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Type.php',
+    1 => 1,
+  ),
+  'phpdocumentor\\reflection\\typeresolver' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/TypeResolver.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\array_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Array_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\boolean' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Boolean.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\callable_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Callable_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\compound' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Compound.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\context' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Context.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\contextfactory' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/ContextFactory.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\float_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Float_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\integer' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Integer.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\mixed' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Mixed.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\null_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Null_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\object_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Object_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\resource' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Resource.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\scalar' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Scalar.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\self_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Self_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\static_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Static_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\string_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/String_.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\this' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/This.php',
+    1 => 0,
+  ),
+  'phpdocumentor\\reflection\\types\\void_' => 
+  array (
+    0 => '/../../vendor/phpdocumentor/type-resolver/src/Types/Void_.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\emptyclass' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/EmptyClass.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\emptyinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/EmptyInterface.php',
+    1 => 1,
+  ),
+  'fixtures\\prophecy\\finalclass' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/FinalClass.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\modifierinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/ModifierInterface.php',
+    1 => 1,
+  ),
+  'fixtures\\prophecy\\named' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/Named.php',
+    1 => 1,
+  ),
+  'fixtures\\prophecy\\optionaldepsclass' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/OptionalDepsClass.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\specialmethods' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/SpecialMethods.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\witharguments' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithArguments.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withcallableargument' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithCallableArgument.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withfinalmethod' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithFinalMethod.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withfinalvirtuallyprivatemethod' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithFinalVirtuallyPrivateMethod.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withprotectedabstractmethod' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithProtectedAbstractMethod.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withreferences' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithReferences.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withreturntypehints' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithReturnTypehints.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withstaticmethod' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithStaticMethod.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withtypehintedvariadicargument' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithTypehintedVariadicArgument.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withvariadicargument' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithVariadicArgument.php',
+    1 => 0,
+  ),
+  'fixtures\\prophecy\\withvirtuallyprivatemethod' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/fixtures/WithVirtuallyPrivateMethod.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\argumentswildcardspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/ArgumentsWildcardSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\anyvaluestokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/AnyValuesTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\anyvaluetokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/AnyValueTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\approximatevaluetokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ApproximateValueTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\arraycounttokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ArrayCountTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\arrayentrytokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ArrayEntryTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\arrayeveryentrytokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ArrayEveryEntryTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\callbacktokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/CallbackTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\exactvaluetokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ExactValueTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\exactvaluetokenfixturea' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ExactValueTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\exactvaluetokenfixtureb' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ExactValueTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\identicalvaluetokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/IdenticalValueTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\logicalandtokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/LogicalAndTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\logicalnottokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/LogicalNotTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\objectstatetokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ObjectStateTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\objectstatetokenfixturea' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ObjectStateTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\objectstatetokenfixtureb' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/ObjectStateTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\stringcontainstokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/StringContainsTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argument\\token\\typetokenspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Argument/Token/TypeTokenSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\argumentspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/ArgumentSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\call\\callcenterspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Call/CallCenterSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\call\\callspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Call/CallSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\comparator\\closurecomparatorspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Comparator/ClosureComparatorSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\comparator\\factoryspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Comparator/FactorySpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\comparator\\prophecycomparatorspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Comparator/ProphecyComparatorSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\disableconstructorpatchspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/DisableConstructorPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\hhvmexceptionpatchspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/HhvmExceptionPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\keywordpatchspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/KeywordPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magiccallpatchspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapi' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapiinvalidmethoddefinition' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapiextended' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapiimplemented' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapiinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php',
+    1 => 1,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapiimplementedextended' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/MagicCallPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\prophecysubjectpatchspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/ProphecySubjectPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\reflectionclassnewinstancepatchspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/ReflectionClassNewInstancePatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\splfileinfopatchspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/SplFileInfoPatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\traversablepatchspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/ClassPatch/TraversablePatchSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\doublerspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/DoublerSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\withfinalconstructor' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/DoublerSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\generator\\classcodegeneratorspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/ClassCodeGeneratorSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\generator\\classcreatorspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/ClassCreatorSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\generator\\node\\argumentnodespec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/Node/ArgumentNodeSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\generator\\node\\classnodespec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/Node/ClassNodeSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\generator\\node\\methodnodespec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/Generator/Node/MethodNodeSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\lazydoublespec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/LazyDoubleSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\doubler\\namegeneratorspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Doubler/NameGeneratorSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\call\\unexpectedcallexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Call/UnexpectedCallExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\doubler\\classcreatorexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Doubler/ClassCreatorExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\doubler\\classmirrorexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Doubler/ClassMirrorExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\doubler\\classnotfoundexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Doubler/ClassNotFoundExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\doubler\\doubleexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Doubler/DoubleExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\doubler\\interfacenotfoundexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Doubler/InterfaceNotFoundExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\doubler\\methodnotextendableexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Doubler/MethodNotExtendableExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\doubler\\methodnotfoundexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Doubler/MethodNotFoundExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\prediction\\aggregateexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Prediction/AggregateExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\prediction\\nocallsexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Prediction/NoCallsExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\prediction\\unexpectedcallscountexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Prediction/UnexpectedCallsCountExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\prediction\\unexpectedcallsexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Prediction/UnexpectedCallsExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\prophecy\\methodprophecyexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Prophecy/MethodProphecyExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\exception\\prophecy\\objectprophecyexceptionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Exception/Prophecy/ObjectProphecyExceptionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prediction\\callbackpredictionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prediction/CallbackPredictionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prediction\\callpredictionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prediction/CallPredictionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prediction\\calltimespredictionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prediction/CallTimesPredictionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prediction\\nocallspredictionspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prediction/NoCallsPredictionSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\promise\\callbackpromisespec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Promise/CallbackPromiseSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\promise\\classcallback' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Promise/CallbackPromiseSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\promise\\returnargumentpromisespec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Promise/ReturnArgumentPromiseSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\promise\\returnpromisespec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Promise/ReturnPromiseSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\promise\\throwpromisespec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Promise/ThrowPromiseSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\promise\\requiredargumentexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Promise/ThrowPromiseSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prophecy\\classwithfinalmethod' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prophecy/MethodProphecySpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prophecy\\methodprophecyspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prophecy/MethodProphecySpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prophecy\\objectprophecyspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prophecy/ObjectProphecySpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prophecy\\objectprophecyspecfixturea' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prophecy/ObjectProphecySpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prophecy\\objectprophecyspecfixtureb' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prophecy/ObjectProphecySpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prophecy\\revealerspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Prophecy/RevealerSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\prophetspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/ProphetSpec.php',
+    1 => 0,
+  ),
+  'spec\\prophecy\\util\\stringutilspec' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/spec/Prophecy/Util/StringUtilSpec.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\argumentswildcard' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\anyvaluestoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValuesToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\tokeninterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/TokenInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\argument\\token\\anyvaluetoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\approximatevaluetoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ApproximateValueToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\arraycounttoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayCountToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\arrayentrytoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayEntryToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\arrayeveryentrytoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ArrayEveryEntryToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\callbacktoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/CallbackToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\exactvaluetoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ExactValueToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\identicalvaluetoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/IdenticalValueToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\logicalandtoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/LogicalAndToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\logicalnottoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/LogicalNotToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\objectstatetoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/ObjectStateToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\stringcontainstoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/StringContainsToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument\\token\\typetoken' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument/Token/TypeToken.php',
+    1 => 0,
+  ),
+  'prophecy\\argument' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Argument.php',
+    1 => 0,
+  ),
+  'prophecy\\call\\call' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Call/Call.php',
+    1 => 0,
+  ),
+  'prophecy\\call\\callcenter' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Call/CallCenter.php',
+    1 => 0,
+  ),
+  'prophecy\\comparator\\closurecomparator' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Comparator/ClosureComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\comparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/Comparator.php',
+    1 => 0,
+  ),
+  'prophecy\\comparator\\factory' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Comparator/Factory.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\factory' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/Factory.php',
+    1 => 0,
+  ),
+  'prophecy\\comparator\\prophecycomparator' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Comparator/ProphecyComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\objectcomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/ObjectComparator.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\cacheddoubler' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/CachedDoubler.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\doubler' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/Doubler.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\classpatch\\classpatchinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ClassPatchInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\doubler\\classpatch\\disableconstructorpatch' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/DisableConstructorPatch.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\classpatch\\hhvmexceptionpatch' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/HhvmExceptionPatch.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\classpatch\\keywordpatch' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/KeywordPatch.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\classpatch\\magiccallpatch' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/MagicCallPatch.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\classpatch\\prophecysubjectpatch' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ProphecySubjectPatch.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\classpatch\\reflectionclassnewinstancepatch' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/ReflectionClassNewInstancePatch.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\classpatch\\splfileinfopatch' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/SplFileInfoPatch.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\classpatch\\traversablepatch' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/ClassPatch/TraversablePatch.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\doubleinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/DoubleInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\doubler\\generator\\classcodegenerator' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCodeGenerator.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\generator\\classcreator' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassCreator.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\generator\\classmirror' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ClassMirror.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\generator\\node\\argumentnode' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ArgumentNode.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\generator\\node\\classnode' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/ClassNode.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\generator\\node\\methodnode' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/Node/MethodNode.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\generator\\reflectioninterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/Generator/ReflectionInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\doubler\\lazydouble' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/LazyDouble.php',
+    1 => 0,
+  ),
+  'prophecy\\doubler\\namegenerator' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Doubler/NameGenerator.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\call\\unexpectedcallexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Call/UnexpectedCallException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\prophecy\\objectprophecyexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/ObjectProphecyException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\doubler\\classcreatorexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassCreatorException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\doubler\\doublerexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/DoublerException.php',
+    1 => 1,
+  ),
+  'prophecy\\exception\\doubler\\classmirrorexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassMirrorException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\doubler\\classnotfoundexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ClassNotFoundException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\doubler\\doubleexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/DoubleException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\exception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Exception.php',
+    1 => 1,
+  ),
+  'prophecy\\exception\\doubler\\interfacenotfoundexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/InterfaceNotFoundException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\doubler\\methodnotextendableexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/MethodNotExtendableException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\doubler\\methodnotfoundexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/MethodNotFoundException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\doubler\\returnbyreferenceexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Doubler/ReturnByReferenceException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\invalidargumentexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/InvalidArgumentException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\prediction\\aggregateexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/AggregateException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\prediction\\predictionexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/PredictionException.php',
+    1 => 1,
+  ),
+  'prophecy\\exception\\prediction\\failedpredictionexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/FailedPredictionException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\prediction\\nocallsexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/NoCallsException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\prophecy\\methodprophecyexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/MethodProphecyException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\prediction\\unexpectedcallscountexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/UnexpectedCallsCountException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\prediction\\unexpectedcallsexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prediction/UnexpectedCallsException.php',
+    1 => 0,
+  ),
+  'prophecy\\exception\\prophecy\\prophecyexception' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Exception/Prophecy/ProphecyException.php',
+    1 => 1,
+  ),
+  'prophecy\\phpdocumentor\\classandinterfacetagretriever' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/ClassAndInterfaceTagRetriever.php',
+    1 => 0,
+  ),
+  'prophecy\\phpdocumentor\\methodtagretrieverinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/MethodTagRetrieverInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\phpdocumentor\\classtagretriever' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/ClassTagRetriever.php',
+    1 => 0,
+  ),
+  'prophecy\\phpdocumentor\\legacyclasstagretriever' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/LegacyClassTagRetriever.php',
+    1 => 0,
+  ),
+  'prophecy\\prediction\\callbackprediction' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prediction/CallbackPrediction.php',
+    1 => 0,
+  ),
+  'prophecy\\prediction\\predictioninterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prediction/PredictionInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\prediction\\callprediction' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prediction/CallPrediction.php',
+    1 => 0,
+  ),
+  'prophecy\\prediction\\calltimesprediction' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prediction/CallTimesPrediction.php',
+    1 => 0,
+  ),
+  'prophecy\\prediction\\nocallsprediction' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prediction/NoCallsPrediction.php',
+    1 => 0,
+  ),
+  'prophecy\\promise\\callbackpromise' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Promise/CallbackPromise.php',
+    1 => 0,
+  ),
+  'prophecy\\promise\\promiseinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Promise/PromiseInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\promise\\returnargumentpromise' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Promise/ReturnArgumentPromise.php',
+    1 => 0,
+  ),
+  'prophecy\\promise\\returnpromise' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Promise/ReturnPromise.php',
+    1 => 0,
+  ),
+  'prophecy\\promise\\throwpromise' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Promise/ThrowPromise.php',
+    1 => 0,
+  ),
+  'prophecy\\prophecy\\methodprophecy' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prophecy/MethodProphecy.php',
+    1 => 0,
+  ),
+  'prophecy\\prophecy\\objectprophecy' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prophecy/ObjectProphecy.php',
+    1 => 0,
+  ),
+  'prophecy\\prophecy\\prophecyinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prophecy/ProphecyInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\prophecy\\prophecysubjectinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prophecy/ProphecySubjectInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\prophecy\\revealer' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prophecy/Revealer.php',
+    1 => 0,
+  ),
+  'prophecy\\prophecy\\revealerinterface' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prophecy/RevealerInterface.php',
+    1 => 1,
+  ),
+  'prophecy\\prophet' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Prophet.php',
+    1 => 0,
+  ),
+  'prophecy\\util\\exportutil' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Util/ExportUtil.php',
+    1 => 0,
+  ),
+  'prophecy\\util\\stringutil' => 
+  array (
+    0 => '/../../vendor/phpspec/prophecy/src/Prophecy/Util/StringUtil.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\codecoverage' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/CodeCoverage.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\driver\\driver' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Driver/Driver.php',
+    1 => 1,
+  ),
+  'sebastianbergmann\\codecoverage\\driver\\hhvm' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Driver/HHVM.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\driver\\xdebug' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Driver/Xdebug.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\driver\\phpdbg' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Driver/PHPDBG.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\coveredcodenotexecutedexception' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\runtimeexception' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Exception/RuntimeException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\exception' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Exception/Exception.php',
+    1 => 1,
+  ),
+  'sebastianbergmann\\codecoverage\\invalidargumentexception' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Exception/InvalidArgumentException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\missingcoversannotationexception' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Exception/MissingCoversAnnotationException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\unintentionallycoveredcodeexception' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Exception/UnintentionallyCoveredCodeException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\filter' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Filter.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\node\\abstractnode' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Node/AbstractNode.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\node\\builder' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Node/Builder.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\node\\directory' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Node/Directory.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\node\\file' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Node/File.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\node\\iterator' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Node/Iterator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\clover' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Clover.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\crap4j' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Crap4j.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\html\\facade' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Html/Facade.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\html\\dashboard' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Dashboard.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\html\\renderer' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Html/Renderer.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\html\\directory' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Directory.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\html\\file' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/File.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\php' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/PHP.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\text' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Text.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\buildinformation' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/BuildInformation.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\coverage' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Coverage.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\directory' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Directory.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\node' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Node.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\facade' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Facade.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\file' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/File.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\method' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Method.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\project' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Project.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\report' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Report.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\source' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Source.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\totals' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Totals.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\unit' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Report/Xml/Unit.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\util' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Util.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codecoverage\\version' => 
+  array (
+    0 => '/../../vendor/phpunit/php-code-coverage/src/Version.php',
+    1 => 0,
+  ),
+  'file_iterator_facade' => 
+  array (
+    0 => '/../../vendor/phpunit/php-file-iterator/src/Facade.php',
+    1 => 0,
+  ),
+  'file_iterator_factory' => 
+  array (
+    0 => '/../../vendor/phpunit/php-file-iterator/src/Factory.php',
+    1 => 0,
+  ),
+  'file_iterator' => 
+  array (
+    0 => '/../../vendor/phpunit/php-file-iterator/src/Iterator.php',
+    1 => 0,
+  ),
+  'text_template' => 
+  array (
+    0 => '/../../vendor/phpunit/php-text-template/src/Template.php',
+    1 => 0,
+  ),
+  'php_timer' => 
+  array (
+    0 => '/../../vendor/phpunit/php-timer/src/Timer.php',
+    1 => 0,
+  ),
+  'php_token_stream_cachingfactory' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
+    1 => 0,
+  ),
+  'php_token_stream' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token/Stream.php',
+    1 => 0,
+  ),
+  'php_token' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_tokenwithscope' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_tokenwithscopeandvisibility' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_includes' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_function' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_interface' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_abstract' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_ampersand' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_and_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_array' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_array_cast' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_as' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_at' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_backtick' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_bad_character' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_boolean_and' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_boolean_or' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_bool_cast' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_break' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_caret' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_case' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_catch' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_character' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_class' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_class_c' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_class_name_constant' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_clone' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_close_bracket' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_close_curly' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_close_square' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_close_tag' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_colon' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_comma' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_comment' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_concat_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_const' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_constant_encapsed_string' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_continue' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_curly_open' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_dec' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_declare' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_default' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_div' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_div_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_dnumber' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_do' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_doc_comment' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_dollar' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_dollar_open_curly_braces' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_dot' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_double_arrow' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_double_cast' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_double_colon' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_double_quotes' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_echo' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_else' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_elseif' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_empty' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_encapsed_and_whitespace' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_enddeclare' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_endfor' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_endforeach' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_endif' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_endswitch' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_endwhile' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_end_heredoc' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_eval' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_exclamation_mark' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_exit' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_extends' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_file' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_final' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_for' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_foreach' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_func_c' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_global' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_gt' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_if' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_implements' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_inc' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_include' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_include_once' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_inline_html' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_instanceof' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_int_cast' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_isset' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_is_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_is_greater_or_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_is_identical' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_is_not_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_is_not_identical' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_is_smaller_or_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_line' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_list' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_lnumber' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_logical_and' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_logical_or' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_logical_xor' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_lt' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_method_c' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_minus' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_minus_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_mod_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_mult' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_mul_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_new' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_num_string' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_object_cast' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_object_operator' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_open_bracket' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_open_curly' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_open_square' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_open_tag' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_open_tag_with_echo' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_or_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_paamayim_nekudotayim' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_percent' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_pipe' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_plus' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_plus_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_print' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_private' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_protected' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_public' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_question_mark' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_require' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_require_once' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_return' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_semicolon' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_sl' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_sl_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_sr' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_sr_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_start_heredoc' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_static' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_string' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_string_cast' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_string_varname' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_switch' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_throw' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_tilde' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_try' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_unset' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_unset_cast' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_use' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_use_function' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_var' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_variable' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_while' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_whitespace' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xor_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_halt_compiler' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_dir' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_goto' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_namespace' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_ns_c' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_ns_separator' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_callable' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_insteadof' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_trait' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_trait_c' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_finally' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_yield' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_ellipsis' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_pow' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_pow_equal' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_coalesce' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_spaceship' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_yield_from' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_async' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_await' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_compiler_halt_offset' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_enum' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_equals' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_in' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_join' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_lambda_arrow' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_lambda_cp' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_lambda_op' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_onumber' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_nullsafe_object_operator' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_shape' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_super' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_type' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_typelist_gt' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_typelist_lt' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_where' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_attribute' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_category' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_category_label' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_children' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_label' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_required' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_tag_gt' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_tag_lt' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'php_token_xhp_text' => 
+  array (
+    0 => '/../../vendor/phpunit/php-token-stream/src/Token.php',
+    1 => 0,
+  ),
+  'phpunit\\exception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Exception.php',
+    1 => 1,
+  ),
+  'phpunit\\framework\\assert' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Assert.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\assertionfailederror' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/AssertionFailedError.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\exception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Exception.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\selfdescribing' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/SelfDescribing.php',
+    1 => 1,
+  ),
+  'phpunit\\framework\\codecoverageexception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/CodeCoverageException.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\arrayhaskey' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/ArrayHasKey.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\constraint' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/Constraint.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\arraysubset' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/ArraySubset.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\attribute' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/Attribute.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\composite' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/Composite.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\callback' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/Callback.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\classhasattribute' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/ClassHasAttribute.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\classhasstaticattribute' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/ClassHasStaticAttribute.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\count' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/Count.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\directoryexists' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/DirectoryExists.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\exception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/Exception.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\exceptioncode' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/ExceptionCode.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\exceptionmessage' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/ExceptionMessage.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\exceptionmessageregularexpression' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/ExceptionMessageRegularExpression.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\fileexists' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/FileExists.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\greaterthan' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/GreaterThan.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isanything' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsAnything.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isempty' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsEmpty.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isequal' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsEqual.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isfalse' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsFalse.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isfinite' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsFinite.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isidentical' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsIdentical.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isinfinite' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsInfinite.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isinstanceof' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsInstanceOf.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isjson' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsJson.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isnan' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsNan.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isnull' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsNull.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\isreadable' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsReadable.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\istrue' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsTrue.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\istype' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsType.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\iswritable' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/IsWritable.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\jsonmatches' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatches.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\jsonmatcheserrormessageprovider' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/JsonMatchesErrorMessageProvider.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\lessthan' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/LessThan.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\logicaland' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/LogicalAnd.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\logicalnot' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/LogicalNot.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\logicalor' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/LogicalOr.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\logicalxor' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/LogicalXor.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\objecthasattribute' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/ObjectHasAttribute.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\regularexpression' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/RegularExpression.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\samesize' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/SameSize.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\stringcontains' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/StringContains.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\stringendswith' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/StringEndsWith.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\stringmatchesformatdescription' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/StringMatchesFormatDescription.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\stringstartswith' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/StringStartsWith.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\traversablecontains' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/TraversableContains.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\constraint\\traversablecontainsonly' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Constraint/TraversableContainsOnly.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\coveredcodenotexecutedexception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/CoveredCodeNotExecutedException.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\error\\deprecated' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Error/Deprecated.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\error\\error' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Error/Error.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\error\\notice' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Error/Notice.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\error\\warning' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Error/Warning.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\exceptionwrapper' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/ExceptionWrapper.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\expectationfailedexception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/ExpectationFailedException.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\invalidcoverstargetexception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/InvalidCoversTargetException.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\missingcoversannotationexception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/MissingCoversAnnotationException.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\outputerror' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/OutputError.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\syntheticerror' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/SyntheticError.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\unintentionallycoveredcodeerror' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/UnintentionallyCoveredCodeError.php',
+    1 => 0,
+  ),
+  'phpunit\\framework\\warning' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Framework/Warning.php',
+    1 => 0,
+  ),
+  'phpunit\\runner\\exception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Runner/Exception.php',
+    1 => 0,
+  ),
+  'phpunit\\runner\\filter\\excludegroupfilteriterator' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Runner/Filter/ExcludeGroupFilterIterator.php',
+    1 => 0,
+  ),
+  'phpunit\\runner\\filter\\groupfilteriterator' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Runner/Filter/GroupFilterIterator.php',
+    1 => 0,
+  ),
+  'phpunit\\runner\\filter\\factory' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Runner/Filter/Factory.php',
+    1 => 0,
+  ),
+  'phpunit\\runner\\filter\\includegroupfilteriterator' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Runner/Filter/IncludeGroupFilterIterator.php',
+    1 => 0,
+  ),
+  'phpunit\\runner\\filter\\namefilteriterator' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Runner/Filter/NameFilterIterator.php',
+    1 => 0,
+  ),
+  'phpunit\\runner\\version' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Runner/Version.php',
+    1 => 0,
+  ),
+  'phpunit\\textui\\command' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/TextUI/Command.php',
+    1 => 0,
+  ),
+  'phpunit\\textui\\resultprinter' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/TextUI/ResultPrinter.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\printer' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Printer.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\blacklist' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Blacklist.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\configuration' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Configuration.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\configurationgenerator' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/ConfigurationGenerator.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\errorhandler' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/ErrorHandler.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\fileloader' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Fileloader.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\filesystem' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Filesystem.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\filter' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Filter.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\getopt' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Getopt.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\globalstate' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/GlobalState.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\invalidargumenthelper' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/InvalidArgumentHelper.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\log\\junit' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Log/JUnit.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\log\\teamcity' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Log/TeamCity.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\php\\abstractphpprocess' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/PHP/AbstractPhpProcess.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\php\\defaultphpprocess' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/PHP/DefaultPhpProcess.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\php\\windowsphpprocess' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/PHP/WindowsPhpProcess.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\regularexpression' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/RegularExpression.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\type' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Type.php',
+    1 => 0,
+  ),
+  'phpunit\\util\\xml' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit/src/Util/Xml.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_builder_identity' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Builder/Identity.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_builder_invocationmocker' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Builder/InvocationMocker.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_builder_methodnamematch' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Builder/MethodNameMatch.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_builder_match' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Builder/Match.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_builder_stub' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Builder/Stub.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_builder_parametersmatch' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Builder/ParametersMatch.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_builder_namespace' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Builder/Namespace.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_badmethodcallexception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Exception/BadMethodCallException.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_exception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Exception/Exception.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_runtimeexception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Exception/RuntimeException.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_generator' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Generator.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_invocation_object' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Invocation/Object.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_invocation_static' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Invocation/Static.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_invocation' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Invocation.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_invocationmocker' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/InvocationMocker.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_stub_matchercollection' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/MatcherCollection.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_invokable' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Invokable.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_verifiable' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Verifiable.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_matcher_anyinvokedcount' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/AnyInvokedCount.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_invokedrecorder' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/InvokedRecorder.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_anyparameters' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/AnyParameters.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_statelessinvocation' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/StatelessInvocation.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_consecutiveparameters' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/ConsecutiveParameters.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_invocation' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/Invocation.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_matcher_invokedatindex' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtIndex.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_invokedatleastcount' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtLeastCount.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_invokedatleastonce' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtLeastOnce.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_invokedatmostcount' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/InvokedAtMostCount.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_invokedcount' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/InvokedCount.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_methodname' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/MethodName.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher_parameters' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher/Parameters.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_matcher' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Matcher.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_mockbuilder' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/MockBuilder.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_mockobject' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/MockObject.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_stub_consecutivecalls' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/ConsecutiveCalls.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_stub' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub.php',
+    1 => 1,
+  ),
+  'phpunit_framework_mockobject_stub_exception' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/Exception.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_stub_return' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/Return.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_stub_returnargument' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/ReturnArgument.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_stub_returncallback' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/ReturnCallback.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_stub_returnreference' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/ReturnReference.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_stub_returnself' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/ReturnSelf.php',
+    1 => 0,
+  ),
+  'phpunit_framework_mockobject_stub_returnvaluemap' => 
+  array (
+    0 => '/../../vendor/phpunit/phpunit-mock-objects/src/Stub/ReturnValueMap.php',
+    1 => 0,
   ),
   'psr\\log\\abstractlogger' => 
   array (
     0 => '/../../vendor/psr/log/Psr/Log/AbstractLogger.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'psr\\log\\loggerinterface' => 
   array (
     0 => '/../../vendor/psr/log/Psr/Log/LoggerInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'psr\\log\\invalidargumentexception' => 
   array (
     0 => '/../../vendor/psr/log/Psr/Log/InvalidArgumentException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'psr\\log\\loggerawareinterface' => 
   array (
     0 => '/../../vendor/psr/log/Psr/Log/LoggerAwareInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'psr\\log\\loggerawaretrait' => 
   array (
     0 => '/../../vendor/psr/log/Psr/Log/LoggerAwareTrait.php',
-    1 => 'trait_exists',
+    1 => 2,
   ),
   'psr\\log\\loggertrait' => 
   array (
     0 => '/../../vendor/psr/log/Psr/Log/LoggerTrait.php',
-    1 => 'trait_exists',
+    1 => 2,
   ),
   'psr\\log\\loglevel' => 
   array (
     0 => '/../../vendor/psr/log/Psr/Log/LogLevel.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'psr\\log\\nulllogger' => 
   array (
     0 => '/../../vendor/psr/log/Psr/Log/NullLogger.php',
-    1 => 'class_exists',
+    1 => 0,
+  ),
+  'sebastianbergmann\\codeunitreverselookup\\wizard' => 
+  array (
+    0 => '/../../vendor/sebastian/code-unit-reverse-lookup/src/Wizard.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\arraycomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/ArrayComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\comparisonfailure' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/ComparisonFailure.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\datetimecomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/DateTimeComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\domnodecomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/DOMNodeComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\doublecomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/DoubleComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\numericcomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/NumericComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\exceptioncomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/ExceptionComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\mockobjectcomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/MockObjectComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\scalarcomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/ScalarComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\resourcecomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/ResourceComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\splobjectstoragecomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/SplObjectStorageComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\comparator\\typecomparator' => 
+  array (
+    0 => '/../../vendor/sebastian/comparator/src/TypeComparator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\diff\\chunk' => 
+  array (
+    0 => '/../../vendor/sebastian/diff/src/Chunk.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\diff\\diff' => 
+  array (
+    0 => '/../../vendor/sebastian/diff/src/Diff.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\diff\\differ' => 
+  array (
+    0 => '/../../vendor/sebastian/diff/src/Differ.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\diff\\lcs\\longestcommonsubsequence' => 
+  array (
+    0 => '/../../vendor/sebastian/diff/src/LCS/LongestCommonSubsequence.php',
+    1 => 1,
+  ),
+  'sebastianbergmann\\diff\\lcs\\memoryefficientimplementation' => 
+  array (
+    0 => '/../../vendor/sebastian/diff/src/LCS/MemoryEfficientLongestCommonSubsequenceImplementation.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\diff\\lcs\\timeefficientimplementation' => 
+  array (
+    0 => '/../../vendor/sebastian/diff/src/LCS/TimeEfficientLongestCommonSubsequenceImplementation.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\diff\\line' => 
+  array (
+    0 => '/../../vendor/sebastian/diff/src/Line.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\diff\\parser' => 
+  array (
+    0 => '/../../vendor/sebastian/diff/src/Parser.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\environment\\console' => 
+  array (
+    0 => '/../../vendor/sebastian/environment/src/Console.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\environment\\runtime' => 
+  array (
+    0 => '/../../vendor/sebastian/environment/src/Runtime.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\exporter\\exporter' => 
+  array (
+    0 => '/../../vendor/sebastian/exporter/src/Exporter.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\globalstate\\blacklist' => 
+  array (
+    0 => '/../../vendor/sebastian/global-state/src/Blacklist.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\globalstate\\codeexporter' => 
+  array (
+    0 => '/../../vendor/sebastian/global-state/src/CodeExporter.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\globalstate\\exception' => 
+  array (
+    0 => '/../../vendor/sebastian/global-state/src/exceptions/Exception.php',
+    1 => 1,
+  ),
+  'sebastianbergmann\\globalstate\\runtimeexception' => 
+  array (
+    0 => '/../../vendor/sebastian/global-state/src/exceptions/RuntimeException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\globalstate\\restorer' => 
+  array (
+    0 => '/../../vendor/sebastian/global-state/src/Restorer.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\globalstate\\snapshot' => 
+  array (
+    0 => '/../../vendor/sebastian/global-state/src/Snapshot.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\objectenumerator\\enumerator' => 
+  array (
+    0 => '/../../vendor/sebastian/object-enumerator/src/Enumerator.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\objectenumerator\\exception' => 
+  array (
+    0 => '/../../vendor/sebastian/object-enumerator/src/Exception.php',
+    1 => 1,
+  ),
+  'sebastianbergmann\\objectenumerator\\invalidargumentexception' => 
+  array (
+    0 => '/../../vendor/sebastian/object-enumerator/src/InvalidArgumentException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\objectreflector\\exception' => 
+  array (
+    0 => '/../../vendor/sebastian/object-reflector/src/Exception.php',
+    1 => 1,
+  ),
+  'sebastianbergmann\\objectreflector\\invalidargumentexception' => 
+  array (
+    0 => '/../../vendor/sebastian/object-reflector/src/InvalidArgumentException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\objectreflector\\objectreflector' => 
+  array (
+    0 => '/../../vendor/sebastian/object-reflector/src/ObjectReflector.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\recursioncontext\\context' => 
+  array (
+    0 => '/../../vendor/sebastian/recursion-context/src/Context.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\recursioncontext\\exception' => 
+  array (
+    0 => '/../../vendor/sebastian/recursion-context/src/Exception.php',
+    1 => 1,
+  ),
+  'sebastianbergmann\\recursioncontext\\invalidargumentexception' => 
+  array (
+    0 => '/../../vendor/sebastian/recursion-context/src/InvalidArgumentException.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\resourceoperations\\resourceoperations' => 
+  array (
+    0 => '/../../vendor/sebastian/resource-operations/src/ResourceOperations.php',
+    1 => 0,
+  ),
+  'sebastianbergmann\\version' => 
+  array (
+    0 => '/../../vendor/sebastian/version/src/Version.php',
+    1 => 0,
   ),
   'seld\\jsonlint\\duplicatekeyexception' => 
   array (
     0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/DuplicateKeyException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'seld\\jsonlint\\parsingexception' => 
   array (
     0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/ParsingException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'seld\\jsonlint\\jsonparser' => 
   array (
     0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/JsonParser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'seld\\jsonlint\\lexer' => 
   array (
     0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/Lexer.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'seld\\jsonlint\\undefined' => 
   array (
     0 => '/../../vendor/seld/jsonlint/src/Seld/JsonLint/Undefined.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\application' => 
   array (
     0 => '/../../vendor/symfony/console/Application.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\command\\command' => 
   array (
     0 => '/../../vendor/symfony/console/Command/Command.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\command\\helpcommand' => 
   array (
     0 => '/../../vendor/symfony/console/Command/HelpCommand.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\command\\listcommand' => 
   array (
     0 => '/../../vendor/symfony/console/Command/ListCommand.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\command\\lockabletrait' => 
   array (
     0 => '/../../vendor/symfony/console/Command/LockableTrait.php',
-    1 => 'trait_exists',
+    1 => 2,
   ),
   'symfony\\component\\console\\consoleevents' => 
   array (
     0 => '/../../vendor/symfony/console/ConsoleEvents.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\descriptor\\applicationdescription' => 
   array (
     0 => '/../../vendor/symfony/console/Descriptor/ApplicationDescription.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\descriptor\\descriptor' => 
   array (
     0 => '/../../vendor/symfony/console/Descriptor/Descriptor.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\descriptor\\descriptorinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Descriptor/DescriptorInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\descriptor\\jsondescriptor' => 
   array (
     0 => '/../../vendor/symfony/console/Descriptor/JsonDescriptor.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\descriptor\\markdowndescriptor' => 
   array (
     0 => '/../../vendor/symfony/console/Descriptor/MarkdownDescriptor.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\descriptor\\textdescriptor' => 
   array (
     0 => '/../../vendor/symfony/console/Descriptor/TextDescriptor.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\descriptor\\xmldescriptor' => 
   array (
     0 => '/../../vendor/symfony/console/Descriptor/XmlDescriptor.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\event\\consolecommandevent' => 
   array (
     0 => '/../../vendor/symfony/console/Event/ConsoleCommandEvent.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\event\\consoleevent' => 
   array (
     0 => '/../../vendor/symfony/console/Event/ConsoleEvent.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\event\\consoleexceptionevent' => 
   array (
     0 => '/../../vendor/symfony/console/Event/ConsoleExceptionEvent.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\event\\consoleterminateevent' => 
   array (
     0 => '/../../vendor/symfony/console/Event/ConsoleTerminateEvent.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\exception\\commandnotfoundexception' => 
   array (
     0 => '/../../vendor/symfony/console/Exception/CommandNotFoundException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\exception\\exceptioninterface' => 
   array (
     0 => '/../../vendor/symfony/console/Exception/ExceptionInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\exception\\invalidargumentexception' => 
   array (
     0 => '/../../vendor/symfony/console/Exception/InvalidArgumentException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\exception\\invalidoptionexception' => 
   array (
     0 => '/../../vendor/symfony/console/Exception/InvalidOptionException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\exception\\logicexception' => 
   array (
     0 => '/../../vendor/symfony/console/Exception/LogicException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\exception\\runtimeexception' => 
   array (
     0 => '/../../vendor/symfony/console/Exception/RuntimeException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\formatter\\outputformatter' => 
   array (
     0 => '/../../vendor/symfony/console/Formatter/OutputFormatter.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\formatter\\outputformatterinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Formatter/OutputFormatterInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\formatter\\outputformatterstyle' => 
   array (
     0 => '/../../vendor/symfony/console/Formatter/OutputFormatterStyle.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\formatter\\outputformatterstyleinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Formatter/OutputFormatterStyleInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\formatter\\outputformatterstylestack' => 
   array (
     0 => '/../../vendor/symfony/console/Formatter/OutputFormatterStyleStack.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\debugformatterhelper' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/DebugFormatterHelper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\helper' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/Helper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\descriptorhelper' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/DescriptorHelper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\formatterhelper' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/FormatterHelper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\helperinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/HelperInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\helper\\helperset' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/HelperSet.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\inputawarehelper' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/InputAwareHelper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\input\\inputawareinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Input/InputAwareInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\helper\\processhelper' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/ProcessHelper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\progressbar' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/ProgressBar.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\progressindicator' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/ProgressIndicator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\questionhelper' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/QuestionHelper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\symfonyquestionhelper' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/SymfonyQuestionHelper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\table' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/Table.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\tablecell' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/TableCell.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\tableseparator' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/TableSeparator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\helper\\tablestyle' => 
   array (
     0 => '/../../vendor/symfony/console/Helper/TableStyle.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\input\\argvinput' => 
   array (
     0 => '/../../vendor/symfony/console/Input/ArgvInput.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\input\\input' => 
   array (
     0 => '/../../vendor/symfony/console/Input/Input.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\input\\arrayinput' => 
   array (
     0 => '/../../vendor/symfony/console/Input/ArrayInput.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\input\\inputinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Input/InputInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\input\\streamableinputinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Input/StreamableInputInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\input\\inputargument' => 
   array (
     0 => '/../../vendor/symfony/console/Input/InputArgument.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\input\\inputdefinition' => 
   array (
     0 => '/../../vendor/symfony/console/Input/InputDefinition.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\input\\inputoption' => 
   array (
     0 => '/../../vendor/symfony/console/Input/InputOption.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\input\\stringinput' => 
   array (
     0 => '/../../vendor/symfony/console/Input/StringInput.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\logger\\consolelogger' => 
   array (
     0 => '/../../vendor/symfony/console/Logger/ConsoleLogger.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\output\\bufferedoutput' => 
   array (
     0 => '/../../vendor/symfony/console/Output/BufferedOutput.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\output\\output' => 
   array (
     0 => '/../../vendor/symfony/console/Output/Output.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\output\\consoleoutput' => 
   array (
     0 => '/../../vendor/symfony/console/Output/ConsoleOutput.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\output\\streamoutput' => 
   array (
     0 => '/../../vendor/symfony/console/Output/StreamOutput.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\output\\consoleoutputinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Output/ConsoleOutputInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\output\\outputinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Output/OutputInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\output\\nulloutput' => 
   array (
     0 => '/../../vendor/symfony/console/Output/NullOutput.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\question\\choicequestion' => 
   array (
     0 => '/../../vendor/symfony/console/Question/ChoiceQuestion.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\question\\question' => 
   array (
     0 => '/../../vendor/symfony/console/Question/Question.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\question\\confirmationquestion' => 
   array (
     0 => '/../../vendor/symfony/console/Question/ConfirmationQuestion.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\style\\outputstyle' => 
   array (
     0 => '/../../vendor/symfony/console/Style/OutputStyle.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\style\\styleinterface' => 
   array (
     0 => '/../../vendor/symfony/console/Style/StyleInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\console\\style\\symfonystyle' => 
   array (
     0 => '/../../vendor/symfony/console/Style/SymfonyStyle.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\console\\terminal' => 
   array (
     0 => '/../../vendor/symfony/console/Terminal.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\bufferinglogger' => 
   array (
     0 => '/../../vendor/symfony/debug/BufferingLogger.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\debug' => 
   array (
     0 => '/../../vendor/symfony/debug/Debug.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\debugclassloader' => 
   array (
     0 => '/../../vendor/symfony/debug/DebugClassLoader.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\errorhandler' => 
   array (
     0 => '/../../vendor/symfony/debug/ErrorHandler.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\classnotfoundexception' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/ClassNotFoundException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\fatalerrorexception' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/FatalErrorException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\contexterrorexception' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/ContextErrorException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\fatalthrowableerror' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/FatalThrowableError.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\flattenexception' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/FlattenException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\outofmemoryexception' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/OutOfMemoryException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\silencederrorcontext' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/SilencedErrorContext.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\undefinedfunctionexception' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/UndefinedFunctionException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exception\\undefinedmethodexception' => 
   array (
     0 => '/../../vendor/symfony/debug/Exception/UndefinedMethodException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\exceptionhandler' => 
   array (
     0 => '/../../vendor/symfony/debug/ExceptionHandler.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\fatalerrorhandler\\classnotfoundfatalerrorhandler' => 
   array (
     0 => '/../../vendor/symfony/debug/FatalErrorHandler/ClassNotFoundFatalErrorHandler.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\fatalerrorhandler\\fatalerrorhandlerinterface' => 
   array (
     0 => '/../../vendor/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\debug\\fatalerrorhandler\\undefinedfunctionfatalerrorhandler' => 
   array (
     0 => '/../../vendor/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\debug\\fatalerrorhandler\\undefinedmethodfatalerrorhandler' => 
   array (
     0 => '/../../vendor/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\comparator\\comparator' => 
   array (
     0 => '/../../vendor/symfony/finder/Comparator/Comparator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\comparator\\datecomparator' => 
   array (
     0 => '/../../vendor/symfony/finder/Comparator/DateComparator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\comparator\\numbercomparator' => 
   array (
     0 => '/../../vendor/symfony/finder/Comparator/NumberComparator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\exception\\accessdeniedexception' => 
   array (
     0 => '/../../vendor/symfony/finder/Exception/AccessDeniedException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\exception\\exceptioninterface' => 
   array (
     0 => '/../../vendor/symfony/finder/Exception/ExceptionInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\finder\\finder' => 
   array (
     0 => '/../../vendor/symfony/finder/Finder.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\glob' => 
   array (
     0 => '/../../vendor/symfony/finder/Glob.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\customfilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/CustomFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\filteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/FilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\daterangefilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/DateRangeFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\depthrangefilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/DepthRangeFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\excludedirectoryfilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/ExcludeDirectoryFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\filecontentfilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/FilecontentFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\multiplepcrefilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/MultiplePcreFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\filenamefilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/FilenameFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\filetypefilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/FileTypeFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\pathfilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/PathFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\recursivedirectoryiterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/RecursiveDirectoryIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\sizerangefilteriterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/SizeRangeFilterIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\iterator\\sortableiterator' => 
   array (
     0 => '/../../vendor/symfony/finder/Iterator/SortableIterator.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\finder\\splfileinfo' => 
   array (
     0 => '/../../vendor/symfony/finder/SplFileInfo.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\polyfill\\mbstring\\mbstring' => 
   array (
     0 => '/../../vendor/symfony/polyfill-mbstring/Mbstring.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\dumper' => 
   array (
     0 => '/../../vendor/symfony/yaml/Dumper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\escaper' => 
   array (
     0 => '/../../vendor/symfony/yaml/Escaper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\exception\\dumpexception' => 
   array (
     0 => '/../../vendor/symfony/yaml/Exception/DumpException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\exception\\runtimeexception' => 
   array (
     0 => '/../../vendor/symfony/yaml/Exception/RuntimeException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\exception\\exceptioninterface' => 
   array (
     0 => '/../../vendor/symfony/yaml/Exception/ExceptionInterface.php',
-    1 => 'interface_exists',
+    1 => 1,
   ),
   'symfony\\component\\yaml\\exception\\parseexception' => 
   array (
     0 => '/../../vendor/symfony/yaml/Exception/ParseException.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\inline' => 
   array (
     0 => '/../../vendor/symfony/yaml/Inline.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\parser' => 
   array (
     0 => '/../../vendor/symfony/yaml/Parser.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\unescaper' => 
   array (
     0 => '/../../vendor/symfony/yaml/Unescaper.php',
-    1 => 'class_exists',
+    1 => 0,
   ),
   'symfony\\component\\yaml\\yaml' => 
   array (
     0 => '/../../vendor/symfony/yaml/Yaml.php',
-    1 => 'class_exists',
+    1 => 0,
+  ),
+  'theseer\\tokenizer\\exception' => 
+  array (
+    0 => '/../../vendor/theseer/tokenizer/src/Exception.php',
+    1 => 0,
+  ),
+  'theseer\\tokenizer\\namespaceuri' => 
+  array (
+    0 => '/../../vendor/theseer/tokenizer/src/NamespaceUri.php',
+    1 => 0,
+  ),
+  'theseer\\tokenizer\\namespaceuriexception' => 
+  array (
+    0 => '/../../vendor/theseer/tokenizer/src/NamespaceUriException.php',
+    1 => 0,
+  ),
+  'theseer\\tokenizer\\token' => 
+  array (
+    0 => '/../../vendor/theseer/tokenizer/src/Token.php',
+    1 => 0,
+  ),
+  'theseer\\tokenizer\\tokencollection' => 
+  array (
+    0 => '/../../vendor/theseer/tokenizer/src/TokenCollection.php',
+    1 => 0,
+  ),
+  'theseer\\tokenizer\\tokencollectionexception' => 
+  array (
+    0 => '/../../vendor/theseer/tokenizer/src/TokenCollectionException.php',
+    1 => 0,
+  ),
+  'theseer\\tokenizer\\tokenizer' => 
+  array (
+    0 => '/../../vendor/theseer/tokenizer/src/Tokenizer.php',
+    1 => 0,
+  ),
+  'theseer\\tokenizer\\xmlserializer' => 
+  array (
+    0 => '/../../vendor/theseer/tokenizer/src/XMLSerializer.php',
+    1 => 0,
+  ),
+  'webmozart\\assert\\assert' => 
+  array (
+    0 => '/../../vendor/webmozart/assert/src/Assert.php',
+    1 => 0,
   ),
 );
 
@@ -2433,6 +6303,70 @@ function autoloader_5b1631d32df0a0314cc4cc022b1c7643c877227a($class) {
   'class_a4423e79cd6df51ca66b13affa3d681f3041bae4' => 
   array (
     0 => 'base_template_cae776d793caf672c15e1210f1d0eb6609155ade',
+  ),
+  'doctrine\\instantiator\\exception\\invalidargumentexception' => 
+  array (
+    0 => 'doctrine\\instantiator\\exception\\exceptioninterface',
+  ),
+  'doctrine\\instantiator\\exception\\unexpectedvalueexception' => 
+  array (
+    0 => 'doctrine\\instantiator\\exception\\exceptioninterface',
+  ),
+  'doctrine\\instantiator\\instantiator' => 
+  array (
+    0 => 'doctrine\\instantiator\\instantiatorinterface',
+  ),
+  'deepcopy\\filter\\doctrine\\doctrinecollectionfilter' => 
+  array (
+    0 => 'deepcopy\\filter\\filter',
+  ),
+  'deepcopy\\filter\\doctrine\\doctrineemptycollectionfilter' => 
+  array (
+    0 => 'deepcopy\\filter\\filter',
+  ),
+  'deepcopy\\filter\\doctrine\\doctrineproxyfilter' => 
+  array (
+    0 => 'deepcopy\\filter\\filter',
+  ),
+  'deepcopy\\filter\\keepfilter' => 
+  array (
+    0 => 'deepcopy\\filter\\filter',
+  ),
+  'deepcopy\\filter\\replacefilter' => 
+  array (
+    0 => 'deepcopy\\filter\\filter',
+  ),
+  'deepcopy\\filter\\setnullfilter' => 
+  array (
+    0 => 'deepcopy\\filter\\filter',
+  ),
+  'deepcopy\\matcher\\doctrine\\doctrineproxymatcher' => 
+  array (
+    0 => 'deepcopy\\matcher\\matcher',
+  ),
+  'deepcopy\\matcher\\propertymatcher' => 
+  array (
+    0 => 'deepcopy\\matcher\\matcher',
+  ),
+  'deepcopy\\matcher\\propertynamematcher' => 
+  array (
+    0 => 'deepcopy\\matcher\\matcher',
+  ),
+  'deepcopy\\matcher\\propertytypematcher' => 
+  array (
+    0 => 'deepcopy\\matcher\\matcher',
+  ),
+  'deepcopy\\typefilter\\replacefilter' => 
+  array (
+    0 => 'deepcopy\\typefilter\\typefilter',
+  ),
+  'deepcopy\\typefilter\\shallowcopyfilter' => 
+  array (
+    0 => 'deepcopy\\typefilter\\typefilter',
+  ),
+  'deepcopy\\typefilter\\spl\\spldoublylinkedlist' => 
+  array (
+    0 => 'deepcopy\\typefilter\\typefilter',
   ),
   'phpparser\\builder\\class_' => 
   array (
@@ -3556,6 +7490,2057 @@ function autoloader_5b1631d32df0a0314cc4cc022b1c7643c877227a($class) {
   array (
     0 => 'phpparser\\unserializer',
   ),
+  'phario\\manifest\\invalidapplicationnameexception' => 
+  array (
+    0 => 'phario\\manifest\\exception',
+  ),
+  'phario\\manifest\\invalidemailexception' => 
+  array (
+    0 => 'phario\\manifest\\exception',
+  ),
+  'phario\\manifest\\invalidurlexception' => 
+  array (
+    0 => 'phario\\manifest\\exception',
+  ),
+  'phario\\manifest\\manifestdocumentexception' => 
+  array (
+    0 => 'phario\\manifest\\exception',
+  ),
+  'phario\\manifest\\manifestdocumentmapperexception' => 
+  array (
+    0 => 'phario\\manifest\\exception',
+  ),
+  'phario\\manifest\\manifestelementexception' => 
+  array (
+    0 => 'phario\\manifest\\exception',
+  ),
+  'phario\\manifest\\manifestloaderexception' => 
+  array (
+    0 => 'phario\\manifest\\exception',
+  ),
+  'phario\\manifest\\application' => 
+  array (
+    0 => 'phario\\manifest\\type',
+  ),
+  'phario\\manifest\\extension' => 
+  array (
+    0 => 'phario\\manifest\\type',
+  ),
+  'phario\\manifest\\library' => 
+  array (
+    0 => 'phario\\manifest\\type',
+  ),
+  'phario\\manifest\\phpextensionrequirement' => 
+  array (
+    0 => 'phario\\manifest\\requirement',
+  ),
+  'phario\\manifest\\phpversionrequirement' => 
+  array (
+    0 => 'phario\\manifest\\requirement',
+  ),
+  'phario\\manifest\\authorelement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\authorelementcollection' => 
+  array (
+    0 => 'phario\\manifest\\elementcollection',
+  ),
+  'phario\\manifest\\bundleselement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\componentelement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\componentelementcollection' => 
+  array (
+    0 => 'phario\\manifest\\elementcollection',
+  ),
+  'phario\\manifest\\containselement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\copyrightelement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\extelement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\extelementcollection' => 
+  array (
+    0 => 'phario\\manifest\\elementcollection',
+  ),
+  'phario\\manifest\\extensionelement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\licenseelement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\manifestdocumentloadingexception' => 
+  array (
+    0 => 'phario\\manifest\\exception',
+  ),
+  'phario\\manifest\\phpelement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\manifest\\requireselement' => 
+  array (
+    0 => 'phario\\manifest\\manifestelement',
+  ),
+  'phario\\version\\abstractversionconstraint' => 
+  array (
+    0 => 'phario\\version\\versionconstraint',
+  ),
+  'phario\\version\\andversionconstraintgroup' => 
+  array (
+    0 => 'phario\\version\\versionconstraint',
+    1 => 'phario\\version\\abstractversionconstraint',
+  ),
+  'phario\\version\\anyversionconstraint' => 
+  array (
+    0 => 'phario\\version\\versionconstraint',
+  ),
+  'phario\\version\\exactversionconstraint' => 
+  array (
+    0 => 'phario\\version\\versionconstraint',
+    1 => 'phario\\version\\abstractversionconstraint',
+  ),
+  'phario\\version\\greaterthanorequaltoversionconstraint' => 
+  array (
+    0 => 'phario\\version\\versionconstraint',
+    1 => 'phario\\version\\abstractversionconstraint',
+  ),
+  'phario\\version\\invalidversionexception' => 
+  array (
+    0 => 'phario\\version\\exception',
+  ),
+  'phario\\version\\orversionconstraintgroup' => 
+  array (
+    0 => 'phario\\version\\versionconstraint',
+    1 => 'phario\\version\\abstractversionconstraint',
+  ),
+  'phario\\version\\specificmajorandminorversionconstraint' => 
+  array (
+    0 => 'phario\\version\\versionconstraint',
+    1 => 'phario\\version\\abstractversionconstraint',
+  ),
+  'phario\\version\\specificmajorversionconstraint' => 
+  array (
+    0 => 'phario\\version\\versionconstraint',
+    1 => 'phario\\version\\abstractversionconstraint',
+  ),
+  'phario\\version\\unsupportedversionconstraintexception' => 
+  array (
+    0 => 'phario\\version\\exception',
+  ),
+  'mytag' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\basetag' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\standardtagfactory' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tagfactory',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\author' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\covers' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\deprecated' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\example' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tag',
+    1 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\formatter\\passthroughformatter' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\formatter',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\generic' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\link' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\method' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\param' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\property' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\propertyread' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\propertywrite' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\return_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\see' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\since' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\source' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\throws' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\uses' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\var_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblock\\tags\\version' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblock\\tags\\factory\\staticmethod',
+    1 => 'phpdocumentor\\reflection\\docblock\\tag',
+    2 => 'phpdocumentor\\reflection\\docblock\\tags\\basetag',
+  ),
+  'phpdocumentor\\reflection\\docblockfactory' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\docblockfactoryinterface',
+  ),
+  'phpdocumentor\\reflection\\types\\array_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\boolean' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\callable_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\compound' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\float_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\integer' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\mixed' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\null_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\object_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\resource' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\scalar' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\self_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\static_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\string_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\this' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'phpdocumentor\\reflection\\types\\void_' => 
+  array (
+    0 => 'phpdocumentor\\reflection\\type',
+  ),
+  'fixtures\\prophecy\\withreturntypehints' => 
+  array (
+    0 => 'fixtures\\prophecy\\emptyclass',
+  ),
+  'spec\\prophecy\\argument\\token\\exactvaluetokenfixtureb' => 
+  array (
+    0 => 'spec\\prophecy\\argument\\token\\exactvaluetokenfixturea',
+  ),
+  'spec\\prophecy\\argument\\token\\objectstatetokenfixtureb' => 
+  array (
+    0 => 'spec\\prophecy\\argument\\token\\objectstatetokenfixturea',
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapiextended' => 
+  array (
+    0 => 'spec\\prophecy\\doubler\\classpatch\\magicalapi',
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapiimplemented' => 
+  array (
+    0 => 'spec\\prophecy\\doubler\\classpatch\\magicalapiinterface',
+  ),
+  'spec\\prophecy\\doubler\\classpatch\\magicalapiimplementedextended' => 
+  array (
+    0 => 'spec\\prophecy\\doubler\\classpatch\\magicalapiinterface',
+    1 => 'spec\\prophecy\\doubler\\classpatch\\magicalapiimplemented',
+  ),
+  'spec\\prophecy\\prophecy\\objectprophecyspecfixtureb' => 
+  array (
+    0 => 'spec\\prophecy\\prophecy\\objectprophecyspecfixturea',
+  ),
+  'prophecy\\argument\\token\\anyvaluestoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\anyvaluetoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\approximatevaluetoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\arraycounttoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\arrayentrytoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\arrayeveryentrytoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\callbacktoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\exactvaluetoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\identicalvaluetoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\logicalandtoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\logicalnottoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\objectstatetoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\stringcontainstoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\argument\\token\\typetoken' => 
+  array (
+    0 => 'prophecy\\argument\\token\\tokeninterface',
+  ),
+  'prophecy\\comparator\\closurecomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+  ),
+  'prophecy\\comparator\\factory' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\factory',
+  ),
+  'prophecy\\comparator\\prophecycomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+    1 => 'sebastianbergmann\\comparator\\arraycomparator',
+    2 => 'sebastianbergmann\\comparator\\objectcomparator',
+  ),
+  'sebastianbergmann\\comparator\\objectcomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+    1 => 'sebastianbergmann\\comparator\\arraycomparator',
+  ),
+  'prophecy\\doubler\\cacheddoubler' => 
+  array (
+    0 => 'prophecy\\doubler\\doubler',
+  ),
+  'prophecy\\doubler\\classpatch\\disableconstructorpatch' => 
+  array (
+    0 => 'prophecy\\doubler\\classpatch\\classpatchinterface',
+  ),
+  'prophecy\\doubler\\classpatch\\hhvmexceptionpatch' => 
+  array (
+    0 => 'prophecy\\doubler\\classpatch\\classpatchinterface',
+  ),
+  'prophecy\\doubler\\classpatch\\keywordpatch' => 
+  array (
+    0 => 'prophecy\\doubler\\classpatch\\classpatchinterface',
+  ),
+  'prophecy\\doubler\\classpatch\\magiccallpatch' => 
+  array (
+    0 => 'prophecy\\doubler\\classpatch\\classpatchinterface',
+  ),
+  'prophecy\\doubler\\classpatch\\prophecysubjectpatch' => 
+  array (
+    0 => 'prophecy\\doubler\\classpatch\\classpatchinterface',
+  ),
+  'prophecy\\doubler\\classpatch\\reflectionclassnewinstancepatch' => 
+  array (
+    0 => 'prophecy\\doubler\\classpatch\\classpatchinterface',
+  ),
+  'prophecy\\doubler\\classpatch\\splfileinfopatch' => 
+  array (
+    0 => 'prophecy\\doubler\\classpatch\\classpatchinterface',
+  ),
+  'prophecy\\doubler\\classpatch\\traversablepatch' => 
+  array (
+    0 => 'prophecy\\doubler\\classpatch\\classpatchinterface',
+  ),
+  'prophecy\\exception\\call\\unexpectedcallexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\prophecy\\prophecyexception',
+    2 => 'prophecy\\exception\\prophecy\\objectprophecyexception',
+  ),
+  'prophecy\\exception\\prophecy\\objectprophecyexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\prophecy\\prophecyexception',
+  ),
+  'prophecy\\exception\\doubler\\classcreatorexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\doubler\\doublerexception',
+  ),
+  'prophecy\\exception\\doubler\\doublerexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+  ),
+  'prophecy\\exception\\doubler\\classmirrorexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\doubler\\doublerexception',
+  ),
+  'prophecy\\exception\\doubler\\classnotfoundexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\doubler\\doublerexception',
+    2 => 'prophecy\\exception\\doubler\\doubleexception',
+  ),
+  'prophecy\\exception\\doubler\\doubleexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\doubler\\doublerexception',
+  ),
+  'prophecy\\exception\\doubler\\interfacenotfoundexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\doubler\\doublerexception',
+    2 => 'prophecy\\exception\\doubler\\doubleexception',
+    3 => 'prophecy\\exception\\doubler\\classnotfoundexception',
+  ),
+  'prophecy\\exception\\doubler\\methodnotextendableexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\doubler\\doublerexception',
+    2 => 'prophecy\\exception\\doubler\\doubleexception',
+  ),
+  'prophecy\\exception\\doubler\\methodnotfoundexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\doubler\\doublerexception',
+    2 => 'prophecy\\exception\\doubler\\doubleexception',
+  ),
+  'prophecy\\exception\\doubler\\returnbyreferenceexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\doubler\\doublerexception',
+    2 => 'prophecy\\exception\\doubler\\doubleexception',
+  ),
+  'prophecy\\exception\\invalidargumentexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+  ),
+  'prophecy\\exception\\prediction\\aggregateexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\prediction\\predictionexception',
+  ),
+  'prophecy\\exception\\prediction\\predictionexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+  ),
+  'prophecy\\exception\\prediction\\failedpredictionexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\prediction\\predictionexception',
+  ),
+  'prophecy\\exception\\prediction\\nocallsexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\prediction\\predictionexception',
+    3 => 'prophecy\\exception\\prophecy\\prophecyexception',
+    4 => 'prophecy\\exception\\prophecy\\objectprophecyexception',
+    5 => 'prophecy\\exception\\prophecy\\methodprophecyexception',
+  ),
+  'prophecy\\exception\\prophecy\\methodprophecyexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\prophecy\\prophecyexception',
+    2 => 'prophecy\\exception\\prophecy\\objectprophecyexception',
+  ),
+  'prophecy\\exception\\prediction\\unexpectedcallscountexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\prediction\\predictionexception',
+    3 => 'prophecy\\exception\\prophecy\\prophecyexception',
+    4 => 'prophecy\\exception\\prophecy\\objectprophecyexception',
+    5 => 'prophecy\\exception\\prophecy\\methodprophecyexception',
+    6 => 'prophecy\\exception\\prediction\\unexpectedcallsexception',
+  ),
+  'prophecy\\exception\\prediction\\unexpectedcallsexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+    1 => 'prophecy\\exception\\prediction\\predictionexception',
+    3 => 'prophecy\\exception\\prophecy\\prophecyexception',
+    4 => 'prophecy\\exception\\prophecy\\objectprophecyexception',
+    5 => 'prophecy\\exception\\prophecy\\methodprophecyexception',
+  ),
+  'prophecy\\exception\\prophecy\\prophecyexception' => 
+  array (
+    0 => 'prophecy\\exception\\exception',
+  ),
+  'prophecy\\phpdocumentor\\classandinterfacetagretriever' => 
+  array (
+    0 => 'prophecy\\phpdocumentor\\methodtagretrieverinterface',
+  ),
+  'prophecy\\phpdocumentor\\classtagretriever' => 
+  array (
+    0 => 'prophecy\\phpdocumentor\\methodtagretrieverinterface',
+  ),
+  'prophecy\\phpdocumentor\\legacyclasstagretriever' => 
+  array (
+    0 => 'prophecy\\phpdocumentor\\methodtagretrieverinterface',
+  ),
+  'prophecy\\prediction\\callbackprediction' => 
+  array (
+    0 => 'prophecy\\prediction\\predictioninterface',
+  ),
+  'prophecy\\prediction\\callprediction' => 
+  array (
+    0 => 'prophecy\\prediction\\predictioninterface',
+  ),
+  'prophecy\\prediction\\calltimesprediction' => 
+  array (
+    0 => 'prophecy\\prediction\\predictioninterface',
+  ),
+  'prophecy\\prediction\\nocallsprediction' => 
+  array (
+    0 => 'prophecy\\prediction\\predictioninterface',
+  ),
+  'prophecy\\promise\\callbackpromise' => 
+  array (
+    0 => 'prophecy\\promise\\promiseinterface',
+  ),
+  'prophecy\\promise\\returnargumentpromise' => 
+  array (
+    0 => 'prophecy\\promise\\promiseinterface',
+  ),
+  'prophecy\\promise\\returnpromise' => 
+  array (
+    0 => 'prophecy\\promise\\promiseinterface',
+  ),
+  'prophecy\\promise\\throwpromise' => 
+  array (
+    0 => 'prophecy\\promise\\promiseinterface',
+  ),
+  'prophecy\\prophecy\\objectprophecy' => 
+  array (
+    0 => 'prophecy\\prophecy\\prophecyinterface',
+  ),
+  'prophecy\\prophecy\\revealer' => 
+  array (
+    0 => 'prophecy\\prophecy\\revealerinterface',
+  ),
+  'sebastianbergmann\\codecoverage\\driver\\hhvm' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\driver\\driver',
+    1 => 'sebastianbergmann\\codecoverage\\driver\\xdebug',
+  ),
+  'sebastianbergmann\\codecoverage\\driver\\xdebug' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\driver\\driver',
+  ),
+  'sebastianbergmann\\codecoverage\\driver\\phpdbg' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\driver\\driver',
+  ),
+  'sebastianbergmann\\codecoverage\\coveredcodenotexecutedexception' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\exception',
+    1 => 'sebastianbergmann\\codecoverage\\runtimeexception',
+  ),
+  'sebastianbergmann\\codecoverage\\runtimeexception' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\exception',
+  ),
+  'sebastianbergmann\\codecoverage\\invalidargumentexception' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\exception',
+  ),
+  'sebastianbergmann\\codecoverage\\missingcoversannotationexception' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\exception',
+    1 => 'sebastianbergmann\\codecoverage\\runtimeexception',
+  ),
+  'sebastianbergmann\\codecoverage\\unintentionallycoveredcodeexception' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\exception',
+    1 => 'sebastianbergmann\\codecoverage\\runtimeexception',
+  ),
+  'sebastianbergmann\\codecoverage\\node\\directory' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\node\\abstractnode',
+  ),
+  'sebastianbergmann\\codecoverage\\node\\file' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\node\\abstractnode',
+  ),
+  'sebastianbergmann\\codecoverage\\report\\html\\dashboard' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\report\\html\\renderer',
+  ),
+  'sebastianbergmann\\codecoverage\\report\\html\\directory' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\report\\html\\renderer',
+  ),
+  'sebastianbergmann\\codecoverage\\report\\html\\file' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\report\\html\\renderer',
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\directory' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\report\\xml\\node',
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\project' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\report\\xml\\node',
+  ),
+  'sebastianbergmann\\codecoverage\\report\\xml\\report' => 
+  array (
+    0 => 'sebastianbergmann\\codecoverage\\report\\xml\\file',
+  ),
+  'php_tokenwithscope' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_tokenwithscopeandvisibility' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_tokenwithscope',
+  ),
+  'php_token_includes' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_function' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_tokenwithscope',
+    2 => 'php_tokenwithscopeandvisibility',
+  ),
+  'php_token_interface' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_tokenwithscope',
+    2 => 'php_tokenwithscopeandvisibility',
+  ),
+  'php_token_abstract' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_ampersand' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_and_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_array' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_array_cast' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_as' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_at' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_backtick' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_bad_character' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_boolean_and' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_boolean_or' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_bool_cast' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_break' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_caret' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_case' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_catch' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_character' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_class' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_tokenwithscope',
+    2 => 'php_tokenwithscopeandvisibility',
+    3 => 'php_token_interface',
+  ),
+  'php_token_class_c' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_class_name_constant' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_clone' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_close_bracket' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_close_curly' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_close_square' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_close_tag' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_colon' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_comma' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_comment' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_concat_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_const' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_constant_encapsed_string' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_continue' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_curly_open' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_dec' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_declare' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_default' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_div' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_div_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_dnumber' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_do' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_doc_comment' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_dollar' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_dollar_open_curly_braces' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_dot' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_double_arrow' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_double_cast' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_double_colon' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_double_quotes' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_echo' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_else' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_elseif' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_empty' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_encapsed_and_whitespace' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_enddeclare' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_endfor' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_endforeach' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_endif' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_endswitch' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_endwhile' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_end_heredoc' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_eval' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_exclamation_mark' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_exit' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_extends' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_file' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_final' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_for' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_foreach' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_func_c' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_global' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_gt' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_if' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_implements' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_inc' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_include' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_token_includes',
+  ),
+  'php_token_include_once' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_token_includes',
+  ),
+  'php_token_inline_html' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_instanceof' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_int_cast' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_isset' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_is_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_is_greater_or_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_is_identical' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_is_not_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_is_not_identical' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_is_smaller_or_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_line' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_list' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_lnumber' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_logical_and' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_logical_or' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_logical_xor' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_lt' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_method_c' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_minus' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_minus_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_mod_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_mult' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_mul_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_new' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_num_string' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_object_cast' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_object_operator' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_open_bracket' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_open_curly' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_open_square' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_open_tag' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_open_tag_with_echo' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_or_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_paamayim_nekudotayim' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_percent' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_pipe' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_plus' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_plus_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_print' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_private' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_protected' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_public' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_question_mark' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_require' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_token_includes',
+  ),
+  'php_token_require_once' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_token_includes',
+  ),
+  'php_token_return' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_semicolon' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_sl' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_sl_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_sr' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_sr_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_start_heredoc' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_static' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_string' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_string_cast' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_string_varname' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_switch' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_throw' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_tilde' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_try' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_unset' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_unset_cast' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_use' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_use_function' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_var' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_variable' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_while' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_whitespace' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xor_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_halt_compiler' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_dir' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_goto' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_namespace' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_tokenwithscope',
+  ),
+  'php_token_ns_c' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_ns_separator' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_callable' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_insteadof' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_trait' => 
+  array (
+    0 => 'php_token',
+    1 => 'php_tokenwithscope',
+    2 => 'php_tokenwithscopeandvisibility',
+    3 => 'php_token_interface',
+  ),
+  'php_token_trait_c' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_finally' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_yield' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_ellipsis' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_pow' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_pow_equal' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_coalesce' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_spaceship' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_yield_from' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_async' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_await' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_compiler_halt_offset' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_enum' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_equals' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_in' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_join' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_lambda_arrow' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_lambda_cp' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_lambda_op' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_onumber' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_nullsafe_object_operator' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_shape' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_super' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_type' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_typelist_gt' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_typelist_lt' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_where' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_attribute' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_category' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_category_label' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_children' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_label' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_required' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_tag_gt' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_tag_lt' => 
+  array (
+    0 => 'php_token',
+  ),
+  'php_token_xhp_text' => 
+  array (
+    0 => 'php_token',
+  ),
+  'phpunit\\framework\\assertionfailederror' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\exception',
+    2 => 'phpunit\\framework\\exception',
+  ),
+  'phpunit\\framework\\exception' => 
+  array (
+    0 => 'phpunit\\exception',
+  ),
+  'phpunit\\framework\\codecoverageexception' => 
+  array (
+    0 => 'phpunit\\exception',
+    1 => 'phpunit\\framework\\exception',
+  ),
+  'phpunit\\framework\\constraint\\arrayhaskey' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\constraint' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+  ),
+  'phpunit\\framework\\constraint\\arraysubset' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\attribute' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+    2 => 'phpunit\\framework\\constraint\\composite',
+  ),
+  'phpunit\\framework\\constraint\\composite' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\callback' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\classhasattribute' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\classhasstaticattribute' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+    2 => 'phpunit\\framework\\constraint\\classhasattribute',
+  ),
+  'phpunit\\framework\\constraint\\count' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\directoryexists' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\exception' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\exceptioncode' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\exceptionmessage' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\exceptionmessageregularexpression' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\fileexists' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\greaterthan' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isanything' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isempty' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isequal' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isfalse' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isfinite' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isidentical' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isinfinite' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isinstanceof' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isjson' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isnan' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isnull' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\isreadable' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\istrue' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\istype' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\iswritable' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\jsonmatches' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\lessthan' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\logicaland' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\logicalnot' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\logicalor' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\logicalxor' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\objecthasattribute' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+    2 => 'phpunit\\framework\\constraint\\classhasattribute',
+  ),
+  'phpunit\\framework\\constraint\\regularexpression' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\samesize' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+    2 => 'phpunit\\framework\\constraint\\count',
+  ),
+  'phpunit\\framework\\constraint\\stringcontains' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\stringendswith' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\stringmatchesformatdescription' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+    2 => 'phpunit\\framework\\constraint\\regularexpression',
+  ),
+  'phpunit\\framework\\constraint\\stringstartswith' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\traversablecontains' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\constraint\\traversablecontainsonly' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\framework\\constraint\\constraint',
+  ),
+  'phpunit\\framework\\error\\deprecated' => 
+  array (
+    0 => 'phpunit\\exception',
+    1 => 'phpunit\\framework\\exception',
+    2 => 'phpunit\\framework\\error\\error',
+  ),
+  'phpunit\\framework\\error\\error' => 
+  array (
+    0 => 'phpunit\\exception',
+    1 => 'phpunit\\framework\\exception',
+  ),
+  'phpunit\\framework\\error\\notice' => 
+  array (
+    0 => 'phpunit\\exception',
+    1 => 'phpunit\\framework\\exception',
+    2 => 'phpunit\\framework\\error\\error',
+  ),
+  'phpunit\\framework\\error\\warning' => 
+  array (
+    0 => 'phpunit\\exception',
+    1 => 'phpunit\\framework\\exception',
+    2 => 'phpunit\\framework\\error\\error',
+  ),
+  'phpunit\\framework\\exceptionwrapper' => 
+  array (
+    0 => 'phpunit\\exception',
+    1 => 'phpunit\\framework\\exception',
+  ),
+  'phpunit\\framework\\expectationfailedexception' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\exception',
+    2 => 'phpunit\\framework\\exception',
+    3 => 'phpunit\\framework\\assertionfailederror',
+  ),
+  'phpunit\\framework\\invalidcoverstargetexception' => 
+  array (
+    0 => 'phpunit\\exception',
+    1 => 'phpunit\\framework\\exception',
+    2 => 'phpunit\\framework\\codecoverageexception',
+  ),
+  'phpunit\\framework\\outputerror' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\exception',
+    2 => 'phpunit\\framework\\exception',
+    3 => 'phpunit\\framework\\assertionfailederror',
+  ),
+  'phpunit\\framework\\syntheticerror' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\exception',
+    2 => 'phpunit\\framework\\exception',
+    3 => 'phpunit\\framework\\assertionfailederror',
+  ),
+  'phpunit\\framework\\warning' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit\\exception',
+    2 => 'phpunit\\framework\\exception',
+  ),
+  'phpunit\\runner\\exception' => 
+  array (
+    0 => 'phpunit\\exception',
+  ),
+  'phpunit\\runner\\filter\\excludegroupfilteriterator' => 
+  array (
+    0 => 'phpunit\\runner\\filter\\groupfilteriterator',
+  ),
+  'phpunit\\runner\\filter\\includegroupfilteriterator' => 
+  array (
+    0 => 'phpunit\\runner\\filter\\groupfilteriterator',
+  ),
+  'phpunit\\textui\\resultprinter' => 
+  array (
+    0 => 'phpunit\\util\\printer',
+  ),
+  'phpunit\\util\\log\\junit' => 
+  array (
+    0 => 'phpunit\\util\\printer',
+  ),
+  'phpunit\\util\\log\\teamcity' => 
+  array (
+    0 => 'phpunit\\util\\printer',
+    1 => 'phpunit\\textui\\resultprinter',
+  ),
+  'phpunit\\util\\php\\defaultphpprocess' => 
+  array (
+    0 => 'phpunit\\util\\php\\abstractphpprocess',
+  ),
+  'phpunit\\util\\php\\windowsphpprocess' => 
+  array (
+    0 => 'phpunit\\util\\php\\abstractphpprocess',
+    1 => 'phpunit\\util\\php\\defaultphpprocess',
+  ),
+  'phpunit_framework_mockobject_builder_invocationmocker' => 
+  array (
+    0 => 'phpunit_framework_mockobject_builder_identity',
+    1 => 'phpunit_framework_mockobject_builder_stub',
+    2 => 'phpunit_framework_mockobject_builder_match',
+    3 => 'phpunit_framework_mockobject_builder_parametersmatch',
+    4 => 'phpunit_framework_mockobject_builder_methodnamematch',
+  ),
+  'phpunit_framework_mockobject_builder_methodnamematch' => 
+  array (
+    0 => 'phpunit_framework_mockobject_builder_identity',
+    1 => 'phpunit_framework_mockobject_builder_stub',
+    2 => 'phpunit_framework_mockobject_builder_match',
+    3 => 'phpunit_framework_mockobject_builder_parametersmatch',
+  ),
+  'phpunit_framework_mockobject_builder_match' => 
+  array (
+    0 => 'phpunit_framework_mockobject_builder_identity',
+    1 => 'phpunit_framework_mockobject_builder_stub',
+  ),
+  'phpunit_framework_mockobject_builder_stub' => 
+  array (
+    0 => 'phpunit_framework_mockobject_builder_identity',
+  ),
+  'phpunit_framework_mockobject_builder_parametersmatch' => 
+  array (
+    0 => 'phpunit_framework_mockobject_builder_identity',
+    1 => 'phpunit_framework_mockobject_builder_stub',
+    2 => 'phpunit_framework_mockobject_builder_match',
+  ),
+  'phpunit_framework_mockobject_badmethodcallexception' => 
+  array (
+    0 => 'phpunit_framework_mockobject_exception',
+  ),
+  'phpunit_framework_mockobject_runtimeexception' => 
+  array (
+    0 => 'phpunit_framework_mockobject_exception',
+  ),
+  'phpunit_framework_mockobject_invocation_object' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_invocation',
+    2 => 'phpunit_framework_mockobject_invocation_static',
+  ),
+  'phpunit_framework_mockobject_invocation_static' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_invocation',
+  ),
+  'phpunit_framework_mockobject_invocationmocker' => 
+  array (
+    0 => 'phpunit_framework_mockobject_builder_namespace',
+    1 => 'phpunit_framework_mockobject_verifiable',
+    2 => 'phpunit_framework_mockobject_invokable',
+    3 => 'phpunit_framework_mockobject_stub_matchercollection',
+  ),
+  'phpunit_framework_mockobject_invokable' => 
+  array (
+    0 => 'phpunit_framework_mockobject_verifiable',
+  ),
+  'phpunit_framework_mockobject_matcher_anyinvokedcount' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_invokedrecorder',
+  ),
+  'phpunit_framework_mockobject_matcher_invokedrecorder' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+  ),
+  'phpunit_framework_mockobject_matcher_anyparameters' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_statelessinvocation',
+  ),
+  'phpunit_framework_mockobject_matcher_statelessinvocation' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+  ),
+  'phpunit_framework_mockobject_matcher_consecutiveparameters' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_statelessinvocation',
+  ),
+  'phpunit_framework_mockobject_matcher_invocation' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+  ),
+  'phpunit_framework_mockobject_matcher_invokedatindex' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+  ),
+  'phpunit_framework_mockobject_matcher_invokedatleastcount' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_invokedrecorder',
+  ),
+  'phpunit_framework_mockobject_matcher_invokedatleastonce' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_invokedrecorder',
+  ),
+  'phpunit_framework_mockobject_matcher_invokedatmostcount' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_invokedrecorder',
+  ),
+  'phpunit_framework_mockobject_matcher_invokedcount' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_invokedrecorder',
+  ),
+  'phpunit_framework_mockobject_matcher_methodname' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_statelessinvocation',
+  ),
+  'phpunit_framework_mockobject_matcher_parameters' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+    2 => 'phpunit_framework_mockobject_matcher_statelessinvocation',
+  ),
+  'phpunit_framework_mockobject_matcher' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_matcher_invocation',
+  ),
+  'phpunit_framework_mockobject_stub_consecutivecalls' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_stub',
+  ),
+  'phpunit_framework_mockobject_stub' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+  ),
+  'phpunit_framework_mockobject_stub_exception' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_stub',
+  ),
+  'phpunit_framework_mockobject_stub_return' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_stub',
+  ),
+  'phpunit_framework_mockobject_stub_returnargument' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_stub',
+    2 => 'phpunit_framework_mockobject_stub_return',
+  ),
+  'phpunit_framework_mockobject_stub_returncallback' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_stub',
+  ),
+  'phpunit_framework_mockobject_stub_returnreference' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_stub',
+    2 => 'phpunit_framework_mockobject_stub_return',
+  ),
+  'phpunit_framework_mockobject_stub_returnself' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_stub',
+  ),
+  'phpunit_framework_mockobject_stub_returnvaluemap' => 
+  array (
+    0 => 'phpunit\\framework\\selfdescribing',
+    1 => 'phpunit_framework_mockobject_stub',
+  ),
   'psr\\log\\abstractlogger' => 
   array (
     0 => 'psr\\log\\loggerinterface',
@@ -3564,6 +9549,85 @@ function autoloader_5b1631d32df0a0314cc4cc022b1c7643c877227a($class) {
   array (
     0 => 'psr\\log\\loggerinterface',
     1 => 'psr\\log\\abstractlogger',
+  ),
+  'sebastianbergmann\\comparator\\arraycomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+  ),
+  'sebastianbergmann\\comparator\\datetimecomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+    1 => 'sebastianbergmann\\comparator\\arraycomparator',
+    2 => 'sebastianbergmann\\comparator\\objectcomparator',
+  ),
+  'sebastianbergmann\\comparator\\domnodecomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+    1 => 'sebastianbergmann\\comparator\\arraycomparator',
+    2 => 'sebastianbergmann\\comparator\\objectcomparator',
+  ),
+  'sebastianbergmann\\comparator\\doublecomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+    1 => 'sebastianbergmann\\comparator\\scalarcomparator',
+    2 => 'sebastianbergmann\\comparator\\numericcomparator',
+  ),
+  'sebastianbergmann\\comparator\\numericcomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+    1 => 'sebastianbergmann\\comparator\\scalarcomparator',
+  ),
+  'sebastianbergmann\\comparator\\exceptioncomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+    1 => 'sebastianbergmann\\comparator\\arraycomparator',
+    2 => 'sebastianbergmann\\comparator\\objectcomparator',
+  ),
+  'sebastianbergmann\\comparator\\mockobjectcomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+    1 => 'sebastianbergmann\\comparator\\arraycomparator',
+    2 => 'sebastianbergmann\\comparator\\objectcomparator',
+  ),
+  'sebastianbergmann\\comparator\\scalarcomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+  ),
+  'sebastianbergmann\\comparator\\resourcecomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+  ),
+  'sebastianbergmann\\comparator\\splobjectstoragecomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+  ),
+  'sebastianbergmann\\comparator\\typecomparator' => 
+  array (
+    0 => 'sebastianbergmann\\comparator\\comparator',
+  ),
+  'sebastianbergmann\\diff\\lcs\\memoryefficientimplementation' => 
+  array (
+    0 => 'sebastianbergmann\\diff\\lcs\\longestcommonsubsequence',
+  ),
+  'sebastianbergmann\\diff\\lcs\\timeefficientimplementation' => 
+  array (
+    0 => 'sebastianbergmann\\diff\\lcs\\longestcommonsubsequence',
+  ),
+  'sebastianbergmann\\globalstate\\runtimeexception' => 
+  array (
+    0 => 'sebastianbergmann\\globalstate\\exception',
+  ),
+  'sebastianbergmann\\objectenumerator\\invalidargumentexception' => 
+  array (
+    0 => 'sebastianbergmann\\objectenumerator\\exception',
+  ),
+  'sebastianbergmann\\objectreflector\\invalidargumentexception' => 
+  array (
+    0 => 'sebastianbergmann\\objectreflector\\exception',
+  ),
+  'sebastianbergmann\\recursioncontext\\invalidargumentexception' => 
+  array (
+    0 => 'sebastianbergmann\\recursioncontext\\exception',
   ),
   'seld\\jsonlint\\duplicatekeyexception' => 
   array (
@@ -3869,6 +9933,14 @@ function autoloader_5b1631d32df0a0314cc4cc022b1c7643c877227a($class) {
     0 => 'symfony\\component\\yaml\\exception\\exceptioninterface',
     1 => 'symfony\\component\\yaml\\exception\\runtimeexception',
   ),
+  'theseer\\tokenizer\\namespaceuriexception' => 
+  array (
+    0 => 'theseer\\tokenizer\\exception',
+  ),
+  'theseer\\tokenizer\\tokencollectionexception' => 
+  array (
+    0 => 'theseer\\tokenizer\\exception',
+  ),
 );
 
 $class = strtolower($class);
@@ -3876,14 +9948,14 @@ if (isset($classes[$class])) {
     if (!empty($deps[$class])) {
         foreach ($deps[$class] as $zclass) {
 if (
-    ! $classes[$zclass][1]( $zclass, false )
+    ! $functions[$classes[$zclass][1]]( $zclass, false )
 ) {
     require __DIR__5b1631d32df0a0314cc4cc022b1c7643c877227a  . $classes[$zclass][0];
 }
         }
     }
 if (
-    ! $classes[$class][1]( $class, false )
+    ! $functions[$classes[$class][1]]( $class, false )
 ) {
     require __DIR__5b1631d32df0a0314cc4cc022b1c7643c877227a  . $classes[$class][0];
 }

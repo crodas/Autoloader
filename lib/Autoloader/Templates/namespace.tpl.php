@@ -15,6 +15,7 @@ define({{@$dir}}, defined('__DIR__') ? __DIR__ : dirname(__FILE__));
 
 function {{$function}}($class) {
     static $classes = {{ var_export($classes, true) }};
+    static $functions  = {{ @$functions }};
 
     @if (count($deps) > 0)
     static $deps    = {{ var_export($deps, true) }};

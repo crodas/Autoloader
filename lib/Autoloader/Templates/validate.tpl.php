@@ -1,5 +1,5 @@
 if (
-    ! $classes[${{$var}}][1]( ${{$var}}, false )
+    ! $functions[$classes[${{$var}}][1]]( ${{$var}}, false )
 ) {
     @if ($stats) 
     $GLOBALS['load_{{$stats}}']++;
